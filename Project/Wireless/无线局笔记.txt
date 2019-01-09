@@ -1,0 +1,41 @@
+git地址：https://github.com/windxiaoxian/SelfStudy.git
+8a96b92d973bd1b6bbdc75782633b3c93e930a31
+
+接入内网：http://1.1.1.1:90/login 
+堡垒机|10.5.6.250[lianxk neu12345678]->前置机|10.5.7.20[administrator Wxj@123]
+
+项目服务器：后台服务器|10.9.3.20[root 1qazZAQ!]  数据库服务器|10.9.3.21[oracle oracle]
+
+数据库连接信息：
+Oracle11g 
+#jdbc.demoDB.url=jdbc:oracle:thin:@//10.9.3.21:1521/bscreem
+#jdbc.demoDB.username=screem_user
+#jdbc.demoDB.password=screem_xxp
+
+linux常用指令
+ 防火墙：
+#查询状态|service iptables status 
+#启停操作 
+1) 重启后生效 
+开启： chkconfig iptables on 
+关闭： chkconfig iptables off 
+
+2) 即时生效，重启后失效 
+开启： service iptables start 
+关闭： service iptables stop 
+
+需要说明的是对于Linux下的其它服务都可以用以上命令执行开启和关闭操作。 
+
+在开启了防火墙时，做如下设置，开启相关端口， 
+修改/etc/sysconfig/iptables 文件，添加以下内容： 
+-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT 
+-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+
+ oracle数据库：
+#登录数据库|sqlplus / as sysdba
+#关闭数据库|shutdown immidiate
+#启动数据库|startup
+#检查oracle监听状态|lsnrctl status
+#关掉oracle的监听进程|lsnrctl stop
+#启动oracle的监听进程|lsnrctl start
+
