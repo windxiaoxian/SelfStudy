@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>全国广播监测网-控制台</title>
+	<link href="../css/reset.css" rel="stylesheet">
+	<link href="../css/function.css" rel="stylesheet">
+	<style>
+		.doc {
+			margin: 0 auto;
+		}
+
+		.w1360 {
+			width: 1360px;
+		}
+
+		.w1020 {
+			width: 1020px;
+		}
+
+		.w340 {
+			width: 340px;
+		}
+
+		.w338 {
+			width: 338px;
+		}
+
+		.h510 {
+			height: 510px;
+		}
+
+		.h508 {
+			height: 508px;
+		}
+
+		.lh510 {
+			line-height: 510px;
+		}
+
+		.h255 {
+			height: 255px;
+		}
+
+		.bgc0 {
+			background-color: #DCDCDC;
+		}
+
+		.bgc1 {
+			background-color: #FFFFFF;
+		}
+
+		.bgc2 {
+			background-color: #CDCDCD;
+		}
+		
+		/**
+		 * 主题区
+		 */
+		#sortable .delete {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 45px;
+			height: 45px;
+			cursor: pointer;
+		}
+
+		/**
+		 * 素材区
+		 */
+		#slider .delete {
+			display: none;
+		}
+
+		#slider .navs {
+			position: absolute;
+			top: 75px;
+			width: 55px;
+			line-height: 120px;
+			background-color: rgba(30, 30, 30, 0.7);
+			text-align: center;
+			font-size: 80px;
+			color: #ffffff;
+			cursor: pointer;
+		}
+
+		#slider .prev {
+			left: 0;
+		}
+
+		#slider .next {
+			right: 0;
+		}
+
+		/**
+		 * 控制台
+		 */
+		#console {
+			border: 1px solid #B8B8B8;
+		}
+		#console .title {
+			line-height: 28px;
+			padding: 8px 0;
+			font-size: 28px;
+		}
+
+		#console .tab {
+			height: 39px;
+			border-bottom: 1px solid #B8B8B8;
+		}
+
+		#console .tab .item {
+			display: inline-block;
+			width: 92px;
+			line-height: 38px;
+			font-size: 22px;
+			border-top: 1px solid #B8B8B8;
+			border-left: 1px solid #B8B8B8;
+			border-right: 1px solid #B8B8B8;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+
+		#console .tab .ml8 {
+			margin-left: 8px;
+		}
+
+		#console .tab .bt0 {
+			border-bottom: 1px solid #FFFFFF;
+		}
+
+		#console .content .item {
+			height: 404px;
+			padding: 0 10px;
+		}
+
+		#console .content .item .btn {
+			width: 70px;
+			margin: 20px 16px;
+			line-height: 30px;
+			background-color: #E5E5E5;
+			border-radius: 5px;
+		}
+
+		#console .content .item .btn .bgc {
+			background-color: #E5E5E5;
+			border: 2px solid #E5E5E5;
+		}
+
+		#console .content .item .btn .sel {
+			background-color: #CDCDCD;
+			border: 2px solid #88ABDB;
+		}
+	</style>
+</head>
+<body>
+	<div class="w1360 doc bgc0">
+		<div class="f-cb">
+			<div class="w1020 h510 f-fl">
+				<div id="sortable" class="w1020 h510 f-cb">
+					<div class="item f-pr f-fl">
+						<img class="w340 h255" src="../img/console/封面.PNG" name="封面"/>
+						<img class="delete" src="../img/console/delete.png"/>
+					</div>
+					<div class="item f-pr f-fl">
+						<img class="w340 h255" src="../img/console/监管范围.PNG" name="监管范围"/>
+						<img class="delete" src="../img/console/delete.png"/>
+					</div>
+					<div class="item f-pr f-fl">
+						<img class="w340 h255" src="../img/console/监管任务.PNG" name="监管任务"/>
+						<img class="delete" src="../img/console/delete.png"/>
+					</div>
+					<div class="item f-pr f-fl">
+						<img class="w340 h255" src="../img/console/监管流程.PNG" name="监管流程"/>
+						<img class="delete" src="../img/console/delete.png"/>
+					</div>
+					<div class="item f-pr f-fl">
+						<img class="w340 h255" src="../img/console/数据采集.PNG" name="数据采集"/>
+						<img class="delete" src="../img/console/delete.png"/>
+					</div>
+					<div class="item f-pr f-fl">
+						<img class="w340 h255" src="../img/console/评估分析.PNG" name="评估分析"/>
+						<img class="delete" src="../img/console/delete.png"/>
+					</div>
+				</div>
+			</div>
+			<div id="console" class="w338 f-fr f-tac">
+				<div class="title">控制台</div>
+				<div class="tab f-cb">
+					<div class="item f-fl bgc1 bt0 f-csp">单主题</div>
+					<div class="item f-fl ml8 bgc2 f-csp">轮播</div>
+					<div class="item f-fl ml8 bgc2 f-csp">多主题</div>
+				</div>
+				<div class="content">
+					<div class="item f-cb bgc1">
+						<div class="btn f-fl bgc">窗体1</div>
+						<div class="btn f-fl bgc">窗体2</div>
+						<div class="btn f-fl bgc">窗体3</div>
+						<div class="btn f-fl bgc">窗体4</div>
+						<div class="btn f-fl bgc">窗体5</div>
+						<div class="btn f-fl bgc">窗体6</div>
+					</div>
+					<div class="item bgc1 f-dn">2</div>
+					<div class="item bgc1 f-dn">3</div>
+				</div>
+			</div>
+		</div>
+		<div id="slider" class="w1360 h255 f-pa f-cb f-oh">
+			<div class="item f-pr f-fl">
+				<img class="w340 h255" src="../img/console/封面.PNG" name="封面"/>
+				<img class="delete" src="../img/console/delete.png"/>
+			</div>
+			<div class="item f-pr f-fl">
+				<img class="w340 h255" src="../img/console/监管范围.PNG" name="监管范围"/>
+				<img class="delete" src="../img/console/delete.png"/>
+			</div>
+			<div class="item f-pr f-fl">
+				<img class="w340 h255" src="../img/console/监管任务.PNG" name="监管任务"/>
+				<img class="delete" src="../img/console/delete.png"/>
+			</div>
+			<div class="item f-pr f-fl">
+				<img class="w340 h255" src="../img/console/监管流程.PNG" name="监管流程"/>
+				<img class="delete" src="../img/console/delete.png"/>
+			</div>
+			<div class="item f-pr f-fl">
+				<img class="w340 h255" src="../img/console/数据采集.PNG" name="数据采集"/>
+				<img class="delete" src="../img/console/delete.png"/>
+			</div>
+			<div class="item f-pr f-fl">
+				<img class="w340 h255" src="../img/console/评估分析.PNG" name="评估分析"/>
+				<img class="delete" src="../img/console/delete.png"/>
+			</div>
+			<div class="navs prev">&#10096;</div>
+			<div class="navs next f-dn">&#10097;</div>
+		</div>
+	</div>
+	<!--<script src="../js/jquery-3.2.1.min.js"></script>-->
+	<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  	<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script>
+		var pages = 0,
+			$prev = $('.prev'),
+			$next = $('.next');
+		
+		// 上一页
+		$prev.click(function() {
+			$item = $('#slider .item').eq(pages);
+			if ($item.is(':animated')) {
+				return;
+			}
+			$item.animate({ 'margin-left': '-=' + 340 }, 'slow');
+			$next.removeClass('f-dn');
+			pages++;
+			if (pages === 2) {
+				$(this).addClass('f-dn');
+			}
+		});
+
+		// 下一页
+		$next.click(function() {
+			$item = $('#slider .item').eq(pages - 1);
+			if ($item.is(':animated')) {
+				return;
+			}
+			$item.animate({ 'margin-left': '+=' + 340 }, 'slow');
+			$prev.removeClass('f-dn');
+			pages--;
+			if (pages === 0) {
+				$(this).addClass('f-dn');
+			}
+		});
+
+		// 拖拽
+		$("#sortable").sortable({
+			revert: false
+		});
+
+		$('#slider .item').draggable({
+			opacity: 0.9,
+			cursor: 'move',
+			connectToSortable: '#sortable',
+			helper: 'clone',
+			revert: 'invalid',
+			zIndex: 99999,
+			stop: function(event, ui) {
+				removeItem();
+			}
+		});
+
+		// 移除主题
+		removeItem();
+
+		function removeItem() {
+			$('#sortable .delete').unbind('click').bind('click', function() {
+				var $parent = $(this).parent();
+				$parent.hide(1000, function() { $parent.remove(); });
+			});
+		};
+
+		// 控制台
+		var $content_item = $('#console .content .item');
+
+		var $tab_item = $('#console .tab .item');
+		$tab_item.unbind('click').bind('click', function() {
+			$this = $(this);
+			$this.removeClass('bgc2')
+				 .addClass('bgc1')
+				 .addClass('bt0')
+				 .siblings()
+				 .removeClass('bgc1')
+				 .addClass('bgc2')
+				 .removeClass('bt0');
+
+			var index = $this.index();
+			$content_item.eq(index)
+						 .removeClass('f-dn')
+						 .siblings()
+						 .addClass('f-dn');
+		});
+	</script>
+</body>
+</html>

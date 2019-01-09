@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>监管范围</title>
+		<link href="../css/reset.css" rel="stylesheet">
+		<link href="../css/media.css" rel="stylesheet">
+		<link href="../css/function.css" rel="stylesheet">
+		<style>
+		    .cls-1 {
+		        fill: #efa524;
+		    }
+
+		    .cls-1, .cls-2, .cls-3 {
+		        stroke: #fff;
+		        stroke-width: 2px;
+		        fill-rule: evenodd;
+		    }
+
+		    .cls-1, .cls-2 {
+		        stroke-linecap: round;
+		    }
+
+		    .cls-2 {
+		        fill: #fff;
+		    }
+
+		    .cls-3 {
+		        fill: none;
+		    }
+    	</style>
+	</head>
+	<body>
+		<div class="doc f-bt1">
+			<img src="../img/监管范围.svg" class="tt f-db">
+			<div class="f-cb">
+				<div class="w680 h510 f-fl f-pr">
+					<div class="w50 f-pa tt2 f-bgc1 f-tac">监管中心业务辖区图</div>
+					<div id="map"></div>
+				</div>
+				<div class="w680 h510 f-fl f-pr">
+					<div id="map2"></div>
+				</div>
+				<div class="w850 h340 f-fl f-pr">
+					<div class="w50 f-pa tt2 f-bgc1 f-tac">人口覆盖</div>
+					<div id="pie"></div>
+				</div>
+				<div class="w510 h340 f-fl f-pr">
+					<div class="w50 f-pa tt3 f-bgc1 f-tac">语言覆盖</div>
+					<svg id="bar" width="510" height="340"></svg>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script src="../js/map/china.js"></script>
+		<script src="../js/map/201台.js"></script>
+		<script src="../js/map/202台.js"></script>
+		<script src="../js/map/203台.js"></script>
+		<script src="../js/map/海南台.js"></script>
+		<script src="../js/map/哈尔滨台.js"></script>
+		<script src="../js/map/573台.js"></script>
+		<script src="../js/map/553台.js"></script>
+		<script src="../js/map/成都台.js"></script>
+		<script src="../js/map/西安台.js"></script>
+		<script src="../js/map/282台.js"></script>
+		<script src="../js/map/281台.js"></script>
+		<script src="../js/map/291台.js"></script>
+		<script src="../js/map/292台.js"></script>
+		<script src="../js/map/293台.js"></script>
+		<script src="../js/map/厦门台.js"></script>
+		<script src="../js/d3.v4.min.js"></script>
+		<script src="../js/part1.js"></script>
+	</body>
+</html>

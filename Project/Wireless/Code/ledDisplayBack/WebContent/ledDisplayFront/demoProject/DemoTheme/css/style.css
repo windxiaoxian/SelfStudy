@@ -1,0 +1,316 @@
+﻿.banner-box {
+    width: 800px;
+}
+
+    .banner-box ul {
+        position: relative;
+    }
+
+        .banner-box ul li {
+            position: absolute;
+        }
+
+            .banner-box ul li img {
+                width: 100%;
+            }
+
+            .banner-box ul li:first-child {
+                left: 0;
+                width: 260px;
+                z-index: -2;
+                -webkit-animation: bannerBox1 45s 0s infinite;
+            }
+
+            .banner-box ul li:nth-child(2) {
+                left: 100px;
+                width: 280px;
+                z-index: -1;
+                -webkit-animation: bannerBox2 45s 0s infinite;
+            }
+
+            .banner-box ul li:nth-child(3) {
+                left: 240px;
+                width: 320px;
+                -webkit-animation: bannerBox3 45s 0s infinite;
+                z-index: 1;
+            }
+
+            .banner-box ul li:nth-child(4) {
+                left: 420px;
+                width: 280px;
+                z-index: -1;
+                -webkit-animation: bannerBox4 45s 0s infinite;
+            }
+
+            .banner-box ul li:nth-child(5) {
+                left: 540px;
+                width: 260px;
+                z-index: -2;
+                -webkit-animation: bannerBox5 45s 0s infinite;
+            }
+
+@-webkit-keyframes bannerBox1 {
+    0%,2% {
+        left: 0;
+        width: 260px;
+        z-index: -2;
+    }
+    11%,13% {
+        left: 540px;
+        width: 260px;
+        z-index: -2;
+    }
+
+    22%,24% {
+        left: 420px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    33%,35% {
+        left: 100px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    44%,46% {
+        left: 0;
+        width: 260px;
+        z-index: -2;
+    }
+    55%,57% {
+        left: 540px;
+        width: 260px;
+        z-index: -2;
+    }
+
+    66%,68% {
+        left: 420px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    77%,79% {
+        left: 240px;
+        width: 320px;
+        z-index: 1;
+    }
+
+    88%,90% {
+        left: 100px;
+        width: 280px;
+        z-index: -1;
+    }
+}
+@-webkit-keyframes bannerBox2 {
+    0%,2% {
+        left: 100px;
+        width: 280px;
+        z-index: -1;
+    }
+    11%,13% {
+        left: 0;
+        width: 260px;
+        z-index: -2;
+    }
+
+    22%,24% {
+        left: 540px;
+        width: 260px;
+        z-index: -2;
+    }
+
+    33%,35% {
+        left: 240px;
+        width: 320px;
+        z-index: 1;
+    }
+
+    44%,46% {
+        left: 100px;
+        width: 280px;
+        z-index: -1;
+    }
+    55%,57% {
+        left: 0;
+        width: 260px;
+        z-index: -2;
+    }
+
+    66%,68% {
+        left: 540px;
+        width: 260px;
+        z-index: -2;
+    }
+
+    77%,79% {
+        left: 420px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    88%,90% {
+        left: 240px;
+        width: 320px;
+        z-index: 1;
+    }
+}
+@-webkit-keyframes bannerBox3 {
+    0%,2% {
+        left: 240px;
+        width: 320px;
+        z-index: 1;
+    }
+    11%,13% {
+        left: 100px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    22%,24% {
+        left: 0;
+        width: 260px;
+        z-index: -2;
+    }
+
+    33%,35% {
+        left: 420px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    44%,46% {
+        left: 240px;
+        width: 320px;
+        z-index: 1;
+    }
+    55%,57% {
+        left: 100px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    66%,68% {
+        left: 0;
+        width: 260px;
+        z-index: -2;
+    }
+
+    77%,79% {
+        left: 540px;
+        width: 260px;
+        z-index: -2;
+    }
+
+    88%,90% {
+        left: 420px;
+        width: 280px;
+        z-index: -1;
+    }
+}
+@-webkit-keyframes bannerBox4 {
+    0%,2% {
+        left: 420px;
+        width: 280px;
+        z-index: -1;
+    }
+    11%,13% {
+        left: 240px;
+        width: 320px;
+        z-index: 1;
+    }
+
+    22%,24% {
+        left: 100px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    33%,35% {
+        left: 540px;
+        width: 260px;
+        z-index: -2;
+    }
+
+    44%,46% {
+        left: 420px;
+        width: 280px;
+        z-index: -1;
+    }
+    55%,57% {
+        left: 240px;
+        width: 320px;
+        z-index: 1;
+    }
+
+    66%,68% {
+        left: 100px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    77%,79% {
+        left: 0;
+        width: 260px;
+        z-index: -2;
+    }
+
+    88%,90% {
+        left: 540px;
+        width: 260px;
+        z-index: -2;
+    }
+}
+@-webkit-keyframes bannerBox5 {
+    0%,2% {
+        left: 540px;
+        width: 260px;
+        z-index: -2;
+    }
+    11%,13% {
+        left: 420px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    22%,24% {
+        left: 240px;
+        width: 320px;
+        z-index: 1;
+    }
+
+    33%,35% {
+        left: 0;
+        width: 260px;
+        z-index: -2;
+    }
+
+    44%,46% {
+        left: 540px;
+        width: 260px;
+        z-index: -2;
+    }
+    55%,57% {
+        left: 420px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    66%,68% {
+        left: 240px;
+        width: 320px;
+        z-index: 1;
+    }
+
+    77%,79% {
+        left: 100px;
+        width: 280px;
+        z-index: -1;
+    }
+
+    88%,90% {
+        left: 0;
+        width: 260px;
+        z-index: -2;
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据采集</title>
+		<link href="../css/reset.css" rel="stylesheet">
+		<link href="../css/media.css" rel="stylesheet">
+		<link href="../css/function.css" rel="stylesheet">
+		<!--<style type="text/css">
+			@import "http://10.10.90.147/arcgis_js_api/library/js/dojo/dijit/themes/tundra/tundra.css";
+			@import "http://10.10.90.147/arcgis_js_api/library/js/esri/css/esri.css";
+		</style>-->
+	</head>
+	<body>
+		<div class="doc f-bt4">
+			<img src="../img/数据采集.svg" class="tt f-db">
+			<div class="f-pr">
+				<div class="w50 f-pa tt2 f-bgc4 f-tac">录音文件采集</div>
+				<div class="w1190 f-cb" style="margin: 25px auto 0;">
+					<div class="f-fl f-tac" style="width: 85px;font-size: 20px;color: #FFFFFF;">
+						<div class="f-br2" style="height: 45px;background-color: #5a5a5a;padding-top: 30px;">编号</div>
+						<div class="f-br1" style="height: 57px;background-color: #5a5a5a;margin: 10px auto;padding-top: 18px;">监测<br/>直属台</div>
+						<div class="f-br2" style="height: 45px;background-color: #5a5a5a;padding-top: 30px;">发射台</div>
+						<div class="f-br1" style="height: 57px;background-color: #5a5a5a;margin: 10px auto;padding-top: 18px;">频率<br/>(KMZ)</div>
+						<div class="f-br2" style="height: 45px;background-color: #5a5a5a;padding-top: 30px;">节目</div>
+						<div class="f-br1" style="height: 45px;background-color: #5a5a5a;margin: 10px auto;padding-top: 30px;">时间段</div>
+						<div class="f-br2" style="height: 57px;background-color: #5a5a5a;padding-top: 18px;">录音<br/>文件名称</div>
+					</div>
+					<table id="table" class="w340 h575 f-fl f-br1 f-fc1 f-tac"></table>
+					<div id="map3" class="w705 h595 f-fr f-br1 f-pr">
+						<img style="width: 705px;" src="../img/arcgis.gif"/>
+						<div class="f-pa" style="left: 20px;bottom: 20px;line-height: 40px;width: 440px;border-radius: 5px;background-color: rgba(121,121,121,0.5);color: #fff;text-align:center;font-size: 16px;font-weight: bold;">截止目前共采集了 <span style="font-size: 25px;">104,887,710</span> 条录音文件</div>
+					</div>
+				</div>
+				<div id="radio" class="w1190 h150" style="margin: 60px auto;">
+					<div class="f-cb f-fc1 f-tac f-fwb f-fs1">
+						<div class="lh70 f-fl f-br1 f-bgc5" style="width: 255px;">
+							当前音频编号：<span id="radio_id">01</span>
+						</div>
+						<div class="lh70 f-fl f-br1 f-bgc5" style="width: 425px;">
+							节目名称：<span id="radio_name">中16</span>
+						</div>
+						<div class="lh70 f-fl f-br1 f-bgc5" style="width: 510px;">
+							录音文件名称：<span id="radio_name2">20170202AQL03.mp3</span>
+						</div>
+					</div>
+					<div class="f-cb f-fc1 f-tac f-fwb f-fs1" style="margin-top: 5px;">
+						<div id="svg1" class="h70 f-fl f-br1 f-bgc5" style="width: 85px;"></div>
+						<div id="svg2" class="h70 f-fl f-br1 f-bgc5" style="width: 1010px;margin: 0 5px;"></div>
+						<div id="svg3" class="h70 f-fl f-br1 f-bgc5" style="width: 85px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../js/d3.v4.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<!--<script>
+			var djConfig = { parseOnLoad: true };
+		</script>
+		<script type="text/javascript" src="http://10.10.90.147/arcgis_js_api/library/init.js"></script>-->
+		<script src="../js/part4.js"></script>
+	</body>
+</html>

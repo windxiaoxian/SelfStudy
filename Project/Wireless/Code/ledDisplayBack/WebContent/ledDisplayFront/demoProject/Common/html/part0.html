@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>封面</title>
+	<link href="../css/reset.css" rel="stylesheet">
+	<link href="../css/media.css" rel="stylesheet">
+	<link href="../css/function.css" rel="stylesheet">
+	<style type="text/css">
+		#tagscloud {
+			position: relative;
+			width: 1360px;
+			height: 850px;
+		}
+		#tagscloud img {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="doc">
+		<!-- TODO 内容和样式分离 -->
+		<div style="height:15px;background: linear-gradient(to right, #eba500 , #7bc346, #34bc9e, #4586d6, #dc4aed);"></div>
+		<img src="../img/全国广播监测网.svg" class="tt f-db">
+		<div id="tagscloud">
+			<img src="../img/1.jpg"/>
+			<img src="../img/1.png"/>
+			<img src="../img/1.jpg"/>
+			<img src="../img/a1.png"/>
+
+			<img src="../img/2.jpg"/>
+			<img src="../img/2.png"/>
+			<img src="../img/2.jpg"/>
+			<img src="../img/a2.png"/>
+
+			<img src="../img/3.jpg"/>
+			<img src="../img/3.png"/>
+			<img src="../img/3.jpg"/>
+			<img src="../img/a3.png"/>
+
+			<img src="../img/4.jpg"/>
+			<img src="../img/4.png"/>
+			<img src="../img/4.jpg"/>
+			<img src="../img/a4.png"/>
+
+			<img src="../img/5.jpg"/>
+			<img src="../img/5.png"/>
+			<img src="../img/5.jpg"/>
+			<img src="../img/a5.png"/>
+
+			<img src="../img/6.jpg"/>
+			<img src="../img/6.png"/>
+			<img src="../img/6.jpg"/>
+			<img src="../img/a6.png"/>
+
+			<img src="../img/7.jpg"/>
+			<img src="../img/7.png"/>
+			<img src="../img/7.jpg"/>
+			<img src="../img/a7.png"/>
+
+			<img src="../img/8.jpg"/>
+			<img src="../img/8.png"/>
+			<img src="../img/8.jpg"/>
+			<img src="../img/a8.png"/>
+
+			<img src="../img/9.jpg"/>
+			<img src="../img/9.png"/>
+			<img src="../img/9.jpg"/>
+			<img src="../img/a9.png"/>
+
+			<img src="../img/10.jpg"/>
+			<img src="../img/10.png"/>
+			<img src="../img/10.jpg"/>
+			<img src="../img/a10.png"/>
+
+			<img src="../img/11.jpg"/>
+		</div>
+	</div>
+	<script src="../js/tagscloud.js"></script>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script>
+		var cursor = 0;
+		setInterval(function() {
+			$_radio = $('.radio').eq(cursor++);
+			$_radio.animate({'margin-left': '-30px'}, '2000');
+			var html = "<div class='radio' style='margin-left:25px;width: 15px;text-align: right;float: left;word-break: break-all;font-size: 18px;color:#FFFFFF;'>" + $_radio.html() + "</div>";
+			$('.radioAll').append(html);
+		}, 2000);
+	</script>
+</body>
+</html>

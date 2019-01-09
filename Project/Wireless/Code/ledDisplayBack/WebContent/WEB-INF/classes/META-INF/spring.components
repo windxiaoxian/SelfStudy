@@ -1,0 +1,4 @@
+#
+#Mon Jan 07 18:08:55 CST 2019
+gd.services.ledDisplay.demoProject.servlet.DemoServlet=javax.servlet.annotation.WebServlet
+gd.services.ledDisplay.demoProject.task.DemoSchedule=org.springframework.stereotype.Component
