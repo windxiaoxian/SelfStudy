@@ -1,4 +1,4 @@
-package gd.services.ledDisplay.demoProject.util;
+package gd.services.ledDisplay.wirelessProject.util;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;

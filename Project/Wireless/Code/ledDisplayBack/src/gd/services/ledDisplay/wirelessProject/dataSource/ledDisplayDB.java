@@ -1,4 +1,4 @@
-package gd.services.ledDisplay.demoProject.dataSource;
+package gd.services.ledDisplay.wirelessProject.dataSource;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.commons.dbutils.QueryRunner;
