@@ -6,6 +6,7 @@ package gd.services.ledDisplay.demoProject.util;
 public class CommonUtil {
     public static String JsonFormat(String s) {
         int level = 0;
+        
         //存放格式化的json字符串
         StringBuffer jsonForMatStr = new StringBuffer();
         jsonForMatStr.append("\n");
