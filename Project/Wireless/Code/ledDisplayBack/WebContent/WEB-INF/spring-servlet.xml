@@ -31,5 +31,5 @@
     <!-- 定时器开关-->
     <task:annotation-driven/>
     <!-- 扫描任务 -->
-    <context:component-scan base-package="gd.services.ledDisplay.demoProject.task" />
+    <context:component-scan base-package="gd.services.ledDisplay.*.task" />
 </beans>

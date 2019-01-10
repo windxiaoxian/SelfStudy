@@ -12,8 +12,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ledDisplayDB {
-    private static final Logger logger = LogManager.getLogger(ledDisplayDB.class.getName());
+public class wirelessDB {
+    private static final Logger logger = LogManager.getLogger(wirelessDB.class.getName());
 
     private static DataSource ledDisplayDB;
 
@@ -22,7 +22,7 @@ public class ledDisplayDB {
         Properties dbProperties = new Properties();
         try {
             Properties properties = new Properties();
-            properties.load(ledDisplayDB.class.getClassLoader().getResourceAsStream("dataSource.properties"));
+            properties.load(wirelessDB.class.getClassLoader().getResourceAsStream("dataSource.properties"));
             for (Object key : properties.keySet()) {
                 String temp = (String) key;
                 if (temp.startsWith("jdbc.ledDisplay.")) {
@@ -52,7 +52,7 @@ public class ledDisplayDB {
             resp.put("data", run.query(
                     sql, new MapListHandler(), params));
         } catch (Exception e) {            //记录日志
-            logger.error("[ledDisplayDB.qryList]后台报错" + e.getMessage());
+            logger.error("[wirelessDB.qryList]后台报错：" + e.getMessage());
             resp.put("code", "9999");
         }
         return resp;
@@ -66,7 +66,21 @@ public class ledDisplayDB {
             resp.put("data", run.query(
                     sql, new MapHandler(), params));
         } catch (Exception e) {            //记录日志
-            logger.error("[ledDisplayDB.qryMap]后台报错" + e.getMessage());
+            logger.error("[wirelessDB.qryMap]后台报错：" + e.getMessage());
+            resp.put("code", "9999");
+        }
+        return resp;
+    }
+
+    public static Map<String, Object> executeSql(String sql, Object... params) {
+        Map<String, Object> resp = new ConcurrentHashMap<String, Object>();
+        resp.put("code", "0000");
+        try {
+            QueryRunner run = new QueryRunner(ledDisplayDB);
+            resp.put("data", run.execute(
+                    sql, new MapHandler(), params));
+        } catch (Exception e) {            //记录日志
+            logger.error("[wirelessDB.executeSql]后台报错：" + e.getMessage());
             resp.put("code", "9999");
         }
         return resp;
