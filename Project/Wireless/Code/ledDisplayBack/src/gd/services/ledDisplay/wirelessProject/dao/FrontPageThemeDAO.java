@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * Created by 徐文正 on 2019/1/12.
  */
-public class FronPageThemeDAO {
+public class FrontPageThemeDAO {
     public static String getMonthToalHours(Map reqMap) {
         StringBuffer strBuffer = new StringBuffer();
         strBuffer.append("SELECT   order_type, MONTH, MIN (history_date) history_date,                 ")
@@ -68,6 +68,7 @@ public class FronPageThemeDAO {
                 .append("                     WHERE SYSDATE BETWEEN start_date AND end_date                            ")
                 .append("                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')                       ")
                 .append("                       AND operate IN ('A', 'U')                                              ")
+                .append("                       AND run_type =  1                                                      ")
                 .append("                       AND days LIKE                                                          ")
                 .append("                              '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')                       ")
                 .append("                                        FROM DUAL) || '%')                                    ")
@@ -90,6 +91,7 @@ public class FronPageThemeDAO {
                 .append("                     WHERE SYSDATE BETWEEN start_date AND end_date                            ")
                 .append("                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')                       ")
                 .append("                       AND operate IN ('A', 'U')                                              ")
+                .append("                       AND run_type =  1                                                      ")
                 .append("                       AND days LIKE                                                          ")
                 .append("                              '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')                       ")
                 .append("                                        FROM DUAL) || '%')                                    ")
@@ -121,6 +123,7 @@ public class FronPageThemeDAO {
                 .append("                     WHERE SYSDATE BETWEEN start_date AND end_date                            ")
                 .append("                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')                       ")
                 .append("                       AND operate IN ('A', 'U')                                              ")
+                .append("                       AND run_type =  1                                                      ")
                 .append("                       AND days LIKE                                                          ")
                 .append("                              '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')                       ")
                 .append("                                        FROM DUAL) || '%')                                    ")
@@ -148,6 +151,7 @@ public class FronPageThemeDAO {
                 .append("                     WHERE SYSDATE BETWEEN start_date AND end_date                            ")
                 .append("                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')                       ")
                 .append("                       AND operate IN ('A', 'U')                                              ")
+                .append("                       AND run_type =  1                                                      ")
                 .append("                       AND days LIKE                                                          ")
                 .append("                              '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')                       ")
                 .append("                                        FROM DUAL) || '%')                                    ")
@@ -177,6 +181,7 @@ public class FronPageThemeDAO {
                 .append("                     WHERE SYSDATE BETWEEN start_date AND end_date                            ")
                 .append("                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')                       ")
                 .append("                       AND operate IN ('A', 'U')                                              ")
+                .append("                       AND run_type =  1                                                      ")
                 .append("                       AND days LIKE                                                          ")
                 .append("                              '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')                       ")
                 .append("                                        FROM DUAL) || '%')                                    ")
