@@ -23,6 +23,19 @@
         <url-pattern>/servlet/DemoServlet</url-pattern>
     </servlet-mapping>
 
+    <!--        主题一Servlet     -->
+    <servlet>
+        <description>FirstThemeServlet_Description</description>
+        <display-name>FirstThemeServlet_Name</display-name>
+        <servlet-name>FirstThemeServlet</servlet-name>
+        <servlet-class>gd.services.ledDisplay.wirelessProject.servlet.FirstThemeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FirstThemeServlet</servlet-name>
+        <url-pattern>/servlet/FirstThemeServlet</url-pattern>
+    </servlet-mapping>
+
+
     <!-- Spring 配置 begin-->
     <!-- ====================================== -->
     <servlet>
