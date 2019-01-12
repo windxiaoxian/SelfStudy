@@ -1,0 +1,1083 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>主题一左侧</title>
+    <link href="../../Common/css/ledDisplayCommon.css" rel="stylesheet" type="text/css">
+    <link href="../../Common/css/assemblyCommon.css" rel="stylesheet" type="text/css">
+    <link href="../css/Theme1Left.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="main">
+    <!--左侧内容-->
+    <div class="mainLeft">
+        <div class="mainLeftContainer">
+            <div class="Model bccjModel">
+                <div class="modelTitleBox">
+                    <div class="modelTitle">播出成绩</div>
+                </div>
+                <div class="modelContentBox">
+                    <div class="modelContent">
+                        <!--当年累计播出时间-->
+                        <!--播出三项统计-->
+                        <div class="bccjThreeState">
+                            <div class="DataAssmeblyOne DataAssmeblyOne01">
+                                <div class="DataAssmeblyOne_Content">
+                                    <div class="DataAssemblyOne_title">当年累计播出<br>时间</div>
+                                    <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
+                                            class="DataUnit">小时</span></div>
+                                </div>
+                            </div>
+
+                            <!--当年累计播出时间-->
+                            <div class="DataAssmeblyOne DataAssmeblyOne02">
+                                <div class="DataAssmeblyOne_Content">
+                                    <div class="DataAssemblyOne_title">当年累计播出<br>频次</div>
+                                    <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
+                                            class="DataUnit">个</span></div>
+                                </div>
+                            </div>
+
+                            <!--当年累计播出时间-->
+                            <div class="DataAssmeblyOne DataAssmeblyOne03">
+                                <div class="DataAssmeblyOne_Content">
+                                    <div class="DataAssemblyOne_title">当年累计播出<br>功率</div>
+                                    <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
+                                            class="DataUnit">kw</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--播出三项占比条-->
+                        <div class="bccjzb">
+                            <!--数据占比条组件-->
+                            <div class="DataAssemblyBar">
+                                <!--数据占比条图例-->
+                                <ul class="DataAssemblyBar_lengendGroup">
+                                    <li><span class="DataAssemblyBar_legendCircle yellowMix"></span><span
+                                            class="DataAssemblyBar_legendName">当年累计播出时间</span></li>
+                                    <li><span class="DataAssemblyBar_legendCircle blueMix"></span><span
+                                            class="DataAssemblyBar_legendName">当年对内累计播出时间</span></li>
+                                    <li><span class="DataAssemblyBar_legendCircle greenMix"></span><span
+                                            class="DataAssemblyBar_legendName">当年对外累计播出时间</span></li>
+                                </ul>
+                                <!--数据占比条主体-->
+                                <div class="DataAssemblyBar_progressBar">
+                                    <a class="DataAssemblyBar_progressBarItem yellowMix" id="item1"><span
+                                            class="progressBarData">236小时</span></a>
+                                    <a class="DataAssemblyBar_progressBarItem blueMix" id="item2"><span
+                                            class="progressBarData">236小时</span></a>
+                                    <a class="DataAssemblyBar_progressBarItem greenMix" id="item3"><span
+                                            class="progressBarData">236小时</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--播出时长图表-->
+                        <div class="bcscChart">
+                            <div class="chartTitle"><img src="../img/bcscTitle.png"></div>
+                            <div class="chartBox" id="bcsc_barChart"></div>
+                        </div>
+
+                        <!--停播率图表-->
+                        <div class="tbvChart">
+                            <div class="chartTitle"><img src="../img/tbvTitle.png"></div>
+                            <div class="chartBox" id="tblv_lieChart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainLeft_bottom">
+                <!--安防监控-->
+                <div class="mainLeft_bottom_item afjkModel">
+                    <div class="modelTitleBox">
+                        <div class="modelTitle">安防监控</div>
+                    </div>
+                    <div class="modelContentBox">
+                        <div class="modelContent">video</div>
+                    </div>
+                </div>
+                <!--视频指挥系统-->
+                <div class="mainLeft_bottom_item spzhxtModel">
+                    <div class="modelTitleBox">
+                        <div class="modelTitle">视频指挥系统</div>
+                    </div>
+                    <div class="modelContentBox">
+                        <div class="videoBox">video</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右侧内容-->
+    <div class="mainRight">
+        <div class="mainRightContainer">
+            <!--实验任务统计-->
+            <div class="Model mainRight_item syrwtj">
+                <div class="modelTitleBox">
+                    <div class="modelTitle">实验任务统计</div>
+                </div>
+                <div class="modelContentBox">
+                    <!--占比环组件-->
+                    <div class="tj_item pieAssembly">
+                        <div class="pieAssembly_pieChart" id="syrwtj_pieChart"></div>
+                    </div>
+
+                    <!--实验三项统计-->
+                    <div class="tj_item syrwtjThreeState">
+                        <!--在播频率数-->
+                        <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo01">
+                            <div class="DataAssmeblyTwo_Content">
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/zbplsSign.png">
+                                <div class="DataAssemblyTwo_title">在播频率数</div>
+                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                        class="DataUnit">个</span></div>
+                            </div>
+                        </div>
+
+                        <!--节目-->
+                        <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo02">
+                            <div class="DataAssmeblyTwo_Content">
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/jmSign.png">
+                                <div class="DataAssemblyTwo_title">节目</div>
+                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                        class="DataUnit">套</span></div>
+                            </div>
+                        </div>
+
+                        <!--在播发射机-->
+                        <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo03" style="margin-bottom:0px;">
+                            <div class="DataAssmeblyTwo_Content">
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/fsjSign.png">
+                                <div class="DataAssemblyTwo_title">在播发射机</div>
+                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                        class="DataUnit">个</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--敌我对比-->
+                    <div class="tj_item dwdbChart">
+                        <!--敌我对比图例-->
+                        <ul class="BarCompAssembly_lengendGroup">
+                            <li><span class="BarCompAssembly_legendCircle greenMix2"></span><span
+                                    class="BarCompAssembly_legendName">我台</span></li>
+                            <li><span class="BarCompAssembly_legendCircle yellowMix2"></span><span
+                                    class="BarCompAssembly_legendName">敌台</span></li>
+                        </ul>
+                        <div class="BarCompAssembly">
+                            <!--发射机对比-->
+                            <div class="BarCompAssembly_item">
+
+                                <!--我台-->
+                                <div class="BarCompAssembly_item1">
+                                    <div class="BarCompAssembly_Data">
+                                        <span class="num-span">271</span>个
+                                    </div>
+                                    <div class="BarCompAssembly_barBox up-bar">
+                                        <div class="bar-1"></div>
+                                    </div>
+                                </div>
+                                <div class="BarCompAssembly_Name">
+                                    <span class="">发射机</span>
+                                </div>
+
+                                <!--敌台-->
+                                <div class="BarCompAssembly_item2">
+                                    <div class="BarCompAssembly_barBox down-bar">
+                                        <div class="bar-2"></div>
+                                    </div>
+                                    <div class="BarCompAssembly_Data">
+                                        <span class="num-span">271</span>个
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--频次对比-->
+                            <div class="BarCompAssembly_item">
+
+                                <!--我台-->
+                                <div class="BarCompAssembly_item1">
+                                    <div class="BarCompAssembly_Data">
+                                        <span class="num-span">271</span>个
+                                    </div>
+                                    <div class="BarCompAssembly_barBox up-bar">
+                                        <div class="bar-1"></div>
+                                    </div>
+                                </div>
+                                <div class="BarCompAssembly_Name">
+                                    <span class="">频次</span>
+                                </div>
+
+                                <!--敌台-->
+                                <div class="BarCompAssembly_item2">
+                                    <div class="BarCompAssembly_barBox down-bar">
+                                        <div class="bar-2"></div>
+                                    </div>
+                                    <div class="BarCompAssembly_Data">
+                                        <span class="num-span">271</span>个
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--年度合格率-->
+
+                    <div class="tj_item ndhglvChart">
+                        <div class="PieTransformAssembly" id="ndhglvChart"></div>
+                        <div class="PieTransformAssembly_Data"><span id="year-qass-rate"></span><span class="PieTransformAssembly_DataUnit">%</span>
+                        </div>
+                        <div class="PieTransformAssembly_Name">年度实验合格率</div>
+                    </div>
+                </div>
+            </div>
+
+            <!--对内任务统计-->
+            <div class="Model mainRight_item dnrwtj">
+                <div class="modelTitleBox">
+                    <div class="modelTitle">对内任务统计</div>
+                </div>
+                <div class="modelContentBox">
+                    <!--占比环组件-->
+                    <div class="tj_item pieAssembly">
+                        <div class="pieAssembly_pieChart" id="dnrwtj_pieChart"></div>
+                    </div>
+
+                    <!--对内三项统计-->
+                    <div class="tj_item syrwtjThreeState">
+                        <!--在播频率数-->
+                        <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo01">
+                            <div class="DataAssmeblyTwo_Content">
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/zbplsSign.png">
+                                <div class="DataAssemblyTwo_title">在播频率数</div>
+                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                        class="DataUnit">个</span></div>
+                            </div>
+                        </div>
+
+                        <!--节目-->
+                        <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo02">
+                            <div class="DataAssmeblyTwo_Content">
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/jmSign.png">
+                                <div class="DataAssemblyTwo_title">节目</div>
+                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                        class="DataUnit">套</span></div>
+                            </div>
+                        </div>
+
+                        <!--在播发射机-->
+                        <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo03" style="margin-bottom:0px;">
+                            <div class="DataAssmeblyTwo_Content">
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/fsjSign.png">
+                                <div class="DataAssemblyTwo_title">在播发射机</div>
+                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                        class="DataUnit">个</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--右侧大统计-->
+                    <div class="tj_item DataStageGroup">
+                        <!--在播功率统计-->
+                        <div class="DataStageGroup_item DataStageAssembly">
+                            <div class="DataStageAssembly_Icon"><img src="../img/icon/glvStageIcon.png"></div>
+                            <div class="DataStageAssembly_Data"><span class="counter" id="broad-cast-power">0</span><span class="DataUnit">kw</span>
+                            </div>
+                            <div class="DataStageAssembly_Name">在播功率</div>
+                        </div>
+
+                        <!--年度可听率统计-->
+                        <div class="DataStageGroup_item DataStageAssembly">
+                            <div class="DataStageAssembly_Icon"><img src="../img/icon/ktlvStageIcon.png"></div>
+                            <div class="DataStageAssembly_Data"><span class="counter" id="year-listen-rate">0</span><span
+                                    class="DataUnit">%</span></div>
+                            <div class="DataStageAssembly_Name">年度可听率</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--对外任务统计-->
+            <div class="mainRight_item dwrwtj">
+                <div class="modelTitleBox">
+                    <div class="modelTitle">对外任务统计</div>
+                </div>
+                <div class="modelContentBox">
+                    <!--占比环组件-->
+                    <div class="tj_item pieAssembly">
+                        <div class="pieAssembly_pieChart" id="dwrwtj_pieChart"></div>
+                    </div>
+
+                    <!--实验三项统计-->
+                    <div class="tj_item syrwtjThreeState">
+                        <!--在播频率数-->
+                        <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo01">
+                            <div class="DataAssmeblyTwo_Content">
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/zbplsSign.png">
+                                <div class="DataAssemblyTwo_title">在播频率数</div>
+                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                        class="DataUnit">个</span></div>
+                            </div>
+                        </div>
+
+                        <!--节目-->
+                        <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo02">
+                            <div class="DataAssmeblyTwo_Content">
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/jmSign.png">
+                                <div class="DataAssemblyTwo_title">节目</div>
+                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                        class="DataUnit">套</span></div>
+                            </div>
+                        </div>
+
+                        <!--在播发射机-->
+                        <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo03" style="margin-bottom:0px;">
+                            <div class="DataAssmeblyTwo_Content">
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/fsjSign.png">
+                                <div class="DataAssemblyTwo_title">在播发射机</div>
+                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                        class="DataUnit">个</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--右侧大统计-->
+                    <div class="tj_item DataStageGroup">
+                        <!--年度播放频次统计-->
+                        <div class="DataStageGroup_item DataStageAssembly">
+                            <div class="DataStageAssembly_Icon"><img src="../img/icon/bfpcStageIcon.png"></div>
+                            <div class="DataStageAssembly_Data"><span class="counter" id="acc-freqency"> - </span><span
+                                    class="DataUnit">次</span></div>
+                            <div class="DataStageAssembly_Name">年度播放频次</div>
+                        </div>
+
+                        <!--播出语言统计-->
+                        <div class="DataStageGroup_item DataStageAssembly" style="margin-top: 10px;">
+                            <div class="DataStageAssembly_Icon"><img src="../img/icon/bcyyStageIcon.png"></div>
+                            <div class="DataStageAssembly_Data"><span class="counter" id="language"> - </span><span
+                                    class="DataUnit">种</span></div>
+                            <div class="DataStageAssembly_Name">播出语言</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="../../Common/js/jquery-1.9.1.min.js"></script>
+<script src="../../Common/js/jquery.waypoints.js"></script>
+<script src="../../Common/js/jquery.counterup.min.js"></script>
+<script src="../../Common/js/echarts.js"></script>
+<script type="text/javascript" src="../../Common/js/global.js"></script>
+<script type="text/javascript">
+    	let timer1,
+        timer2,
+        timer3,
+        refreshTime,
+        initHour 	= new Date().getHours(),
+        initMin 	= new Date().getMinutes(),
+        frontBar 	= [],	// 高亮柱图数据
+        backBar 	= [],	// 背景柱图数据
+        lineData 	= [],	// 折线图数据
+        monthArr 	= [],	// 图表月份
+
+        // 23点后定时刷新
+        lastHourRefresh = function(){
+	       	if(initMin >= 50){ // 50分以后30秒刷一次
+	    		time1 = setInterval(function(){ //
+	    			if(new Date().getMinutes() == 0){
+	    				clearInterval(time1);
+	    				//	刷新
+
+	    			}
+	    		},30000);
+	       	} else {
+	       		time2 = setInterval(function(){ // 50分以前10分钟刷一次
+	    			if(new Date().getMinutes() >= 50){
+	    				clearInterval(time2);
+		    			time3 = setInterval(function(){ //
+			    			if(new Date().getMinutes() == 0){
+			    				clearInterval(time3);
+			    				//	刷新
+
+			    			}
+			    		},30000);
+	    			}
+	    		},6000000);
+	       	}
+       	},
+    	/*数据刷新动画调用方法*/
+       	dataFresh = function(target) {
+		    $(target).counterUp({
+		        delay: 100,
+		        time: 2000
+		    });
+		};
+    ;
+    
+    // 刷新设置
+   	initHour == 23 ? lastHourRefresh() : null ;
+	timer4 = setInterval(function(){ // 23点以前 每小时调一次
+		new Date().getHours() == 23 ? lastHourRefresh() : null ;
+	}, 3600000);
+
+    
+    // 左上六个数据
+    let getData = function (res) {
+        console.log(res, 1);
+        // res = JSON.parse(res);
+        $(".DataAssmeblyOne01 .counter").html(res.broadCastTime);
+        $(".DataAssmeblyOne02 .counter").html(res.broadCastFrequency);
+        $(".DataAssmeblyOne03 .counter").html(res.broadCastPower);
+        $("#item1 .progressBarData").html(res.broadCastTestTime);
+        $("#item2 .progressBarData").html(res.broadCastInter);
+        $("#item3 .progressBarData").html(res.broadCastExter);
+        let total = (res.broadCastTestTime - 0) + (res.broadCastInter - 0) + (res.broadCastExter - 0);
+        $("#item1").width((res.broadCastTestTime - 0) / total * 100 + '%');
+        $("#item2").width((res.broadCastInter - 0) / total * 100 + '%');
+        $("#item3").width((res.broadCastExter - 0) / total * 100 + '%');
+        dataFresh('.mainLeft .counter');
+    };
+    let param = {
+        key: 'left',
+        param: JSON.stringify({position: 'broadCastGrade'}),
+    }
+    g.doAjax("servlet/FirstThemeServlet", param, getData);
+
+    // 左中两个echarts
+    let getChartsData = function (res) {
+        res.broadCastTimeAndStopRate.map(function (item) {
+            // console.log(item)
+            // 柱图数据
+            frontBar.push({
+                value: item.BroadTime,
+                symbol: bar1,
+                symbolSize: ['100%', '100%'],
+                symbolPosition: 'end',
+                z: 1
+            });
+            // 线图数据
+            lineData.push(item.stopHour);
+            // 月份
+            monthArr.push(item.month);
+        });
+        myChart.setOption({
+            xAxis: [{
+                // name: 'barxAxis', 
+                data: monthArr
+            }],
+            series: [{
+                name: 'frontBar', 
+                data: frontBar
+            }]
+        });
+		myChart2.setOption({
+			xAxis: [{
+                // name: 'barxAxis', 
+                data: monthArr
+            }],
+            series: [{
+                name: '停播率', 
+                data: lineData
+            }]
+        });
+    };
+    let param2 = {
+        key: 'left',
+        param: JSON.stringify({position: 'broadCastTimeAndStopRate'}),
+    }
+    g.doAjax("servlet/FirstThemeServlet", param2, getChartsData);
+
+    // 右侧饼图与九组数据
+    let getTaskCountData1 = function(res){
+		myChart3.setOption({
+			series: [{
+				name : '实验任务统计饼图',
+	    		data: [
+                    {value: res.taskCount[0].taskDone, name: '已完成'},
+                    {value: res.taskCount[0].taskDoing, name: '正在执行'},
+                    {value: res.taskCount[0].taskUndo, name: '未完成'},
+                ]
+			}]
+		});
+		myChart4.setOption({
+			series: [{
+				name : '实验任务统计饼图',
+	    		data: [
+                    {value: res.taskCount[1].taskDone, name: '已完成'},
+                    {value: res.taskCount[1].taskDoing, name: '正在执行'},
+                    {value: res.taskCount[1].taskUndo, name: '未完成'},
+                ]
+			}]
+		});
+		myChart5.setOption({
+			series: [{
+				name : '实验任务统计饼图',
+	    		data: [
+                    {value: res.taskCount[2].taskDone, name: '已完成'},
+                    {value: res.taskCount[2].taskDoing, name: '正在执行'},
+                    {value: res.taskCount[2].taskUndo, name: '未完成'},
+                ]
+			}]
+		});
+		res.taskCount.map(function(item,index){
+			console.log(item.freqCount)
+			$('.syrwtjThreeState').eq(index).find("span.counter:eq(0)").html(item.freqCount);
+			$('.syrwtjThreeState').eq(index).find("span.counter:eq(1)").html(item.programCount);
+			$('.syrwtjThreeState').eq(index).find("span.counter:eq(2)").html(item.stationCount);
+		});
+        dataFresh('.syrwtjThreeState .counter');
+
+    }
+    let param3 = {
+        key: 'left',
+        param: JSON.stringify({position: 'taskCount'}),
+    }
+    g.doAjax("servlet/FirstThemeServlet", param3, getTaskCountData1);
+
+    // 右侧九组数据右侧的数据
+    let getTaskCountData2 = function(res){
+    	$('.num-span:eq(0)').html(res.taskDetail.myStation);
+    	$('.num-span:eq(1)').html(res.taskDetail.myFreqency);
+    	$('.num-span:eq(2)').html(res.taskDetail.enemyStation);
+    	$('.num-span:eq(3)').html(res.taskDetail.enemyFreqency);
+        $('#year-qass-rate').html(res.taskDetail.passPrecent);
+
+        $('#broad-cast-power').html(res.taskDetail.broadCastPower);
+        $('#year-listen-rate').html(res.taskDetail.AudiBility);
+
+        $('#acc-freqency').html(res.taskDetail.accFreqency);
+        $('#language').html(res.taskDetail.Language);
+        dataFresh('#year-qass-rate,.DataStageGroup .counter');
+
+    }
+    let param4 = {
+        key: 'left',
+        param: JSON.stringify({position: 'taskDetail'}),
+    }
+    g.doAjax("servlet/FirstThemeServlet", param4, getTaskCountData2);
+</script>
+
+<script>
+    /*播出时长柱图*/
+    console.log(frontBar, 111)
+    let bar1 = "image://../img/barBg.png";
+    let bar2 = "image://../img/barBgDark.png";
+    let myChart = echarts.init(document.getElementById('bcsc_barChart'));
+    let gain = 0.9;
+    let gap = 0;
+    let baroption = {
+        grid: {
+            left: '0',
+            right: '0',
+            bottom: '0',
+            height: '85%',
+            containLabel: true
+        },
+        xAxis: [{
+        	name:'barxAxis',
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'rgb(69,109,154)',
+                }
+            },
+            axisLabel: {
+                textStyle: {
+                    color: "ffffff",
+                    fontSize: 14,
+                }
+            },
+            data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十一月', '十一月', '十二月',]
+        }, {
+            type: 'category',
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                show: false
+            },
+            splitArea: {
+                show: false
+            },
+            splitLine: {
+                show: false
+            },
+            data: []
+        },
+        ],
+        yAxis: {
+            type: 'value',
+            // name:'单位：件',
+            // minInterval:1,
+            splitNumber: 3,
+            // interval:12,
+
+            name: '小时',
+            nameTextStyle: {
+                color: '#ffffff',
+                fontSize: 10,
+            },
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'rgb(69,109,154)',
+                }
+            },
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    type: 'dashed',
+                    color: '#135c92',
+                    opacity: 0.5
+                }
+            },
+            axisLabel: {
+                textStyle: {
+                    color: 'rgba(255,255,255,0.8)',
+                    fontSize: 14 * gain,
+                }
+            }
+        },
+        series: [
+            {
+                type: 'pictorialBar',
+                xAxisIndex: 1,
+                barWidth: '25%',
+                data: [{
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                }, {
+                    value: 300,
+                    symbol: bar2,
+                    symbolSize: ['100%', '100%'],
+                    symbolPosition: 'end',
+                    z: 10
+                },]
+            },
+            {
+                name: "frontBar",
+                type: 'pictorialBar',
+                barWidth: '25%',
+                // data: ''
+            }
+        ]
+    };
+    myChart.setOption(baroption);
+</script>
+<script>
+
+    /*停播率*/
+    let myChart2 = echarts.init(document.getElementById('tblv_lieChart'));
+    optionLine1 = {
+        grid: {
+            left: '0',
+            right: '0',
+            bottom: '0',
+            height: '78%',
+            containLabel: true
+        },
+        legend: {
+            show: false,
+            data: ['播出时长'],
+            textStyle: {
+                color: '#f9f9f9',
+                borderColor: '#fff'
+            },
+        },
+        xAxis: [{
+            type: 'category',
+            boundaryGap: true,
+            axisLine: { //坐标轴轴线相关设置。数学上的x轴
+                show: true,
+                lineStyle: {
+                    color: '#135c92'
+                },
+            },
+            axisLabel: { //坐标轴刻度标签的相关设置
+                textStyle: {
+                    color: '#ffffff',
+                    margin: 15,
+                    fontSize: 14
+                },
+            },
+            axisTick: {
+                show: false,
+            },
+            data : monthArr
+        }],
+        yAxis: [{
+            name: '秒/百小时',
+            nameTextStyle: {
+                color: '#ffffff',
+                fontSize: 10
+            },
+            type: 'value',
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    type: 'dashed',
+                    color: '#135c92',
+                    opacity: 0.5
+                }
+            },
+            axisLine: {
+                show: false,
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#d1e6eb',
+
+                },
+            },
+            axisTick: {
+                show: false,
+            },
+        }],
+        series: [{
+            name: '停播率',
+            type: 'line',
+            // smooth: true, //是否平滑曲线显示
+            // 			symbol:'circle',  // 默认是空心圆（中间是白色的），改成实心圆
+            showAllSymbol: true,
+            symbol: 'emptyCircle',
+            symbolSize: 6,
+            lineStyle: {
+                normal: {
+                    color: "#69f276", // 线条颜色
+                    shadowColor: 'rgba(105,242,118,0.3)', //阴影颜色
+                    shadowBlur: 4,
+                    shadowOffsetY: 6
+                },
+                borderColor: '#f0f'
+            },
+            label: {
+                show: true,
+                position: 'top',
+                textStyle: {
+                    color: '#fff',
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: "#69f276",
+
+                }
+            },
+            tooltip: {
+                show: false
+            },
+            areaStyle: { //区域填充样式
+                normal: {
+
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgba(105,242,118,0.5)'
+                    },
+                        {
+                            offset: 1,
+                            color: 'rgba(105,242,118, 0)'
+                        }
+                    ], false),
+                }
+            },
+            // data: lineData
+        }]
+    };
+    myChart2.setOption(optionLine1, true);
+
+    /*实验任务统计饼图*/
+    let myChart3 = echarts.init(document.getElementById('syrwtj_pieChart'));
+    optionPie1 = {
+        color: ['#2c77e0', '#f8de4d', '#61a0a8', '#cccccc'],
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: '33%',
+            top: '35%',
+            icon: 'circle',
+            textStyle: {
+                color: '#ffffff',
+                fontSize: '12'
+            },
+            data: ['已完成', '正在执行', '未完成']
+        },
+        series: [
+            {
+                name: '实验任务统计饼图',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [ // 饼图需要先渲染data 
+                    {value: 335, name: '已完成'},
+                    {value: 310, name: '正在执行'},
+                    {value: 234, name: '未完成'},
+
+                ]
+            }
+        ]
+    };
+    myChart3.setOption(optionPie1, true);
+
+    /*对内任务统计饼图*/
+    let myChart4 = echarts.init(document.getElementById('dnrwtj_pieChart'));
+    optionPie2 = {
+        color: ['#2c77e0', '#f8de4d', '#61a0a8', '#cccccc'],
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: '33%',
+            top: '35%',
+            icon: 'circle',
+            textStyle: {
+                color: '#ffffff',
+                fontSize: '12'
+            },
+            data: ['已完成', '正在执行', '未完成']
+        },
+        series: [
+            {
+                name: '实验任务统计饼图',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [
+                    {value: 335, name: '已完成'},
+                    {value: 310, name: '正在执行'},
+                    {value: 234, name: '未完成'},
+
+                ]
+            }
+        ]
+    };
+    myChart4.setOption(optionPie2, true);
+
+    /*对外任务统计饼图*/
+    let myChart5 = echarts.init(document.getElementById('dwrwtj_pieChart'));
+    optionPie3 = {
+        color: ['#2c77e0', '#f8de4d', '#61a0a8', '#cccccc'],
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: '33%',
+            top: '35%',
+            icon: 'circle',
+            textStyle: {
+                color: '#ffffff',
+                fontSize: '12'
+            },
+            data: ['已完成', '正在执行', '未完成']
+        },
+        series: [
+            {
+                name: '实验任务统计饼图',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [
+                    {value: 335, name: '已完成'},
+                    {value: 310, name: '正在执行'},
+                    {value: 234, name: '未完成'},
+
+                ]
+            }
+        ]
+    };
+    myChart5.setOption(optionPie3, true);
+
+    /*年度合格率*/
+    let myChart6 = echarts.init(document.getElementById('ndhglvChart'));
+    optionrange = {
+
+        color: ['rgba(105, 242, 118, 0.1)'],
+        legend: {
+            show: false,
+            itemGap: 12,
+            data: ['总量', '合格']
+        },
+
+        series: [{
+            name: 'Line 1',
+            type: 'pie',
+            clockWise: true,
+            radius: ['90%', '100%'],
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    }
+                }
+            },
+            hoverAnimation: false,
+            data: [{
+                value: 80,
+                name: '总量',
+                itemStyle: {
+                    normal: {
+                        color: { // 完成的圆环的颜色
+                            colorStops: [{
+                                offset: 0,
+                                color: 'rgba(105, 242, 118, 1)' // 0% 处的颜色
+                            }, {
+                                offset: 1,
+                                color: 'rgba(105, 242, 118, 1)' // 100% 处的颜色
+                            }]
+                        },
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        }
+                    }
+                }
+            }, {
+                name: '合格',
+                value: 20
+            }]
+        }]
+    }
+    myChart6.setOption(optionrange, true);
+</script>
+</html>

@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* 主题一左侧 */
+html,body,div,img{margin:0;padding:0;}
+body{width:1920px;height:1080px;background:url(../img/bg/leftBg.png) no-repeat;overflow:hidden;font-family:"微软雅黑"}
+.main{margin:40px 0px 0px 45px;overflow:hidden;}
+.Model{margin-bottom:20px;}
+.mainLeft{width:879px;height:994px;perspective:500px;float:left;}
+.mainLeftContainer{width:879px;height:994px;float:left;transform-origin:left center;transform:rotateY(5deg)}
+.bccjModel{width:879px;height:652px;background:url(../img/bg/containerBG1.png) no-repeat;background-size:cover;}
+.mainLeft_bottom{overflow:hidden;}
+.mainLeft_bottom_item{width:430px;height:317px;background:url(../img/bg/containerBG2.png) no-repeat;background-size:cover;float:left;}
+.mainRight{width:879px;perspective:500px;float:left;}
+.mainRightContainer{width:879px;float:left;transform-origin:left center;transform:rotateY(5deg)}
+.mainRight_item{width:879px;height:317px;background:url(../img/bg/containerBG3.png) no-repeat;background-size:cover;}
+
+/*播出成绩模块内容样式*/
+/*顶部三个统计项*/
+.bccjThreeState{overflow:hidden;}
+.DataAssmeblyOne01{background:url(../img/icon/bcStateViewIcon1.png) no-repeat;background-size:cover;float:left;}
+.DataAssmeblyOne02{background:url(../img/icon/bcStateViewIcon2.png) no-repeat;background-size:cover;float:left;margin-left:20px;}
+.DataAssmeblyOne03{background:url(../img/icon/bcStateViewIcon3.png) no-repeat;background-size:cover;float:left;margin-left:20px;}
+
+/*播出成绩三项占比条*/
+.bccjzb{margin-top:15px;}
+.DataAssemblyBar{}
+.DataAssemblyBar_lengendGroup{margin-left:60px;}
+.DataAssemblyBar_lengendGroup li{margin-right:100px;}
+
+/*播出时长图表*/
+.bcscChart{margin-top:35px;}
+.bcscChart .chartBox{width:100%;height:120px;}
+.tbvChart{margin-top:35px;}
+.tbvChart .chartBox{width:100%;height:120px;}
+
+/*视频监控*/
+.videoBox{width:360px;height:220px;}
+
+/*实验任务统计*/
+.tj_item{float:left;}
+.syrwtjThreeState{margin-left:30px;margin-top:15px;}
+.syrwtjThreeState_item{margin-bottom:35px;}
+.DataAssmeblyTwo02 .DataAssemblyTwo_icon{position:absolute;left:10px;}
+.DataAssmeblyTwo03 .DataAssemblyTwo_icon{position:absolute;left:15px;top:-35px;}
+
+.DataStageGroup{overflow:hidden;margin-left:40px;}
+.DataStageGroup_item{float:left;margin-left:20px;}
+
+/*敌我对比图表*/
+.dwdbChart{margin-left:5px;}
+
+/*年度合格率*/
+.ndhglvChart{width:250px;height:250px;perspective:500px;position: relative;top: -100px;}
+
+

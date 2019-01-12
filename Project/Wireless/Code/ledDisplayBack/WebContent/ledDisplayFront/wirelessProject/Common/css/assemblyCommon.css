@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* 大屏数据展示组件样式 */
+
+/*托盘数据呈现组件-大*/
+.DataAssmeblyOne{width:260px;height:95px;position:relative;margin-top: 15px;}
+.DataAssmeblyOne_Content{}
+.DataAssemblyOne_title{font-size:18px;color:#ffffff;text-align:center;position:absolute;top:-15px;left:100px;}
+.DataAssemblyOne_data{font-size:40px;font-family:DataFont;text-align:center;display:inline-block;height:45px;line-height:45px;text-align:center;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;position:absolute;top:35px;left:100px;}
+.DataAssemblyOne_data .DataUnit{font-size:16px;font-weight:bold;font-family:"微软雅黑"}
+
+/*托盘数据呈现组件-小*/
+.DataAssmeblyTwo{width:185px;height:42px;background:url(../img/assembly/DataAssemblyTwoBg.png) no-repeat;background-size:cover;position:relative;}
+.DataAssmeblyTwo_Content{}
+.DataAssemblyTwo_title{font-size:14px;color:#ffffff;text-align:center;position:absolute;top:-25px;left:80px;}
+.DataAssemblyTwo_data{font-size:28px;font-family:DataFont;text-align:center;display:inline-block;height:28px;line-height:28px;text-align:center;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;position:absolute;top:0px;left:75px;}
+.DataAssemblyTwo_data .DataUnit{font-size:16px;font-weight:bold;font-family:"微软雅黑"}
+.DataAssemblyTwo_icon{position:absolute;top:-20px;left:25px;}
+
+/*舞台数据统计呈现组件*/
+.DataStageAssembly{}
+.DataStageAssembly_Data{width:100%;font-size:40px;font-family:DataFont;display:inline-block;height:45px;line-height:45px;text-align:center;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.DataStageAssembly_Data .DataUnit{font-size:16px;font-weight:bold;font-family:"微软雅黑"}
+.DataStageAssembly_Name{font-size:18px;color:#ffffff;text-align:center;}
+
+/*数据进度条呈现组件*/
+.DataAssemblyBar_lengendGroup{overflow:hidden;}
+.DataAssemblyBar_lengendGroup li{float:left;}
+.DataAssemblyBar_legendCircle{display:inline-block;width:12px;height:12px;margin-right:5px;border-radius:100%;}
+.DataAssemblyBar_legendName{font-size:14px;color:#ffffff;}
+.yellowMix{background:-webkit-linear-gradient(top,#fef55a,#dc6d0b);}
+.blueMix{background:-webkit-linear-gradient(top,#42b9fd,#1e4bcd);}
+.greenMix{background:-webkit-linear-gradient(top,#a6ef78,#468b1a);}
+
+.DataAssemblyBar_progressBar{width:810px;height:30px;border-radius:30px;overflow:hidden;margin-top:5px;}
+.DataAssemblyBar_progressBarItem{height:30px;line-height:30px;display:block;float:left;text-align:center;}
+.progressBarData{font-size:16px;font-weight:bold;color:#ffffff;}
+#item1 .progressBarData{text-shadow: 2px 2px 1px #c74202;}
+#item2 .progressBarData{text-shadow: 2px 2px 1px #0722b1;}
+#item3 .progressBarData{text-shadow: 2px 2px 1px #1c5d06;}
+#item1{width:30%;}
+#item2{width:40%;}
+#item3{width:30%;}
+
+/*饼图类1呈现样式*/
+.pieAssembly{width:206px;height:206px;background:url(../img/assembly/pieChartBg.png) no-repeat;background-size:cover;position:relative;}
+.pieAssembly_pieChart{width:235px;height:235px;margin:0 auto;position: absolute;top:-14px;left:-12px;border-radius:50%;}
+
+/*进度环呈现组件*/
+.PieTransformAssembly{width:100%;height:100%;transform-origin:bottom center;transform:rotateX(75deg)}
+.PieTransformAssembly_Data{font-size: 40px;font-style: italic; font-family:DataFont;color:#69f276;position:absolute;left:52px;top:172px;}
+.PieTransformAssembly_DataUnit{font-size:18px;}
+.PieTransformAssembly_Name{font-size:16px;color:#ffffff;text-align:center;margin-top: 10px;}
+
+/*对比柱图呈现组件*/
+
+.BarCompAssembly_lengendGroup{overflow:hidden;padding-left: 15px;}
+.BarCompAssembly_lengendGroup li{float:left;width:50%}
+.BarCompAssembly_legendCircle{display:inline-block;width:12px;height:12px;margin-right:5px;}
+.BarCompAssembly_legendName{font-size:14px;color:#ffffff;}
+.greenMix2{background:linear-gradient(to top, rgba(106,255,197,1), rgba(106,255,197,0));}
+.yellowMix2{background:linear-gradient(to top, rgba(248,222,77,0), rgba(248,222,77,1));}
+
+.BarCompAssembly{
+			display: flex;
+			justify-content: center;
+		}
+		.BarCompAssembly_barBox{
+			width: 50px;
+			height: 60px;
+			position: relative;
+			margin: 0 auto;
+		}
+		.BarCompAssembly_barBox div{
+		}
+		.BarCompAssembly_Name{
+		    font-size: 16px;
+		    width: 80px;
+		    color: #ffffff;
+		    text-align: center;
+			margin: 5px 0 5px 0;
+		}
+		
+		.bar-1{
+			height: 80%;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background: linear-gradient(to top, rgba(106,255,197,1), rgba(106,255,197,0));
+		}
+		.bar-2{
+			height: 50%;
+			background: linear-gradient(to top, rgba(248,222,77,0), rgba(248,222,77,1));
+
+		}
+		.BarCompAssembly_Data{
+			text-align: center;
+			color: #22f;
+			font-size: 12px;
+		}
+		.BarCompAssembly_item1 .BarCompAssembly_Data{color:#6affc5;}
+		.BarCompAssembly_item2 .BarCompAssembly_Data{color:#f8de4d;}
+		.num-span{
+			font-size: 16px;
+		}
+/*图表标题*/
+.chartTitle img{display:block;margin:0 auto;}
