@@ -4,8 +4,8 @@ html,body,div,img{margin:0;padding:0;}
 body{width:1920px;height:1080px;background:url(../img/bg/leftBg.png) no-repeat;overflow:hidden;font-family:"微软雅黑"}
 .main{margin:40px 0px 0px 45px;overflow:hidden;}
 .Model{margin-bottom:20px;}
-.mainLeft{width:879px;height:994px;perspective:500px;float:left;}
-.mainLeftContainer{width:879px;height:994px;float:left;transform-origin:left center;transform:rotateY(5deg)}
+.mainLeft{width:879px;height:988px;perspective:500px;float:left;}
+.mainLeftContainer{width:879px;height:988px;float:left;transform-origin:left center;transform:rotateY(5deg)}
 .bccjModel{width:879px;height:652px;background:url(../img/bg/containerBG1.png) no-repeat;background-size:cover;}
 .mainLeft_bottom{overflow:hidden;}
 .mainLeft_bottom_item{width:430px;height:317px;background:url(../img/bg/containerBG2.png) no-repeat;background-size:cover;float:left;}

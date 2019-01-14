@@ -6,6 +6,23 @@
     <link href="../../Common/css/ledDisplayCommon.css" rel="stylesheet" type="text/css">
     <link href="../../Common/css/assemblyCommon.css" rel="stylesheet" type="text/css">
     <link href="../css/Theme1Left.css" rel="stylesheet" type="text/css">
+    <style>
+    	.DataAssemblyOne_data{
+    		left: 160px;
+    	}
+    	.DataAssmeblyOne02 .DataAssemblyOne_data{
+    		left: 200px;
+    	}
+    	.DataAssmeblyOne{
+    		width: 50%;
+    		margin: 0;
+    		background-size: 100% 100%;
+    	}
+    	.DataAssemblyOne_title{
+    		top: 0;
+    		left: 200px;
+    	}
+    </style>
 </head>
 
 <body>
@@ -24,7 +41,7 @@
                         <div class="bccjThreeState">
                             <div class="DataAssmeblyOne DataAssmeblyOne01">
                                 <div class="DataAssmeblyOne_Content">
-                                    <div class="DataAssemblyOne_title">当年累计播出<br>时间</div>
+                                    <div class="DataAssemblyOne_title">当年累计播出时间</div>
                                     <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
                                             class="DataUnit">小时</span></div>
                                 </div>
@@ -33,20 +50,20 @@
                             <!--当年累计播出时间-->
                             <div class="DataAssmeblyOne DataAssmeblyOne02">
                                 <div class="DataAssmeblyOne_Content">
-                                    <div class="DataAssemblyOne_title">当年累计播出<br>频次</div>
+                                    <div class="DataAssemblyOne_title">当年累计播出频次</div>
                                     <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
                                             class="DataUnit">个</span></div>
                                 </div>
                             </div>
 
                             <!--当年累计播出时间-->
-                            <div class="DataAssmeblyOne DataAssmeblyOne03">
+                           <!--  <div class="DataAssmeblyOne DataAssmeblyOne03">
                                 <div class="DataAssmeblyOne_Content">
                                     <div class="DataAssemblyOne_title">当年累计播出<br>功率</div>
                                     <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
                                             class="DataUnit">kw</span></div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <!--播出三项占比条-->
@@ -430,17 +447,9 @@
     let getData = function (res) {
         console.log(res, 1);
         // res = JSON.parse(res);
-        $(".DataAssmeblyOne01 .counter").html(res.broadCastTime);
         $(".DataAssmeblyOne02 .counter").html(res.broadCastFrequency);
         $(".DataAssmeblyOne03 .counter").html(res.broadCastPower);
-        $("#item1 .progressBarData").html(res.broadCastTestTime);
-        $("#item2 .progressBarData").html(res.broadCastInter);
-        $("#item3 .progressBarData").html(res.broadCastExter);
-        let total = (res.broadCastTestTime - 0) + (res.broadCastInter - 0) + (res.broadCastExter - 0);
-        $("#item1").width((res.broadCastTestTime - 0) / total * 100 + '%');
-        $("#item2").width((res.broadCastInter - 0) / total * 100 + '%');
-        $("#item3").width((res.broadCastExter - 0) / total * 100 + '%');
-        dataFresh('.mainLeft .counter');
+        dataFresh('.mainLeft .counter:eq(1),.mainLeft .counter:eq(2)');
     };
     let param = {
         key: 'left',
@@ -450,6 +459,16 @@
 
     // 左中两个echarts
     let getChartsData = function (res) {
+        $(".DataAssmeblyOne01 .counter").html(res.broadCastTime);
+        $("#item1 .progressBarData").html(res.broadCastTestTime);
+        $("#item2 .progressBarData").html(res.broadCastInter);
+        $("#item3 .progressBarData").html(res.broadCastExter);
+        let total = (res.broadCastTestTime - 0) + (res.broadCastInter - 0) + (res.broadCastExter - 0);
+        $("#item1").width((res.broadCastTestTime - 0) / total * 100 + '%');
+        $("#item2").width((res.broadCastInter - 0) / total * 100 + '%');
+        $("#item3").width((res.broadCastExter - 0) / total * 100 + '%');
+        dataFresh('.mainLeft .counter:eq(0)');
+
         res.broadCastTimeAndStopRate.map(function (item) {
             // console.log(item)
             // 柱图数据

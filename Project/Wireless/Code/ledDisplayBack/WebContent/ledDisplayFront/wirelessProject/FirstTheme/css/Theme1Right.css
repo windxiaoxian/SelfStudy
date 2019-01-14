@@ -1,0 +1,111 @@
+﻿@charset "utf-8";
+/* 主题一右侧 */
+html,body,div,img{margin:0;padding:0;}
+body{width:1920px;height:1080px;background:url(../img/bg/rightBg.png) no-repeat;overflow:hidden;font-family:"微软雅黑"}
+.main{margin:40px 0px 0px 45px;overflow:hidden;}
+.main2{margin:40px 45px 0px 0px;overflow:hidden;}
+.Model{margin-bottom:20px;}
+.mainLeft{width:879px;height:988px;perspective:500px;float:right;}
+.mainLeftContainer{width:879px;height:988px;transform-origin:right center;transform:rotateY(-5deg)}
+.jcxgModel{width:879px;height:988px;background:url(../img/bg/containerBG4.png) no-repeat;}
+
+.mainRight{width:879px;height:988px;perspective:500px;float:right;}
+.mainRightContainer{width:879px;height:988px;float:left;transform-origin:right center;transform:rotateY(-5deg)}
+.wlaqModel{width:879px;height:652px;background:url(../img/bg/containerBG5.png) no-repeat;}
+#wltptChart{width:830px;height:250px;margin:0 auto;position:relative;top:-20px;left:50px;}
+/* #wltptChart{width: 830px;height: 270px;margin: -10px auto 10px;} */
+
+/*网络访问行为*/
+.wlfwxwModel{margin-top:35px;}
+.wlfwxwModel .yczsCompairBox{width:368px;height:41px;margin:0 auto;margin-top:15px;background: url(../img/bg/hzBgBox.png) no-repeat;background-size:cover;}
+.yczsCompairBox li{display:inline-block;height:40px;line-height:40px;text-align:center;}
+.yczsCompairBox_Data{width:50%;font-family:DataFont;font-size:16px;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.yczsCompairType{font-size:16px;color:#01fff6;width:20%;font-weight:bold;}
+#ycNum,#sumNum{font-size:26px;}
+
+/*异态三项拆分统计*/
+.yczsThreeState{overflow:hidden;margin-top:10px;}
+.DataAssmeblyOne{width:260px;height:103px;position:relative;}
+.DataAssmeblyOne01{background:url(../img/icon/ytViewIcon1.png) no-repeat;background-size:cover;float:left;}
+.DataAssmeblyOne02{background:url(../img/icon/ytViewIcon2.png) no-repeat;background-size:cover;float:left;margin-left:20px;}
+.DataAssmeblyOne03{background:url(../img/icon/ytViewIcon3.png) no-repeat;background-size:cover;float:left;margin-left:20px;}
+.DataAssemblyOne_title{top:0;left:130px;}
+
+
+/*带宽占比组件*/
+.dkzbModel #item1{width:70%;}
+.dkzbModel #item2{width:30%;}
+.DataAssemblyBar_lengendGroup li{width:50%;text-align:center;}
+.mainLeft_bottom{overflow:hidden;}
+.mainLeft_bottom_item{width:430px;height:317px;background:url(../img/bg/containerBG6.png) no-repeat;background-size:cover;float:right}
+/*视频监控*/
+.videoBox{width:360px;height:220px;}
+
+/*节传数据景观化*/
+.jcViewModel{position:relative;}
+.jcViewTopContainer{position:relative;z-index:1;}
+.jcViewTopContainerLeft{float:right;padding-right:30px;}
+.jcViewTopContainerRight{float:right;}
+.jcFloor{position:relative;top:-1060px;z-index:0;}
+.jcViewTopTj{width:158px;height:91px;background:url(../img/jcView/jcViewContainerMini.png) no-repeat;background-position:center;overflow:hidden;}
+.jcViewTopTj_title{font-size:14px;color:#0fffff;margin:20px 0 0 10px;}
+.jcViewTopTj_Data{font-size:22px;font-weight:bold;margin:5px 0 0 10px;background-image: -webkit-linear-gradient(top,#fef55a,#e8b705);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+.DataUnit{font-size:12px;font-weight:bold;}
+.DataStage2Assembly_Data_item span{background-image: -webkit-linear-gradient(top,#fef55a,#e8b705);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+
+.jcViewEarthStationArea{width:660px;height:480px;position:relative;z-index:2;left:130px;top:-20px;background:url(../img/jcView/earthStationGroup/542Select.png) no-repeat;transition:1s;}
+.EarthStation542{background:url(../img/jcView/earthStationGroup/542Select.png) no-repeat;transition:1s;}
+.EarthStationSHZ{background:url(../img/jcView/earthStationGroup/SHZSelect.png) no-repeat;transition:1s;}
+.EarthStationHTZ{background:url(../img/jcView/earthStationGroup/HTSelect.png) no-repeat;transition:1s;}
+.EarthStationHSZ{background:url(../img/jcView/earthStationGroup/HSZSelect.png) no-repeat;transition:1s;}
+
+/*传输线动画*/
+@keyframes jcViewLine
+{
+	0%{background:url(../img/jcView/jcViewLine/jcViewLine1.png) no-repeat;}
+	12.5%{background:url(../img/jcView/jcViewLine/jcViewLine2.png) no-repeat;}
+	25%{background:url(../img/jcView/jcViewLine/jcViewLine3.png) no-repeat;}
+	37.5%{background:url(../img/jcView/jcViewLine/jcViewLine4.png) no-repeat;}
+	50%{background:url(../img/jcView/jcViewLine/jcViewLine5.png) no-repeat;}
+	62.5%{background:url(../img/jcView/jcViewLine/jcViewLine6.png) no-repeat;}
+	75%{background:url(../img/jcView/jcViewLine/jcViewLine7.png) no-repeat;}
+	87.5%{background:url(../img/jcView/jcViewLine/jcViewLine8.png) no-repeat;}
+	100%{background:url(../img/jcView/jcViewLine/jcViewLine1.png) no-repeat;}
+}
+.jcViewLine{width:339px;height:90px;position:relative;left:290px;top:-50px;background:url(../img/jcView/jcViewLine/jcViewLine1.png) no-repeat;animation:jcViewLine 2s linear infinite;}
+
+
+/*节传中心动画*/
+@keyframes jcViewJCZXFlash
+{
+	0%{background:url(../img/jcView/jczxGroupPanel.png) no-repeat;}
+	100%{background:url(../img/jcView/jczxGroupPanel2.png) no-repeat;}
+}
+.jcViewJCZX{width:759px;height:219px;position:relative;left:80px;top:-200px;z-index:2;background:url(../img/jcView/jczxGroupPanel2.png) no-repeat;animation:jcViewJCZXFlash 1s linear infinite alternate;}
+
+/*网络链路动画*/
+@keyframes jcViewWLFlash
+{
+	0%{top:-200px;background:url(../img/jcView/wlluPanel.png)}
+	100%{top:-192px;background:url(../img/jcView/wlluPanel2.png)}
+}
+.jcViewWL{width:382px;height:130px;position:relative;left:265px;top:-195px;z-index:3;background:url(../img/jcView/wlluPanel.png) no-repeat;animation:jcViewWLFlash 2s linear infinite alternate;}
+
+/*地球站信息弹出层*/
+.jcViewEarthStationInfoBox1{width:209px;height:323px;background:url(../img/jcView/jcViewAlertContainer1.png) no-repeat;position:absolute;top:80px;left:-80px;z-index:10;overflow:hidden;}
+.jcViewEarthStationInfo_title{font-size:16px;color:#0fffff;font-weight:bold;margin:15px 0 15px 15px;}
+.jcViewEarthStationInfo_content{margin-left:15px;}
+.jcViewEarthStationInfo_block{overflow:hidden;margin-bottom:10px;}
+.jcViewEarthStationInfo_block img{display:block;float:left;margin-top:10px;}
+.jcViewEarthStationInfo_block ul{float:left;margin-left:10px;}
+.jcViewEarthStationInfo_typeName{font-size:12px;color:#52ccff;font-weight:bold;display: inline-block;width:60px;}
+.jcViewEarthStationInfo_Data{font-size:16px;font-weight:bold;font-family:DataFont;vertical-align:middle;display:inline-block;background-image: -webkit-linear-gradient(top,#fef55a,#e8b705);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+.jcViewEarthStationInfo_block .unit{font-size:12px;fong-weight:bold;}
+.Info2 .jcViewEarthStationInfo_typeName,.info2 .jcViewEarthStationInfo_Data{display:block;}
+
+/*地球站系统信息弹出框*/
+.jcViewEarthStationInfoBox2{width:209px;height:203px;background:url(../img/jcView/jcViewAlertContainer2.png) no-repeat;position:absolute;top:80px;right:-65px;z-index:10;overflow:hidden;}
+
+/*地球站工作信息弹出框*/
+.jcViewEarthStationInfoBox3{width:209px;height:143px;background:url(../img/jcView/jcViewAlertContainer3.png) no-repeat;position:absolute;top:310px;right:-65px;z-index:10;overflow:hidden;}
+

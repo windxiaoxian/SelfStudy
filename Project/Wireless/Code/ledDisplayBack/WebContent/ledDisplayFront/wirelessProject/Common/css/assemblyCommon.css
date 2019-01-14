@@ -104,3 +104,10 @@
 		}
 /*图表标题*/
 .chartTitle img{display:block;margin:0 auto;}
+
+/*数据景观化组件*/
+.DataStage2Assembly{float:left;}
+.DataStage2Assembly_Data{height:40px;}
+.DataStage2Assembly_Data_item{margin-right:30px;transform-origin:left;transform: skewY(30deg);color:#01fff6;font-size:14px;}
+.DataStage2Assembly_Data_item span{font-size:18px;font-weight: bold;font-family: DataFont;}
+.DataStage2Assembly_Icon{margin:30px 0 0 10px;}
