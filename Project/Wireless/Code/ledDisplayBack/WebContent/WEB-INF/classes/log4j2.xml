@@ -11,8 +11,8 @@ private static final Logger logger = LogManager.getLogger(实际类名.class.get
 <configuration status="error" monitorInterval="1800">
     <Properties>
         <Property name="fileName">ledDisplay.log</Property>
-        <Property name="backupFilePatch">e:/testxu/logs/</Property>
-        <!--<Property name="backupFilePatch">/root/neusoft/wireless/logs/</Property>-->
+        <!--<Property name="backupFilePatch">e:/testxu/logs/</Property>-->
+        <Property name="backupFilePatch">/root/neusoft/wireless/logs/</Property>
         <!--<Property name="backupFilePatch">/root/wireless_project/logs/</Property>-->
     </Properties>
     <!--先定义所有的appender-->
