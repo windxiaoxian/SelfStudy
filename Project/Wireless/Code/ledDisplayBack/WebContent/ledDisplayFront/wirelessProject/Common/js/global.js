@@ -1,5 +1,5 @@
 var env = 0, //0本机 1生产
-    apiurlArr = ['http://10.1.4.194:8080/ledDisplayBack/', 'http://10.9.3.20:8080/ledDisplayBack'],
+    apiurlArr = ['http://10.1.4.194:8080/ledDisplayBack/', 'http://10.9.3.20:8080/ledDisplayBack/'],
     g={};
 
     g.doAjax = function (url,_data,func,sync, cache, isGet ) { //封装ajax的一些常用参数  //data数据可以为空
