@@ -1,4 +1,4 @@
-var env = 0, //0本机 1生产
+var env = 1, //0本机 1生产
     apiurlArr = ['http://10.1.4.194:8080/ledDisplayBack/', 'http://10.9.3.20:8080/ledDisplayBack'],
     g={};
 
