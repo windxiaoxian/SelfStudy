@@ -444,4 +444,15 @@ public class FrontPageThemeDAO {
                 .append("               )                                                                     ");
         return strBuffer.toString();
     }
+
+    public static String getStationNetworkInfo(Map reqMap) {
+        StringBuffer strBuffer = new StringBuffer();
+        strBuffer.append("SELECT a.station_code, a.ping_status, b.bandwidth_used, b.bandwidth_unused  ")
+                .append("  FROM wxj_station_network_info_t a                                         ")
+                .append("       JOIN                                                                 ")
+                .append("       (SELECT CEIL (SUM (bandwidth_used)) bandwidth_used,                  ")
+                .append("               CEIL (SUM (bandwidth_unused)) bandwidth_unused               ")
+                .append("          FROM wxj_station_network_info_t) b ON 1 = 1                       ");
+        return strBuffer.toString();
+    }
 }
