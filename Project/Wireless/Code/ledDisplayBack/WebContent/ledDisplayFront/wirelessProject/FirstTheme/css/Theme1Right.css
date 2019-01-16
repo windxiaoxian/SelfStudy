@@ -13,7 +13,6 @@ body{width:1920px;height:1080px;background:url(../img/bg/rightBg.png) no-repeat;
 .mainRightContainer{width:879px;height:988px;float:left;transform-origin:right center;transform:rotateY(-5deg)}
 .wlaqModel{width:879px;height:652px;background:url(../img/bg/containerBG5.png) no-repeat;}
 #wltptChart{width:830px;height:250px;margin:0 auto;position:relative;top:-20px;left:50px;}
-/* #wltptChart{width: 830px;height: 270px;margin: -10px auto 10px;} */
 
 /*网络访问行为*/
 .wlfwxwModel{margin-top:35px;}

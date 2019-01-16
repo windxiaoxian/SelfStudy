@@ -111,3 +111,10 @@
 .DataStage2Assembly_Data_item{margin-right:30px;transform-origin:left;transform: skewY(30deg);color:#01fff6;font-size:14px;}
 .DataStage2Assembly_Data_item span{font-size:18px;font-weight: bold;font-family: DataFont;}
 .DataStage2Assembly_Icon{margin:30px 0 0 10px;}
+
+/*数据球组件*/
+.DataBallGreen1{width:205px;height:170px;background:url(../img/assembly/DataBallGreen1Bg.png) no-repeat;text-align:center;overflow:hidden;}
+.DataBallGreen1Mini{width:84px;height:84px;background:url(../img/assembly/DataBallGreen1MiniBg.png) no-repeat;text-align:center;overflow:hidden;}
+.DataBallGreen2{width:205px;height:169px;background:url(../img/assembly/DataBallGreen2Bg.png) no-repeat;text-align:center;overflow:hidden;}
+.DataBallOrange{width:205px;height:138px;background:url(../img/assembly/DataBallOrangeBg.png) no-repeat;text-align:center;overflow:hidden;}
+.DataBallOrangeMini{width:84px;height:84px;background:url(../img/assembly/DataBallOrangeMiniBg.png) no-repeat;text-align:center;overflow:hidden;}

@@ -7,6 +7,52 @@
 	<link href="../../Common/css/ledDisplayCommon.css" rel="stylesheet" type="text/css">
 	<link href="../../Common/css/assemblyCommon.css" rel="stylesheet" type="text/css">
 	<link href="../css/Theme1Right.css" rel="stylesheet" type="text/css">
+	<style>
+		#wltptChart{
+			height: 290px;
+			top: 0;
+		}
+		.modelContentBoxR{
+			margin: 0px 25px 0 0px;
+		}
+		.jcViewEarthStationInfoBox1{
+			background-size: 99% 100%;
+			width: 240px;
+			left: -130px;
+		}
+		.jcViewEarthStationInfo_block .waveBandUl{
+			width: 180px;
+    		/* border: 1px solid pink; */
+			margin-left: 0;
+			margin-top: 12px;
+		}
+		.waveBandUl li{
+			float: left;
+			text-align: center;
+		}
+		.jcViewEarthStationInfoBox1{
+			width: 250px;
+			height: 236px;
+		}
+		.upStarDiv{
+			margin-top: 40px;
+		}
+		.upStarSpans{
+			margin-top: 22px;
+		}
+		.upStarSpans span{
+			font-size: 18px;
+			width: 85px;
+		}
+		.upStarSpans .antenna_16,.upStarSpans .unit{
+			font-size: 22px;	
+		}
+		.arrowIcon{
+			position: absolute;
+			left: 136px;
+			top: 130px;
+		}
+	</style>
 </head>
 
 <body>
@@ -22,7 +68,7 @@
 
 					<div class="modelContentBoxR">
 						<!--网络安全拓扑图-->
-						<div id="wltptChart" style="/*border:1px solid tomato;*/width:720px;left: 30px;"></div>
+						<div id="wltptChart" style="border:1px ;width:950px;left: 0px;"></div>
 
 						<!--带宽占比条组件-->
 						<div class="dkzbModel contentRightDQ">
@@ -64,7 +110,7 @@
 								<div class="DataAssmeblyOne DataAssmeblyOne01">
 									<div class="DataAssmeblyOne_Content">
 										<div class="DataAssemblyOne_title">病毒</div>
-										<div class="DataAssemblyOne_data"><span class="counter virus"> - </span><span class="DataUnit">个</span></div>
+										<div class="DataAssemblyOne_data"><span class="counter virus"> - </span><span class="DataUnit">套</span></div>
 									</div>
 								</div>
 
@@ -72,7 +118,7 @@
 								<div class="DataAssmeblyOne DataAssmeblyOne02">
 									<div class="DataAssmeblyOne_Content">
 										<div class="DataAssemblyOne_title">漏洞</div>
-										<div class="DataAssemblyOne_data"><span class="counter loophole"> - </span><span class="DataUnit">个</span></div>
+										<div class="DataAssemblyOne_data"><span class="counter loophole"> - </span><span class="DataUnit">套</span></div>
 									</div>
 								</div>
 
@@ -80,7 +126,7 @@
 								<div class="DataAssmeblyOne DataAssmeblyOne03">
 									<div class="DataAssmeblyOne_Content">
 										<div class="DataAssemblyOne_title">间谍</div>
-										<div class="DataAssemblyOne_data"><span class="counter spy"> - </span><span class="DataUnit">个</span></div>
+										<div class="DataAssemblyOne_data"><span class="counter spy"> - </span><span class="DataUnit">套</span></div>
 									</div>
 								</div>
 							</div>
@@ -131,12 +177,12 @@
 							<div class="jcViewTopContainerRight">
 								<!--截止上月地球站统计-->
 								<div class="jcViewTopTj">
-									<div class="jcViewTopTj_title">截止上月地球站累计</div>
+									<div class="jcViewTopTj_title">上月地球站传输上行时间</div>
 									<div class="jcViewTopTj_Data"><span class="DataNum earthStation counter"> - </span><span class="DataUnit">小时</span></div>
 								</div>
 								<!--截止上月节传中心统计-->
 								<div class="jcViewTopTj">
-									<div class="jcViewTopTj_title">截止上月节传中心累计</div>
+									<div class="jcViewTopTj_title">上月节传中心传输时间</div>
 									<div class="jcViewTopTj_Data"><span class="DataNum programTransTime counter"> - </span><span class="DataUnit">小时</span></div>
 								</div>
 							</div>
@@ -147,8 +193,8 @@
 								<div class="DataStage2Assembly DataStage2Assembly_item">
 									<!--舞台数据展示组件_顶部数据-->
 									<div class="DataStage2Assembly_Data">
-										<div class="DataStage2Assembly_Data_item">当前上星<span class="satellite counter"> - </span>套</div>
-										<div class="DataStage2Assembly_Data_item">地面广播<span class="broadCastGround counter"> - </span>套</div>
+										<div class="DataStage2Assembly_Data_item">中央广播<span class="satellite counter"> - </span>套</div>
+										<div class="DataStage2Assembly_Data_item">地方广播<span class="broadCastGround counter"> - </span>套</div>
 									</div>
 									<!--舞台数据展示组件_底部图标-->
 									<img class="DataStage2Assembly_Icon" src="../img/jcView/TopDataGroup/TopDataIcon1.png">
@@ -157,8 +203,8 @@
 								<div class="DataStage2Assembly DataStage2Assembly_item">
 									<!--舞台数据展示组件_顶部数据-->
 									<div class="DataStage2Assembly_Data">
-										<div class="DataStage2Assembly_Data_item">公益<span class="commonWeal counter"> - </span>套</div>
-										<div class="DataStage2Assembly_Data_item">付费<span class="pay counter"> - </span>套</div>
+										<div class="DataStage2Assembly_Data_item">中央<span class="commonWeal counter"> - </span>套</div>
+										<div class="DataStage2Assembly_Data_item">地方<span class="pay counter"> - </span>套</div>
 									</div>
 									<!--舞台数据展示组件_底部图标-->
 									<img class="DataStage2Assembly_Icon" src="../img/jcView/TopDataGroup/TopDataIcon2.png">
@@ -198,53 +244,59 @@
 								<div class="jcViewEarthStationInfoBox1">
 									<div class="jcViewEarthStationInfo_title"><span id="siteBaseName1">542台</span>地球站资源</div>
 									<div class="jcViewEarthStationInfo_content">
-										<!--天线统计-->
-										<div class="jcViewEarthStationInfo_block">·
-											<img src="../img/jcView/jcViewAlertTXIcon.png" />
-											<ul>
-												<li><span class="jcViewEarthStationInfo_typeName">16米天线:</span><span class="jcViewEarthStationInfo_Data"><span
-														 class="counter antenna_16"> - </span><span class="unit">个</span></span></li>
-												<li><span class="jcViewEarthStationInfo_typeName">13米天线:</span><span class="jcViewEarthStationInfo_Data"><span
-														 class="counter antenna_13"> - </span><span class="unit">个</span></span></li>
-												<li><span class="jcViewEarthStationInfo_typeName">转动天线:</span><span class="jcViewEarthStationInfo_Data"><span
-														 class="counter antenna_move"> - </span><span class="unit">个</span></span></li>
-											</ul>
-										</div>
-
 										<!--波段统计-->
 										<div class="jcViewEarthStationInfo_block">
 											<img src="../img/jcView/jcViewAlertBDIcon.png" />
+											<ul class="waveBandUl">
+												<li>
+													<span class="jcViewEarthStationInfo_typeName">C波段</span><br>
+													<span class="jcViewEarthStationInfo_Data">
+														<span class="counter C_band"> - </span>
+														<span class="unit">套</span>
+													</span>
+												</li>
+												<li><span class="jcViewEarthStationInfo_typeName">KU波段</span><br><span class="jcViewEarthStationInfo_Data"><span
+														 class="counter KU_band"> - </span><span class="unit">套</span></span></li>
+												<li><span class="jcViewEarthStationInfo_typeName">DHS波段</span><br><span class="jcViewEarthStationInfo_Data"><span
+														 class="counter DHS_band"> - </span><span class="unit">套</span></span></li>
+											</ul>
+										</div>
+										<img class="arrowIcon" src="../img/jcView/arrowIcon.png">
+										<!--天线统计-->
+										<div class="jcViewEarthStationInfo_block upStarDiv">·
+											<img src="../img/jcView/jcViewAlertTXIcon.png" />
 											<ul>
-												<li><span class="jcViewEarthStationInfo_typeName">C波段:</span><span class="jcViewEarthStationInfo_Data"><span
-														 class="counter C_band"> - </span><span class="unit">个</span></span></li>
-												<li><span class="jcViewEarthStationInfo_typeName">KU波段:</span><span class="jcViewEarthStationInfo_Data"><span
-														 class="counter KU_band"> - </span><span class="unit">个</span></span></li>
-												<li><span class="jcViewEarthStationInfo_typeName">DHS波段:</span><span class="jcViewEarthStationInfo_Data"><span
-														 class="counter DHS_band"> - </span><span class="unit">个</span></span></li>
+												<li class="upStarSpans"><span class="jcViewEarthStationInfo_typeName">上星(天线)</span><span class="jcViewEarthStationInfo_Data"><span
+														 class="counter antenna_16"> - </span><span class="unit">套</span></span></li>
+												<!-- <li><span class="jcViewEarthStationInfo_typeName">天线:</span><span class="jcViewEarthStationInfo_Data"><span -->
+														 <!-- class="counter antenna_13"> - </span><span class="unit">套</span></span></li> -->
+												<!-- <li><span class="jcViewEarthStationInfo_typeName">转动天线:</span><span class="jcViewEarthStationInfo_Data"><span
+														 class="counter antenna_move"> - </span><span class="unit">套</span></span></li> -->
 											</ul>
 										</div>
 
+
 										<!--转发器统计-->
-										<div class="jcViewEarthStationInfo_block">
+										<!-- <div class="jcViewEarthStationInfo_block">
 											<img src="../img/jcView/jcViewAlertZFQIcon.png" style="margin-top:0;" />
 											<ul class="Info2">
 												<li><span class="jcViewEarthStationInfo_typeName">转发器:</span><span class="jcViewEarthStationInfo_Data"><span
-														 class="counter repeater"> - </span><span class="unit">个</span></span></li>
+														 class="counter repeater"> - </span><span class="unit">套</span></span></li>
 											</ul>
-										</div>
+										</div> -->
 									</div>
 								</div>
 
 								<!--右侧地球站系统信息框-->
 								<div class="jcViewEarthStationInfoBox2">
-									<div class="jcViewEarthStationInfo_title"><span id="siteBaseName2">542台</span>地球站系统</div>
+									<div class="jcViewEarthStationInfo_title"><span id="siteBaseName2">542台</span>地球站工作内容</div>
 									<div class="jcViewEarthStationInfo_content">
 										<!--上星卫星系统-->
 										<div class="jcViewEarthStationInfo_block">
 											<img src="../img/jcView/jcViewAlertWXSYSIcon.png" style="margin-top:0;" />
 											<ul class="Info2">
-												<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">上星卫星系统:</span><span class="jcViewEarthStationInfo_Data"><span
-														 class="counter satelliteSys"> - </span><span class="unit">个</span></span></li>
+												<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">主播节目:</span><span class="jcViewEarthStationInfo_Data"><span
+														 class="counter satelliteSys"> - </span><span class="unit">套</span></span></li>
 											</ul>
 										</div>
 
@@ -252,22 +304,21 @@
 										<div class="jcViewEarthStationInfo_block">
 											<img src="../img/jcView/jcViewAlertJMPTIcon.png" style="margin-top:0;" />
 											<ul class="Info2">
-												<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">节目集成平台:</span><span class="jcViewEarthStationInfo_Data"><span
-														 class="counter programPlatform"> - </span><span class="unit">个</span></span></li>
+												<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">备播节目:</span><span class="jcViewEarthStationInfo_Data"><span
+														 class="counter programPlatform"> - </span><span class="unit">套</span></span></li>
 											</ul>
 										</div>
 									</div>
 								</div>
-
 								<!--右侧地球站工作信息框-->
 								<div class="jcViewEarthStationInfoBox3">
-									<div class="jcViewEarthStationInfo_title"><span id="siteBaseName3">542台</span>地球站工作</div>
+									<div class="jcViewEarthStationInfo_title"><span id="siteBaseName3">542台</span>地球站集成平台</div>
 									<div class="jcViewEarthStationInfo_content">
-										<!--在传节目-->
+										<!-- //在传节目 -->
 										<div class="jcViewEarthStationInfo_block">
 											<img src="../img/jcView/jcViewAlertZCJMSIcon.png" style="margin-top:0;" />
 											<ul class="Info2">
-												<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">在传节目:</span><span class="jcViewEarthStationInfo_Data"><span
+												<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">节目集成平台:</span><span class="jcViewEarthStationInfo_Data"><span
 														 class="counter programTrans_again"> - </span><span class="unit">套</span></span></li>
 											</ul>
 										</div>
@@ -292,10 +343,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		/*地球站名目*/
-		let siteBase = ["哈什站", "呼市站", "沙河站", "542站"];
-	</script>
 </body>
 <script src="../../Common/js/jquery-1.9.1.min.js"></script>
 <script src="../../Common/js/jquery.waypoints.js"></script>
@@ -306,10 +353,7 @@
 <script>
 	/*数据刷新动画调用方法*/
 	dataFresh = function (target) {
-		$(target).counterUp({
-			delay: 100,
-			time: 2000
-		});
+		$(target).counterUp({ delay: 100, time: 2000 });
 	};
 
 	// 节传相关
@@ -348,7 +392,7 @@
 	g.doAjax("servlet/FirstThemeServlet", { key: 'right', param: JSON.stringify({ position: 'earthStation', station: '542站' }), }, getData2);
 	let n = 0,
 		classArr = ['EarthStationHSZ', 'EarthStationHTZ', 'EarthStationSHZ', 'EarthStation542'],
-		paramArr = ['哈什站', '呼市站', '沙河站', '542站'];
+		paramArr = ['喀什', '呼市', '北京', '542'];
 	setInterval(function () {
 		$(".jcViewEarthStationArea")[0].className = 'jcViewEarthStationArea ' + classArr[n];
 		let param2 = {
@@ -356,8 +400,10 @@
 			param: JSON.stringify({ position: 'earthStation', station: paramArr[n] }),
 		}
 		g.doAjax("servlet/FirstThemeServlet", param2, getData2);
+		$("#siteBaseName1,#siteBaseName2").html(paramArr[n]);
+
 		n < 3 ? n++ : n = 0;
-	}, 50000);
+	}, 500000);
 
 	// 宽带使用率 与 网络访问行为
 	let getData3 = function (res) {
@@ -394,7 +440,7 @@
 			textStyle: {
 				fontSize: 12,
 				color: '#00eaff',
-				fontFamily: 'microsoftYaHei'
+				fontFamily: 'microsoftYaHei',
 			},
 		}
 	};
@@ -408,27 +454,29 @@
 	let dataList = [], lineList = [];
 	let j, k, startPositoin, dataValue;
 	for (let i = 0; i < 47; i++) {
-		if (i < 6) {
+		if (i < 7) {
 			startPositoin = 7;
 			j = i
-			dataValue = [startPositoin, 230 - j * 42];
-		} else if (6 <= i && i < 12) {
-			j = i - 6;
+			dataValue = [startPositoin, 230 - j * 43];
+		} else if (7 <= i && i < 14) {
+			j = i - 7;
 			startPositoin = 97;
-			dataValue = [startPositoin, 230 - j * 42];
-		} else if (12 <= i && i < 29) {
+			dataValue = [startPositoin, 230 - j * 43];
+		}
+		else if (14 <= i && i < 30) {
 			startPositoin = 230;
-			k = i - 12; // 防止name重名  使用新变量k
-			dataValue = [12 + k * 5, startPositoin]
-		} else if (29 <= i && i < 46) {
-			startPositoin = 18;
-			k = i - 29;
-			dataValue = [12 + k * 5, startPositoin]
-		} else {
-			dataValue = [52, 110];
+			k = i - 14; // 防止name重名  使用新变量k
+			dataValue = [12 + k * 5.3, startPositoin]
+		} else if (30 <= i && i < 46) {
+			startPositoin = -30;
+			k = i - 30;
+			dataValue = [12 + k * 5.3, startPositoin]
+		}
+		else {
+			dataValue = [52, 100];
 		}
 		dataList.push({
-			name: "1." + i,
+			name: "北京." + i,
 			symbol: i == 46 ? iconHome : iconB,
 			symbolSize: symbolSizeSetting,
 			draggable: false,
@@ -437,7 +485,8 @@
 			label: labelOne,
 		});
 		lineList.push({
-			coords: [dataValue, [52, 110]]
+			coords: [dataValue, [52, 100]],
+			isbad: 'ok'
 		});
 	}
 	option = {
@@ -464,20 +513,21 @@
 		},
 		series: [
 			{
+				name: "123123",
 				type: 'graph',
 				coordinateSystem: 'cartesian2d',
 				legendHoverLink: false,
 				hoverAnimation: true,
 				nodeScaleRatio: false,
-				// label: {
-				// 	normal: {
-				// 		show: true,
-				// 		position: 'top',//设置label显示的位置
-				// 		textStyle: {
-				// 		fontSize: '22px'
-				// 		},
-				// 	}
-				// },
+				label: {
+					normal: {
+						show: true,
+						position: 'top',//设置label显示的位置
+						textStyle: {
+							fontSize: '22px'
+						},
+					}
+				},
 
 				roam: false,
 				lineStyle: {//去掉自带的那条线，不要删
@@ -506,138 +556,19 @@
 				},
 				lineStyle: {
 					normal: {
-						color: '#0fffff',
+						color: function (param) {
+							console.log(param);
+							if (param.data.isbad == 'o') {
+								return 'red'
+							} else {
+								return '#0fffff'
+							}
+						},
 						opacity: 0.01,
 						curveness: 0.3
 					}
 				},
 				data: lineList
-				//  [{
-				// 	coords: [
-				// 		[20, 210],
-				// 		[80, 210]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[20, 170],
-				// 		[80, 170]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[20, 130],
-				// 		[80, 130]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[20, 90],
-
-				// 		[80, 90]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[20, 50],
-				// 		[80, 50]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[20, 10],
-				// 		[80, 10]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[380, 210],
-				// 		[320, 210]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[380, 170],
-				// 		[320, 170]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[380, 130],
-				// 		[320, 130]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[380, 90],
-				// 		[320, 90]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[380, 50],
-				// 		[320, 50]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[380, 10],
-				// 		[320, 10]
-				// 	]
-				// },
-				// // 斜线
-				// {
-				// 	coords: [
-				// 		[80, 210],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[80, 170],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[80, 130],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[80, 90],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[80, 50],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[80, 10],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[320, 210],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[320, 170],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[320, 130],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[320, 90],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[320, 50],
-				// 		[200, 110]
-				// 	]
-				// }, {
-				// 	coords: [
-				// 		[320, 10],
-				// 		[200, 110]]
-				// }
-				// ]
-
-
 			}
 		]
 	};
