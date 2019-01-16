@@ -6,7 +6,7 @@ import java.util.Map;
  * Created by 徐文正 on 2019/1/12.
  */
 public class FrontPageThemeDAO {
-    public static String getMonthToalHours(Map reqMap) {
+    public static String getMonthTotalHours(Map reqMap) {
         StringBuffer strBuffer = new StringBuffer();
         strBuffer.append("SELECT   order_type, MONTH, MIN (history_date) history_date,                 ")
                 .append("         CEIL (SUM (play_time) * 24) total_hour                              ")
@@ -49,7 +49,7 @@ public class FrontPageThemeDAO {
         return strBuffer.toString();
     }
 
-    public static String getTodayToalHours(Map reqMap) {
+    public static String getTodayTotalHours(Map reqMap) {
         StringBuffer strBuffer = new StringBuffer();
         strBuffer.append("SELECT   order_type, SUM (total_hour) total_hour                                              ")
                 .append("    FROM (                                                                   ")
@@ -224,6 +224,7 @@ public class FrontPageThemeDAO {
                 .append("       NVL (doing.freq_doing, 0) freq_doing,                                             ")
                 .append("       NVL (doing.program_doing, 0) program_doing,                                       ")
                 .append("       NVL (doing.trans_doing, 0) trans_doing,                                           ")
+                .append("       NVL (doing.power_doing, 0) power_doing,                                           ")
                 .append("       NVL (todo.task_todo, 0) task_todo                                                 ")
                 .append("  FROM (SELECT *                                                                         ")
                 .append("          FROM wxj_common_param_t                                                        ")
@@ -257,8 +258,8 @@ public class FrontPageThemeDAO {
                 .append("       LEFT JOIN                                                                         ")
                 .append("       (SELECT   order_type, COUNT (DISTINCT freq) freq_doing,                           ")
                 .append("                 COUNT (DISTINCT program_name) program_doing,                            ")
-                .append("                 COUNT (DISTINCT trans_code) trans_doing, COUNT                          ")
-                .append("                                                               (*) task_doing            ")
+                .append("                 COUNT (DISTINCT trans_code) trans_doing,                                ")
+                .append("                 SUM (power) power_doing, COUNT  (*) task_doing                          ")
                 .append("            FROM (SELECT trans_code, start_time, end_time, freq, program_name,           ")
                 .append("                         POWER,                                                          ")
                 .append("                         DECODE (order_type,                                             ")
@@ -277,7 +278,7 @@ public class FrontPageThemeDAO {
                 .append("                                        FROM DUAL) || '%'                                ")
                 .append("                     AND trans_code IN (SELECT trans_code                                ")
                 .append("                                          FROM wxj_transmitter_status_t                  ")
-                .append("                                         WHERE work_status = 10)                         ")
+                .append("                                         WHERE work_status = '10')                       ")
                 .append("                     AND (   (    (start_time <= end_time)                               ")
                 .append("                              AND (SYSDATE BETWEEN start_time AND end_time)              ")
                 .append("                             )                                                           ")
@@ -315,6 +316,132 @@ public class FrontPageThemeDAO {
                 .append("                             )                                                           ")
                 .append("                         ))                                                              ")
                 .append("        GROUP BY order_type) todo ON todo.order_type = total.param_value                 ");
+        return strBuffer.toString();
+    }
+
+    public static String getRealtimeBusiOrderInfo(Map reqMap) {
+        StringBuffer strBuffer = new StringBuffer();
+        strBuffer.append("SELECT *                                                                          ")
+                .append("  FROM (SELECT COUNT (DISTINCT order_code) year_order_count,                      ")
+                .append("               CEIL (SUM (end_time - start_time) * 24) year_hour_count            ")
+                .append("          FROM (SELECT order_code, start_time,                                    ")
+                .append("                       CASE                                                       ")
+                .append("                          WHEN SYSDATE > end_time                                 ")
+                .append("                             THEN end_time                                        ")
+                .append("                          ELSE SYSDATE                                            ")
+                .append("                       END end_time                                               ")
+                .append("                  FROM wxj_busiorder_detail_history_t                             ")
+                .append("                 WHERE status_date >                                              ")
+                .append("                                   TO_DATE (TO_CHAR (SYSDATE, 'yyyy'), 'yyyy')    ")
+                .append("                   AND SYSDATE >= start_time                                      ")
+                .append("                   AND start_time < = end_time                                    ")
+                .append("                   AND LENGTH (station_code) = 2))                                ")
+                .append("       JOIN                                                                       ")
+                .append("       (SELECT COUNT (DISTINCT order_code) today_order_count,                     ")
+                .append("               CEIL (SUM (end_time - start_time) * 24) today_hour_count           ")
+                .append("          FROM (SELECT order_code, start_time,                                    ")
+                .append("                       CASE                                                       ")
+                .append("                          WHEN SYSDATE > end_time                                 ")
+                .append("                             THEN end_time                                        ")
+                .append("                          ELSE SYSDATE                                            ")
+                .append("                       END end_time                                               ")
+                .append("                  FROM wxj_busiorder_detail_realtime                              ")
+                .append("                 WHERE status_date >                                              ")
+                .append("                                   TO_DATE (TO_CHAR (SYSDATE, 'yyyy'), 'yyyy')    ")
+                .append("                   AND SYSDATE >= start_time                                      ")
+                .append("                   AND start_time < = end_time                                    ")
+                .append("                   AND LENGTH (station_code) = 2)) ON 1 = 1                       ");
+        return strBuffer.toString();
+    }
+
+    public static String getSlideShowBusiOrder(Map reqMap) {
+        StringBuffer strBuffer = new StringBuffer();
+        strBuffer.append("SELECT *                                                                        ")
+                .append("  FROM (SELECT   a.order_code_dic order_name, a.send_dept, a.sender,            ")
+                .append("                 b.station_name receive_station, a.receiver, b.station_name,    ")
+                .append("                    DECODE (SUBSTR (c.trans_code, 4, 1),                        ")
+                .append("                            '0', 'A',                                           ")
+                .append("                            '1', 'B',                                           ")
+                .append("                            '2', 'C',                                           ")
+                .append("                            '3', 'D',                                           ")
+                .append("                            '4', 'E',                                           ")
+                .append("                            '5', 'F',                                           ")
+                .append("                            '6', 'G',                                           ")
+                .append("                            '7', 'H',                                           ")
+                .append("                            'ERROR'                                             ")
+                .append("                           )                                                    ")
+                .append("                 || SUBSTR (c.trans_code, 5) transmitter,                       ")
+                .append("                 a.status_date                                                  ")
+                .append("            FROM (SELECT *                                                      ")
+                .append("                    FROM wxj_busiorder_total_realtime                           ")
+                .append("                   WHERE LENGTH (station_code) = 2) a                           ")
+                .append("                 LEFT JOIN                                                      ")
+                .append("                 wxj_station_info_t b ON a.station_code = b.station_id          ")
+                .append("                 LEFT JOIN wxj_busiorder_detail_realtime c                      ")
+                .append("                 ON a.order_code = c.order_code                                 ")
+                .append("        ORDER BY status_date DESC)                                              ")
+                .append(" WHERE station_name IS NOT NULL AND LENGTH (transmitter) = 3 AND ROWNUM < 11    ");
+        return strBuffer.toString();
+    }
+
+    public static String getNetWorkCheckInfo(Map reqMap) {
+        StringBuffer strBuffer = new StringBuffer();
+        strBuffer.append("SELECT SUM (access_count) access_count, SUM (virus_count) virus_count, ")
+                .append("       SUM (mole_count) mole_count, SUM (bug_count) bug_count          ")
+                .append("  FROM wxj_network_check_t                                             ");
+        return strBuffer.toString();
+    }
+
+    public static String getRealTimeRunplanInfo(Map reqMap) {
+        StringBuffer strBuffer = new StringBuffer();
+        strBuffer.append("SELECT SUM (freq_doing) freq_count, SUM (trans_doing) trans_count,                   ")
+                .append("       SUM (power_doing) power_count                                                 ")
+                .append("  FROM (SELECT total.param_value order_type,                                         ")
+                .append("               NVL (doing.freq_doing, 0) freq_doing,                                 ")
+                .append("               NVL (doing.power_doing, 0) power_doing,                               ")
+                .append("               NVL (doing.trans_doing, 0) trans_doing                                ")
+                .append("          FROM (SELECT *                                                             ")
+                .append("                  FROM wxj_common_param_t                                            ")
+                .append("                 WHERE param_type = 'order_type') total                              ")
+                .append("               LEFT JOIN                                                             ")
+                .append("               (SELECT   order_type, COUNT (DISTINCT freq) freq_doing,               ")
+                .append("                         COUNT (DISTINCT program_name) program_doing,                ")
+                .append("                         COUNT (DISTINCT trans_code) trans_doing,                    ")
+                .append("                         SUM (POWER) power_doing, COUNT (*) task_doing               ")
+                .append("                    FROM (SELECT trans_code, start_time, end_time, freq,             ")
+                .append("                                 program_name, POWER,                                ")
+                .append("                                 DECODE (order_type,                                 ")
+                .append("                                         'I', 'SY',                                  ")
+                .append("                                         'F', 'DW',                                  ")
+                .append("                                         'M', 'DW',                                  ")
+                .append("                                         'DN'                                        ")
+                .append("                                        ) order_type                                 ")
+                .append("                            FROM wxj_runplan_realtime_t                              ")
+                .append("                           WHERE SYSDATE BETWEEN start_date AND end_date             ")
+                .append("                             AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')        ")
+                .append("                             AND operate IN ('A', 'U')                               ")
+                .append("                             AND run_type = 1                                        ")
+                .append("                             AND days LIKE                                           ")
+                .append("                                       '%'                                           ")
+                .append("                                    || (SELECT TO_CHAR (SYSDATE - 1, 'd')            ")
+                .append("                                          FROM DUAL)                                 ")
+                .append("                                    || '%'                                           ")
+                .append("                             AND trans_code IN (SELECT trans_code                    ")
+                .append("                                                  FROM wxj_transmitter_status_t      ")
+                .append("                                                 WHERE work_status = '10')           ")
+                .append("                             AND (   (    (start_time <= end_time)                   ")
+                .append("                                      AND (SYSDATE BETWEEN start_time AND end_time   ")
+                .append("                                          )                                          ")
+                .append("                                     )                                               ")
+                .append("                                  OR (    (start_time > end_time)                    ")
+                .append("                                      AND (   SYSDATE >= start_time                  ")
+                .append("                                           OR SYSDATE <= end_time                    ")
+                .append("                                          )                                          ")
+                .append("                                     )                                               ")
+                .append("                                 ))                                                  ")
+                .append("                GROUP BY order_type) doing                                           ")
+                .append("               ON doing.order_type = total.param_value                               ")
+                .append("               )                                                                     ");
         return strBuffer.toString();
     }
 }
