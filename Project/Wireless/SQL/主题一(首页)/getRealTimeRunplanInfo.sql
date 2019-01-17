@@ -32,7 +32,7 @@ SELECT SUM (freq_doing) freq_count, SUM (trans_doing) trans_count,
                                     || '%'
                              AND trans_code IN (SELECT trans_code
                                                   FROM wxj_transmitter_status_t
-                                                 WHERE work_status = '10')
+                                                 WHERE SUBSTR (work_status, 1, 1) = '1')
                              AND (   (    (start_time <= end_time)
                                       AND (SYSDATE BETWEEN start_time AND end_time
                                           )
