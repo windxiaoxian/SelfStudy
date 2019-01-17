@@ -1,4 +1,4 @@
-SELECT *
+﻿SELECT *
   FROM (SELECT   a.order_code_dic order_name, a.send_dept, a.sender,
                  b.station_name receive_station, a.receiver, b.station_name,
                     DECODE (SUBSTR (c.trans_code, 4, 1),

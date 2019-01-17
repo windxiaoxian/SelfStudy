@@ -1,4 +1,4 @@
-SELECT a.station_code, a.ping_status, b.bandwidth_used, b.bandwidth_unused
+﻿SELECT a.station_code, a.ping_status, b.bandwidth_used, b.bandwidth_unused
   FROM wxj_station_network_info_t a
        JOIN
        (SELECT CEIL (SUM (bandwidth_used)) bandwidth_used,

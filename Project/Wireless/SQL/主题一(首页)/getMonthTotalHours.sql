@@ -1,4 +1,4 @@
-SELECT   order_type, MONTH, MIN (history_date) history_date,
+ï»¿SELECT   order_type, MONTH, MIN (history_date) history_date,
          CEIL (SUM (play_time) * 24) total_hour
     FROM (SELECT CASE
                     WHEN start_time <= end_time
@@ -14,9 +14,9 @@ SELECT   order_type, MONTH, MIN (history_date) history_date,
                             - start_time
                  END play_time,
                  DECODE (order_type_dic,
-                         'ÊµÑé', 'SY',
-                         '¶ÔÍâ¹ã²¥', 'DW',
-                         'ÖÐ×ªÍâ', 'DW',
+                         'å®žéªŒ', 'SY',
+                         'å¯¹å¤–å¹¿æ’­', 'DW',
+                         'ä¸­è½¬å¤–', 'DW',
                          'DN'
                         ) order_type,
                  history_date, b.param_name MONTH
@@ -26,8 +26,8 @@ SELECT   order_type, MONTH, MIN (history_date) history_date,
                                  TO_CHAR (ADD_MONTHS (SYSDATE, -11),
                                           'yyyy-MM')
                      AND order_type_dic IN
-                            ('ÊµÑé', '¶ÔÄÚ¹ã²¥', '¶ÔÍâ¹ã²¥', 'Íâ×ªÖÐ',
-                             'ÖÐ×ªÍâ', 'µØ·½¹ã²¥')) a
+                            ('å®žéªŒ', 'å¯¹å†…å¹¿æ’­', 'å¯¹å¤–å¹¿æ’­', 'å¤–è½¬ä¸­',
+                             'ä¸­è½¬å¤–', 'åœ°æ–¹å¹¿æ’­')) a
                  LEFT JOIN
                  (SELECT param_value, param_name
                     FROM wxj_common_param_t

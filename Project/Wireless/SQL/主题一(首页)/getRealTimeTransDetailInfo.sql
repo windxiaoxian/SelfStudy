@@ -1,5 +1,5 @@
-SELECT DISTINCT *
-           FROM (SELECT    '»ú·¿'
+ï»¿SELECT DISTINCT *
+           FROM (SELECT    'æœºæˆ¿'
                         || DECODE (SUBSTR (trans_code, 4, 1),
                                    '0', 'A',
                                    '1', 'B',
@@ -13,11 +13,11 @@ SELECT DISTINCT *
                                   ) room,
                         SUBSTR (trans_code, 5) transmitter,
                         DECODE (SUBSTR (work_status, 1, 1),
-                                '1', 'Õý³£',
-                                '2', '¿ÕÏÐ',
-                                '3', '¹ÊÕÏ',
-                                '4', '¼ìÐÞ',
-                                'Î´Öª'
+                                '1', 'æ­£å¸¸',
+                                '2', 'ç©ºé—²',
+                                '3', 'æ•…éšœ',
+                                '4', 'æ£€ä¿®',
+                                'æœªçŸ¥'
                                ) work_status,
                         CASE
                            WHEN CEIL (POWER) < 0
@@ -38,5 +38,5 @@ SELECT DISTINCT *
                                            FROM wxj_station_info_t
                                           WHERE station_code = '2022')
                     AND LENGTH (trans_code) = 6)
-          WHERE room <> '»ú·¿ERROR'
+          WHERE room <> 'æœºæˆ¿ERROR'
        ORDER BY room, transmitter

@@ -1,4 +1,4 @@
-SELECT total.param_value order_type, NVL (done.task_done, 0) task_done,
+﻿SELECT total.param_value order_type, NVL (done.task_done, 0) task_done,
        NVL (doing.task_doing, 0) task_doing,
        NVL (doing.freq_doing, 0) freq_doing,
        NVL (doing.program_doing, 0) program_doing,

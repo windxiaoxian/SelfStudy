@@ -1,4 +1,4 @@
-SELECT   MONTH, MIN (accident_date) accident_date,
+﻿SELECT   MONTH, MIN (accident_date) accident_date,
          SUM (stop_seconds) stop_seconds
     FROM (SELECT accident_date, stop_seconds, param_name MONTH
             FROM (SELECT TO_CHAR (accident_date, 'yyyy-MM') accident_date,

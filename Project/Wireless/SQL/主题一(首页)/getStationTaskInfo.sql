@@ -1,4 +1,4 @@
-SELECT todo.task_todo, todo.play_time_todo, done.task_done,
+﻿SELECT todo.task_todo, todo.play_time_todo, done.task_done,
        done.play_time_done, STOP.stop_time, alarm.alarm_count,
        busiorder.busiorder_count, doing.power_doing
   FROM (SELECT *

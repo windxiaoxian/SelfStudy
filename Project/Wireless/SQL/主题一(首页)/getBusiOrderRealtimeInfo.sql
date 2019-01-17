@@ -1,4 +1,4 @@
-SELECT *
+﻿SELECT *
   FROM (SELECT COUNT (DISTINCT order_code) year_order_count,
                CEIL (SUM (end_time - start_time) * 24) year_hour_count
           FROM (SELECT order_code, start_time,

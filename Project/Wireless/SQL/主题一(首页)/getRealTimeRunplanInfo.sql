@@ -1,4 +1,4 @@
-SELECT SUM (freq_doing) freq_count, SUM (trans_doing) trans_count,
+﻿SELECT SUM (freq_doing) freq_count, SUM (trans_doing) trans_count,
        SUM (power_doing) power_count
   FROM (SELECT total.param_value order_type,
                NVL (doing.freq_doing, 0) freq_doing,

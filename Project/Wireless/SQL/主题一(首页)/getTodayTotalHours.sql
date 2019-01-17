@@ -1,4 +1,4 @@
-SELECT   order_type, SUM (total_hour) total_hour
+﻿SELECT   order_type, SUM (total_hour) total_hour
     FROM (SELECT   order_type,
                    CEIL (SUM (end_time - start_time) * 24) total_hour
               FROM (SELECT trans_code, start_time, end_time, freq,
