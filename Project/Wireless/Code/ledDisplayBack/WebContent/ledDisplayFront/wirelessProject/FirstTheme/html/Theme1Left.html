@@ -22,6 +22,23 @@
     		top: 0;
     		left: 200px;
     	}
+        .mainRight_item{
+            width: 1080px;
+            background-size: auto;
+        }
+        .BarCompAssembly{
+            transform: rotateZ(-90deg);
+        }
+        .BarCompAssembly_Data{
+            transform: rotateZ(90deg);
+        }
+        .BarCompAssembly_Name{
+            transform: rotateZ(90deg);
+            margin: 20px 0 ;
+        }
+        .dwdbChart{
+            margin: 0 55px;
+        }
     </style>
 </head>
 
@@ -50,7 +67,7 @@
                             <!--当年累计播出时间-->
                             <div class="DataAssmeblyOne DataAssmeblyOne02">
                                 <div class="DataAssmeblyOne_Content">
-                                    <div class="DataAssemblyOne_title">当年累计播出频次</div>
+                                    <div class="DataAssemblyOne_title">上月传输时间</div>
                                     <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
                                             class="DataUnit">个</span></div>
                                 </div>
@@ -73,7 +90,7 @@
                                 <!--数据占比条图例-->
                                 <ul class="DataAssemblyBar_lengendGroup">
                                     <li><span class="DataAssemblyBar_legendCircle yellowMix"></span><span
-                                            class="DataAssemblyBar_legendName">当年累计播出时间</span></li>
+                                            class="DataAssemblyBar_legendName">当年实验累计播出时间</span></li>
                                     <li><span class="DataAssemblyBar_legendCircle blueMix"></span><span
                                             class="DataAssemblyBar_legendName">当年对内累计播出时间</span></li>
                                     <li><span class="DataAssemblyBar_legendCircle greenMix"></span><span
@@ -156,10 +173,10 @@
                         <!--节目-->
                         <div class="syrwtjThreeState_item DataAssmeblyTwo DataAssmeblyTwo02">
                             <div class="DataAssmeblyTwo_Content">
-                                <img class="DataAssemblyTwo_icon" src="../img/icon/jmSign.png">
-                                <div class="DataAssemblyTwo_title">节目</div>
+                                <img class="DataAssemblyTwo_icon" src="../img/icon/zbglvSign.png">
+                                <div class="DataAssemblyTwo_title">在播功率</div>
                                 <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
-                                        class="DataUnit">套</span></div>
+                                        class="DataUnit">kw</span></div>
                             </div>
                         </div>
 
@@ -197,7 +214,7 @@
                                     </div>
                                 </div>
                                 <div class="BarCompAssembly_Name">
-                                    <span class="">发射机</span>
+                                    <span class="">台站</span>
                                 </div>
 
                                 <!--敌台-->
@@ -240,13 +257,13 @@
                         </div>
                     </div>
 
-                    <!--年度合格率-->
+                    <!--上月合格率-->
 
                     <div class="tj_item ndhglvChart">
                         <div class="PieTransformAssembly" id="ndhglvChart"></div>
-                        <div class="PieTransformAssembly_Data"><span id="year-qass-rate"></span><span class="PieTransformAssembly_DataUnit">%</span>
+                        <div class="PieTransformAssembly_Data"><span id="year-qass-rate">98.63</span><span class="PieTransformAssembly_DataUnit">%</span>
                         </div>
-                        <div class="PieTransformAssembly_Name">年度实验合格率</div>
+                        <div class="PieTransformAssembly_Name">上月实验合格率</div>
                     </div>
                 </div>
             </div>
@@ -302,15 +319,15 @@
                             <div class="DataStageAssembly_Icon"><img src="../img/icon/glvStageIcon.png"></div>
                             <div class="DataStageAssembly_Data"><span class="counter" id="broad-cast-power">0</span><span class="DataUnit">kw</span>
                             </div>
-                            <div class="DataStageAssembly_Name">在播功率</div>
+                            <div class="DataStageAssembly_Name">对内在播功率</div>
                         </div>
 
-                        <!--年度可听率统计-->
+                        <!--上月可听率统计-->
                         <div class="DataStageGroup_item DataStageAssembly">
                             <div class="DataStageAssembly_Icon"><img src="../img/icon/ktlvStageIcon.png"></div>
-                            <div class="DataStageAssembly_Data"><span class="counter" id="year-listen-rate">0</span><span
+                            <div class="DataStageAssembly_Data"><span class="counter" id="">90.12</span><span
                                     class="DataUnit">%</span></div>
-                            <div class="DataStageAssembly_Name">年度可听率</div>
+                            <div class="DataStageAssembly_Name">上月对内可听率</div>
                         </div>
                     </div>
                 </div>
@@ -362,14 +379,28 @@
 
                     <!--右侧大统计-->
                     <div class="tj_item DataStageGroup">
-                        <!--年度播放频次统计-->
-                        <div class="DataStageGroup_item DataStageAssembly">
+                        <!--上月播放频次统计-->
+                        <!-- <div class="DataStageGroup_item DataStageAssembly">
                             <div class="DataStageAssembly_Icon"><img src="../img/icon/bfpcStageIcon.png"></div>
                             <div class="DataStageAssembly_Data"><span class="counter" id="acc-freqency"> - </span><span
                                     class="DataUnit">次</span></div>
-                            <div class="DataStageAssembly_Name">年度播放频次</div>
+                            <div class="DataStageAssembly_Name">上月播放频次</div>
+                        </div> -->
+                         <!--在播功率统计-->
+                         <div class="DataStageGroup_item DataStageAssembly">
+                            <div class="DataStageAssembly_Icon"><img src="../img/icon/glvStageIcon.png"></div>
+                            <div class="DataStageAssembly_Data"><span class="counter" id="exterPower">0</span><span class="DataUnit">kw</span>
+                            </div>
+                            <div class="DataStageAssembly_Name">对外在播功率</div>
                         </div>
 
+                        <!--上月可听率统计-->
+                        <div class="DataStageGroup_item DataStageAssembly">
+                            <div class="DataStageAssembly_Icon"><img src="../img/icon/ktlvStageIcon.png"></div>
+                            <div class="DataStageAssembly_Data"><span class="counter" id="">69.42</span><span
+                                    class="DataUnit">%</span></div>
+                            <div class="DataStageAssembly_Name">上月对外可听率</div>
+                        </div>
                         <!--播出语言统计-->
                         <div class="DataStageGroup_item DataStageAssembly" style="margin-top: 10px;">
                             <div class="DataStageAssembly_Icon"><img src="../img/icon/bcyyStageIcon.png"></div>
@@ -560,15 +591,16 @@
 
     // 右侧九组数据右侧的数据
     let getTaskCountData2 = function(res){
-    	$('.num-span:eq(0)').html(res.taskDetail.myStation);
-    	$('.num-span:eq(1)').html(res.taskDetail.myFreqency);
-    	$('.num-span:eq(2)').html(res.taskDetail.enemyStation);
+    	$('.num-span:eq(0)').html(res.taskDetail.station);
+    	$('.num-span:eq(1)').html(res.taskDetail.testStation);
+    	$('.num-span:eq(2)').html(res.taskDetail.freqency);
     	$('.num-span:eq(3)').html(res.taskDetail.enemyFreqency);
-        $('#year-qass-rate').html(res.taskDetail.passPrecent);
+        // $('#year-qass-rate').html(res.taskDetail.passPrecent);
 
-        $('#broad-cast-power').html(res.taskDetail.broadCastPower);
+        $('#broad-cast-power').html(res.taskDetail.interPower);
         $('#year-listen-rate').html(res.taskDetail.AudiBility);
 
+        $('#exterPower').html(res.taskDetail.exterPower);
         $('#acc-freqency').html(res.taskDetail.accFreqency);
         $('#language').html(res.taskDetail.Language);
         dataFresh('#year-qass-rate,.DataStageGroup .counter');
@@ -1042,7 +1074,7 @@
     };
     myChart5.setOption(optionPie3, true);
 
-    /*年度合格率*/
+    /*上月合格率*/
     let myChart6 = echarts.init(document.getElementById('ndhglvChart'));
     optionrange = {
 
