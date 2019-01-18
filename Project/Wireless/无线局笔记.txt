@@ -1,5 +1,9 @@
 git地址：https://github.com/windxiaoxian/SelfStudy.git
 8a96b92d973bd1b6bbdc75782633b3c93e930a31
+windxiaoxian  qingxue2010
+
+10.6.3.205 3306  ydy  ydy  odst_tpt （全量）
+10.6.3.241 3306 dr dr  （近7天）
 
 接入内网：http://1.1.1.1:90/login 
 堡垒机|10.5.6.250[lianxk neu12345678]->前置机|10.5.7.20[administrator Wxj@123]
@@ -11,6 +15,46 @@ Oracle11g
 #jdbc.demoDB.url=jdbc:oracle:thin:@//10.9.3.21:1521/bscreem
 #jdbc.demoDB.username=screem_user
 #jdbc.demoDB.password=screem_xxp
+
+常用表
+wxj_station_info_t --台站基础信息表
+wxj_transmitter_status_t --发射机实时状态表
+
+百分点表信息
+MySql
+tpt.ods_station_baseschedule  运行图信息表 A 新增 U 修改 D 删除
+tpt.ods_station_busiorder 调度令信息
+tpt.ods_station_busiorderoplist  调度令集合
+
+ORDER_TYPE
+对内:D(对内广播) L(地方广播) S(外转中)
+对外：F(对外广播) M(中转外)
+实验 ：I(实验)
+节传：T(节目传送)
+SOURCE_TYPE
+自台代播:INNR
+台际代播：INTR
+正常任务：NORM
+SEAS:SEAS
+
+01国内直属、02国内地方、03海外直属、04境外电台，海外台的台站类型为null
+
+码表信息
+gd_code@bfd_code
+运行图任务类型 dic_type = D00028
+台站名称与ID dic_type = D00001
+台站类型 dic_type = D00049
+
+调度命令文号
+频调处下发的调度命令文号，前四位为年号，后面都是文号，文号最长20位。有两种格式：
+广无调单字：由年份+文号组成。
+广无临调字：由年份+99999+文号组成。“99999+文号”最长20位。
+台内下发的调度命令文号，前四位为年号，后面都是文号，格式为：
+台调字：由年份+88888+文号组成。“88888+文号”最长20位。
+自台代播生成的自台代播调度令，则由“代”+年份+文号（台内自定义文号）组成。
+
+节传|传输时间：每月在635415小时左右  31*24*60
+语言：库里是49个
 
 linux常用指令
  防火墙：
@@ -38,4 +82,9 @@ linux常用指令
 #检查oracle监听状态|lsnrctl status
 #关掉oracle的监听进程|lsnrctl stop
 #启动oracle的监听进程|lsnrctl start
+
+控制job是否执行
+用sysdba登录，执行show  parameter  job_queue_process看看结果是不是0
+如果是这个原因，可以修改此参数
+ALTER SYSTEM SET job_queue_processes = 10;
 
