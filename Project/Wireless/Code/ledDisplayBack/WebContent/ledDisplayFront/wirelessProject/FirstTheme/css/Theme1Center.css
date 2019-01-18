@@ -27,7 +27,7 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 
 .siteInfoContainer{width:561px;height:569px;overflow:hidden;background:url(../img/center/alertBox/alertBoxBg.png) no-repeat;}
 .transformerLeft{transform-origin:left center;transform:rotateY(12deg)}
-.transformerRight{transform-origin:right center;transform:rotateY(-12deg)}
+.transformerRight{transform-origin:right center;transform:rotateY(-12deg);}
 
 .siteInfoBox_title{width:235px;height:42px;line-height:42px;margin:0 auto;margin-top:8px;font-size:18px;font-weight: bold;color:#ffffff;text-align:center;}
 
@@ -59,7 +59,7 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 	66%{background:url(../img/center/alertBox/BottomContentBg3.png) no-repeat;}
 	100%{background:url(../img/center/alertBox/BottomContentBg4.png) no-repeat;}
 }
-.BottomContent{width:487px;height:284px;margin:0 auto;margin-top:120px;background:url(../img/center/alertBox/BottomContentBg.png) no-repeat;animation:BottomContentFlash 1s linear infinite ;transition:1s;}
+.BottomContent{width:487px;height:284px;margin:0 auto;margin-top:120px;/*background:url(../img/center/alertBox/BottomContentBg.png) no-repeat;*/animation:BottomContentFlash 1s linear infinite ;transition:1s;}
 .BottomContent_center_TjBox{float:left;margin-right:20px;}
 .BottomContent_center_TjBox_name{font-size:12px;font-weight:bold;color:#ffffff;}
 .BottomContent_center_TjBox_Data{font-size:16px;font-weight:bold;font-family:DataFont;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style: oblique;}
@@ -81,11 +81,11 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 .jfNameTop{width:60px;font-size:14px;display:inline-block;}
 .jfName{width:60px;font-size:14px;font-weight:bold;color:#ffffff;display:inline-block;margin-right:5px;}
 .jfStateLight{width:17px;height:14px;margin-right:42px;display:inline-block;}
-.Nomal{background:url(../img/center/jfState/jcNormalIcon.png);}
+.Normal{background:url(../img/center/jfState/jcNormalIcon.png);}
 .Free{background:url(../img/center/jfState/jcFreeIcon.png);}
 .Repair{background:url(../img/center/jfState/jfRepairIcon.png);}
 .Broken{background:url(../img/center/jfState/jfBrokenIcon.png);}
-.Unknow{background:url(../img/center/jfState/jfUnknownIcon.png);}
+.Unknown{background:url(../img/center/jfState/jfUnknownIcon.png);}
 
 /*数据球左侧*/
 .DataBallGroupLeft{position:fixed;}
@@ -106,16 +106,16 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 .DataBallGreen2 .DataBallAssembly_Name{margin-top:5px;font-size:14px;font-weight:bold;color:#ffffff;}
 
 /*数据球右侧*/
-.DataBallGroupRight{}
+/* .DataBallGroupRight{} */
 .DataBallGreen1Mini{position:absolute;top:400px;right:0px;z-index:5;}
 .DataBallGreen1Mini .DataBallAssembly_Data{margin-top:10px;font-size:28px;color:#ffffff;font-family:DataFont;font-style: oblique;}
 .DataBallGreen1Mini .unit{font-size:12px;font-weight:bold;}
-.DataBallGreen1Mini .DataBallAssembly_Name{;font-size:12px;font-weight:bold;color:#ffffff;}
+.DataBallGreen1Mini .DataBallAssembly_Name{font-size:12px;font-weight:bold;color:#ffffff;}
 
 .DataBallOrangeMini{position:absolute;top:600px;right:0px;z-index:5;}
 .DataBallOrangeMini .DataBallAssembly_Data{margin-top:10px;font-size:28px;color:#ffffff;font-family:DataFont;font-style: oblique;}
 .DataBallOrangeMini .unit{font-size:12px;font-weight:bold;}
-.DataBallOrangeMini .DataBallAssembly_Name{;font-size:12px;font-weight:bold;color:#ffffff;}
+.DataBallOrangeMini .DataBallAssembly_Name{font-size:12px;font-weight:bold;color:#ffffff;}
 
 .DataBallGroupRight .DataBallGreen1{position:absolute;top:250px;right:10px;z-index:5;}
 .DataBallGroupRight .DataBallOrange{position:absolute;top:705px;Right:10px;z-index:5;}
@@ -135,8 +135,8 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 
 /*左下角国际台*/
 .nationSiteBox{width:221px;height:252px;position:absolute;left:190px;bottom:40px;z-index:2;perspective:500px;}
-.nationSiteBox img{}
+/* .nationSiteBox img{} */
 
 /*右下角发射机状态*/
 .fsjStateBox{width:221px;height:252px;position:absolute;right:190px;bottom:40px;z-index:2;perspective: 500px;}
-.fsjStateContainer{}
+/* .fsjStateContainer{} */
