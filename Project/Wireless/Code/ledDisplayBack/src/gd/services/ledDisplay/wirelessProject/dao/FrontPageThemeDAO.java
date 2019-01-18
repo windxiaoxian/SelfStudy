@@ -715,4 +715,19 @@ public class FrontPageThemeDAO {
                 .append("                       ))) doing ON doing.sql_type = total.param_value                   ");
         return strBuffer.toString();
     }
+
+    public static String getStationBasicInfo(Map reqMap) {
+        StringBuffer strBuffer = new StringBuffer();
+        strBuffer.append("SELECT station_name,unit_belong, unit_type, address, contacts_name, contacts_phone  ")
+                .append("  FROM wxj_station_info_t                                                           ")
+                .append(" WHERE station_code = '" + reqMap.get("stationCode") + "'                                                        ");
+        return strBuffer.toString();
+    }
+
+    public static String getRealTimeEnemyRunplanInfo(Map reqMap) {
+        StringBuffer strBuffer = new StringBuffer();
+        strBuffer.append("SELECT 3 station_count,2 freq_count  ")
+                .append("  FROM dual                                                           ");
+        return strBuffer.toString();
+    }
 }
