@@ -54,9 +54,9 @@ body{width:1920px;height:1080px;background:url(../img/bg/rightBg.png) no-repeat;
 
 .jcViewEarthStationArea{width:660px;height:480px;position:relative;z-index:2;left:130px;top:-20px;background:url(../img/jcView/earthStationGroup/542Select.png) no-repeat;transition:1s;}
 .EarthStation542{background:url(../img/jcView/earthStationGroup/542Select.png) no-repeat;transition:1s;}
-.EarthStationSHZ{background:url(../img/jcView/earthStationGroup/SHZSelect.png) no-repeat;transition:1s;}
-.EarthStationHTZ{background:url(../img/jcView/earthStationGroup/HTSelect.png) no-repeat;transition:1s;}
-.EarthStationHSZ{background:url(../img/jcView/earthStationGroup/HSZSelect.png) no-repeat;transition:1s;}
+.EarthStationSHZ{background:url(../img/jcView/earthStationGroup/BJZSelect.png) no-repeat;transition:1s;}
+.EarthStationHTZ{background:url(../img/jcView/earthStationGroup/HSZSelect.png) no-repeat;transition:1s;}
+.EarthStationHSZ{background:url(../img/jcView/earthStationGroup/KSZSelect.png) no-repeat;transition:1s;}
 
 /*传输线动画*/
 @keyframes jcViewLine

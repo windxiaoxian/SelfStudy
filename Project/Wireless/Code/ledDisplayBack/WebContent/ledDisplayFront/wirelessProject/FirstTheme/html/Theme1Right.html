@@ -373,10 +373,10 @@
 
 	// 节传相关
 	let getData1 = function (res) {
-		$(".satellite").html(res.satellite);         			//上星数量
-		$(".broadCastGround").html(res.broadCastGround);   		//地面广播
-		$(".commonWeal").html(res.commonWeal);        			//公益
-		$(".pay").html(res.pay);               					//付费
+		$(".satellite").html(res.centerRadio);         			//上星数量
+		$(".broadCastGround").html(res.localRadio);   		//地面广播
+		$(".commonWeal").html(res.center);        			//公益
+		$(".pay").html(res.local);               					//付费
 		$(".highDefinition").html(res.highDefinition);      	//高清
 		$(".standerDefinition").html(res.standerDefinition);   	//标清
 		$(".dataServices").html(res.dataServices);       		//数据业务
@@ -389,6 +389,9 @@
 		param: JSON.stringify({ position: 'programTrans' }),
 	}
 	g.doAjax("servlet/FirstThemeServlet", param1, getData1);
+	setInterval(function(){
+		g.doAjax("servlet/FirstThemeServlet", param1, getData1);
+	},30000)
 
 	// 地球站数据
 	let getData2 = function (res) {
@@ -418,7 +421,7 @@
 		$("#siteBaseName1,#siteBaseName2").html(paramArr[n]);
 
 		n < 3 ? n++ : n = 0;
-	}, 500000);
+	}, 5000);
 
 	// 宽带使用率 与 网络访问行为
 	let getData3 = function (res) {
@@ -438,7 +441,9 @@
 		param: JSON.stringify({ position: 'netSecurity' }),
 	}
 	g.doAjax("servlet/FirstThemeServlet", param3, getData3);
-
+	setInterval(function(){
+		g.doAjax("servlet/FirstThemeServlet", param3, getData3);
+	},30000)
 </script>
 <!--网络拓扑图-->
 <script>
