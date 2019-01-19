@@ -1,3 +1,5 @@
+尹晶 135 9268 6268
+张贵邓 180 4265 3764
 git地址：https://github.com/windxiaoxian/SelfStudy.git
 8a96b92d973bd1b6bbdc75782633b3c93e930a31
 windxiaoxian  qingxue2010
@@ -88,3 +90,40 @@ linux常用指令
 如果是这个原因，可以修改此参数
 ALTER SYSTEM SET job_queue_processes = 10;
 
+
+
+Linux下的压缩解压缩命令详解及实例
+
+实例：压缩服务器上当前目录的内容为xxx.zip文件
+
+zip -r xxx.zip ./*
+
+解压zip文件到当前目录
+
+unzip filename.zip
+
+============================
+
+另：有些服务器没有安装zip包执行不了zip命令，但基本上都可以用tar命令的，实例如下：
+
+ 
+
+tar -zcvf /home/zdzlibs.tar.gz /home/zdz/java/zdzlibs/
+============================
+
+linux zip命令
+
+zip -r myfile.zip ./*
+将当前目录下的所有文件和文件夹全部压缩成myfile.zip文件,－r表示递归压缩子目录下所有文件.
+
+2.unzip
+unzip -o -d /home/sunny myfile.zip
+把myfile.zip文件解压到 /home/sunny/
+-o:不提示的情况下覆盖文件；
+-d:-d /home/sunny 指明将文件解压缩到/home/sunny目录下；
+
+3.其他
+zip -d myfile.zip smart.txt
+删除压缩文件中smart.txt文件
+zip -m myfile.zip ./rpm_info.txt
+向压缩文件中myfile.zip中添加rpm_info.txt文件
