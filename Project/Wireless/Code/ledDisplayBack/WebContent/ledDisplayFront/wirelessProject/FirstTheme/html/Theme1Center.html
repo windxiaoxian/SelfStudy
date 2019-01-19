@@ -1063,21 +1063,21 @@
 		clearInterval(topTimer);
 		let n = 0;
 		function loadData() {
-			$('.order_name').html(res.dispatchOrderList[n].ORDER_NAME);
-			$('.peceive_station').html(res.dispatchOrderList[n].PECEIVE_STATION);
-			$('.receiver').html(res.dispatchOrderList[n].RECEIVER);
-			$('.send_dept').html(res.dispatchOrderList[n].SEND_DEPT);
-			$('.sender').html(res.dispatchOrderList[n].SENDER);
-			$('.station_name').html(res.dispatchOrderList[n].STATION_NAME);
-			$('.transmitter').html(res.dispatchOrderList[n].TRANSMITTER);
-			$('.stationName').html(res.dispatchOrderList[n].STATION_NAME);
-			$(".transmitterName").html(res.dispatchOrderList[n].TRANSMITTER);
+			$('.order_name').html(res.dispatchOrderList[n].order_name);
+			$('.peceive_station').html(res.dispatchOrderList[n].receive_station);
+			$('.receiver').html(res.dispatchOrderList[n].receiver);
+			$('.send_dept').html(res.dispatchOrderList[n].send_dept);
+			$('.sender').html(res.dispatchOrderList[n].sender);
+			$('.station_name').html(res.dispatchOrderList[n].station_name);
+			$('.transmitter').html(res.dispatchOrderList[n].transmitter);
+			$('.stationName').html(res.dispatchOrderList[n].station_name);
+			$(".transmitterName").html(res.dispatchOrderList[n].transmitter);
 			$('.currentPower,.realTimeAM').empty();
 			// console.log(res.power)
-			for (let i = 0; i < res.dispatchOrderList[n].POWER; i++) {
+			for (let i = 0; i < res.dispatchOrderList[n].power; i++) {
 				$('.currentPower').append('<li></li>')
 			};
-			for (let i = 0; i < res.dispatchOrderList[n].AMRP; i++) {
+			for (let i = 0; i < res.dispatchOrderList[n].amrp; i++) {
 				$('.realTimeAM').append('<li></li>')
 			};
 			n == res.dispatchOrderList.length - 1 ? n = 0 : n++;

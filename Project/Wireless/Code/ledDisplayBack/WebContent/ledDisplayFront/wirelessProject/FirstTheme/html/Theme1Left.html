@@ -571,6 +571,8 @@
 
     // 右侧饼图与九组数据
     let getTaskCountData1 = function(res){
+        $('#broad-cast-power').html(res.taskCount[1].taskBroadPower);
+        $('#exterPower').html(res.taskCount[2].taskBroadPower);
 		myChart3.setOption({
             legend:{
                 data: ['已完成', '正在执行', '未完成'],
@@ -669,10 +671,10 @@
     	$('.num-span:eq(3)').html(res.taskDetail.enemyFreqency);
         $('#year-qass-rate').html(res.taskDetail.passPrecent);
 
-        $('#broad-cast-power').html(res.taskDetail.interPower);
+        // $('#broad-cast-power').html(res.taskDetail.interPower);
         $('#AudiBilityInter').html(res.taskDetail.AudiBilityInter);
 
-        $('#exterPower').html(res.taskDetail.exterPower);
+        // $('#exterPower').html(res.taskDetail.exterPower);
         $('#AudiBilityExter').html(res.taskDetail.AudiBilityExter);
         $('#language').html(res.taskDetail.Language);
         dataFresh('#year-qass-rate,.DataStageGroup .counter');
