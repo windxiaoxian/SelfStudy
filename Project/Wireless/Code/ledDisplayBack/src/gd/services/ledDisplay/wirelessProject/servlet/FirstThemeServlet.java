@@ -482,8 +482,6 @@ public class FirstThemeServlet extends HttpServlet {
             Map resMap = (HashMap)wirelessDB.qryMap(FrontPageThemeDAO.getRunplanCompareInfo(reqMap)).get("data");
             resMap.put("station", resMap.get("station_count"));//台站
             resMap.put("testStation", resMap.get("target_station_count"));//实验台站
-            resMap.put("interPower", 560);//对内在播功率
-            resMap.put("exterPower", 660);//对外在播功率
             resMap.put("enemyFreqency", resMap.get("target_freq_count"));//敌台频次
             resMap.put("freqency", resMap.get("freq_count"));//我台频次
             resMap.put("passPrecent", 98.63);//上月实验合格率
@@ -928,7 +926,21 @@ public class FirstThemeServlet extends HttpServlet {
 //            dispatchOrderList.add(temp3);
 
 //           **************************************测试数据*****************************************
-            resultJson.accumulate("dispatchOrderList", dispatchOrderList); // 调度令  10条  轮播
+            List orderList = new ArrayList();
+            for(Object order:dispatchOrderList){
+                Map orderMap = (HashMap)order;
+                orderMap.put("order_name",orderMap.get("order_name"));
+                orderMap.put("send_dept",orderMap.get("send_dept"));
+                orderMap.put("sender",orderMap.get("sender"));
+                orderMap.put("receive_station",orderMap.get("receive_station"));
+                orderMap.put("receiver",orderMap.get("receiver"));
+                orderMap.put("station_name",orderMap.get("station_name"));
+                orderMap.put("transmitter",orderMap.get("transmitter"));
+                orderMap.put("power",(int) Math.ceil(Integer.parseInt((String) orderMap.get("power")) / 10));
+                orderMap.put("amrp",(int) Math.ceil(Integer.parseInt((String) orderMap.get("amrp")) / 10));
+                orderList.add(orderMap);
+            }
+            resultJson.accumulate("dispatchOrderList", orderList); // 调度令  10条  轮播
             return resultJson.toString();
         } catch (Exception e) {
             logger.error("FirstThemeServlet.center.getDispatchOrder@"  + "后台报错" + e.getMessage());
@@ -973,15 +985,16 @@ public class FirstThemeServlet extends HttpServlet {
 //            resMap2.put("year_order_count",88);
 //            resMap2.put("today_order_count",99);
 
+//            resultJson.accumulate("realTimeFreq", resMap.get("freq_count"));//实时在播频率
+//            resultJson.accumulate("realTimeTrans", resMap.get("trans_count"));//实时在播发射机
+//            resultJson.accumulate("realTimePower", resMap.get("power_count"));//实时在播功率
+//
+//            resultJson.accumulate("dispatchOrderTimeByYear", resMap2.get("year_hour_count"));//年累计调度令时长
+//            resultJson.accumulate("dispatchOrderTimeByDay", resMap2.get("today_hour_count"));//日累计调度令时长
+//            resultJson.accumulate("dispatchOrderNumByYear",resMap2.get("year_order_count"));//年累计调度令个数
+//            resultJson.accumulate("dispatchOrderNumByDay", resMap2.get("today_order_count"));//日累计调度令个数
 //    ********************************  测试数据   ******************************************
-            resultJson.accumulate("realTimeFreq", resMap.get("freq_count"));//实时在播频率
-            resultJson.accumulate("realTimeTrans", resMap.get("trans_count"));//实时在播发射机
-            resultJson.accumulate("realTimePower", resMap.get("power_count"));//实时在播功率
 
-            resultJson.accumulate("dispatchOrderTimeByYear", resMap2.get("year_hour_count"));//年累计调度令时长
-            resultJson.accumulate("dispatchOrderTimeByDay", resMap2.get("today_hour_count"));//日累计调度令时长
-            resultJson.accumulate("dispatchOrderNumByYear",resMap2.get("year_order_count"));//年累计调度令个数
-            resultJson.accumulate("dispatchOrderNumByDay", resMap2.get("today_order_count"));//日累计调度令个数
             return resultJson.toString();
         } catch (Exception e) {
             logger.error("FirstThemeServlet.center.getRealTimeInfo"  + "后台报错" + e.getMessage());
