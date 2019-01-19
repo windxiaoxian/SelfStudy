@@ -39,6 +39,12 @@
         .dwdbChart{
             margin: 0 55px;
         }
+        .pieAssembly{
+            background: none;
+        }
+        .yellowMix2{
+            background: linear-gradient(to top,  rgba(248,222,77,1),rgba(248,222,77,0))
+        }
     </style>
 </head>
 
@@ -69,7 +75,7 @@
                                 <div class="DataAssmeblyOne_Content">
                                     <div class="DataAssemblyOne_title">上月传输时间</div>
                                     <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
-                                            class="DataUnit">个</span></div>
+                                            class="DataUnit">小时</span></div>
                                 </div>
                             </div>
 
@@ -78,7 +84,7 @@
                                 <div class="DataAssmeblyOne_Content">
                                     <div class="DataAssemblyOne_title">当年累计播出<br>功率</div>
                                     <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
-                                            class="DataUnit">kw</span></div>
+                                            class="DataUnit">kW</span></div>
                                 </div>
                             </div> -->
                         </div>
@@ -176,7 +182,7 @@
                                 <img class="DataAssemblyTwo_icon" src="../img/icon/zbglvSign.png">
                                 <div class="DataAssemblyTwo_title">在播功率</div>
                                 <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
-                                        class="DataUnit">kw</span></div>
+                                        class="DataUnit">kW</span></div>
                             </div>
                         </div>
 
@@ -198,7 +204,7 @@
                             <li><span class="BarCompAssembly_legendCircle greenMix2"></span><span
                                     class="BarCompAssembly_legendName">我台</span></li>
                             <li><span class="BarCompAssembly_legendCircle yellowMix2"></span><span
-                                    class="BarCompAssembly_legendName">敌台</span></li>
+                                    class="BarCompAssembly_legendName">对象台</span></li>
                         </ul>
                         <div class="BarCompAssembly">
                             <!--发射机对比-->
@@ -261,7 +267,7 @@
 
                     <div class="tj_item ndhglvChart">
                         <div class="PieTransformAssembly" id="ndhglvChart"></div>
-                        <div class="PieTransformAssembly_Data"><span id="year-qass-rate">98.63</span><span class="PieTransformAssembly_DataUnit">%</span>
+                        <div class="PieTransformAssembly_Data"><span id="year-qass-rate"> - </span><span class="PieTransformAssembly_DataUnit">%</span>
                         </div>
                         <div class="PieTransformAssembly_Name">上月实验合格率</div>
                     </div>
@@ -317,7 +323,7 @@
                         <!--在播功率统计-->
                         <div class="DataStageGroup_item DataStageAssembly">
                             <div class="DataStageAssembly_Icon"><img src="../img/icon/glvStageIcon.png"></div>
-                            <div class="DataStageAssembly_Data"><span class="counter" id="broad-cast-power">0</span><span class="DataUnit">kw</span>
+                            <div class="DataStageAssembly_Data"><span class="counter" id="broad-cast-power">0</span><span class="DataUnit">kW</span>
                             </div>
                             <div class="DataStageAssembly_Name">对内在播功率</div>
                         </div>
@@ -325,7 +331,7 @@
                         <!--上月可听率统计-->
                         <div class="DataStageGroup_item DataStageAssembly">
                             <div class="DataStageAssembly_Icon"><img src="../img/icon/ktlvStageIcon.png"></div>
-                            <div class="DataStageAssembly_Data"><span class="counter" id="">90.12</span><span
+                            <div class="DataStageAssembly_Data"><span class="counter" id="AudiBilityInter"> - </span><span
                                     class="DataUnit">%</span></div>
                             <div class="DataStageAssembly_Name">上月对内可听率</div>
                         </div>
@@ -389,7 +395,7 @@
                          <!--在播功率统计-->
                          <div class="DataStageGroup_item DataStageAssembly">
                             <div class="DataStageAssembly_Icon"><img src="../img/icon/glvStageIcon.png"></div>
-                            <div class="DataStageAssembly_Data"><span class="counter" id="exterPower">0</span><span class="DataUnit">kw</span>
+                            <div class="DataStageAssembly_Data"><span class="counter" id="exterPower">0</span><span class="DataUnit">kW</span>
                             </div>
                             <div class="DataStageAssembly_Name">对外在播功率</div>
                         </div>
@@ -397,7 +403,7 @@
                         <!--上月可听率统计-->
                         <div class="DataStageGroup_item DataStageAssembly">
                             <div class="DataStageAssembly_Icon"><img src="../img/icon/ktlvStageIcon.png"></div>
-                            <div class="DataStageAssembly_Data"><span class="counter" id="">69.42</span><span
+                            <div class="DataStageAssembly_Data"><span class="counter" id="AudiBilityExter"> - </span><span
                                     class="DataUnit">%</span></div>
                             <div class="DataStageAssembly_Name">上月对外可听率</div>
                         </div>
@@ -487,6 +493,9 @@
         param: JSON.stringify({position: 'broadCastGrade'}),
     }
     g.doAjax("servlet/FirstThemeServlet", param, getData);
+    setInterval(function(){
+        g.doAjax("servlet/FirstThemeServlet", param, getData);
+    },30000);
 
     // 左中两个echarts
     let getChartsData = function (res) {
@@ -499,7 +508,7 @@
         $("#item2").width((res.broadCastInter - 0) / total * 100 + '%');
         $("#item3").width((res.broadCastExter - 0) / total * 100 + '%');
         dataFresh('.mainLeft .counter:eq(0)');
-
+        lineData = [] , monthArr = [];
         res.broadCastTimeAndStopRate.map(function (item) {
             // console.log(item)
             // 柱图数据
@@ -541,10 +550,27 @@
         param: JSON.stringify({position: 'broadCastTimeAndStopRate'}),
     }
     g.doAjax("servlet/FirstThemeServlet", param2, getChartsData);
+    setInterval(function(){
+        g.doAjax("servlet/FirstThemeServlet", param2, getChartsData);
+    },30000);
 
     // 右侧饼图与九组数据
     let getTaskCountData1 = function(res){
 		myChart3.setOption({
+            legend:{
+                data: ['已完成', '正在执行', '未完成'],
+                formatter : function(name){
+                    var index = 0;
+                    var clientlabels = ['已完成', '正在执行', '未完成'];
+                    var clientcounts = [res.taskCount[0].taskDone,res.taskCount[0].taskDoing,res.taskCount[0].taskUndo];
+                    clientlabels.forEach(function(value,i){
+                        if(value == name){
+                            index = i;
+                        }
+                    });
+                    return name + " " + clientcounts[index] + " 个";
+                }
+            },
 			series: [{
 				name : '实验任务统计饼图',
 	    		data: [
@@ -555,6 +581,20 @@
 			}]
 		});
 		myChart4.setOption({
+            legend:{
+                data: ['已完成', '正在执行', '未完成'],
+                formatter : function(name){
+                    var index = 0;
+                    var clientlabels = ['已完成', '正在执行', '未完成'];
+                    var clientcounts = [res.taskCount[1].taskDone,res.taskCount[1].taskDoing,res.taskCount[1].taskUndo];
+                    clientlabels.forEach(function(value,i){
+                        if(value == name){
+                            index = i;
+                        }
+                    });
+                    return name + " " + clientcounts[index] + " 个";
+                }
+            },
 			series: [{
 				name : '实验任务统计饼图',
 	    		data: [
@@ -565,6 +605,20 @@
 			}]
 		});
 		myChart5.setOption({
+            legend:{
+                data: ['已完成', '正在执行', '未完成'],
+                formatter : function(name){
+                    var index = 0;
+                    var clientlabels = ['已完成', '正在执行', '未完成'];
+                    var clientcounts = [res.taskCount[2].taskDone,res.taskCount[2].taskDoing,res.taskCount[2].taskUndo];
+                    clientlabels.forEach(function(value,i){
+                        if(value == name){
+                            index = i;
+                        }
+                    });
+                    return name + " " + clientcounts[index] + " 个";
+                }
+            },
 			series: [{
 				name : '实验任务统计饼图',
 	    		data: [
@@ -588,6 +642,9 @@
         param: JSON.stringify({position: 'taskCount'}),
     }
     g.doAjax("servlet/FirstThemeServlet", param3, getTaskCountData1);
+    setInterval(function(){
+        g.doAjax("servlet/FirstThemeServlet", param3, getTaskCountData1);
+    },30000);
 
     // 右侧九组数据右侧的数据
     let getTaskCountData2 = function(res){
@@ -595,13 +652,13 @@
     	$('.num-span:eq(1)').html(res.taskDetail.testStation);
     	$('.num-span:eq(2)').html(res.taskDetail.freqency);
     	$('.num-span:eq(3)').html(res.taskDetail.enemyFreqency);
-        // $('#year-qass-rate').html(res.taskDetail.passPrecent);
+        $('#year-qass-rate').html(res.taskDetail.passPrecent);
 
         $('#broad-cast-power').html(res.taskDetail.interPower);
-        $('#year-listen-rate').html(res.taskDetail.AudiBility);
+        $('#AudiBilityInter').html(res.taskDetail.AudiBilityInter);
 
         $('#exterPower').html(res.taskDetail.exterPower);
-        $('#acc-freqency').html(res.taskDetail.accFreqency);
+        $('#AudiBilityExter').html(res.taskDetail.AudiBilityExter);
         $('#language').html(res.taskDetail.Language);
         dataFresh('#year-qass-rate,.DataStageGroup .counter');
 
@@ -611,6 +668,9 @@
         param: JSON.stringify({position: 'taskDetail'}),
     }
     g.doAjax("servlet/FirstThemeServlet", param4, getTaskCountData2);
+    setInterval(function(){
+        g.doAjax("servlet/FirstThemeServlet", param4, getTaskCountData2);
+    },30000);
 </script>
 
 <script>
@@ -703,88 +763,98 @@
             }
         },
         series: [
-            {
-                type: 'pictorialBar',
-                xAxisIndex: 1,
-                barWidth: '25%',
-                data: [{
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                }, {
-                    value: 300,
-                    symbol: bar2,
-                    symbolSize: ['100%', '100%'],
-                    symbolPosition: 'end',
-                    z: 10
-                },]
-            },
+            // {
+            //     type: 'pictorialBar',
+            //     xAxisIndex: 1,
+            //     barWidth: '25%',
+            //     data: [{
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     }, {
+            //         value: 300,
+            //         symbol: bar2,
+            //         symbolSize: ['100%', '100%'],
+            //         symbolPosition: 'end',
+            //         z: 10
+            //     },]
+            // },
+            
             {
                 name: "frontBar",
                 type: 'pictorialBar',
                 barWidth: '25%',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top',
+                        textStyle:{
+                            color:'gold'
+                        }
+                    },
+                },
                 // data: ''
             }
         ]
@@ -878,10 +948,9 @@
                 borderColor: '#f0f'
             },
             label: {
-                show: true,
-                position: 'top',
-                textStyle: {
-                    color: '#fff',
+                normal: {
+                    show: true,
+                    position: 'top'
                 }
             },
             itemStyle: {
@@ -922,20 +991,31 @@
         },
         legend: {
             orient: 'vertical',
-            left: '33%',
+            left: '23%',
             top: '35%',
             icon: 'circle',
             textStyle: {
                 color: '#ffffff',
-                fontSize: '12'
+                fontSize: '14'
             },
-            data: ['已完成', '正在执行', '未完成']
+            data: ['已完成', '正在执行', '未完成'],
+            // formatter : function(name){
+            //     var index = 0;
+            //     var clientlabels = ['已完成', '正在执行', '未完成'];
+            //     var clientcounts = [9,1,10];
+            //     clientlabels.forEach(function(value,i){
+            //         if(value == name){
+            //             index = i;
+            //         }
+            //     });
+            //     return name + " " + clientcounts[index];
+            // }
         },
         series: [
             {
                 name: '实验任务统计饼图',
                 type: 'pie',
-                radius: ['50%', '70%'],
+                radius: ['70%', '90%'],
                 avoidLabelOverlap: false,
                 label: {
                     normal: {
@@ -943,7 +1023,7 @@
                         position: 'center'
                     },
                     emphasis: {
-                        show: true,
+                        show: false,
                         textStyle: {
                             fontSize: '30',
                             fontWeight: 'bold'
@@ -976,12 +1056,12 @@
         },
         legend: {
             orient: 'vertical',
-            left: '33%',
+            left: '23%',
             top: '35%',
             icon: 'circle',
             textStyle: {
                 color: '#ffffff',
-                fontSize: '12'
+                fontSize: '14'
             },
             data: ['已完成', '正在执行', '未完成']
         },
@@ -989,7 +1069,7 @@
             {
                 name: '实验任务统计饼图',
                 type: 'pie',
-                radius: ['50%', '70%'],
+                radius: ['70%', '90%'],
                 avoidLabelOverlap: false,
                 label: {
                     normal: {
@@ -1030,20 +1110,20 @@
         },
         legend: {
             orient: 'vertical',
-            left: '33%',
+            left: '23%',
             top: '35%',
             icon: 'circle',
             textStyle: {
                 color: '#ffffff',
-                fontSize: '12'
+                fontSize: '14'
             },
-            data: ['已完成', '正在执行', '未完成']
+            data: ['已完成1', '正在执行', '未完成']
         },
         series: [
             {
                 name: '实验任务统计饼图',
                 type: 'pie',
-                radius: ['50%', '70%'],
+                radius: ['70%', '90%'],
                 avoidLabelOverlap: false,
                 label: {
                     normal: {
@@ -1064,7 +1144,7 @@
                     }
                 },
                 data: [
-                    {value: 335, name: '已完成'},
+                    {value: 335, name: '已完成1'},
                     {value: 310, name: '正在执行'},
                     {value: 234, name: '未完成'},
 

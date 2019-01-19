@@ -81,11 +81,11 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 .jfNameTop{width:60px;font-size:14px;display:inline-block;}
 .jfName{width:60px;font-size:14px;font-weight:bold;color:#ffffff;display:inline-block;margin-right:5px;}
 .jfStateLight{width:17px;height:14px;margin-right:42px;display:inline-block;}
-.Normal{background:url(../img/center/jfState/jcNormalIcon.png);}
-.Free{background:url(../img/center/jfState/jcFreeIcon.png);}
-.Repair{background:url(../img/center/jfState/jfRepairIcon.png);}
-.Broken{background:url(../img/center/jfState/jfBrokenIcon.png);}
-.Unknown{background:url(../img/center/jfState/jfUnknownIcon.png);}
+.Normal{background:url(../img/center/jfState/jcNormalIcon.png) no-repeat;}
+.Free{background:url(../img/center/jfState/jcFreeIcon.png) no-repeat;}
+.Repair{background:url(../img/center/jfState/jfRepairIcon.png) no-repeat;}
+.Broken{background:url(../img/center/jfState/jfBrokenIcon.png) no-repeat;}
+.Unknown{background:url(../img/center/jfState/jfUnknownIcon.png) no-repeat;}
 
 /*数据球左侧*/
 .DataBallGroupLeft{position:fixed;}
