@@ -110,20 +110,31 @@ public class FirstThemeServlet extends HttpServlet {
             JSONObject resultJson = new JSONObject();
             Map reqMap = new HashMap();
 //            ---------------------------正式代码-----------------------------------------
-            List stationStatusList = (List) wirelessDB.qryList(FrontPageThemeDAO.getTodayTotalTasks(reqMap)).get("data");
+            List stationStatusList = (List) wirelessDB.qryList(FrontPageThemeDAO.getRealTimeStationWorkStatus(reqMap)).get("data");
+            List stationList = new ArrayList();
+            List CHStationstatus = new ArrayList();
+            List BJStationstatus = new ArrayList();
 //            遍历结果集将站点状态改为对应的前台显示样式
             for(Object stationStatusItem:stationStatusList){
-                Map ststionStatusMap = (HashMap)stationStatusItem;
-                if("work".equals(ststionStatusMap.get("work_status"))){
-                    ststionStatusMap.put("work_status","Normal"); //台站工作状态@播音
-                }else if("fix".equals(ststionStatusMap.get("work_status"))){
-                    ststionStatusMap.put("work_status","Repair"); //台站工作状态@检修
-                }else if("bad".equals(ststionStatusMap.get("work_status"))){
-                    ststionStatusMap.put("work_status","Broken"); //台站工作状态@故障
-                }else if("free".equals(ststionStatusMap.get("work_status"))){
-                    ststionStatusMap.put("work_status","Free"); //台站工作状态@空闲
+                Map stationStatusMap = (HashMap)stationStatusItem;
+                if("work".equals(stationStatusMap.get("work_status"))){
+                    stationStatusMap.put("work_status","Normal"); //台站工作状态@播音
+                }else if("fix".equals(stationStatusMap.get("work_status"))){
+                    stationStatusMap.put("work_status","Repair"); //台站工作状态@检修
+                }else if("bad".equals(stationStatusMap.get("work_status"))){
+                    stationStatusMap.put("work_status","Broken"); //台站工作状态@故障
+                }else if("free".equals(stationStatusMap.get("work_status"))){
+                    stationStatusMap.put("work_status","Free"); //台站工作状态@空闲
+                }
+                String[] station = new String[]{"491", "542", "564", "572", "582", "BES", "CRT", "YTS"};
+                if(Arrays.asList(station).contains(stationStatusMap.get("station_code"))){
+                    BJStationstatus.add(stationStatusMap);
+                }else{
+                    CHStationstatus.add(stationStatusMap);
                 }
             }
+            stationList.add(BJStationstatus);
+            stationList.add(CHStationstatus);
             //遍历结果集将站点状态改为对应的前台显示样式
 //            -----------------------------正式代码--------------------------------------------
 //            ******************************测试数据******************************************
@@ -206,7 +217,7 @@ public class FirstThemeServlet extends HttpServlet {
 //            stationStatusList.add(list1);
 //            stationStatusList.add(list2);
 //            ******************************测试数据******************************************
-            resultJson.accumulate("stationStatus", stationStatusList);
+            resultJson.accumulate("stationStatus", stationList);
             return resultJson.toString();
         } catch (Exception e) {
             logger.error("[FirstThemeServlet.left.getStationStatus]后台报错" +screenPosition+ e.getMessage());
@@ -382,10 +393,8 @@ public class FirstThemeServlet extends HttpServlet {
             resultJson.accumulate("broadCastExter", broadCastExterTime + todayDWTemp);       //当年对外累计播出时长
             resultJson.accumulate("location", screenPosition);
 
-
-
 //            **************************************  测试数据  ************************************
-
+//            ArrayList list = new ArrayList();
 //            for(int i=0;i<12;i++){
 //                Map  temp = new HashMap();
 //                temp.put("month",months[i]);
@@ -469,7 +478,6 @@ public class FirstThemeServlet extends HttpServlet {
         try {
             JSONObject resultJson = new JSONObject();
             HashMap reqMap = new HashMap();
-//            HashMap resMap = new HashMap();
 //          -------------------------------正式代码------------------------------------------
             Map resMap = (HashMap)wirelessDB.qryMap(FrontPageThemeDAO.getRunplanCompareInfo(reqMap)).get("data");
             resMap.put("station", resMap.get("station_count"));//台站
@@ -484,6 +492,7 @@ public class FirstThemeServlet extends HttpServlet {
             resMap.put("Language", 49);//播出语言:总共49种
 //          -------------------------------正式代码------------------------------------------
 //            **************************** 测试数据 ***************************************
+//            HashMap resMap = new HashMap();
 //            resMap.put("station", 38);//台站resMap.get("station_count")
 //            resMap.put("testStation", 7);//实验台站resMap.get("target_station_count")
 //            resMap.put("interPower", 560);//对内在播功率
@@ -575,7 +584,7 @@ public class FirstThemeServlet extends HttpServlet {
             Map resMap = (HashMap) wirelessDB.qryMap(FrontPageThemeDAO.getNetWorkCheckInfo(reqMap)).get("data");
             List resList = (List) wirelessDB.qryList(FrontPageThemeDAO.getStationNetworkInfo(reqMap)).get("data");
 //          -----------------------------------  正式代码  ----------------------------------------
-//           **********************************  测试数据  ****************************************
+////           **********************************  测试数据  ****************************************
 //            Map resMap = new HashMap();
 //            List resList = new ArrayList();
 //            reqMap.put("access_count",1234455);
@@ -596,7 +605,7 @@ public class FirstThemeServlet extends HttpServlet {
             resultJson.accumulate("stationsList", resList);//台站的连接状态
             resultJson.accumulate("bandInUse", ((Map) resList.get(0)).get("bandwidth_used"));//已使用带宽数
             resultJson.accumulate("bandNoUse", ((Map) resList.get(0)).get("bandwidth_unused"));//未使用带宽数
-            resultJson.accumulate("netAccessAbonormal", ((BigDecimal) resMap.get("virus_count")).intValue() + ((BigDecimal) resMap.get("bug_count")).intValue() + ((BigDecimal) resMap.get("mole_count")).intValue());//网络访问行为异常数 ((BigDecimal)resMap.get("virus_count")).intValue()+((BigDecimal)resMap.get("bug_count")).intValue()+((BigDecimal)resMap.get("mole_count")).intValue()
+            resultJson.accumulate("netAccessAbonormal", (int)resMap.get("virus_count") +(int)resMap.get("bug_count") + (int) resMap.get("mole_count"));//网络访问行为异常数 ((BigDecimal)resMap.get("virus_count")).intValue()+((BigDecimal)resMap.get("bug_count")).intValue()+((BigDecimal)resMap.get("mole_count")).intValue()
             resultJson.accumulate("netAccessTotal", resMap.get("access_count"));//网络访问行为总数
             resultJson.accumulate("virus", resMap.get("virus_count"));//病毒 //
             resultJson.accumulate("loophole", resMap.get("bug_count"));//漏洞
@@ -878,45 +887,45 @@ public class FirstThemeServlet extends HttpServlet {
             List dispatchOrderList = (List) wirelessDB.qryList(FrontPageThemeDAO.getSlideShowBusiOrder(reqMap)).get("data");
 //            ********************************测试数据**************************************
 //            List dispatchOrderList = new ArrayList();
-            Map temp = new HashMap();
-            temp.put("order_name","调度令");//调度令
-            temp.put("send_dept","频调处");//发送调度令
-            temp.put("sender","lyr");//发送调度令
-            temp.put("receive_station","654台");//下发调度令
-            temp.put("receiver","zy");//下发调度令
-            temp.put("station_name","654台");//接收台站
-            temp.put("transmitter","D03");//机号
-            temp.put("power",3);//调度令中功率
-            temp.put("amrp",5);//调度令中的调幅度
-
-            Map temp2 = new HashMap();
-            temp2.put("order_name","调度令");
-            temp2.put("send_dept","频调处");
-            temp2.put("sender","测试");
-            temp2.put("receive_station","2024台");
-            temp2.put("receiver","zy");
-            temp2.put("station_name","2024台");
-            temp2.put("transmitter","A02");
-            //发射机当前状态
-            temp2.put("power",4);//调度令中功率
-            temp2.put("amrp",1);//调度令中的调幅度
-//            temp.put("",);//调度令中的发射机
-//            temp.put("",);//调度令中的台站
-
-            Map temp3 = new HashMap();
-            temp3.put("order_name","调度令");
-            temp3.put("send_dept","频调处");
-            temp3.put("sender","lxk");
-            temp3.put("receive_station","554台");
-            temp3.put("receiver","xwz");
-            temp3.put("station_name","554台");
-            temp3.put("transmitter","D03");
-            temp3.put("power",2);//调度令中功率
-            temp3.put("amrp",8);//调度令中的调幅度
-
-            dispatchOrderList.add(temp);
-            dispatchOrderList.add(temp2);
-            dispatchOrderList.add(temp3);
+//            Map temp = new HashMap();
+//            temp.put("order_name","调度令");//调度令
+//            temp.put("send_dept","频调处");//发送调度令
+//            temp.put("sender","lyr");//发送调度令
+//            temp.put("receive_station","654台");//下发调度令
+//            temp.put("receiver","zy");//下发调度令
+//            temp.put("station_name","654台");//接收台站
+//            temp.put("transmitter","D03");//机号
+//            temp.put("power",3);//调度令中功率
+//            temp.put("amrp",5);//调度令中的调幅度
+//
+//            Map temp2 = new HashMap();
+//            temp2.put("order_name","调度令");
+//            temp2.put("send_dept","频调处");
+//            temp2.put("sender","测试");
+//            temp2.put("receive_station","2024台");
+//            temp2.put("receiver","zy");
+//            temp2.put("station_name","2024台");
+//            temp2.put("transmitter","A02");
+//            //发射机当前状态
+//            temp2.put("power",4);//调度令中功率
+//            temp2.put("amrp",1);//调度令中的调幅度
+////            temp.put("",);//调度令中的发射机
+////            temp.put("",);//调度令中的台站
+//
+//            Map temp3 = new HashMap();
+//            temp3.put("order_name","调度令");
+//            temp3.put("send_dept","频调处");
+//            temp3.put("sender","lxk");
+//            temp3.put("receive_station","554台");
+//            temp3.put("receiver","xwz");
+//            temp3.put("station_name","554台");
+//            temp3.put("transmitter","D03");
+//            temp3.put("power",2);//调度令中功率
+//            temp3.put("amrp",8);//调度令中的调幅度
+//
+//            dispatchOrderList.add(temp);
+//            dispatchOrderList.add(temp2);
+//            dispatchOrderList.add(temp3);
 
 //           **************************************测试数据*****************************************
             resultJson.accumulate("dispatchOrderList", dispatchOrderList); // 调度令  10条  轮播
@@ -964,7 +973,7 @@ public class FirstThemeServlet extends HttpServlet {
 //            resMap2.put("year_order_count",88);
 //            resMap2.put("today_order_count",99);
 
-
+//    ********************************  测试数据   ******************************************
             resultJson.accumulate("realTimeFreq", resMap.get("freq_count"));//实时在播频率
             resultJson.accumulate("realTimeTrans", resMap.get("trans_count"));//实时在播发射机
             resultJson.accumulate("realTimePower", resMap.get("power_count"));//实时在播功率
@@ -973,7 +982,6 @@ public class FirstThemeServlet extends HttpServlet {
             resultJson.accumulate("dispatchOrderTimeByDay", resMap2.get("today_hour_count"));//日累计调度令时长
             resultJson.accumulate("dispatchOrderNumByYear",resMap2.get("year_order_count"));//年累计调度令个数
             resultJson.accumulate("dispatchOrderNumByDay", resMap2.get("today_order_count"));//日累计调度令个数
-//       ********************************** 测试数据************************************************
             return resultJson.toString();
         } catch (Exception e) {
             logger.error("FirstThemeServlet.center.getRealTimeInfo"  + "后台报错" + e.getMessage());
