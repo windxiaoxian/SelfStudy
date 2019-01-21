@@ -115,21 +115,22 @@ public class FirstThemeServlet extends HttpServlet {
             List CHStationstatus = new ArrayList();
             List BJStationstatus = new ArrayList();
 //            遍历结果集将站点状态改为对应的前台显示样式
-            for(Object stationStatusItem:stationStatusList){
-                Map stationStatusMap = (HashMap)stationStatusItem;
-                if("work".equals(stationStatusMap.get("work_status"))){
-                    stationStatusMap.put("work_status","Normal"); //台站工作状态@播音
-                }else if("fix".equals(stationStatusMap.get("work_status"))){
-                    stationStatusMap.put("work_status","Repair"); //台站工作状态@检修
-                }else if("bad".equals(stationStatusMap.get("work_status"))){
-                    stationStatusMap.put("work_status","Broken"); //台站工作状态@故障
-                }else if("free".equals(stationStatusMap.get("work_status"))){
-                    stationStatusMap.put("work_status","Free"); //台站工作状态@空闲
+            for (Object stationStatusItem : stationStatusList) {
+                Map stationStatusMap = (HashMap) stationStatusItem;
+                stationStatusMap.put("station_code", stationStatusMap.get("STATION_CODE"));
+                if ("work".equals(stationStatusMap.get("work_status"))) {
+                    stationStatusMap.put("work_status", "Normal"); //台站工作状态@播音
+                } else if ("fix".equals(stationStatusMap.get("work_status"))) {
+                    stationStatusMap.put("work_status", "Repair"); //台站工作状态@检修
+                } else if ("bad".equals(stationStatusMap.get("work_status"))) {
+                    stationStatusMap.put("work_status", "Broken"); //台站工作状态@故障
+                } else if ("free".equals(stationStatusMap.get("work_status"))) {
+                    stationStatusMap.put("work_status", "Free"); //台站工作状态@空闲
                 }
                 String[] station = new String[]{"491", "542", "564", "572", "582", "BES", "CRT", "YTS"};
-                if(Arrays.asList(station).contains(stationStatusMap.get("station_code"))){
+                if (Arrays.asList(station).contains(stationStatusMap.get("station_code"))) {
                     BJStationstatus.add(stationStatusMap);
-                }else{
+                } else {
                     CHStationstatus.add(stationStatusMap);
                 }
             }
@@ -220,7 +221,7 @@ public class FirstThemeServlet extends HttpServlet {
             resultJson.accumulate("stationStatus", stationList);
             return resultJson.toString();
         } catch (Exception e) {
-            logger.error("[FirstThemeServlet.left.getStationStatus]后台报错" +screenPosition+ e.getMessage());
+            logger.error("[FirstThemeServlet.left.getStationStatus]后台报错" + screenPosition + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -411,7 +412,7 @@ public class FirstThemeServlet extends HttpServlet {
 //            **************************************  测试数据  ************************************
             return resultJson.toString();
         } catch (Exception e) {
-            logger.error("FirstThemeServlet.left.getBroadCastTimebyMonth"  + "后台报错" + e.getMessage());
+            logger.error("FirstThemeServlet.left.getBroadCastTimebyMonth" + "后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -462,7 +463,7 @@ public class FirstThemeServlet extends HttpServlet {
             resultJson.accumulate("taskCount", resultList);
             return resultJson.toString();
         } catch (Exception e) {
-            logger.error("FirstThemeServlet.left.getTaskCountByBroadType"  + "后台报错" + e.getMessage());
+            logger.error("FirstThemeServlet.left.getTaskCountByBroadType" + "后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -479,7 +480,7 @@ public class FirstThemeServlet extends HttpServlet {
             JSONObject resultJson = new JSONObject();
             HashMap reqMap = new HashMap();
 //          -------------------------------正式代码------------------------------------------
-            Map resMap = (HashMap)wirelessDB.qryMap(FrontPageThemeDAO.getRunplanCompareInfo(reqMap)).get("data");
+            Map resMap = (HashMap) wirelessDB.qryMap(FrontPageThemeDAO.getRunplanCompareInfo(reqMap)).get("data");
             resMap.put("station", resMap.get("station_count"));//台站
             resMap.put("testStation", resMap.get("target_station_count"));//实验台站
             resMap.put("enemyFreqency", resMap.get("target_freq_count"));//敌台频次
@@ -545,7 +546,7 @@ public class FirstThemeServlet extends HttpServlet {
      * @Date 2019-01-14
      */
     protected String getEarthStationInfo(JSONObject json, String screenPosition) {
-            Map reqMap = new HashMap();
+        Map reqMap = new HashMap();
         try {
             JSONObject resultJson = new JSONObject();
             reqMap.put("station", json.get("station"));//入参@正在轮播的具体台站名称
@@ -603,14 +604,14 @@ public class FirstThemeServlet extends HttpServlet {
             resultJson.accumulate("stationsList", resList);//台站的连接状态
             resultJson.accumulate("bandInUse", ((Map) resList.get(0)).get("bandwidth_used"));//已使用带宽数
             resultJson.accumulate("bandNoUse", ((Map) resList.get(0)).get("bandwidth_unused"));//未使用带宽数
-            resultJson.accumulate("netAccessAbonormal", (int)resMap.get("virus_count") +(int)resMap.get("bug_count") + (int) resMap.get("mole_count"));//网络访问行为异常数 ((BigDecimal)resMap.get("virus_count")).intValue()+((BigDecimal)resMap.get("bug_count")).intValue()+((BigDecimal)resMap.get("mole_count")).intValue()
+            resultJson.accumulate("netAccessAbonormal", ((BigDecimal) resMap.get("virus_count")).intValue() + ((BigDecimal) resMap.get("bug_count")).intValue() + ((BigDecimal) resMap.get("mole_count")).intValue());//网络访问行为异常数 ((BigDecimal)resMap.get("virus_count")).intValue()+((BigDecimal)resMap.get("bug_count")).intValue()+((BigDecimal)resMap.get("mole_count")).intValue()
             resultJson.accumulate("netAccessTotal", resMap.get("access_count"));//网络访问行为总数
             resultJson.accumulate("virus", resMap.get("virus_count"));//病毒 //
             resultJson.accumulate("loophole", resMap.get("bug_count"));//漏洞
             resultJson.accumulate("spy", resMap.get("mole_count"));//间谍
             return resultJson.toString();
         } catch (Exception e) {
-            logger.error("FirstThemeServlet.right.getNetSecurityInfo"  + "后台报错" + e.getMessage());
+            logger.error("FirstThemeServlet.right.getNetSecurityInfo" + "后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -623,7 +624,7 @@ public class FirstThemeServlet extends HttpServlet {
      * @Date 2019-01-14
      */
     protected String getSubStationInfo(JSONObject json, String screenPosition) {
-            Map reqMap = new HashMap();
+        Map reqMap = new HashMap();
         try {
             JSONObject resultJson = new JSONObject();
             reqMap.put("stationCode", json.get("stationCode"));
@@ -866,7 +867,7 @@ public class FirstThemeServlet extends HttpServlet {
 
             return resultJson.toString();
         } catch (Exception e) {
-            logger.error("FirstThemeServlet.getSubStationInfo@stationCode" +reqMap.get("stationCode") + "后台报错" + e.getMessage());
+            logger.error("FirstThemeServlet.getSubStationInfo@stationCode" + reqMap.get("stationCode") + "后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -927,23 +928,23 @@ public class FirstThemeServlet extends HttpServlet {
 
 //           **************************************测试数据*****************************************
             List orderList = new ArrayList();
-            for(Object order:dispatchOrderList){
-                Map orderMap = (HashMap)order;
-                orderMap.put("order_name",orderMap.get("order_name"));
-                orderMap.put("send_dept",orderMap.get("send_dept"));
-                orderMap.put("sender",orderMap.get("sender"));
-                orderMap.put("receive_station",orderMap.get("receive_station"));
-                orderMap.put("receiver",orderMap.get("receiver"));
-                orderMap.put("station_name",orderMap.get("station_name"));
-                orderMap.put("transmitter",orderMap.get("transmitter"));
-                orderMap.put("power",(int) Math.ceil(Integer.parseInt((String) orderMap.get("power")) / 10));
-                orderMap.put("amrp",(int) Math.ceil(Integer.parseInt((String) orderMap.get("amrp")) / 10));
+            for (Object order : dispatchOrderList) {
+                Map orderMap = (HashMap) order;
+                orderMap.put("order_name", orderMap.get("order_name"));
+                orderMap.put("send_dept", orderMap.get("send_dept"));
+                orderMap.put("sender", orderMap.get("sender"));
+                orderMap.put("receive_station", orderMap.get("receive_station"));
+                orderMap.put("receiver", orderMap.get("receiver"));
+                orderMap.put("station_name", orderMap.get("station_name"));
+                orderMap.put("transmitter", orderMap.get("transmitter"));
+                orderMap.put("power", (int) Math.ceil(Integer.parseInt((String) orderMap.get("power")) / 10));
+                orderMap.put("amrp", (int) Math.ceil(Integer.parseInt((String) orderMap.get("amrp")) / 10));
                 orderList.add(orderMap);
             }
             resultJson.accumulate("dispatchOrderList", orderList); // 调度令  10条  轮播
             return resultJson.toString();
         } catch (Exception e) {
-            logger.error("FirstThemeServlet.center.getDispatchOrder@"  + "后台报错" + e.getMessage());
+            logger.error("FirstThemeServlet.center.getDispatchOrder@" + "后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -997,7 +998,7 @@ public class FirstThemeServlet extends HttpServlet {
 
             return resultJson.toString();
         } catch (Exception e) {
-            logger.error("FirstThemeServlet.center.getRealTimeInfo"  + "后台报错" + e.getMessage());
+            logger.error("FirstThemeServlet.center.getRealTimeInfo" + "后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
