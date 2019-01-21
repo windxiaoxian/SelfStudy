@@ -77,6 +77,18 @@ public class ScheduleDAO {
         return strBuffer.toString();
     }
 
+    public static String cleanValidRunplan2(Map reqMap) {
+        StringBuffer strBuffer = new StringBuffer();
+        strBuffer.append("  delete wxj_runplan_realtime_t ")
+                .append(" where (order_type,source_type,trans_code,freq,days,start_time,end_time) ")
+                .append(" in ( ")
+                .append(" select order_type,source_type,trans_code,freq,days,start_time,end_time ")
+                .append(" from wxj_runplan_realtime_t ")
+                .append(" where operate = 'D' ")
+                .append(" )");
+        return strBuffer.toString();
+    }
+
     public static String truncateValidRunplan(Map reqMap) {
         StringBuffer strBuffer = new StringBuffer();
         strBuffer.append("  truncate table wxj_runplan_realtime_t ");

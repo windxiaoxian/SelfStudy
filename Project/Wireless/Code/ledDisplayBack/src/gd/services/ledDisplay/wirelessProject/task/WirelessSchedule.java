@@ -249,6 +249,7 @@ public class WirelessSchedule {
             }
 
             wirelessDB.executeSql(ScheduleDAO.cleanValidRunplan(null));
+            wirelessDB.executeSql(ScheduleDAO.cleanValidRunplan2(null));
 
             logger.info("有效运行图增量信息沉淀【MongoDB】完成：" + validRunplanList.size());
         } catch (Exception e) {

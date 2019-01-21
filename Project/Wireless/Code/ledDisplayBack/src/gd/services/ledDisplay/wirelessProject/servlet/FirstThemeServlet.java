@@ -186,7 +186,7 @@ public class FirstThemeServlet extends HttpServlet {
 //            //播出时长柱状图与停播率条形图查询
             List BroadTimeList = (List) wirelessDB.qryList(FrontPageThemeDAO.getMonthTotalHours(reqMap)).get("data");
             List StopRateList = (List) wirelessDB.qryList(FrontPageThemeDAO.getMonthStopSeconds(reqMap)).get("data");
-            List TodayBroadCastList = (List) wirelessDB.qryList(FrontPageThemeDAO.getMonthTotalHours(reqMap)).get("data");
+            List TodayBroadCastList = (List) wirelessDB.qryList(FrontPageThemeDAO.getTodayTotalHours(reqMap)).get("data");
             int numOfJanuary = 0;
             int ifMatch = -1;
             List DWList = new ArrayList();
@@ -238,11 +238,11 @@ public class FirstThemeServlet extends HttpServlet {
                 }
                 temMap.put("BroadTime", totalTimeTemp);
                 temMap.put("stopHour", Math.floor(((BigDecimal) ((Map) StopRateList.get(j)).get("stop_seconds")).intValue() / (totalTimeTemp / 100)));
-                logger.info("本月的位置:" + numOfJanuary);
-                logger.info("DWList:" + temMap.get("month"));
-                logger.info("StopRateList:" + ((Map) StopRateList.get(j)).get("month"));
-                logger.info("DNList:" + ((Map) DNList.get(j)).get("month"));
-                logger.info("SYList:" + ((Map) SYList.get(j)).get("month"));
+//                logger.info("本月的位置:" + numOfJanuary);
+//                logger.info("DWList:" + temMap.get("month"));
+//                logger.info("StopRateList:" + ((Map) StopRateList.get(j)).get("month"));
+//                logger.info("DNList:" + ((Map) DNList.get(j)).get("month"));
+//                logger.info("SYList:" + ((Map) SYList.get(j)).get("month"));
                 list.add(temMap);
             }
             int broadCastTime = broadCastExterTime + broadCastInterTime + broadCastTestTime + todayDWTemp + todayDNTemp + todaySYTemp; // 取实验、对内、对外之和为总播出时长;
