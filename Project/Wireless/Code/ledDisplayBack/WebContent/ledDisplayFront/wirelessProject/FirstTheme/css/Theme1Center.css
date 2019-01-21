@@ -31,7 +31,15 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 
 .siteInfoBox_title{width:235px;height:42px;line-height:42px;margin:0 auto;margin-top:8px;font-size:18px;font-weight: bold;color:#ffffff;text-align:center;}
 
-.siteDesGroup1{width:53px;height:50px;background:url(../img/center/alertBox/desSign1.png) no-repeat;position:relative;left:135px;top:48px;}
+.siteDesGroup1{width:53px;height:50px;position:relative;left:135px;top:48px;animation: siteDesGroup1Flash 3s linear infinite;}
+@keyframes siteDesGroup1Flash
+{
+	0% {background:url(../img/center/alertBox/desSign1.png) no-repeat;}
+	25% {background:url(../img/center/alertBox/desSign2.png) no-repeat;}
+	50% {background:url(../img/center/alertBox/desSign3.png) no-repeat;}
+	75% {background:url(../img/center/alertBox/desSign2.png) no-repeat;}
+	100% {background:url(../img/center/alertBox/desSign1.png) no-repeat;}
+}
 .siteDesBar1{width:150px;height:25px;line-height:25px;font-size:12px;font-weight:bold;color:#0fffff;text-align:center;background:url(../img/center/alertBox/desBox1.png) no-repeat;}
 .siteDesBar1 span{background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .siteDesGroup1 .item1{position:absolute;position:absolute;left:-50px;top:-30px;}
@@ -59,7 +67,7 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 	66%{background:url(../img/center/alertBox/BottomContentBg3.png) no-repeat;}
 	100%{background:url(../img/center/alertBox/BottomContentBg4.png) no-repeat;}
 }
-.BottomContent{width:487px;height:284px;margin:0 auto;margin-top:120px;/*background:url(../img/center/alertBox/BottomContentBg.png) no-repeat;*/animation:BottomContentFlash 1s linear infinite ;transition:1s;}
+.BottomContent{width:487px;height:284px;margin:0 auto;margin-top:120px;/*background:url(../img/center/alertBox/BottomContentBg.png) no-repeat;*/animation:BottomContentFlash 3s linear infinite ;transition:1s;}
 .BottomContent_center_TjBox{float:left;margin-right:20px;}
 .BottomContent_center_TjBox_name{font-size:12px;font-weight:bold;color:#ffffff;}
 .BottomContent_center_TjBox_Data{font-size:16px;font-weight:bold;font-family:DataFont;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style: oblique;}
