@@ -77,7 +77,7 @@
 			margin: 4px 9px;
 		}
 		.DataBallGroupLeft .DataBallGreen2 {
-			background: url(../../Common/img/assembly/DataBallGreen1MiniBg.png) no-repeat;
+			background: url(../../Common/img/assembly/DataBallGreen2Bg.png) no-repeat;
 			background-size: 100% 100%;
 			width: 160px;
 			height: 160px;
@@ -87,11 +87,15 @@
 			margin-top: 50px;
 		}
 		.DataBallGreen1 {
-			width: 158px;
+			width: 140px;
+			height: 140px;
 			background-size: 100% 100%;
 		}
 		.DataBallGreen1 .DataBallAssembly_Data {
-			margin-top: 50px;
+			margin-top: 34px;
+		}
+		.DataBallGroupRight .DataBallGreen1 .DataBallAssembly_Data{
+			margin-top: 22px;
 		}
 		.DataBallGreen1Mini {
 			width: 110px;
@@ -101,6 +105,12 @@
 		}
 		.DataBallGreen1Mini .DataBallAssembly_Data {
 			margin-top: 30px;
+		}
+		.DataBallOrangeMini{
+			top: 580px;
+			width: 106px;
+			height: 106px;
+			background-size: 100% 100%;
 		}
 		.DataBallGroupRight .DataBallOrange {
 			width: 140px;
@@ -112,24 +122,29 @@
 			width: 120px;
 			height: 120px;
 		}
-		.DataBallGroupRight .DataBallAssembly_Data{
-			margin-top: 26px;
+		.DataBallOrange .DataBallAssembly_Data{
+			margin-top: 36px;
 		}
-		.DataBallOrangeMini {
-			width: 104px;
-			height: 104px;
+		.DataBallOrangeMini,{
+			width: 114px;
+			height: 114px;
 			background-size: 100% 100%;
 			top: 570px;
 		}
 		.DataBallOrangeMini .DataBallAssembly_Data {
-			margin-top: 20px;
+			margin-top: 28px;
 		}
 		.DataBallGroupLeft .DataBallOrange {
 			background: url(../../Common/img/assembly/DataBallOrangeMiniBg.png) no-repeat;
 			background-size: 100% 100%;
-			width: 138px;
-			height: 138px;
+			width: 120px;
+			height: 120px;
 			left: 0;
+		}
+		.DataBallGroupLeft .DataBallOrange .DataBallAssembly_Data{
+			margin-top: 30px;
+			font-size: 30px;
+
 		}
 		.jfNum {
 			width: 19px;
@@ -140,7 +155,7 @@
 			width: 50px;
 			margin-left: 120px;
 		}
-		.jfStateLight {
+		.jfStateLight normal {
 			margin-right: 14px;
 		}
 		.jfName {
@@ -248,6 +263,10 @@
 			top: 89px;
     		left: 444px;
 		}
+		.siteInfoBox_title{
+			width: inherit;
+			font-style: 18px;
+		}
 	</style>
 </head>
 
@@ -264,7 +283,7 @@
 				<ul>
 					<li class="ddlcModel_item">
 						<img src="../img/center/ddlIcon1.png">
-						<span class="ddlcModel_item_Name">接收<br>调度令</span>
+						<span class="ddlcModel_item_Name">生成<br>调度令</span>
 						<span class="ddlcModel_item_value send_dept">调度处</span>
 					</li>
 					<li class="ddlcModel_item">
@@ -365,21 +384,20 @@
 						<div class="roll-box">
 
 							<ul class="jfStateBox">
-								<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
-								<li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
-								<li class="jfNumList"><span class="jfName">丙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+								<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span
+									 class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span></li>
+								<!-- <li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span
+									 class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span></li>
+								<li class="jfNumList"><span class="jfName">丙机房</span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span
+									 class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span></li> -->
 							</ul>
 							<ul class="jfStateBox jfStateBox2">
-
-								<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
-								<li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
+									<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span
+										class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span></li>
+								<!-- <li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
 									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
 								<li class="jfNumList"><span class="jfName">丙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li> -->
 							</ul>
 						</div>
 					</div>
@@ -414,11 +432,11 @@
 		<div class="DataBallGroupRight">
 			<!--年下发调度令-->
 			<div class="DataBallAssembly DataBallGreen1">
-				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByDay"> - </span><span class="unit">个</span></div>
+				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByYear"> - </span><span class="unit">个</span></div>
 				<div class="DataBallAssembly_Name">年下发调度令</div>
 			</div>
 			<div class="DataBallAssembly DataBallGreen1Mini">
-				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByYear"> - </span><span class="unit">个</span></div>
+				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByDay"> - </span><span class="unit">个</span></div>
 				<div class="DataBallAssembly_Name">日下发调度令</div>
 			</div>
 
@@ -886,16 +904,20 @@
 		// 机房ABC状态
 		let jfArr = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛'];
 		$(".jfStateBox").html('');
-		$(res.machineList).each(function (i, item) {
+		let arr = [
+			['Normal','Normal','Normal','Normal',],
+			['Normal',],
+		]
+		$(arr).each(function (i, item) {
 			let newLi = $('<li class="jfNumList"><span class="jfName">' + jfArr[i] + '机房</span></li>');
 			$(item).each(function (j, item2) {
 				newLi.append('<span class="jfStateLight ' + item2 + '"></span>')
 			});
 			$(".jfStateBox").append(newLi);
-			// $('.jfNumList').eq(i).find(".jfStateLight").each(function (j, item2) {
-			// 	// console.log(item[j])
-			// 	$(item2).addClass(item[j]);
-			// })
+			$('.jfNumList').eq(i).find(".jfStateLight").each(function (j, item2) {
+				// console.log(item[j])
+				$(item2).addClass(item[j]);
+			})
 		});
 	}
 	// window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;

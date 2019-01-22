@@ -67,7 +67,7 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 	66%{background:url(../img/center/alertBox/BottomContentBg3.png) no-repeat;}
 	100%{background:url(../img/center/alertBox/BottomContentBg4.png) no-repeat;}
 }
-.BottomContent{width:487px;height:284px;margin:0 auto;margin-top:120px;/*background:url(../img/center/alertBox/BottomContentBg.png) no-repeat;*/animation:BottomContentFlash 3s linear infinite ;transition:1s;}
+.BottomContent{width:487px;height:284px;margin:0 auto;margin-top:120px;/*background:url(../img/center/alertBox/BottomContentBg.png) no-repeat;*/animation:BottomContentFlash 2s linear infinite ;transition:1s;}
 .BottomContent_center_TjBox{float:left;margin-right:20px;}
 .BottomContent_center_TjBox_name{font-size:12px;font-weight:bold;color:#ffffff;}
 .BottomContent_center_TjBox_Data{font-size:16px;font-weight:bold;font-family:DataFont;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style: oblique;}
@@ -88,7 +88,7 @@ body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat
 .jfNum{width:27px;height:18px;margin-right:30px;border-radius:2px;border:1px solid #007cfb;font-size:14px;font-weight:bold;color:#ffffff;display:inline-block;text-align:center;}
 .jfNameTop{width:60px;font-size:14px;display:inline-block;}
 .jfName{width:60px;font-size:14px;font-weight:bold;color:#ffffff;display:inline-block;margin-right:5px;}
-.jfStateLight{width:17px;height:14px;margin-right:42px;display:inline-block;}
+.jfStateLight{width:17px;height:14px;margin-right:14px;display:inline-block;}
 .Normal{background:url(../img/center/jfState/jcNormalIcon.png) no-repeat;}
 .Free{background:url(../img/center/jfState/jcFreeIcon.png) no-repeat;}
 .Repair{background:url(../img/center/jfState/jfRepairIcon.png) no-repeat;}

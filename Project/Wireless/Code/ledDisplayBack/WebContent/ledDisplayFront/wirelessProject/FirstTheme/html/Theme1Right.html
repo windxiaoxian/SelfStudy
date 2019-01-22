@@ -18,12 +18,16 @@
 		.jcViewEarthStationInfoBox1{
 			background-size: 99% 100%;
 			width: 240px;
-			left: -50px;
+			left: -110px;
 			top: -150px;
 		}
 		.jcViewEarthStationInfoBox2{
 			top: -140px;
-			right: -250px;
+			right: -180px;
+		}
+		.jcViewTopContainer{
+			top: 10px;	
+			right: 8px;
 		}
 		.jcViewEarthStationInfo_block .waveBandUl{
 			width: 192px;
@@ -79,10 +83,13 @@
 			background-size: 100% 100%;
 			width: 170px;
 		}
+		.jcViewTopContainerLeft{
+			padding-right: 10px;
+		}
 		.jcViewEarthStationInfoBox3{
 			display: none;
 			top: -140px;
-    		right: -20px;
+    		right: 50px;
 		}
 		.jcViewEarthStationInfoBox4{
 			width: 349px;
@@ -91,18 +98,18 @@
 			background-size: 100% 104%;
 			position: absolute;
 			top: -350px;
-    		left: -60px;
+    		left: -110px;
 			z-index: 10;
 			overflow: hidden;
 		}
 		.jcViewEarthStationInfoBox5{
-			width: 349px;
-			height: 296px;
+			width: 240px;
+			height: 200px;
 			/* background: url(../img/jcView/jcViewAlertContainer2.png) no-repeat; */
 			background-size: 100% 104%;
 			position: absolute;
-			top: 330px;
-    		right: -380px;
+			top: 370px;
+    		right: -210px;
 			z-index: 10;
 			overflow: hidden;
 		}
@@ -136,12 +143,12 @@
 			width: inherit;
 		}
 		.jcViewJCZX{
-			left: 40px;
+			left: 100px;
 			top: -180px;
 			height: 440px;
 		}
 		.jcViewEarthStationArea{
-			left: -50px;
+			left: 10px;
     		top: 167px;
 		}
 		.info2-title{
@@ -150,6 +157,15 @@
 		.jcViewEarthStationInfoBox5 .Info2 .jcViewEarthStationInfo_typeName,.jcViewEarthStationInfoBox5 .info2 .jcViewEarthStationInfo_Data{
 			display: inline;
 		}
+		.legend{
+			position: absolute;
+			top: 680px;
+			right: 30px;
+		}
+
+
+
+
 
 	</style>
 </head>
@@ -460,7 +476,7 @@
 									</div>
 								</div>
 								<div class="jcViewEarthStationInfoBox5">
-										<div class="jcViewEarthStationInfo_title"><span id="siteBaseName2">542台</span>地球站工作内容</div>
+										<div class="jcViewEarthStationInfo_title"><span></span>地球站工作内容</div>
 										<div class="jcViewEarthStationInfo_content">
 											<!--上星卫星系统-->
 											<div class="jcViewEarthStationInfo_block">
@@ -497,7 +513,8 @@
 						<!--节传中心-->
 						<div class="jcViewJCZX"></div>
 						<!-- <div class="jcViewJCZX2"></div> -->
-
+						<!-- 图例 -->
+						<img class="legend" src="../img/jcView/JcViewLegend.png">
 						<!--网格地板-->
 						<img class="jcFloor" src="../img/jcView/jcViewFloorBg.png" />
 					</div>
