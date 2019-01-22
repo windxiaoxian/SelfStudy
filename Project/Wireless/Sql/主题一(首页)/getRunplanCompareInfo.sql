@@ -1,11 +1,11 @@
-﻿SELECT station_count, freq_count,target_station_count, target_freq_count
+﻿SELECT station_count, freq_count, target_station_count, target_freq_count
   FROM (SELECT *
           FROM wxj_common_param_t
          WHERE param_type = 'today_station_tasks') total
        LEFT JOIN
        (SELECT 'today_station_tasks' sql_type,
                COUNT (DISTINCT station_name) target_station_count,
-               COUNT (DISTINCT freq) target_freq_count
+               COUNT (DISTINCT station_name || '-' || freq) target_freq_count
           FROM (SELECT station_name, freq,
                        TO_DATE (   TO_CHAR (SYSDATE, 'yyyy-MM-dd')
                                 || TO_CHAR (start_time, ' HH24:Mi:ss'),
@@ -30,17 +30,13 @@
        LEFT JOIN
        (SELECT 'today_station_tasks' sql_type,
                COUNT (DISTINCT station_code) station_count,
-               COUNT (DISTINCT freq) freq_count
-          FROM wxj_runplan_realtime_t
+               COUNT (DISTINCT station_code || '-' || freq) freq_count
+          FROM wxj_runplan_realtime_v
          WHERE SYSDATE BETWEEN start_date AND end_date
            AND order_type IN ('I')
-           AND operate IN ('A', 'U')
            AND run_type = 1
            AND days LIKE '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')
                                    FROM DUAL) || '%'
-           AND trans_code IN (SELECT trans_code
-                                FROM wxj_transmitter_status_t
-                               WHERE SUBSTR (work_status, 1, 1) = '1')
            AND (   (    (start_time <= end_time)
                     AND (SYSDATE BETWEEN start_time AND end_time)
                    )

@@ -19,7 +19,8 @@
                          a.status_date
                     FROM (SELECT *
                             FROM wxj_busiorder_total_realtime
-                           WHERE LENGTH (station_code) = 2) a
+                           WHERE LENGTH (station_code) = 2
+						   and order_code_dic not like '台%') a
                          LEFT JOIN
                          wxj_station_info_t b ON a.station_code = b.station_id
                          LEFT JOIN wxj_busiorder_detail_realtime c
@@ -62,4 +63,4 @@
            WHERE busiorder.station_name IS NOT NULL
              AND LENGTH (busiorder.transmitter) = 3
         ORDER BY status_date DESC)
- WHERE ROWNUM < 11
+ WHERE ROWNUM < 2
