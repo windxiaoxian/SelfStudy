@@ -585,9 +585,9 @@
 
     // 右侧饼图与九组数据
     let getTaskCountData1 = function(res){
-        $('#testPower').html(res.taskCount[0].taskBroadPower);
+        $('#testPower').html(res.taskCount[2].taskBroadPower);
         $('#broad-cast-power').html(res.taskCount[1].taskBroadPower);
-        $('#exterPower').html(res.taskCount[2].taskBroadPower);
+        $('#exterPower').html(res.taskCount[0].taskBroadPower);
         dataFresh('.counter1');
 		myChart3.setOption({
             legend:{
