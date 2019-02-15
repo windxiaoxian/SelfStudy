@@ -126,7 +126,7 @@ public class FirstThemeServlet extends HttpServlet {
                     stationStatusMap.put("work_status", "Broken"); //台站工作状态@故障
                 } else if ("free".equals(stationStatusMap.get("work_status"))) {
                     stationStatusMap.put("work_status", "Free"); //台站工作状态@空闲
-                }else{
+                } else {
                     stationStatusMap.put("work_status", "Unknown"); //台站工作状态@未知
                 }
                 String[] station = new String[]{"491", "542", "564", "572", "582", "BES", "CRT", "YTS"};
@@ -136,8 +136,8 @@ public class FirstThemeServlet extends HttpServlet {
                     CHStationstatus.add(stationStatusMap);//其余台站
                 }
             }
-            stationList.add(BJStationstatus);
             stationList.add(CHStationstatus);
+            stationList.add(BJStationstatus);
             resultJson.accumulate("stationStatus", stationList);
             //遍历结果集将站点状态改为对应的前台显示样式
             return resultJson.toString();
@@ -348,10 +348,10 @@ public class FirstThemeServlet extends HttpServlet {
             resultJson.accumulate("earthStation", 381944);//截止上月地球站累计数量
             resultJson.accumulate("programTransTime", 253471);//截止上月节传累计时长
 
-            resultJson.accumulate("upProgramstream",65);//上行节目流
-            resultJson.accumulate("transProgram",580);//传输节目
-            resultJson.accumulate("satilliteUsed",9);//占用卫星
-            resultJson.accumulate("repeater",57);//转发器
+            resultJson.accumulate("upProgramstream", 65);//上行节目流
+            resultJson.accumulate("transProgram", 580);//传输节目
+            resultJson.accumulate("satilliteUsed", 9);//占用卫星
+            resultJson.accumulate("repeater", 57);//转发器
             return resultJson.toString();
         } catch (Exception e) {
             logger.error("FirstThemeServlet." + screenPosition + "后台报错" + e.getMessage());
@@ -370,31 +370,31 @@ public class FirstThemeServlet extends HttpServlet {
         Map reqMap = new HashMap();
         try {
             JSONObject resultJson = new JSONObject();
-            if("呼市".equals(json.get("station"))){
-                reqMap.put("stationCode","HST");//呼和浩特地球站
-            }else if("542".equals(json.get("station"))){
-                reqMap.put("stationCode","542");
-            }else if("北京".equals(json.get("station"))){
-                reqMap.put("stationCode","BST");
-            }else if("喀什".equals(json.get("station"))){
-                reqMap.put("stationCode","");
+            if ("呼市".equals(json.get("station"))) {
+                reqMap.put("stationCode", "HST");//呼和浩特地球站
+            } else if ("542".equals(json.get("station"))) {
+                reqMap.put("stationCode", "542");
+            } else if ("北京".equals(json.get("station"))) {
+                reqMap.put("stationCode", "BST");
+            } else if ("喀什".equals(json.get("station"))) {
+                reqMap.put("stationCode", "");
             }
 
-            if("呼市".equals(json.get("station"))){
+            if ("呼市".equals(json.get("station"))) {
                 resultJson.accumulate("C_band", 2);//C波段
                 resultJson.accumulate("KU_band", 3);//Ku波段
                 resultJson.accumulate("DHS_band", 2);//DHS波段
                 resultJson.accumulate("antenna", 7);//天线
                 resultJson.accumulate("mainProgram", 115);//主播
                 resultJson.accumulate("backUpProgram", 90);//备播
-            }else if("542".equals(json.get("station"))){
+            } else if ("542".equals(json.get("station"))) {
                 resultJson.accumulate("C_band", 10);//C波段
                 resultJson.accumulate("KU_band", 6);//Ku波段
                 resultJson.accumulate("DHS_band", 1);//DHS波段
                 resultJson.accumulate("antenna", 17);//天线
                 resultJson.accumulate("mainProgram", 127);//主播
                 resultJson.accumulate("backUpProgram", 177);//备播
-            }else if("北京".equals(json.get("station"))){
+            } else if ("北京".equals(json.get("station"))) {
                 resultJson.accumulate("C_band", 14);//C波段
                 resultJson.accumulate("KU_band", 6);//Ku波段
                 resultJson.accumulate("DHS_band", 2);//DHS波段
@@ -402,7 +402,7 @@ public class FirstThemeServlet extends HttpServlet {
                 resultJson.accumulate("mainProgram", 228);//主播
                 resultJson.accumulate("backUpProgram", 272);//备播
                 resultJson.accumulate("programPlatform", 22);//节目集成平台
-            }else if("喀什".equals(json.get("station"))){
+            } else if ("喀什".equals(json.get("station"))) {
                 resultJson.accumulate("C_band", 1);//C波段
                 resultJson.accumulate("KU_band", 1);//Ku波段
                 resultJson.accumulate("DHS_band", 0);//DHS波段
@@ -472,34 +472,53 @@ public class FirstThemeServlet extends HttpServlet {
                 room = ((HashMap) machineList.get(0)).get("room").toString();//当前遍历机房号
             String workStatus = "";//当前该发射机的状态
             List transList = new ArrayList();
+            int countTemp = 1;
             for (Object machineItem : machineList) {
                 Map machineMap = (Map) machineItem;
                 //计算所有机房的发射机的各种状态数据汇总
                 if ("正常".equals(machineMap.get("work_status"))) {
                     workStatus = "Normal";
                     transmitterInUseCount++;
-                } else if ("空闲".equals(machineMap.get("work_status").toString())) {
+                } else if ("空闲".equals(machineMap.get("work_status"))) {
                     workStatus = "Free";
                     transmitterNoUseCount++;
-                } else if ("检修".equals(machineMap.get("work_status").toString())) {
+                } else if ("检修".equals(machineMap.get("work_status"))) {
                     workStatus = "Repair";
                     transmitterRepairCount++;
-                } else if ("未知".equals(machineMap.get("work_status").toString())) {
+                } else if ("未知".equals(machineMap.get("work_status"))) {
                     workStatus = "Unknown";
                     transmitterUnknownCount++;
                 } else {
                     workStatus = "Broken";
                     transmitterAbonormalCount++;
                 }
-                if (room.equals(machineMap.get("room").toString())) {//同一个机房
-                    transList.add(workStatus);
+                if (room.equals(machineMap.get("room"))) {//同一个机房
+                    if (transList != null && transList.size() >= 0) {
+                        //大于10个不再添加
+                        if (transList.size() < 10)
+                            transList.add(workStatus);
+                    } else {
+                        transList.add(workStatus);
+                    }
+                    //当前循环是最后一个机房的情况
+                    if (countTemp == machineList.size()) {
+                        int listCountTemp = 0;
+                        if (transList != null && transList.size() > 0)
+                            listCountTemp = transList.size();
+                        if (listCountTemp < 10) { //如果一个机房的机号不足10个,补充null
+                            for (int i = listCountTemp; i < 10; i++) {
+                                transList.add("null");
+                            }
+                        }
+                        machineFinalList.add(transList);//每隔机房返回一个List,list中只显示接收机状态;
+                    }
                 } else {
                     room = machineMap.get("room").toString();
                     int listCountTemp = 0;
                     if (transList != null && transList.size() > 0)
                         listCountTemp = transList.size();
-                    if (listCountTemp < 10) { //如果一个机房的机号不足5个,补充null
-                        for (int i = listCountTemp; i < 5; i++) {
+                    if (listCountTemp < 10) { //如果一个机房的机号不足10个,补充null
+                        for (int i = listCountTemp; i < 10; i++) {
                             transList.add("null");
                         }
                     }
@@ -507,6 +526,7 @@ public class FirstThemeServlet extends HttpServlet {
                     transList = new ArrayList();
                     transList.add(workStatus);
                 }
+                countTemp++;
             }
             resultJson.accumulate("stationType", stationBasicMap.get("unit_belong"));//台站类别
             resultJson.accumulate("sendBandType", stationBasicMap.get("unit_type"));// 类型

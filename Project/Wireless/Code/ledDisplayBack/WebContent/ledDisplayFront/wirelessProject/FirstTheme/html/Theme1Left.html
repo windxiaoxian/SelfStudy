@@ -11,12 +11,13 @@
     		left: 160px;
     	}
     	.DataAssmeblyOne02 .DataAssemblyOne_data{
-    		left: 200px;
+    		left: 170px;
     	}
     	.DataAssmeblyOne{
     		width: 50%;
     		margin: 0;
-    		background-size: 100% 100%;
+            background-size: 100% 100%;
+            height: 116px;
     	}
     	.DataAssemblyOne_title{
     		top: 0;
@@ -46,7 +47,7 @@
             background: linear-gradient(to top,  rgba(248,222,77,1),rgba(248,222,77,0))
         }
         .DataAssmeblyTwo03 .DataAssemblyTwo_icon{
-            top: 0;
+            top: -20px;
         }
         .DataAssmeblyTwo02 .DataAssemblyTwo_icon,.DataAssmeblyTwo03 .DataAssemblyTwo_icon{
             left: 25px;
@@ -54,11 +55,16 @@
         .DataStageAssembly_Icon{
             margin-top: 10px;
         }
+        .DataAssemblyTwo_icon{}
         .DataStageAssembly:first-of-type .DataStageAssembly_Icon{
             margin-top: 20px;
         }
         .DataStageGroup_item{
             margin-left: 40px;
+        }
+        .DataStageAssembly{
+            width: 144px;
+            text-align: center;
         }
     </style>
 </head>
@@ -88,7 +94,7 @@
                             <!--当年累计播出时间-->
                             <div class="DataAssmeblyOne DataAssmeblyOne02">
                                 <div class="DataAssmeblyOne_Content">
-                                    <div class="DataAssemblyOne_title">上月传输时间</div>
+                                    <div class="DataAssemblyOne_title">当年累计传输时间</div>
                                     <div class="DataAssemblyOne_data"><span class="counter" id=""> - </span><span
                                             class="DataUnit">小时</span></div>
                                 </div>
@@ -196,7 +202,7 @@
                             <div class="DataAssmeblyTwo_Content">
                                 <img class="DataAssemblyTwo_icon" src="../img/icon/zbglvSign.png">
                                 <div class="DataAssemblyTwo_title">在播功率</div>
-                                <div class="DataAssemblyTwo_data"><span class="counter" id=""> - </span><span
+                                <div class="DataAssemblyTwo_data"><span class="counter1 counter" id="testPower"> - </span><span
                                         class="DataUnit">kW</span></div>
                             </div>
                         </div>
@@ -337,7 +343,7 @@
                     <div class="tj_item DataStageGroup">
                         <!--在播功率统计-->
                         <div class="DataStageGroup_item DataStageAssembly">
-                            <div class="DataStageAssembly_Data"><span class="counter" id="broad-cast-power">0</span><span class="DataUnit">kW</span>
+                            <div class="DataStageAssembly_Data"><span class="counter1" id="broad-cast-power">0</span><span class="DataUnit">kW</span>
                             </div>
                             <div class="DataStageAssembly_Name">对内在播功率</div>
                             <div class="DataStageAssembly_Icon"><img src="../img/icon/glvStageIcon.png"></div>
@@ -409,7 +415,7 @@
                         </div> -->
                          <!--在播功率统计-->
                          <div class="DataStageGroup_item DataStageAssembly">
-                             <div class="DataStageAssembly_Data"><span class="counter" id="exterPower">0</span><span class="DataUnit">kW</span>
+                             <div class="DataStageAssembly_Data"><span class="counter1" id="exterPower">0</span><span class="DataUnit">kW</span>
                              </div>
                              <div class="DataStageAssembly_Name">对外在播功率</div>
                              <div class="DataStageAssembly_Icon"><img src="../img/icon/glvStageIcon.png"></div>
@@ -499,9 +505,17 @@
     let getData = function (res) {
         console.log(res, 1);
         // res = JSON.parse(res);
-        $(".DataAssmeblyOne02 .counter").html(res.broadCastFrequency);
+        let nowTime = new Date().getTime() - new Date(new Date().getFullYear() + '-01-01 00:00:00').getTime()
+        // $(".DataAssmeblyOne02 .counter").html(res.broadCastFrequency);
+        $(".DataAssmeblyOne02 .counter").html((635415/(31*24*60) * (nowTime/1000/60)).toFixed());
         $(".DataAssmeblyOne03 .counter").html(res.broadCastPower);
         dataFresh('.mainLeft .counter:eq(1),.mainLeft .counter:eq(2)');
+        $('.counter').each(function(i,item){
+			// console.log((Math.random()*24000+3000).toFixed())
+			setTimeout(function(){
+				dataFresh(item);
+			},Math.random()*24000+3000)
+		})
     };
     let param = {
         key: 'left',
@@ -571,8 +585,10 @@
 
     // 右侧饼图与九组数据
     let getTaskCountData1 = function(res){
+        $('#testPower').html(res.taskCount[2].taskBroadPower);
         $('#broad-cast-power').html(res.taskCount[1].taskBroadPower);
-        $('#exterPower').html(res.taskCount[2].taskBroadPower);
+        $('#exterPower').html(res.taskCount[0].taskBroadPower);
+        dataFresh('.counter1');
 		myChart3.setOption({
             legend:{
                 data: ['已完成', '正在执行', '未完成'],
@@ -647,11 +663,14 @@
 		});
 		res.taskCount.map(function(item,index){
 			console.log(item.freqCount)
-			$('.syrwtjThreeState').eq(index).find("span.counter:eq(0)").html(item.freqCount);
-			$('.syrwtjThreeState').eq(index).find("span.counter:eq(1)").html(item.programCount);
+            $('.syrwtjThreeState').eq(index).find("span.counter:eq(0)").html(item.freqCount);
+            if(index != 0){
+                $('.syrwtjThreeState').eq(index).find("span.counter:eq(1)").html(item.programCount);
+            }
 			$('.syrwtjThreeState').eq(index).find("span.counter:eq(2)").html(item.stationCount);
 		});
-        dataFresh('.syrwtjThreeState .counter');
+        dataFresh('.syrwtjThreeState .counter:not(.counter1)')
+
 
     }
     let param3 = {
@@ -703,7 +722,7 @@
             left: '0',
             right: '0',
             bottom: '0',
-            height: '85%',
+            top: '25',
             containLabel: true
         },
         xAxis: [{

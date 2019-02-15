@@ -77,7 +77,7 @@
 			margin: 4px 9px;
 		}
 		.DataBallGroupLeft .DataBallGreen2 {
-			background: url(../../Common/img/assembly/DataBallGreen1MiniBg.png) no-repeat;
+			background: url(../../Common/img/assembly/DataBallGreen2Bg.png) no-repeat;
 			background-size: 100% 100%;
 			width: 160px;
 			height: 160px;
@@ -87,11 +87,15 @@
 			margin-top: 50px;
 		}
 		.DataBallGreen1 {
-			width: 158px;
+			width: 140px;
+			height: 140px;
 			background-size: 100% 100%;
 		}
 		.DataBallGreen1 .DataBallAssembly_Data {
-			margin-top: 50px;
+			margin-top: 34px;
+		}
+		.DataBallGroupRight .DataBallGreen1 .DataBallAssembly_Data{
+			margin-top: 40px;
 		}
 		.DataBallGreen1Mini {
 			width: 110px;
@@ -102,6 +106,12 @@
 		.DataBallGreen1Mini .DataBallAssembly_Data {
 			margin-top: 30px;
 		}
+		.DataBallOrangeMini{
+			top: 580px;
+			width: 106px;
+			height: 106px;
+			background-size: 100% 100%;
+		}
 		.DataBallGroupRight .DataBallOrange {
 			width: 140px;
 			height: 140px;
@@ -109,27 +119,32 @@
 			font-size: 38px;
 		}
 		.DataBallGroupRight .DataBallGreen1{
-			width: 120px;
-			height: 120px;
+			width: 150px;
+			height: 150px;
 		}
-		.DataBallGroupRight .DataBallAssembly_Data{
-			margin-top: 26px;
+		.DataBallOrange .DataBallAssembly_Data{
+			margin-top: 36px;
 		}
-		.DataBallOrangeMini {
-			width: 104px;
-			height: 104px;
+		.DataBallOrangeMini,{
+			width: 114px;
+			height: 114px;
 			background-size: 100% 100%;
 			top: 570px;
 		}
 		.DataBallOrangeMini .DataBallAssembly_Data {
-			margin-top: 20px;
+			margin-top: 28px;
 		}
 		.DataBallGroupLeft .DataBallOrange {
 			background: url(../../Common/img/assembly/DataBallOrangeMiniBg.png) no-repeat;
 			background-size: 100% 100%;
-			width: 138px;
-			height: 138px;
+			width: 120px;
+			height: 120px;
 			left: 0;
+		}
+		.DataBallGroupLeft .DataBallOrange .DataBallAssembly_Data{
+			margin-top: 30px;
+			font-size: 30px;
+
 		}
 		.jfNum {
 			width: 19px;
@@ -140,7 +155,7 @@
 			width: 50px;
 			margin-left: 120px;
 		}
-		.jfStateLight {
+		.jfStateLight normal {
 			margin-right: 14px;
 		}
 		.jfName {
@@ -248,6 +263,10 @@
 			top: 89px;
     		left: 444px;
 		}
+		.siteInfoBox_title{
+			width: inherit;
+			font-style: 18px;
+		}
 	</style>
 </head>
 
@@ -264,7 +283,7 @@
 				<ul>
 					<li class="ddlcModel_item">
 						<img src="../img/center/ddlIcon1.png">
-						<span class="ddlcModel_item_Name">接收<br>调度令</span>
+						<span class="ddlcModel_item_Name">生成<br>调度令</span>
 						<span class="ddlcModel_item_value send_dept">调度处</span>
 					</li>
 					<li class="ddlcModel_item">
@@ -365,21 +384,20 @@
 						<div class="roll-box">
 
 							<ul class="jfStateBox">
-								<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
-								<li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
-								<li class="jfNumList"><span class="jfName">丙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+								<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span
+									 class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span></li>
+								<!-- <li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span
+									 class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span></li>
+								<li class="jfNumList"><span class="jfName">丙机房</span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span
+									 class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span></li> -->
 							</ul>
 							<ul class="jfStateBox jfStateBox2">
-
-								<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
-								<li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
+									<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span
+										class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span><span class="jfStateLight Normal"></span></li>
+								<!-- <li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
 									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
 								<li class="jfNumList"><span class="jfName">丙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
-									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li> -->
 							</ul>
 						</div>
 					</div>
@@ -414,11 +432,11 @@
 		<div class="DataBallGroupRight">
 			<!--年下发调度令-->
 			<div class="DataBallAssembly DataBallGreen1">
-				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByDay"> - </span><span class="unit">个</span></div>
+				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByYear"> - </span><span class="unit">个</span></div>
 				<div class="DataBallAssembly_Name">年下发调度令</div>
 			</div>
 			<div class="DataBallAssembly DataBallGreen1Mini">
-				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByYear"> - </span><span class="unit">个</span></div>
+				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByDay"> - </span><span class="unit">个</span></div>
 				<div class="DataBallAssembly_Name">日下发调度令</div>
 			</div>
 
@@ -705,7 +723,7 @@
 				coordinateSystem: 'geo',
 				data: chData,
 				symbol: '',
-				symbolSize: 26,
+				symbolSize: [16,26],
 				label: {
 					normal: {
 						formatter: '{b}',
@@ -726,7 +744,7 @@
 				name: 'effectPoint1',
 				type: 'effectScatter',
 				coordinateSystem: 'geo',
-				symbolSize: 30,
+				symbolSize: [23,30],
 				data: ''
 			},
 			{
@@ -817,8 +835,8 @@
 				type: 'scatter',
 				coordinateSystem: 'geo',
 				map: "beijing",
-				symbol: 'image://../img/center/site/zdbSite2.png',
-				symbolSize: 26,
+				// symbol: 'image://../img/center/site/zdbSite1.png',
+				symbolSize: [16,26],
 				label: {
 					normal: {
 						formatter: '{b}',
@@ -840,7 +858,7 @@
 				name: 'effectPoint1',
 				type: 'effectScatter',
 				coordinateSystem: 'geo',
-				symbolSize: 30,
+				symbolSize: [23,30],
 				data: ''
 			},
 			{
@@ -870,7 +888,7 @@
 		$('.broadTaskCount').html(res.broadTaskCount);
 		$('.broadTimeDone').html(res.broadTimeDone);
 		$('.dispatchOrder').html(res.dispatchOrder);
-		$('.machineList').html(res.machineList);
+		// $('.machineList').html(res.machineList);
 		$('.phone').html(res.phone);
 		$('.planBroadTime').html(res.planBroadTime);
 		$('.planTask').html(res.planTask);
@@ -886,40 +904,55 @@
 		// 机房ABC状态
 		let jfArr = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛'];
 		$(".jfStateBox").html('');
+		// let arr = [
+		// 	['Normal','Normal','Normal','Normal',],
+		// 	['Normal',],
+		// 	['Normal',],
+		// 	['Normal',],
+		// ]
 		$(res.machineList).each(function (i, item) {
 			let newLi = $('<li class="jfNumList"><span class="jfName">' + jfArr[i] + '机房</span></li>');
 			$(item).each(function (j, item2) {
 				newLi.append('<span class="jfStateLight ' + item2 + '"></span>')
 			});
 			$(".jfStateBox").append(newLi);
-			// $('.jfNumList').eq(i).find(".jfStateLight").each(function (j, item2) {
-			// 	// console.log(item[j])
-			// 	$(item2).addClass(item[j]);
-			// })
+			$('.jfNumList').eq(i).find(".jfStateLight").each(function (j, item2) {
+				// console.log(item[j])
+				$(item2).addClass(item[j]);
+			})
 		});
+		if(res.machineList.length > 3){
+			startRoll();
+		} else {
+			$(".jfStateBox2").remove();
+			$(".jfStateBox").css("top", "0px");
+			clearTimeout(rollTimer);
+		}
 	}
-	// window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-	let speed1 = speed2 = 0;
-	function rollTable() {
-		let tablePosition1 = parseInt($(".jfStateBox").eq(0).css("top"));
-		let tablePosition2 = parseInt($(".jfStateBox").eq(1).css("top"));
-		let tableHeight = $(".jfStateBox").eq(0).height();
+	let speed1 = speed2 = 0,rollTimer;
+	function startRoll(){
+		// window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+		function rollTable() {
+			let tablePosition1 = parseInt($(".jfStateBox").eq(0).css("top"));
+			let tablePosition2 = parseInt($(".jfStateBox").eq(1).css("top"));
+			let tableHeight = $(".jfStateBox").eq(0).height();
 
-		if (tablePosition1 < -tableHeight) {
-			speed1 = tableHeight;
+			if (tablePosition1 < -tableHeight) {
+				speed1 = tableHeight;
+			}
+			if (tablePosition2 < -tableHeight) {
+				speed2 = 0;
+			}
+			speed1 -= 1;
+			speed2 -= 1;
+			$(".jfStateBox").eq(0).css("top", speed1 + "px");
+			$(".jfStateBox").eq(1).css("top", speed2 + tableHeight + "px");
+			// window.requestAnimationFrame(rollTable);
+			rollTimer = setTimeout(rollTable, 60);
 		}
-		if (tablePosition2 < -tableHeight) {
-			speed2 = 0;
-		}
-		speed1 -= 1;
-		speed2 -= 1;
-		$(".jfStateBox").eq(0).css("top", speed1 + "px");
-		$(".jfStateBox").eq(1).css("top", speed2 + tableHeight + "px");
 		// window.requestAnimationFrame(rollTable);
-		setTimeout(rollTable, 60);
+		rollTimer = setTimeout(rollTable, 60);
 	}
-	// window.requestAnimationFrame(rollTable);
-	setTimeout(rollTable, 60);
 	// $(".siteInfoBox").hide();
 
 	let totalData = bjData.concat(chData), i = 0, effectData, effectData2 = [], targetChart, cancelEffectChart;
@@ -1028,6 +1061,7 @@
 		$(res.stationStatus[0]).each(function(i,item){
 			$(chData).each(function(j,item2){
 				if(item2.code == item.station_code){
+					// item2.symbol = 'image://../img/center/site/zdbSiteNormal.png'
 					item2.symbol = 'image://../img/center/site/zdbSite'+ item.work_status +'.png'
 				}
 			})
@@ -1044,6 +1078,7 @@
 			$(bjData).each(function(j,item2){
 				if(item2.code == item.station_code){
 					item2.symbol = 'image://../img/center/site/zdbSite'+ item.work_status +'.png'
+					// item2.symbol = 'image://../img/center/site/zdbSiteNormal.png'
 				}
 			})
 		})
@@ -1060,31 +1095,31 @@
 	// 顶端数据
 	let topTimer;
 	let getData2 = function (res) {
-		clearInterval(topTimer);
-		let n = 0;
-		function loadData() {
-			$('.order_name').html(res.dispatchOrderList[n].order_name);
-			$('.peceive_station').html(res.dispatchOrderList[n].receive_station);
-			$('.receiver').html(res.dispatchOrderList[n].receiver);
-			$('.send_dept').html(res.dispatchOrderList[n].send_dept);
-			$('.sender').html(res.dispatchOrderList[n].sender);
-			$('.station_name').html(res.dispatchOrderList[n].station_name);
-			$('.transmitter').html(res.dispatchOrderList[n].transmitter);
-			$('.stationName').html(res.dispatchOrderList[n].station_name);
-			$(".transmitterName").html(res.dispatchOrderList[n].transmitter);
+		// clearInterval(topTimer);
+		// let n = 0;
+		// function loadData() {
+			$('.order_name').html(res.dispatchOrderList[0].order_name);
+			$('.peceive_station').html(res.dispatchOrderList[0].receive_station);
+			$('.receiver').html(res.dispatchOrderList[0].receiver);
+			$('.send_dept').html(res.dispatchOrderList[0].send_dept);
+			$('.sender').html(res.dispatchOrderList[0].sender);
+			$('.station_name').html(res.dispatchOrderList[0].station_name);
+			$('.transmitter').html(res.dispatchOrderList[0].transmitter);
+			$('.stationName').html(res.dispatchOrderList[0].station_name);
+			$(".transmitterName").html(res.dispatchOrderList[0].transmitter);
 			$('.currentPower,.realTimeAM').empty();
 			// console.log(res.power)
-			for (let i = 0; i < res.dispatchOrderList[n].power; i++) {
+			for (let i = 0; i < res.dispatchOrderList[0].power; i++) {
 				$('.currentPower').append('<li></li>')
 			};
-			for (let i = 0; i < res.dispatchOrderList[n].amrp; i++) {
+			for (let i = 0; i < res.dispatchOrderList[0].amrp; i++) {
 				$('.realTimeAM').append('<li></li>')
 			};
-			n == res.dispatchOrderList.length - 1 ? n = 0 : n++;
+			// n == res.dispatchOrderList.length - 1 ? n = 0 : n++;
 
-		}
-		loadData();
-		topTimer = setInterval(loadData, 30000)
+		// }
+		// loadData();
+		// topTimer = setInterval(loadData, 30000)
 	};
 	let param2 = {
 		key: 'center',
@@ -1092,7 +1127,7 @@
 	}
 	setInterval(function () {
 		g.doAjax("servlet/FirstThemeServlet", param2, getData2);
-	}, 60000 * 20)
+	}, 30000)
 	g.doAjax("servlet/FirstThemeServlet", param2, getData2);
 
 	// 两侧球数据

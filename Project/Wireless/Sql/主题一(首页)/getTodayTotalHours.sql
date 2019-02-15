@@ -6,13 +6,11 @@
                            DECODE (order_type,
                                    'I', 'SY',
                                    'F', 'DW',
-                                   'M', 'DW',
                                    'DN'
                                   ) order_type
-                      FROM wxj_runplan_realtime_t
+                      FROM wxj_runplan_realtime_v
                      WHERE SYSDATE BETWEEN start_date AND end_date
-                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')
-                       AND operate IN ('A', 'U')
+                       AND order_type IN ('D', 'F', 'I')
                        AND run_type = 1
                        AND days LIKE
                               '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')
@@ -29,13 +27,11 @@
                            DECODE (order_type,
                                    'I', 'SY',
                                    'F', 'DW',
-                                   'M', 'DW',
                                    'DN'
                                   ) order_type
-                      FROM wxj_runplan_realtime_t
+                      FROM wxj_runplan_realtime_v
                      WHERE SYSDATE BETWEEN start_date AND end_date
-                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')
-                       AND operate IN ('A', 'U')
+                       AND order_type IN ('D', 'F', 'I')
                        AND run_type = 1
                        AND days LIKE
                               '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')
@@ -61,13 +57,11 @@
                            DECODE (order_type,
                                    'I', 'SY',
                                    'F', 'DW',
-                                   'M', 'DW',
                                    'DN'
                                   ) order_type
-                      FROM wxj_runplan_realtime_t
+                      FROM wxj_runplan_realtime_v
                      WHERE SYSDATE BETWEEN start_date AND end_date
-                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')
-                       AND operate IN ('A', 'U')
+                       AND order_type IN ('D', 'F', 'I')
                        AND run_type = 1
                        AND days LIKE
                               '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')
@@ -89,13 +83,11 @@
                            DECODE (order_type,
                                    'I', 'SY',
                                    'F', 'DW',
-                                   'M', 'DW',
                                    'DN'
                                   ) order_type
-                      FROM wxj_runplan_realtime_t
+                      FROM wxj_runplan_realtime_v
                      WHERE SYSDATE BETWEEN start_date AND end_date
-                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')
-                       AND operate IN ('A', 'U')
+                       AND order_type IN ('D', 'F', 'I')
                        AND run_type = 1
                        AND days LIKE
                               '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')
@@ -119,13 +111,11 @@
                            DECODE (order_type,
                                    'I', 'SY',
                                    'F', 'DW',
-                                   'M', 'DW',
                                    'DN'
                                   ) order_type
-                      FROM wxj_runplan_realtime_t
+                      FROM wxj_runplan_realtime_v
                      WHERE SYSDATE BETWEEN start_date AND end_date
-                       AND order_type IN ('D', 'S', 'L', 'F', 'M', 'I')
-                       AND operate IN ('A', 'U')
+                       AND order_type IN ('D', 'F', 'I')
                        AND run_type = 1
                        AND days LIKE
                               '%' || (SELECT TO_CHAR (SYSDATE - 1, 'd')

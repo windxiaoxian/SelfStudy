@@ -18,31 +18,48 @@
 		.jcViewEarthStationInfoBox1{
 			background-size: 99% 100%;
 			width: 240px;
-			left: -130px;
+			left: -110px;
+			top: -150px;
+		}
+		.jcViewEarthStationInfoBox2{
+			top: -140px;
+			right: -180px;
+		}
+		.jcViewTopContainer{
+			top: 10px;	
+			right: 8px;
 		}
 		.jcViewEarthStationInfo_block .waveBandUl{
-			width: 180px;
+			width: 192px;
     		/* border: 1px solid pink; */
 			margin-left: 0;
 			margin-top: 12px;
+		}
+		.jcViewEarthStationInfo_content{
+			margin-left: 10px;
 		}
 		.waveBandUl li{
 			float: left;
 			text-align: center;
 		}
 		.jcViewEarthStationInfoBox1{
-			width: 250px;
+			width: 260px;
 			height: 236px;
 		}
 		.upStarDiv{
 			margin-top: 40px;
 		}
 		.upStarSpans{
-			margin-top: 22px;
+			margin-top: 10px;
 		}
 		.upStarSpans span{
 			font-size: 17px;
-			width: 85px;
+			width: 76px;
+			text-align-last: center;
+			margin-right: 10px;
+		}
+		.upStarSpans .jcViewEarthStationInfo_Data{
+			vertical-align: super;
 		}
 		.upStarSpans .antenna_16,.upStarSpans .unit{
 			font-size: 22px;	
@@ -66,6 +83,90 @@
 			background-size: 100% 100%;
 			width: 170px;
 		}
+		.jcViewTopContainerLeft{
+			padding-right: 10px;
+		}
+		.jcViewEarthStationInfoBox3{
+			display: none;
+			top: -140px;
+    		right: 50px;
+		}
+		.jcViewEarthStationInfoBox4{
+			width: 349px;
+			height: 296px;
+			/* background: url(../img/jcView/jcViewAlertContainer2.png) no-repeat; */
+			background-size: 100% 104%;
+			position: absolute;
+			top: -350px;
+    		left: -110px;
+			z-index: 10;
+			overflow: hidden;
+		}
+		.jcViewEarthStationInfoBox5{
+			width: 240px;
+			height: 200px;
+			/* background: url(../img/jcView/jcViewAlertContainer2.png) no-repeat; */
+			background-size: 100% 104%;
+			position: absolute;
+			top: 370px;
+    		right: -210px;
+			z-index: 10;
+			overflow: hidden;
+		}
+		.jcViewEarthStationInfoBox4 .jcViewEarthStationInfo_title{
+			margin:0 0 30px 20px;
+			font-size: 18px; 
+		}
+		.jcViewEarthStationInfoBox4 .jcViewEarthStationInfo_block{
+			float: left;
+			width: 50%;
+		}
+		.jcViewEarthStationInfo_typeName{
+			width: 64px;
+		}
+		.DataStage2Assembly_item{
+			width: 120px;
+		}
+		.DataStage2Assembly_item:nth-of-type(2){
+			width: 164px;
+		}
+		.DataStage2Assembly_Icon{
+			margin-top: 50px;
+		}
+		.DataStage2Assembly_item:nth-of-type(2) .DataStage2Assembly_Icon{
+			margin-left: 46px;
+		}
+		.DataStage2Assembly_Data_item{
+			margin: 0;
+		}
+		.yczsCompairBox_Data{
+			width: inherit;
+		}
+		.jcViewJCZX{
+			left: 100px;
+			top: -180px;
+			height: 440px;
+		}
+		.jcViewEarthStationArea{
+			left: 10px;
+    		top: 167px;
+		}
+		.info2-title{
+			color: #fff;
+		}
+		.jcViewEarthStationInfoBox5 .Info2 .jcViewEarthStationInfo_typeName,.jcViewEarthStationInfoBox5 .info2 .jcViewEarthStationInfo_Data{
+			display: inline;
+		}
+		.legend{
+			position: absolute;
+			top: 680px;
+			right: 30px;
+		}
+
+
+
+
+
 	</style>
 </head>
 
@@ -124,7 +225,7 @@
 								<div class="DataAssmeblyOne DataAssmeblyOne01">
 									<div class="DataAssmeblyOne_Content">
 										<div class="DataAssemblyOne_title">病毒</div>
-										<div class="DataAssemblyOne_data"><span class="counter virus"> - </span><span class="DataUnit">套</span></div>
+										<div class="DataAssemblyOne_data"><span class="counter virus"> - </span><span class="DataUnit">个</span></div>
 									</div>
 								</div>
 
@@ -132,7 +233,7 @@
 								<div class="DataAssmeblyOne DataAssmeblyOne02">
 									<div class="DataAssmeblyOne_Content">
 										<div class="DataAssemblyOne_title">漏洞</div>
-										<div class="DataAssemblyOne_data"><span class="counter loophole"> - </span><span class="DataUnit">套</span></div>
+										<div class="DataAssemblyOne_data"><span class="counter loophole"> - </span><span class="DataUnit">个</span></div>
 									</div>
 								</div>
 
@@ -140,7 +241,7 @@
 								<div class="DataAssmeblyOne DataAssmeblyOne03">
 									<div class="DataAssmeblyOne_Content">
 										<div class="DataAssemblyOne_title">间谍</div>
-										<div class="DataAssemblyOne_data"><span class="counter spy"> - </span><span class="DataUnit">套</span></div>
+										<div class="DataAssemblyOne_data"><span class="counter spy"> - </span><span class="DataUnit">个</span></div>
 									</div>
 								</div>
 							</div>
@@ -181,7 +282,7 @@
 			<div class="mainRightContainer">
 				<div class="jcxgModel">
 					<div class="modelTitleBoxR">
-						<div class="modelTitle">节传相关</div>
+						<div class="modelTitle">节传业务</div>
 					</div>
 					<!--节传数据景观化场景-->
 					<div class="jcViewModel modelContentBoxR">
@@ -217,22 +318,20 @@
 								<div class="DataStage2Assembly DataStage2Assembly_item">
 									<!--舞台数据展示组件_顶部数据-->
 									<div class="DataStage2Assembly_Data">
-										<div class="DataStage2Assembly_Data_item">中央<span class="commonWeal counter"> - </span>套</div>
-										<div class="DataStage2Assembly_Data_item">地方<span class="pay counter"> - </span>套</div>
+										<div class="DataStage2Assembly_Data_item">中央<span class="commonWeal counter"> - </span>套,地方<span class="pay counter"> - </span>套</div>
+										<div class="DataStage2Assembly_Data_item">高清<span class="highDefinition counter"> - </span>套,标清<span class="standerDefinition counter"> - </span>套</div>
 									</div>
 									<!--舞台数据展示组件_底部图标-->
 									<img class="DataStage2Assembly_Icon" src="../img/jcView/TopDataGroup/TopDataIcon2.png">
 								</div>
 
-								<div class="DataStage2Assembly DataStage2Assembly_item">
-									<!--舞台数据展示组件_顶部数据-->
+								<!-- <div class="DataStage2Assembly DataStage2Assembly_item">
+									舞台数据展示组件_顶部数据
 									<div class="DataStage2Assembly_Data">
-										<div class="DataStage2Assembly_Data_item">高清<span class="highDefinition counter"> - </span>套</div>
-										<div class="DataStage2Assembly_Data_item">标清<span class="standerDefinition counter"> - </span>套</div>
 									</div>
-									<!--舞台数据展示组件_底部图标-->
+									舞台数据展示组件_底部图标
 									<img class="DataStage2Assembly_Icon" src="../img/jcView/TopDataGroup/TopDataIcon2.png">
-								</div>
+								</div> -->
 
 								<div class="DataStage2Assembly DataStage2Assembly_item">
 									<!--舞台数据展示组件_顶部数据-->
@@ -280,10 +379,10 @@
 										<div class="jcViewEarthStationInfo_block upStarDiv">·
 											<img src="../img/jcView/jcViewAlertTXIcon.png" />
 											<ul>
-												<li class="upStarSpans"><span class="jcViewEarthStationInfo_typeName">上星(天线)</span><span class="jcViewEarthStationInfo_Data"><span
+												<li class="upStarSpans"><span class="jcViewEarthStationInfo_typeName">上星系统(天线)</span><span class="jcViewEarthStationInfo_Data"><span
 														 class="counter antenna_16"> - </span><span class="unit">套</span></span></li>
 												<!-- <li><span class="jcViewEarthStationInfo_typeName">天线:</span><span class="jcViewEarthStationInfo_Data"><span -->
-														 <!-- class="counter antenna_13"> - </span><span class="unit">套</span></span></li> -->
+												<!-- class="counter antenna_13"> - </span><span class="unit">套</span></span></li> -->
 												<!-- <li><span class="jcViewEarthStationInfo_typeName">转动天线:</span><span class="jcViewEarthStationInfo_Data"><span
 														 class="counter antenna_move"> - </span><span class="unit">套</span></span></li> -->
 											</ul>
@@ -326,7 +425,7 @@
 								</div>
 								<!--右侧地球站工作信息框-->
 								<div class="jcViewEarthStationInfoBox3">
-									<div class="jcViewEarthStationInfo_title"><span id="siteBaseName3">542台</span>地球站集成平台</div>
+									<div class="jcViewEarthStationInfo_title"><span id="siteBaseName3">北京</span>地球站集成平台</div>
 									<div class="jcViewEarthStationInfo_content">
 										<!-- //在传节目 -->
 										<div class="jcViewEarthStationInfo_block">
@@ -338,19 +437,84 @@
 										</div>
 									</div>
 								</div>
+								<!--右侧地球站系统信息框-->
+								<div class="jcViewEarthStationInfoBox4">
+									<div class="jcViewEarthStationInfo_title">卫星上行信息</div>
+									<div class="jcViewEarthStationInfo_content">
+										<!--上星卫星系统-->
+										<div class="jcViewEarthStationInfo_block">
+											<img src="../img/jcView/sxjmlSign.png" style="margin-top:0;" />
+											<ul class="Info2">
+											<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">上行节目流:</span><span class="jcViewEarthStationInfo_Data"><span
+												class="counter">65 </span><span class="unit">个</span></span></li>
+											</ul>
+										</div>
+										<!--节目集成平台-->
+										<div class="jcViewEarthStationInfo_block">
+											<img src="../img/jcView/jcViewAlertWXSYSIcon.png" style="margin-top:0;" />
+											<ul class="Info2">
+												<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">使用卫星数:</span><span class="jcViewEarthStationInfo_Data"><span
+															class="counter">9 </span><span class="unit">颗</span></span></li>
+											</ul>
+										</div>
+										<!--节目集成平台-->
+										<div class="jcViewEarthStationInfo_block">
+											<img src="../img/jcView/csjmSign.png" style="margin-top:0;" />
+											<ul class="Info2">
+												<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">传输节目:</span><span class="jcViewEarthStationInfo_Data"><span
+														 class="counter">580 </span><span class="unit">套</span></span></li>
+											</ul>
+										</div>
+										<!--节目集成平台-->
+										<div class="jcViewEarthStationInfo_block">
+											<img src="../img/jcView/zfqSign.png" style="margin-top:0;" />
+											<ul class="Info2">
+												<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">使用转发器:</span><span class="jcViewEarthStationInfo_Data"><span
+														 class="counter">57 </span><span class="unit">个</span></span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="jcViewEarthStationInfoBox5">
+										<div class="jcViewEarthStationInfo_title"><span></span>地球站工作内容</div>
+										<div class="jcViewEarthStationInfo_content">
+											<!--上星卫星系统-->
+											<div class="jcViewEarthStationInfo_block">
+												<img src="../img/jcView/jcViewAlertWXSYSIcon.png" style="margin-top:0;" />
+												<ul class="Info2">
+													<li class="info2-title">光传输</li>
+													<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">节目流 : </span><span class="jcViewEarthStationInfo_Data"><span
+														class="counter">198</span><span class="unit">个</span></span></li>
+													<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">占用 : </span><span class="jcViewEarthStationInfo_Data"><span
+														class="counter">647</span><span class="unit">Gbps</span></span></li>
+													</ul>
+												</div>
+												
+												<!--节目集成平台-->
+												<div class="jcViewEarthStationInfo_block">
+													<img src="../img/jcView/jcViewAlertJMPTIcon.png" style="margin-top:0;" />
+													<ul class="Info2">
+													<li class="info2-title">微波传输</li>
+													<li><span class="jcViewEarthStationInfo_typeName" style="width:100%;">传输时间:</span><span class="jcViewEarthStationInfo_Data"><span
+															 class="counter programPlatform">123</span><span class="unit">小时</span></span></li>
+												</ul>
+											</div>
+										</div>
+									</div>
 							</div>
 						</div>
 
 						<!--传输线路-->
-						<div class="jcViewLine"></div>
+						<!-- <div class="jcViewLine"></div> -->
 
 						<!--网络链路-->
-						<div class="jcViewWL"></div>
+						<!-- <div class="jcViewWL"></div> -->
 
 						<!--节传中心-->
-						<!-- <div class="jcViewJCZX"></div> -->
-						<div class="jcViewJCZX2"></div>
-
+						<div class="jcViewJCZX"></div>
+						<!-- <div class="jcViewJCZX2"></div> -->
+						<!-- 图例 -->
+						<img class="legend" src="../img/jcView/JcViewLegend.png">
 						<!--网格地板-->
 						<img class="jcFloor" src="../img/jcView/jcViewFloorBg.png" />
 					</div>
@@ -364,14 +528,167 @@
 <script src="../../Common/js/jquery.counterup.min.js"></script>
 <script src="../../Common/js/echarts.js"></script>
 <script type="text/javascript" src="../../Common/js/global.js"></script>
+<!--网络拓扑图-->
+<script>
+		let myChart = echarts.init(document.getElementById('wltptChart'));
+		let iconA = "image://../img/a.png";
+		let iconHome = "image://../img/core.png";//任务调度
+		let iconB = "image://../img/b.png";//前置服务器
+		let symbolSizeSetting = 20;//图标大小
+		let labelOne = {//文字1省级市级五区
+			normal: {
+				position: "bottom",
+				distance: 0,	//离图标多远					
+				show: true,
+				textStyle: {
+					fontSize: 12,
+					color: '#00eaff',
+					fontFamily: 'microsoftYaHei',
+				},
+			}
+		};
+		let lineColorOne = new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+			offset: 0,
+			color: '#58B3CC'
+		}, {
+			offset: 1,
+			color: '#F58158'
+		}]);
+		let j, k, startPositoin, dataValue;
+		let dataList = [], lineList = [];
+	
+		for (let i = 0; i < 47; i++) {
+			if (i < 7) {
+				startPositoin = 7;
+				j = i
+				dataValue = [startPositoin, 230 - j * 43];
+			} else if (7 <= i && i < 14) {
+				j = i - 7;
+				startPositoin = 97;
+				dataValue = [startPositoin, 230 - j * 43];
+			}
+			else if (14 <= i && i < 30) {
+				startPositoin = 230;
+				k = i - 14; // 防止name重名  使用新变量k
+				dataValue = [12 + k * 5.3, startPositoin]
+			} else if (30 <= i && i < 46) {
+				startPositoin = -30;
+				k = i - 30;
+				dataValue = [12 + k * 5.3, startPositoin]
+			}
+			else {
+				dataValue = [52, 100];
+			}
+			dataList.push({
+				name: "北京." + i,
+				symbol: i == 46 ? iconHome : iconB,
+				symbolSize: symbolSizeSetting,
+				draggable: false,
+				fixed: true,
+				value: dataValue,
+				label: labelOne,
+			});
+			lineList.push({
+				coords: [dataValue, [52, 100]],
+				isbad: 'ok'
+			});
+		}
+		option = {
+	
+			grid: {
+				left: '0%',
+				top: '0%',
+				bottom: '5%',
+			},
+			textStyle: {
+				color: '#f00',
+				fontSize: 16,
+				fontWeight: 600,
+			},
+			animationDuration: 1500,
+			animationEasingUpdate: 'quinticInOut',
+			xAxis: {
+				show: false,
+				type: 'value'
+			},
+			yAxis: {
+				show: false,
+				type: 'value'
+			},
+			series: [
+				{
+					name: "point",
+					type: 'graph',
+					coordinateSystem: 'cartesian2d',
+					legendHoverLink: false,
+					hoverAnimation: true,
+					nodeScaleRatio: false,
+					label: {
+						normal: {
+							show: true,
+							position: 'top',//设置label显示的位置
+							textStyle: {
+								fontSize: '22px'
+							},
+						}
+					},
+	
+					roam: false,
+					lineStyle: {//去掉自带的那条线，不要删
+						normal: {
+							width: 0,
+							shadowColor: 'none',
+							color: 'transparent'
+						},
+					},
+					data: dataList,
+				},
+	
+				{
+					type: 'lines', //节点A,B...N到节点X
+					coordinateSystem: 'cartesian2d',
+					z: 1,
+					polyline: true,
+					zlevel: 1,
+					effect: {
+						show: true,
+						constantSpeed: 50,
+						trailLength: 0.05,
+						symbolSize: 2,
+						symbol: 'circle',
+						loop: true
+					},
+					lineStyle: {
+						normal: {
+							color: function (param) {
+								// console.log(param);
+								if (param.data.isbad == 'o') {
+									return 'red'
+								} else {
+									return '#0fffff'
+								}
+							},
+							opacity: 0.1,
+							curveness: 0.3
+						}
+					},
+					data: lineList
+				}
+			]
+		};
+		myChart.setOption(option);
+	</script>
+	
 <!--地球站切换轮播-->
 <script>
+
 	/*数据刷新动画调用方法*/
 	dataFresh = function (target) {
 		$(target).counterUp({ delay: 100, time: 2000 });
 	};
 
 	// 节传相关
+	// Let timer;
 	let getData1 = function (res) {
 		$(".satellite").html(res.centerRadio);         			//上星数量
 		$(".broadCastGround").html(res.localRadio);   		//地面广播
@@ -383,216 +700,85 @@
 		$(".earthStation").html(res.earthStation);       		//截止上月地球站累计数量
 		$(".programTransTime").html(res.programTransTime);   	//截止上月节传累计时长
 		dataFresh('.jcViewTopContainer .counter');
+		$('.counter').each(function(i,item){
+			// console.log((Math.random()*24000+3000).toFixed())
+			setTimeout(function(){
+				dataFresh(item);
+			},Math.random()*24000+3000)
+		})
 	}
 	let param1 = {
 		key: 'right',
 		param: JSON.stringify({ position: 'programTrans' }),
 	}
 	g.doAjax("servlet/FirstThemeServlet", param1, getData1);
-	setInterval(function(){
+	setInterval(function () {
 		g.doAjax("servlet/FirstThemeServlet", param1, getData1);
-	},30000)
+	}, 30000)
 
 	// 地球站数据
 	let getData2 = function (res) {
-		$(".antenna_16").html(res.antenna_16);           		//地球站资源——16米天线
+		$(".antenna_16").html(res.antenna);           			//地球站资源——16米天线
 		$(".antenna_13").html(res.antenna_13);           		//地球站资源——13米天线
 		$(".antenna_move").html(res.antenna_move);        		//转动天线
 		$(".C_band").html(res.C_band);               			//C波段
 		$(".KU_band").html(res.KU_band);              			//Ku波段
 		$(".DHS_band").html(res.DHS_band);             			//DHS波段
 		$(".repeater").html(res.repeater);             			//转发器
-		$(".satelliteSys").html(res.satelliteSys);        		//上星卫星系统
-		$(".programPlatform").html(res.programPlatform);  		//节目集成平台
-		$(".programTrans_again").html(res.programTrans_again);  //再传节目
+		$(".satelliteSys").html(res.mainProgram);        		//上星卫星系统
+		$(".programPlatform").html(res.backUpProgram);  		//节目集成平台
+		$(".programTrans_again").html(res.programPlatform); 	//再传节目
 		dataFresh('.jcViewEarthStationArea .counter');
 	}
-	g.doAjax("servlet/FirstThemeServlet", { key: 'right', param: JSON.stringify({ position: 'earthStation', station: '542站' }), }, getData2);
+	g.doAjax("servlet/FirstThemeServlet", { key: 'right', param: JSON.stringify({ position: 'earthStation', station: '542' }), }, getData2);
 	let n = 0,
 		classArr = ['EarthStationHSZ', 'EarthStationHTZ', 'EarthStationSHZ', 'EarthStation542'],
 		paramArr = ['喀什', '呼市', '北京', '542'];
 	setInterval(function () {
+		// $(".jcViewEarthStationInfoBox3").fadeOut();
 		$(".jcViewEarthStationArea")[0].className = 'jcViewEarthStationArea ' + classArr[n];
 		let param2 = {
 			key: 'right',
 			param: JSON.stringify({ position: 'earthStation', station: paramArr[n] }),
 		}
+		n == 2 ? $(".jcViewEarthStationInfoBox3").fadeIn() : $(".jcViewEarthStationInfoBox3").fadeOut();
 		g.doAjax("servlet/FirstThemeServlet", param2, getData2);
 		$("#siteBaseName1,#siteBaseName2").html(paramArr[n]);
-
 		n < 3 ? n++ : n = 0;
-	}, 5000);
+	}, 30000);
 
 	// 宽带使用率 与 网络访问行为
 	let getData3 = function (res) {
-		$(".bandInUse").html(res.bandInUse);         			//上星数量
-		$(".bandNoUse").html(res.bandNoUse);   					//地面广播
+		$(".bandNoUse").html(res.bandInUse);         			//上星数量
+		$(".bandInUse").html(res.bandNoUse);   					//地面广播
 		$(".netAccessAbonormal").html(res.netAccessAbonormal);  //公益
 		$(".netAccessTotal").html(res.netAccessTotal);        	//付费
 		$(".virus").html(res.virus);      						//高清
 		$(".loophole").html(res.loophole);   					//标清
 		$(".spy").html(res.spy);       							//数据业务
-		$("#item1").width(res.bandInUse / (res.bandInUse + res.bandNoUse) * 100 + '%');
-		$("#item2").width(res.bandNoUse / (res.bandInUse + res.bandNoUse) * 100 + '%');
+		$("#item2").width(res.bandInUse / (res.bandInUse + res.bandNoUse) * 100 + '%');
+		$("#item1").width(res.bandNoUse / (res.bandInUse + res.bandNoUse) * 100 + '%');
 		dataFresh('.yczsThreeState .counter');
+		res.stationsList.forEach(function(item,i){
+			dataList[i].name = item.station_code;
+			// lineList[i].name
+		})
+		myChart.setOption({
+			series:{
+				name : 'point',
+				data : dataList
+			}
+		})
 	}
 	let param3 = {
 		key: 'right',
 		param: JSON.stringify({ position: 'netSecurity' }),
 	}
 	g.doAjax("servlet/FirstThemeServlet", param3, getData3);
-	setInterval(function(){
+	setInterval(function () {
 		g.doAjax("servlet/FirstThemeServlet", param3, getData3);
-	},30000)
-</script>
-<!--网络拓扑图-->
-<script>
-	let myChart = echarts.init(document.getElementById('wltptChart'));
-	let iconA = "image://../img/a.png";
-	let iconHome = "image://../img/core.png";//任务调度
-	let iconB = "image://../img/b.png";//前置服务器
-	let symbolSizeSetting = 20;//图标大小
-	let labelOne = {//文字1省级市级五区
-		normal: {
-			position: "bottom",
-			distance: 0,	//离图标多远					
-			show: true,
-			textStyle: {
-				fontSize: 12,
-				color: '#00eaff',
-				fontFamily: 'microsoftYaHei',
-			},
-		}
-	};
-	let lineColorOne = new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-		offset: 0,
-		color: '#58B3CC'
-	}, {
-		offset: 1,
-		color: '#F58158'
-	}]);
-	let dataList = [], lineList = [];
-	let j, k, startPositoin, dataValue;
-	for (let i = 0; i < 47; i++) {
-		if (i < 7) {
-			startPositoin = 7;
-			j = i
-			dataValue = [startPositoin, 230 - j * 43];
-		} else if (7 <= i && i < 14) {
-			j = i - 7;
-			startPositoin = 97;
-			dataValue = [startPositoin, 230 - j * 43];
-		}
-		else if (14 <= i && i < 30) {
-			startPositoin = 230;
-			k = i - 14; // 防止name重名  使用新变量k
-			dataValue = [12 + k * 5.3, startPositoin]
-		} else if (30 <= i && i < 46) {
-			startPositoin = -30;
-			k = i - 30;
-			dataValue = [12 + k * 5.3, startPositoin]
-		}
-		else {
-			dataValue = [52, 100];
-		}
-		dataList.push({
-			name: "北京." + i,
-			symbol: i == 46 ? iconHome : iconB,
-			symbolSize: symbolSizeSetting,
-			draggable: false,
-			fixed: true,
-			value: dataValue,
-			label: labelOne,
-		});
-		lineList.push({
-			coords: [dataValue, [52, 100]],
-			isbad: 'ok'
-		});
-	}
-	option = {
-
-		grid: {
-			left: '0%',
-			top: '0%',
-			bottom: '5%',
-		},
-		textStyle: {
-			color: '#f00',
-			fontSize: 16,
-			fontWeight: 600,
-		},
-		animationDuration: 1500,
-		animationEasingUpdate: 'quinticInOut',
-		xAxis: {
-			show: false,
-			type: 'value'
-		},
-		yAxis: {
-			show: false,
-			type: 'value'
-		},
-		series: [
-			{
-				name: "123123",
-				type: 'graph',
-				coordinateSystem: 'cartesian2d',
-				legendHoverLink: false,
-				hoverAnimation: true,
-				nodeScaleRatio: false,
-				label: {
-					normal: {
-						show: true,
-						position: 'top',//设置label显示的位置
-						textStyle: {
-							fontSize: '22px'
-						},
-					}
-				},
-
-				roam: false,
-				lineStyle: {//去掉自带的那条线，不要删
-					normal: {
-						width: 0,
-						shadowColor: 'none',
-						color: 'transparent'
-					},
-				},
-				data: dataList,
-			},
-
-			{
-				type: 'lines', //节点A,B...N到节点X
-				coordinateSystem: 'cartesian2d',
-				z: 1,
-				polyline: true,
-				zlevel: 1,
-				effect: {
-					show: true,
-					constantSpeed: 50,
-					trailLength: 0.05,
-					symbolSize: 2,
-					symbol: 'circle',
-					loop: true
-				},
-				lineStyle: {
-					normal: {
-						color: function (param) {
-							console.log(param);
-							if (param.data.isbad == 'o') {
-								return 'red'
-							} else {
-								return '#0fffff'
-							}
-						},
-						opacity: 0.1,
-						curveness: 0.3
-					}
-				},
-				data: lineList
-			}
-		]
-	};
-	myChart.setOption(option);
+	}, 30000);
+	
 </script>
 
 </html>

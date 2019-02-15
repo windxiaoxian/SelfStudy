@@ -77,8 +77,8 @@ body{width:1920px;height:1080px;background:url(../img/bg/rightBg.png) no-repeat;
 /*节传中心动画*/
 @keyframes jcViewJCZXFlash
 {
-	0%{background:url(../img/jcView/jczxGroupPanel.png) no-repeat;}
-	100%{background:url(../img/jcView/jczxGroupPanel2.png) no-repeat;}
+	0%{background:url(../img/jcView/bcjgGroupFlash1.png) no-repeat;}
+	100%{background:url(../img/jcView/bcjgGroupFlash2.png) no-repeat;}
 }
 .jcViewJCZX{width:759px;height:219px;position:relative;left:80px;top:-200px;z-index:2;background:url(../img/jcView/jczxGroupPanel2.png) no-repeat;animation:jcViewJCZXFlash 1s linear infinite alternate;}
 

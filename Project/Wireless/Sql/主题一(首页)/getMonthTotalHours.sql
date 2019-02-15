@@ -16,18 +16,15 @@
                  DECODE (order_type_dic,
                          '实验', 'SY',
                          '对外广播', 'DW',
-                         '中转外', 'DW',
                          'DN'
                         ) order_type,
                  history_date, b.param_name MONTH
             FROM (SELECT *
-                    FROM wxj_runplan_history_t
+                    FROM wxj_runplan_history_v
                    WHERE history_date >
                                  TO_CHAR (ADD_MONTHS (SYSDATE, -11),
                                           'yyyy-MM')
-                     AND order_type_dic IN
-                            ('实验', '对内广播', '对外广播', '外转中',
-                             '中转外', '地方广播')) a
+                     AND order_type_dic IN ('实验', '对内广播', '对外广播')) a
                  LEFT JOIN
                  (SELECT param_value, param_name
                     FROM wxj_common_param_t

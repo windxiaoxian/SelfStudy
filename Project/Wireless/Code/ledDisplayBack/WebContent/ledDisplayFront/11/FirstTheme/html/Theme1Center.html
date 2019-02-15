@@ -1,0 +1,1124 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>主题一中间</title>
+	<link href="../../Common/css/ledDisplayCommon.css" rel="stylesheet" type="text/css">
+	<link href="../../Common/css/assemblyCommon.css" rel="stylesheet" type="text/css">
+	<link href="../css/Theme1Center.css" rel="stylesheet" type="text/css">
+	<style>
+		#BeijingMap {
+			background: url(../img/center/site/BeijingMapBg.png) !important;
+		}
+		.ddlcModel_item:first-of-type .ddlcModel_item_value {
+			vertical-align: super;
+		}
+		.ddlcModel_item:nth-of-type(2) .ddlcModel_item_value {
+			vertical-align: super;
+		}
+		.ddllcModel .ddlcModel_item {
+			margin: 0;
+		}
+		.ddlcModel_item_value {
+			width: 130px;
+		}
+		.ddlcModel_item:first-of-type .ddlcModel_item_value,
+		.ddlcModel_item:nth-of-type(2) .ddlcModel_item_value {
+			width: 90px;
+		}
+		.margin_left_600 {
+			margin-left: 600px;
+		}
+		.fsjBars {
+			justify-content: center;
+			display: flex;
+		}
+		.fsjBars ul {
+			margin: 0 10px;
+		}
+		.fsjBars li {
+			width: 36px;
+			height: 10px;
+			margin: 4px 0;
+			border-radius: 4px;
+			background-color: #eee;
+			opacity: 0.2;
+		}
+		.fsjUseingBars {
+			height: 144px;
+			position: absolute;
+			left: 54.5px;
+			top: 38.5px;
+			transform: rotateZ(180deg);
+		}
+		.fsjUseingBars li {
+			background-color: gold;
+			opacity: 1;
+		}
+		.fsjUseingBars ul:last-of-type li {
+			background-color: rgb(114, 208, 235);
+			opacity: 1;
+		}
+		.fsjText {
+			color: aquamarine;
+			margin: 10px 62px;
+			font-size: 14px;
+			position: relative;
+			width: 200px;
+		}
+		.barText {
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			padding-left: 10px;
+		}
+		.barText span {
+			margin: 4px 9px;
+		}
+		.DataBallGroupLeft .DataBallGreen2 {
+			background: url(../../Common/img/assembly/DataBallGreen1MiniBg.png) no-repeat;
+			background-size: 100% 100%;
+			width: 160px;
+			height: 160px;
+		}
+		.DataBallGreen2 .DataBallAssembly_Data {
+			font-size: 34px;
+			margin-top: 50px;
+		}
+		.DataBallGreen1 {
+			width: 158px;
+			background-size: 100% 100%;
+		}
+		.DataBallGreen1 .DataBallAssembly_Data {
+			margin-top: 50px;
+		}
+		.DataBallGreen1Mini {
+			width: 110px;
+			height: 110px;
+			background-size: 100% 100%;
+			top: 420px;
+		}
+		.DataBallGreen1Mini .DataBallAssembly_Data {
+			margin-top: 30px;
+		}
+		.DataBallGroupRight .DataBallOrange {
+			width: 140px;
+			height: 140px;
+			background-size: 100% 100%;
+			font-size: 38px;
+		}
+		.DataBallGroupRight .DataBallGreen1{
+			width: 120px;
+			height: 120px;
+		}
+		.DataBallGroupRight .DataBallAssembly_Data{
+			margin-top: 26px;
+		}
+		.DataBallOrangeMini {
+			width: 104px;
+			height: 104px;
+			background-size: 100% 100%;
+			top: 570px;
+		}
+		.DataBallOrangeMini .DataBallAssembly_Data {
+			margin-top: 20px;
+		}
+		.DataBallGroupLeft .DataBallOrange {
+			background: url(../../Common/img/assembly/DataBallOrangeMiniBg.png) no-repeat;
+			background-size: 100% 100%;
+			width: 138px;
+			height: 138px;
+			left: 0;
+		}
+		.jfNum {
+			width: 19px;
+			height: 17px;
+			margin-right: 10px;
+		}
+		.jfNameTop {
+			width: 50px;
+			margin-left: 120px;
+		}
+		.jfStateLight {
+			margin-right: 14px;
+		}
+		.jfName {
+			width: 47px;
+			margin-right: 4px;
+		}
+		.jfStateBox {
+			margin: 0;
+			position: absolute;
+		}
+		.roll-box {
+			/* border: 1px solid gold; */
+			width: 364px;
+			display: inline-block;
+			height: 66px;
+			position: relative;
+			left: 120px;
+			overflow: hidden;
+		}
+		.roll-title {
+			margin-top: 40px;
+		}
+		.siteDesGroup1 {
+			width: 44px;
+			height: 110px;
+			left: 236px;
+			top: 62px;
+		}
+		.siteInfoContainer {
+			width: 528px;
+		}
+		.BottomContent {
+			margin-top: 80px;
+		}
+		.siteDesBar2.item1 {
+			left: -140px;
+			top: -44px;
+		}
+		.siteDesGroup1 .item2 {
+			left: 70px;
+			top: 15px;
+		}
+		.siteDesBar1.item1 {
+			left: 70px;
+			top: 50px;
+		}
+		.siteDesBar1.item4 {
+			left: -170px;
+			top: 90px;
+		}
+		.siteDesBar2.item2 {
+			left: 40px;
+			top: 70px;
+		}
+		.siteDesGroup1 .item3 {
+			left: 36px;
+			top: -44px;
+		}
+		.siteDesGroup1 .item5 {
+			left: -200px;
+			top: 15px;
+			position: absolute;
+		}
+		.siteDesGroup1 .item6 {
+			left: -200px;
+			top: 50px;
+			position: absolute;
+		}
+		.siteDesBar1.item7 {
+			top: 90px;
+			left: 40px;
+			position: absolute;
+		}
+		.siteDesBar1 {
+			width: 180px;
+		}
+		.enemy-station img {
+			position: absolute;
+		}
+		#enmey3 {
+			left: 1600px;
+			top: 300px;
+		}
+		#enmey4 {
+			left: 300px;
+			top: 160px;
+		}
+		#enmey5 {
+			left: 190px;
+			top: 220px;
+		}
+		#enmey6 {
+			left: 490px;
+			top: 300px;
+		}		
+		#enmey7 {
+			left: 390px;
+			top: 410px;
+		}
+		#enmey8 {
+			left: 420px;
+			top: 670px;
+		}
+		#ChinaMap{
+			top: 89px;
+    		left: 444px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<!--顶部栏目-->
+		<div class="MapTopContainer">
+			<!--调度令文号-->
+			<div class="ddlwhModel">
+				<span class="ddlwhModel_title">调度令文号 : </span><span class="ddlwhModel_content order_name"> - </span>
+			</div>
+			<!--调度令流程-->
+			<div class="ddllcModel">
+				<ul>
+					<li class="ddlcModel_item">
+						<img src="../img/center/ddlIcon1.png">
+						<span class="ddlcModel_item_Name">接收<br>调度令</span>
+						<span class="ddlcModel_item_value send_dept">调度处</span>
+					</li>
+					<li class="ddlcModel_item">
+						<img src="../img/center/ddlIcon2.png">
+						<span class="ddlcModel_item_Name">发送<br>调度令</span>
+						<span class="ddlcModel_item_value"><span class="send_dept"> - </span>: <span class="sender"> - </span></span>
+						<!-- <span class="ddlcModel_item_value">
+							频调台站:<span class="peceive_station">123</span><br>
+							人员姓名:<span class="receiver">123</span>
+						</span> -->
+					</li>
+					<li class="ddlcModel_item">
+						<img src="../img/center/ddlIcon3.png">
+						<span class="ddlcModel_item_Name">下发<br>调度令</span>
+						<span class="ddlcModel_item_value">
+							接收台站:<span class="peceive_station">123</span><br>
+							人员姓名:<span class="receiver">123</span>
+						</span>
+					</li>
+					<li class="ddlcModel_item" style="margin-right:0;">
+						<img src="../img/center/ddlIcon4.png">
+						<span class="ddlcModel_item_Name">执行<br>调度令</span>
+						<span class="ddlcModel_item_value">
+							台站:<span class="station_name">123</span><br>
+							发射机:<span class="transmitter">123</span>
+						</span>
+					</li>
+					<li style="clear:both;"></li>
+				</ul>
+			</div>
+		</div>
+
+		<!--站点信息轮播弹出层-->
+		<div class="siteInfoBox">
+			<div class="siteInfoContainer transformerLeft">
+				<div class="siteInfoBox_title">572台</div>
+				<div class="siteInfoBox_content">
+					<!--顶部站点信息条群组-->
+					<div class="siteDesGroup">
+						<!--左侧组-->
+						<div class="siteDesGroup1">
+							<div class="siteDesBar1 item1">类型：<span class="sendBandType"> - </span></div>
+							<div class="siteDesBar1 item2">台站类别：<span class="stationType"> - </span></div>
+							<!-- <div class="siteDesBar1 item3">台长：<span class="stationManager"> - </span></div> -->
+							<div class="siteDesBar1 item4">地址：<span class="address"> - </span></div>
+							<!-- </div> -->
+
+							<!--右侧组-->
+							<!-- <div class="siteDesGroup2"> -->
+							<div class="siteDesBar2 item1">计划播出时长：<br><span class="planBroadTime"> - </span></div>
+							<!-- <div class="siteDesBar2 item2">停播时长：<br><span class="stopTime"> - </span></div> -->
+							<div class="siteDesBar1	item7">综合报警：<span class="alarmCount"> - </span></div>
+							<div class="siteDesBar2 item3">已播出时长：<br><span class="broadTimeDone"> - </span></div>
+							<div class="siteDesBar1 item5">计划任务：<span class="planTask"> - </span> 个</div>
+							<div class="siteDesBar1 item6">已经播任务数 <span class="broadTaskCount"> - </span> 个</div>
+						</div>
+					</div>
+
+					<!--底部信息中心-->
+					<div class="BottomContent">
+						<!--调度中心内容-->
+						<div class="BottomContent_center">
+							<div class="BottomContent_centerContainer">
+								<!--今日调度令-->
+								<div class="BottomContent_center_TjBox">
+									<div class="BottomContent_center_TjBox_name">今日调度令</div>
+									<div class="BottomContent_center_TjBox_Data "><span class="dispatchOrder"> - </span><span> 个</span></div>
+								</div>
+								<!--实时播出功率-->
+								<div class="BottomContent_center_TjBox">
+									<div class="BottomContent_center_TjBox_name">实时播出功率</div>
+									<div class="BottomContent_center_TjBox_Data"><span class="broadCastPowerOn"> - </span><span> kw</span></div>
+								</div>
+								<div style="clear:both;"></div>
+
+								<!--发射机明细-->
+								<div class="BottomContent_center_DetailContainer">
+									<ul>
+										<li><span class="detail_Name">播音发射机</span><span class="detail_Value NomalDetail transmitterInUse"> - </span></li>
+										<li><span class="detail_Name">空闲发射机</span><span class="detail_Value FreeDetail transmitterNoUse"> - </span></li>
+										<li style="clear:both;"><span class="detail_Name">检修发射机</span><span class="detail_Value RepairDetail transmitterRepair">
+												- </span></li>
+										<li><span class="detail_Name">故障发射机</span><span class="detail_Value BrokenDetail transmitterAbonormal"> -
+											</span></li>
+										<li><span class="detail_Name">未知状态发射机</span><span class="detail_Value UnknowDetail transmitterUnknown"> -
+											</span></li>
+									</ul>
+								</div>
+							</div>
+
+
+						</div>
+
+						<!--机房内容-->
+						<div class="roll-title"><span class="jfNameTop"></span><span class="jfNum">1</span><span class="jfNum">2</span><span
+							 class="jfNum">3</span><span class="jfNum">4</span><span class="jfNum">5</span><span class="jfNum">6</span><span
+							 class="jfNum">7</span><span class="jfNum">8</span><span class="jfNum">9</span><span class="jfNum">10</span></div>
+						<div class="roll-box">
+
+							<ul class="jfStateBox">
+								<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
+									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+								<li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
+									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+								<li class="jfNumList"><span class="jfName">丙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
+									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+							</ul>
+							<ul class="jfStateBox jfStateBox2">
+
+								<li class="jfNumList"><span class="jfName">甲机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
+									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+								<li class="jfNumList"><span class="jfName">乙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
+									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+								<li class="jfNumList"><span class="jfName">丙机房</span><span class="jfStateLight"></span><span class="jfStateLight"></span><span
+									 class="jfStateLight"></span><span class="jfStateLight"></span><span class="jfStateLight"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!--信息展现球-->
+		<!--左侧球组-->
+		<div class="DataBallGroupLeft">
+			<!--在播频率-->
+			<div class="DataBallAssembly DataBallGreen1">
+				<div class="DataBallAssembly_Data"><span class="counter realTimeFreq">23456</span><span class="unit">个</span></div>
+				<div class="DataBallAssembly_Name">在播频率</div>
+			</div>
+
+			<!--在播发射机-->
+			<div class="DataBallAssembly DataBallOrange">
+				<div class="DataBallAssembly_Data"><span class="counter realTimeTrans">456</span><span class="unit">个</span></div>
+				<div class="DataBallAssembly_Name">在播发射机</div>
+			</div>
+
+			<!--在播功率-->
+			<div class="DataBallAssembly DataBallGreen2">
+				<div class="DataBallAssembly_Data"><span class="counter realTimePower">23456</span><span class="unit">kW</span></div>
+				<div class="DataBallAssembly_Name">在播功率</div>
+			</div>
+		</div>
+
+		<!--右侧球组-->
+		<div class="DataBallGroupRight">
+			<!--年下发调度令-->
+			<div class="DataBallAssembly DataBallGreen1">
+				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByDay"> - </span><span class="unit">个</span></div>
+				<div class="DataBallAssembly_Name">年下发调度令</div>
+			</div>
+			<div class="DataBallAssembly DataBallGreen1Mini">
+				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderNumByYear"> - </span><span class="unit">个</span></div>
+				<div class="DataBallAssembly_Name">日下发调度令</div>
+			</div>
+
+			<!--年调度令时长-->
+			<div class="DataBallAssembly DataBallOrangeMini">
+				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderTimeByDay"> - </span><span class="unit">时</span></div>
+				<div class="DataBallAssembly_Name">日调度令时长</div>
+			</div>
+			<div class="DataBallAssembly DataBallOrange">
+				<div class="DataBallAssembly_Data"><span class="counter dispatchOrderTimeByYear"> - </span><span class="unit change-unit">时</span></div>
+				<div class="DataBallAssembly_Name">年调度令时长</div>
+			</div>
+		</div>
+
+		<!--卫星阵列暂定--->
+		<img class="sateliteGroup" src="../img/center/sateliteGroup.png">
+
+		<!--敌台打点暂定-->
+		<div class="enemy-station">
+			<!--美国之音-->
+			<img id="enmey1" src="../img/center/site/enemySite1.png">
+			<!--台湾之音-->
+			<img id="enmey2" src="../img/center/site/enemySite2.png">
+			<!--台湾之音-->
+			<img id="enmey3" src="../img/center/site/enemySite3.png">
+			<!--台湾之音-->
+			<img id="enmey4" src="../img/center/site/enemySite4.png">
+			<!--台湾之音-->
+			<img id="enmey5" src="../img/center/site/enemySite5.png">
+			<!--台湾之音-->
+			<img id="enmey6" src="../img/center/site/enemySite6.png">
+			<!--台湾之音-->
+			<img id="enmey7" src="../img/center/site/enemySite7.png">
+			<!--台湾之音-->
+			<img id="enmey8" src="../img/center/site/enemySite8.png">
+		</div>
+		<!--左下角国际台-->
+		<div class="nationSiteBox">
+			<img src="../img/center/nationSitePanel.png">
+		</div>
+
+		<!--右下角发射机当前状态-->
+		<div class="fsjStateBox">
+			<div class="fsjStateContainer">
+				<img class="fsjState_title" src="../img/center/fsjStatePanelTitle.png" />
+			</div>
+			<div class="fsjBars">
+				<ul class="stateBar">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="stateBar">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="fsjBars fsjUseingBars">
+				<ul class="stateBar realTimeAM">
+
+				</ul>
+				<ul class="stateBar currentPower">
+
+				</ul>
+			</div>
+			<div class="barText">
+				<span>功率</span>
+				<span>调幅度</span>
+			</div>
+			<div class="fsjText">
+				台站 : <span class="stationName"></span> <br>
+				发射机 : <span class="transmitterName"></span>
+			</div>
+		</div>
+
+		<!--北京地图-->
+		<div class="BeijingMap" id="BeijingMap"></div>
+		<img class="BeijingMapLine" src="../img/center/site/BeijingMapLine.png" />
+
+		<!--中国地图-->
+		<div id="ChinaMap"></div>
+		<img class="bottomLegend" src="../img/center/BottomLegend.png" />
+	</div>
+</body>
+<script src="../../Common/js/jquery-1.9.1.min.js"></script>
+<script src="../../Common/js/jquery.waypoints.js"></script>
+<script src="../../Common/js/jquery.counterup.min.js"></script>
+<script src="../../Common/js/global.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/china.js"></script>
+<script src="../js/beijing.js"></script>
+
+<!--中国地图-->
+<script>
+	/*数据刷新动画调用方法*/
+	dataFresh = function (target) {
+		$(target).counterUp({ delay: 100, time: 2000 });
+	};
+
+	let chinaMapChart = echarts.init(document.getElementById('ChinaMap'));
+	let pointValue = [
+		{ value: '2021', name: '2021台' },
+		{ value: '2022', name: '2022台' },
+		{ value: '2023', name: '2023台' },
+		{ value: '2024', name: '2024台' },
+		{ value: '491', name: '491台' },
+		{ value: '501', name: '501台' },
+		{ value: '523', name: '523台' },
+		{ value: '542', name: '542台' },
+		{ value: '552', name: '552台' },
+		{ value: '554', name: '554台' },
+		{ value: '561', name: '561台' },
+		{ value: '564', name: '564台' },
+		{ value: '572', name: '572台' },
+		{ value: '582', name: '582台' },
+		{ value: '594', name: '594台' },
+		{ value: '602', name: '602台' },
+		{ value: '623', name: '623台' },
+		{ value: '641', name: '641台' },
+		{ value: '654', name: '654台' },
+		{ value: '694', name: '694台' },
+		{ value: '70551', name: '7055甲台' },
+		{ value: '70552', name: '7055乙台' },
+		{ value: '70553', name: '7055丙台' },
+		{ value: '722', name: '722台' },
+		{ value: '723', name: '723台' },
+		{ value: '724', name: '724台' },
+		{ value: '725', name: '725台' },
+		{ value: '726', name: '726台' },
+		{ value: '731', name: '731台' },
+		{ value: '751', name: '751台' },
+		{ value: '761', name: '761台' },
+		{ value: '763', name: '763台' },
+		{ value: '783', name: '783台' },
+		{ value: '824', name: '824台' },
+		{ value: '831', name: '831台' },
+		{ value: '871', name: '871台' },
+		{ value: '916', name: '916台' },
+		{ value: '951', name: '951台' },
+		{ value: '952', name: '952台' },
+		{ value: '953', name: '953台' },
+		{ value: 'ALBCER', name: '阿尔巴尼亚采立克台' },
+		{ value: 'BES', name: '北京地球站' },
+		{ value: 'BJGCC', name: '北京广播电视维护中心' },
+		{ value: 'CRT', name: '中央广播电视塔管理中心' },
+		{ value: 'ENGCC', name: '东南广播电视维护中心' },
+		{ value: 'HES', name: '呼和浩特地球站' },
+		{ value: 'YTS', name: '中央广播电视发射二台（月坛）' },]
+	let chData = [
+		{ name : '2021台', value: [122.16,49.21] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '2023台', value: [109.54,19.53] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '2024台', value: [124.16,47.21] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '501台', value: [102.31,24.54] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '523台', value: [125.22,43.56] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '552台', value: [119.40,26.05] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '554台', value: [113.25,34.49] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '561台', value: [116.05,28.37] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '594台', value: [108.58,34.15] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '623台', value: [120.08,31.42] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '641台', value: [118.35,24.53] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '694台', value: [111.14,40.47] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '722台', value: [106.58,34.42] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '723台', value: [114.26,38.02] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '724台', value: [107.43,34.32] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '725台', value: [111.55,36.51] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '726台', value: [103.54,25.49] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '731台', value: [117.03,25.01] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '751台', value: [117.19,27.05] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '761台', value: [117.13,25.44] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '763台', value: [126.44,42.54] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '824台', value: [119.11,25.28] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '831台', value: [119.20,29.06] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '871台', value: [108.42,19.53] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '951台', value: [114.08,38.13] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '952台', value: [105.10,28.24] , symbol: 'image://../img/center/site/zbtSite.png',},
+		{ name : '953台', value: [127.17,43.33] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '呼和浩特地球站', value: [111.48,40.41] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站'},
+		{ name : '602台', value: [91.15,29.38] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '2022台', value: [75.47,39.21] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
+		{ name : '654台', value: [86.54,44.09] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '916台', value: [94.60,36.24] , symbol: 'image://../img/center/site/zdbSite.png',},
+	]
+	let bjData = [
+		{ name : '491台', value: [60.36,59.53] , symbol: 'image://../img/center/site/zdbSiteNormal.png',},
+		{ name : '542台', value: [60.14,79.45] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
+		{ name : '564台', value: [80.08,129.38] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '572台', value: [96.50,99.45] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '582台', value: [56.21,79.56] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '北京地球站', value: [36.18,104.06] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站'},
+		{ name : '中央广播电视塔管理中心', value: [44.23,119.54] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
+		{ name : '中央广播电视发射二台（月坛）', value: [70.23,80.55] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
+		// { name : '7055甲台', value: [NULL,NULL] , symbol: 'image://../img/center/site/zbtSite.png',},
+		// { name : '7055乙台', value: [NULL,NULL] , symbol: 'image://../img/center/site/zbtSite.png',},
+		// { name : '7055丙台', value: [NULL,NULL] , symbol: 'image://../img/center/site/zbtSite.png',},
+		// { name : '783台', value: [NULL,NULL] , symbol: 'image://../img/center/site/zbtSite.png',},
+		// { name : '阿尔巴尼亚采立克台', value: [NULL,NULL] , symbol: 'image://../img/center/site/zdbSite.png',},
+		// { name : '北京广播电视维护中心', value: [NULL,NULL] , symbol: '维护中心'},
+		// { name : '东南广播电视维护中心', value: [NULL,NULL] , symbol: '维护中心'},
+	]
+	$(bjData.concat(chData)).each(function (i, item) {
+		$(pointValue).each(function (j, item2) {
+			if (item.name == item2.name) {
+				// console.log(item)
+				item.code = item2.value;
+			}
+		})
+	});
+	// 开关kg
+	let labelIsShow = true;
+	// console.log(chData)
+	/*全国图*/
+	let chinaMap = {
+		title: {},
+		tooltip: {
+			trigger: 'item',
+			formatter: function (params) {
+				return params.name + ' : ' + params.value[2];
+			}
+		},
+		geo: {
+			map: 'china',
+			show: true,
+			regions: [
+				{
+					name: '南海诸岛',
+					value: 0,
+					itemStyle:
+					{
+						normal:
+						{
+							opacity: 0,
+							label: {
+								show: false
+
+							}
+						}
+					}
+				},
+
+			],
+			roam: false,
+			zoom: 1.2,
+			aspectScale: 0.8,
+
+			label: {
+				normal: {
+					show: false,
+					textStyle: {
+						color: 'rgba(255,255,255,0.5)'
+					}
+				},
+
+			},
+			itemStyle: {
+				normal: {
+					areaColor: 'rgba(3,33,93,0.08)',
+					borderColor: '#323f67',
+					borderWidth: 1,
+				},
+				emphasis: {}
+			},
+
+		},
+		silent: true,
+		series: [
+			{
+				name: 'point',
+				type: 'scatter',
+				coordinateSystem: 'geo',
+				data: chData,
+				symbol: '',
+				symbolSize: 26,
+				label: {
+					normal: {
+						formatter: '{b}',
+						position: 'right',
+						show: labelIsShow
+					},
+					emphasis: {
+						show: true
+					}
+				},
+				itemStyle: {
+					normal: {
+						color: '#F4E925'
+					}
+				}
+			},
+			{
+				name: 'effectPoint1',
+				type: 'effectScatter',
+				coordinateSystem: 'geo',
+				symbolSize: 30,
+				data: ''
+			},
+			{
+				name: 'effectPoint2',
+				itemStyle: {
+                normal: {
+                    color: 'red',
+                    shadowBlur: 10,
+                    shadowColor: '#05C3F9'
+                }
+            },
+				symbol: 'circle',
+				type: 'effectScatter',
+				coordinateSystem: 'geo',
+				symbolSize: 10,
+				data: ''
+			}
+		]
+	}
+	chinaMapChart.setOption(chinaMap);
+
+
+	let bjMapChart = echarts.init(document.getElementById('BeijingMap'));
+	let bjMap = {
+
+		title: {
+
+		},
+		tooltip: {
+			trigger: 'item',
+			formatter: function (params) {
+				return params.name + ' : ' + params.value[2];
+			}
+		},
+
+		geo: {
+			show: true,
+			map: 'beijing',
+			label: {
+				normal: {
+					show: false
+				},
+				emphasis: {
+					show: false,
+				}
+			},
+			roam: true,
+			itemStyle: {
+				normal: {
+					areaColor: 'transparent',
+					borderColor: '#3fdaff',
+					borderWidth: 2,
+					shadowColor: 'rgba(63, 218, 255, 0.5)',
+					shadowBlur: 30
+				},
+				emphasis: {
+					areaColor: '#2B91B7',
+				}
+			}
+		},
+		silent: true,
+		series: [
+			// {
+			// 	type: 'map',
+			// 	map: 'beijing',
+			// 	selectedMode:'single',
+			// 	itemStyle:{
+			// 		normal:{
+			// 			label:{
+			// 				show:false
+			// 			},
+			// 			areaColor: 'transparent',
+			// 			borderColor: '#fff',
+			// 			borderWidth: 1,
+			// 			shadowColor: 'red'
+			// 		},
+			// 		emphasis:{
+			// 			label:{
+			// 				show:true
+			// 			}
+			// 		}
+			// 	},
+			// 	data:[]
+			// },
+
+			{
+				name: 'bjpoint',
+				type: 'scatter',
+				coordinateSystem: 'geo',
+				map: "beijing",
+				symbol: 'image://../img/center/site/zdbSite2.png',
+				symbolSize: 26,
+				label: {
+					normal: {
+						formatter: '{b}',
+						position: 'right',
+						show: labelIsShow
+					},
+					emphasis: {
+						show: true
+					}
+				},
+				itemStyle: {
+					normal: {
+						color: '#F4E925'
+					}
+				},
+				data: bjData,
+			},
+			{
+				name: 'effectPoint1',
+				type: 'effectScatter',
+				coordinateSystem: 'geo',
+				symbolSize: 30,
+				data: ''
+			},
+			{
+				name: 'effectPoint2',
+				itemStyle: {
+					normal: {
+						color: 'red',
+						shadowBlur: 10,
+						shadowColor: '#05C3F9'
+					}
+				},
+				symbol: 'circle',
+				type: 'effectScatter',
+				coordinateSystem: 'geo',
+				symbolSize: 10,
+				data: ''
+			}
+		]
+
+	}
+	bjMapChart.setOption(bjMap);
+	// 台站信息框
+	let getData1 = function (res) {
+		$('.address').html(res.address);
+		$('.alarmCount').html(res.alarmCount);
+		$('.broadCastPowerOn').html(res.broadCastPowerOn);
+		$('.broadTaskCount').html(res.broadTaskCount);
+		$('.broadTimeDone').html(res.broadTimeDone);
+		$('.dispatchOrder').html(res.dispatchOrder);
+		$('.machineList').html(res.machineList);
+		$('.phone').html(res.phone);
+		$('.planBroadTime').html(res.planBroadTime);
+		$('.planTask').html(res.planTask);
+		$('.sendBandType').html(res.sendBandType);
+		$('.stationManager').html(res.stationManager);
+		$('.stationType').html(res.stationType);
+		$('.stopTime').html(res.stopTime);
+		$('.transmitterAbonormal').html(res.transmitterAbonormal);
+		$('.transmitterInUse').html(res.transmitterInUse);
+		$('.transmitterNoUse').html(res.transmitterNoUse);
+		$('.transmitterRepair').html(res.transmitterRepair);
+		$('.transmitterUnknown').html(res.transmitterUnknown);
+		// 机房ABC状态
+		let jfArr = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛'];
+		$(".jfStateBox").html('');
+		$(res.machineList).each(function (i, item) {
+			let newLi = $('<li class="jfNumList"><span class="jfName">' + jfArr[i] + '机房</span></li>');
+			$(item).each(function (j, item2) {
+				newLi.append('<span class="jfStateLight ' + item2 + '"></span>')
+			});
+			$(".jfStateBox").append(newLi);
+			// $('.jfNumList').eq(i).find(".jfStateLight").each(function (j, item2) {
+			// 	// console.log(item[j])
+			// 	$(item2).addClass(item[j]);
+			// })
+		});
+	}
+	// window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+	let speed1 = speed2 = 0;
+	function rollTable() {
+		let tablePosition1 = parseInt($(".jfStateBox").eq(0).css("top"));
+		let tablePosition2 = parseInt($(".jfStateBox").eq(1).css("top"));
+		let tableHeight = $(".jfStateBox").eq(0).height();
+
+		if (tablePosition1 < -tableHeight) {
+			speed1 = tableHeight;
+		}
+		if (tablePosition2 < -tableHeight) {
+			speed2 = 0;
+		}
+		speed1 -= 1;
+		speed2 -= 1;
+		$(".jfStateBox").eq(0).css("top", speed1 + "px");
+		$(".jfStateBox").eq(1).css("top", speed2 + tableHeight + "px");
+		// window.requestAnimationFrame(rollTable);
+		setTimeout(rollTable, 60);
+	}
+	// window.requestAnimationFrame(rollTable);
+	setTimeout(rollTable, 60);
+	// $(".siteInfoBox").hide();
+
+	let totalData = bjData.concat(chData), i = 0, effectData, effectData2 = [], targetChart, cancelEffectChart;
+	console.log(totalData);
+	let intervalFun = function () {
+		// 轮播effect
+		effectData = [totalData[i]];
+		effectData2 = [
+			{
+				name : totalData[i].name, 
+				value : [totalData[i].value[0],totalData[i].value[1]]
+			}];
+		// effectData2 = effectData.map(function(item){
+		// 	return item;
+		// })
+		console.log(effectData2,effectData);
+		console.log(effectData2,effectData)
+		// targetChart = i < 8 ? bjMapChart : chinaMapChart;
+		if(i < 8){
+			effectData2[0].value[0] += 2;
+			effectData2[0].value[1] -= 14;
+			delete effectData2[0].symbol ;
+			targetChart = bjMapChart;
+		} else {
+			targetChart = chinaMapChart;
+			effectData2[0].value[0] += 0.3;
+			effectData2[0].value[1] += 1;
+			delete effectData2[0].symbol ;
+		}
+		targetChart.setOption({
+			series: [
+				{
+				name: 'effectPoint1',
+				type: 'effectScatter',
+				coordinateSystem: 'geo',
+				data: effectData
+			},
+			// {
+			// 	name: 'effectPoint2',
+			// 	symbol: 'circle',
+			// 	type: 'effectScatter',
+			// 	coordinateSystem: 'geo',
+			// 	data: effectData2
+			// }
+			]
+		});
+		// 取消另一个chart的effect
+		if (i == 8) {
+			bjMapChart.setOption({
+				series: [{
+					name: 'effectPoint1',
+					data: ''
+				}]
+			});
+		} else if (i == 0) {
+			chinaMapChart.setOption({
+				series: [{
+					name: 'effectPoint1',
+					data: ''
+				}]
+			});
+		}
+		// 信息框title名
+		$('.siteInfoBox_title').html(effectData[0].name);
+		// 控制显示窗口
+		if (i == 36) {
+			$('.siteInfoContainer').fadeOut(
+				function () {
+					$('.siteInfoBox').addClass('margin_left_600');
+					$('.siteInfoContainer').removeClass("transformerLeft").addClass('transformerRight').fadeIn()
+				}
+			)
+		}
+		if (i == 0) {
+			$('.siteInfoContainer').fadeOut(
+				function () {
+					$('.siteInfoBox').removeClass('margin_left_600');
+					$('.siteInfoContainer').removeClass("transformerRight").addClass('transformerLeft').fadeIn()
+				}
+			)
+		}
+		let param1 = {
+			key: 'center',
+			param: JSON.stringify({ position: 'subStation', stationCode: effectData[0].code }),
+		}
+		g.doAjax("servlet/FirstThemeServlet", param1, getData1);
+		console.log(effectData2, i);
+
+		let param4 = {
+			key: 'center',
+			param: JSON.stringify({ position: 'stationStatus' }),
+		}
+		g.doAjax("servlet/FirstThemeServlet", param4, getData4);
+		console.log(effectData2, i);
+		
+		i == totalData.length - 1 ? i = 0 : i++;
+	};
+	let param4 = {
+		key: 'center',
+		param: JSON.stringify({ position: 'stationStatus' }),
+	}
+	g.doAjax("servlet/FirstThemeServlet", param4, getData4);
+	intervalFun();
+	setInterval(intervalFun, 30000);
+	function getData4(res){
+		$(res.stationStatus[0]).each(function(i,item){
+			$(chData).each(function(j,item2){
+				if(item2.code == item.station_code){
+					item2.symbol = 'image://../img/center/site/zdbSiteNormal.png'
+					// item2.symbol = 'image://../img/center/site/zdbSite'+ item.work_status +'.png'
+				}
+			})
+		})
+		chinaMapChart.setOption({
+			series: [{
+				name: 'point',
+				type: 'scatter',
+				coordinateSystem: 'geo',
+				data: chData,
+			}]
+		});
+		$(res.stationStatus[1]).each(function(i,item){
+			$(bjData).each(function(j,item2){
+				if(item2.code == item.station_code){
+					// item2.symbol = 'image://../img/center/site/zdbSite'+ item.work_status +'.png'
+					item2.symbol = 'image://../img/center/site/zdbSiteNormal.png'
+				}
+			})
+		})
+		bjMapChart.setOption({
+			series: [{
+				name: 'point',
+				type: 'scatter',
+				coordinateSystem: 'geo',
+				data: bjData,
+			}]
+		});
+	}
+
+	// 顶端数据
+	let topTimer;
+	let getData2 = function (res) {
+		clearInterval(topTimer);
+		let n = 0;
+		function loadData() {
+			$('.order_name').html(res.dispatchOrderList[n].order_name);
+			$('.peceive_station').html(res.dispatchOrderList[n].receive_station);
+			$('.receiver').html(res.dispatchOrderList[n].receiver);
+			$('.send_dept').html(res.dispatchOrderList[n].send_dept);
+			$('.sender').html(res.dispatchOrderList[n].sender);
+			$('.station_name').html(res.dispatchOrderList[n].station_name);
+			$('.transmitter').html(res.dispatchOrderList[n].transmitter);
+			$('.stationName').html(res.dispatchOrderList[n].station_name);
+			$(".transmitterName").html(res.dispatchOrderList[n].transmitter);
+			$('.currentPower,.realTimeAM').empty();
+			// console.log(res.power)
+			for (let i = 0; i < res.dispatchOrderList[n].power; i++) {
+				$('.currentPower').append('<li></li>')
+			};
+			for (let i = 0; i < res.dispatchOrderList[n].amrp; i++) {
+				$('.realTimeAM').append('<li></li>')
+			};
+			n == res.dispatchOrderList.length - 1 ? n = 0 : n++;
+
+		}
+		loadData();
+		topTimer = setInterval(loadData, 30000)
+	};
+	let param2 = {
+		key: 'center',
+		param: JSON.stringify({ position: 'dispatchOrder' }),
+	}
+	setInterval(function () {
+		g.doAjax("servlet/FirstThemeServlet", param2, getData2);
+	}, 60000 * 20)
+	g.doAjax("servlet/FirstThemeServlet", param2, getData2);
+
+	// 两侧球数据
+	let getData3 = function (res) {
+		$('.dispatchOrderNumByDay').html(res.dispatchOrderNumByDay);
+		$('.dispatchOrderNumByYear').html(res.dispatchOrderNumByYear);
+		$('.dispatchOrderTimeByDay').html(res.dispatchOrderTimeByDay);
+		$('.realTimeFreq').html(res.realTimeFreq);
+		$('.realTimePower').html(res.realTimePower);
+		$('.realTimeTrans').html(res.realTimeTrans);
+		console.log((res.dispatchOrderTimeByYear / 10000).toFixed(2))
+		if (res.dispatchOrderTimeByYear / 1 > 9999) {
+			$('.dispatchOrderTimeByYear').html((res.dispatchOrderTimeByYear / 10000).toFixed(1));
+			$('.change-unit').html("万时");
+		} else {
+			$('.dispatchOrderTimeByYear').html(res.dispatchOrderTimeByYear);
+			$('.change-unit').html("时");
+		}
+	};
+	let param3 = {
+		key: 'center',
+		param: JSON.stringify({ position: 'realTimeInfo' }),
+	}
+	g.doAjax("servlet/FirstThemeServlet", param3, getData3);
+</script>
+
+</html>
