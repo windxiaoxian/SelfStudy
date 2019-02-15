@@ -7,6 +7,7 @@ import net.sf.json.JSONSerializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -238,11 +239,11 @@ public class FirstThemeServlet extends HttpServlet {
                 }
                 temMap.put("BroadTime", totalTimeTemp);
                 temMap.put("stopHour", Math.floor(((BigDecimal) ((Map) StopRateList.get(j)).get("stop_seconds")).intValue() / (totalTimeTemp / 100)));
-//                logger.info("本月的位置:" + numOfJanuary);
-//                logger.info("DWList:" + temMap.get("month"));
-//                logger.info("StopRateList:" + ((Map) StopRateList.get(j)).get("month"));
-//                logger.info("DNList:" + ((Map) DNList.get(j)).get("month"));
-//                logger.info("SYList:" + ((Map) SYList.get(j)).get("month"));
+                logger.info("本月的位置:" + numOfJanuary);
+                logger.info("DWList:" + temMap.get("month"));
+                logger.info("StopRateList:" + ((Map) StopRateList.get(j)).get("month"));
+                logger.info("DNList:" + ((Map) DNList.get(j)).get("month"));
+                logger.info("SYList:" + ((Map) SYList.get(j)).get("month"));
                 list.add(temMap);
             }
             int broadCastTime = broadCastExterTime + broadCastInterTime + broadCastTestTime + todayDWTemp + todayDNTemp + todaySYTemp; // 取实验、对内、对外之和为总播出时长;
@@ -271,6 +272,7 @@ public class FirstThemeServlet extends HttpServlet {
             JSONObject resultJson = new JSONObject();
             ArrayList resultList = new ArrayList();
             List taskCountList = (List) wirelessDB.qryList(FrontPageThemeDAO.getTodayTotalTasks(reqMap)).get("data"); //每种任务对应的在播频率数
+            List resList = new ArrayList();
             for (Object taskCount : taskCountList) {
                 Map map = new HashMap();
                 Map taskCountItem = (Map) taskCount;
@@ -284,6 +286,11 @@ public class FirstThemeServlet extends HttpServlet {
                 map.put("taskBroadPower", taskCountItem.get("power_doing"));//每种任务对应的在播功率
                 resultList.add(map);
             }
+            //将List按照实验、对内、对外排序
+            resList.add(resultList.get(2));
+            resList.add(resultList.get(1));
+            resList.add(resultList.get(0));
+
             resultJson.accumulate("taskCount", resultList);
             return resultJson.toString();
         } catch (Exception e) {
