@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* 主题一中间视频窗口版 */
+html,body,div,img{margin:0;padding:0;}
+body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat;overflow:hidden;font-family:"微软雅黑"}
+.main{margin:40px 0px 0px 45px;overflow:hidden;}
+
+/*顶部报警信息条*/
+.alertBox{width:733px;height:40px;background:url(../img/centerGroup/alertBg.png) no-repeat;background-size:cover;margin:0 auto;margin-top:115px;}
+.alertBoxTitle{display:inline-block;font-size: 16px;font-weight:bold;background-image: -webkit-linear-gradient(top,#9bf9dd,#0095fe);-webkit-background-clip:text;-webkit-text-fill-color:transparent;height:40px;line-height:40px;position:relative;top:-15px;}
+.alerBoxContent{display:inline-block;height:40px;line-height:40px;font-size:14px;color:#ffffff;}
+
+/*视频舞台区域*/
+.videoStage{width:676px;height:329px;background:url(../img/centerGroup/videoStage.png) no-repeat;background-size:cover;position:absolute;bottom:50px;left:50%;margin-left:-338px;z-index:2;}
+@keyframes videoStageFlash
+{
+	from{opacity:0.2;}
+	to{opacity:1}
+}
+.videoStage img{position:relative;left:132px;top:20px;z-index:11;animation:videoStageFlash 1s linear infinite alternate;transition:1s;}
+
+
+/*视频窗口*/
+@keyframes videoTitleBgLeftFlash
+{
+	0%{background:url(../img/centerGroup/videoTitleBgLeft1.png) no-repeat;}
+	33%{background:url(../img/centerGroup/videoTitleBgLeft2.png) no-repeat;}
+	66%{background:url(../img/centerGroup/videoTitleBgLeft3.png) no-repeat;}
+	100%{background:url(../img/centerGroup/videoTitleBgLeft1.png) no-repeat;}
+}
+@keyframes videoTitleBgRightFlash
+{
+	0%{background:url(../img/centerGroup/videoTitleBgRight1.png) no-repeat;}
+	33%{background:url(../img/centerGroup/videoTitleBgRight2.png) no-repeat;}
+	66%{background:url(../img/centerGroup/videoTitleBgRight3.png) no-repeat;}
+	100%{background:url(../img/centerGroup/videoTitleBgRight1.png) no-repeat;}
+}
+
+.videoBigBox{width:921px;height:609px;background:url(../img/centerGroup/videoBoxBig.png) no-repeat;background-size:cover;text-align:center;z-index:10;}
+.leftVideo{position:absolute;left:30px;top:170px;}
+.rightVideo{position:absolute;right:30px;top:170px;}
+.videoTitleBox{display:inline-block;margin-top:50px;}
+.videoTitleBgLeft{width:40px;height:21px;display:inline-block;background:url(../img/centerGroup/videoTitleBgLeft1.png);animation:videoTitleBgLeftFlash 2s linear infinite ;transition:1s;}
+.videoTitleBgRight{width:40px;height:21px;display:inline-block;background:url(../img/centerGroup/videoTitleBgRight1.png);animation:videoTitleBgRightFlash 2s linear infinite ;transition:1s;}
+.videoTitle{display:inline-block;height:21px;line-height:21px;color:#ffffff;font-size:18px;font-weight:bold;text-align:center;margin:0 10px 0 10px;position:relative;bottom:3px;}
+
+
+/*视频指挥系统*/
+.spzhxtBox{width:575px;height:200px;background:url(../img/centerGroup/spzhxtAreaBg.png) no-repeat;background-position:bottom;position:absolute;bottom:50px;left:50px;}
+/*视频页面*/
+.spymBox{width:575px;height:200px;background:url(../img/centerGroup/spymAreaBg.png) no-repeat;background-position:bottom;position:absolute;bottom:50px;right:50px;}

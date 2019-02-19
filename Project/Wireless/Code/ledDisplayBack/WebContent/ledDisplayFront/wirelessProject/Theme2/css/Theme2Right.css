@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* 主题一左侧 */
+html,body,div,img{margin:0;padding:0;}
+body{width:1920px;height:1080px;background:url(../img/bg/rightBg.png) no-repeat;overflow:hidden;font-family:"微软雅黑"}
+.main{margin:40px 0px 0px 45px;overflow:hidden;}
+.main2{margin:40px 45px 0px 0px;overflow:hidden;}
+.Model{margin-bottom:20px;}
+
+.mainLeft{width:879px;height:988px;perspective:500px;float:right;}
+.mainLeftContainer{width:879px;height:988px;transform-origin:right center;transform:rotateY(-5deg)}
+.jgdxModel{width:879px;height:988px;background:url(../img/bg/containerBG5.png) no-repeat;}
+
+
+.mainRight{width:879px;height:988px;perspective:500px;float:right;}
+.mainRightContainer{width:879px;height:988px;float:left;transform-origin:right center;transform:rotateY(-5deg)}
+.zbqljbfscModel{width:879px;height:358px;background:url(../img/bg/containerBG3.png) no-repeat;}
+.zyjmbcztModel{width:879px;height:610px;background:url(../img/bg/containerBG4.png) no-repeat;}
+
+/*播放时长累计节目排名图表*/
+#bfscljpm_barChart{width:90%;height:230px;margin:0 auto;margin-right:45px;}
+
+/*重复节目播出状态表格*/
+.zyjmbcztModel .TableListHeadItemBox{margin-right:10px;}
+.zyjmbcztModel table td{margin-right:10px;padding-left:5px;}
+.zyjmbcztModel .TableListArea{height:220px;}
+
+/*技能大改表格*/
+.ModelContent{margin:20px 0 0 80px;}
+.dqzxxmModel{margin-bottom:35px;}
+.dqzxxmModel .TableListArea{height:180px;}
+.dqzxxmModel table td{padding-left:5px;}
+
+.zjsjModel{margin-bottom:35px;}
+.zjsjModel .TableListHeadItemBox{margin-right:155px;}
+.zjsjModel .TableListArea{height:80px;}
+.zjsjModel table td{padding-left:5px;margin-right:155px;}
+
+/*顶部统计*/
+.TopTJContainer{overflow:hidden;}
+.tc{margin-left:110px;}
+.TJPanelAssembly{width:218px;height:101px;margin-right:20px;background:url(../img/bg/panelBG3.png) no-repeat;overflow:hidden;display:inline-block;}
+.TJPanelAssemblyTitle{font-size:14px;font-weight:bold;color:#0fffff;margin:20px 0 0 15px;}
+.TJPanelAssemblyData{margin:0px 0 0 0px;text-align:center;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:oblique;}
+.TJPanelAssemblyData .DataCounter{font-size:40px;font-family:DataFont;}
+.DataAssemblyOne_data .DataUnit{font-size:12px;font-weight:bold;font-family:"微软雅黑"}
+
+.TJGroupContainer{margin-top:35px;margin-left:30px;}
+.TJGroupContainer .TjGroupItem{display:inline-block;margin-right:30px;}
+.TJGroupContainer .TjGroupItem img{display:inline-block;}

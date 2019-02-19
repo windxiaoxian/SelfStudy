@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* 主题一左侧 */
+html,body,div,img{margin:0;padding:0;}
+body{width:1920px;height:1080px;background:url(../img/bg/rightBg.png) no-repeat;overflow:hidden;font-family:"微软雅黑"}
+.main{margin:40px 0px 0px 45px;overflow:hidden;}
+.main2{margin:40px 45px 0px 0px;overflow:hidden;}
+.Model{margin-bottom:20px;}
+
+.mainLeft{width:879px;height:988px;perspective:500px;float:right;}
+.mainLeftContainer{width:879px;height:988px;transform-origin:right center;transform:rotateY(-5deg)}
+.jgdxModel{width:879px;height:988px;background:url(../img/bg/containerBG5.png) no-repeat;}
+
+
+.mainRight{width:879px;height:988px;perspective:500px;float:right;}
+.mainRightContainer{width:879px;height:988px;float:left;transform-origin:right center;transform:rotateY(-5deg)}
+.qjtzzyzlModel{width:879px;height:328px;background:url(../img/bg/containerBG9.png) no-repeat;}
+.syjbcqktModel{width:879px;height:640px;background:url(../img/bg/containerBG10.png) no-repeat;}
+
+
+
+/*技能大改表格*/
+.ModelContent{margin:20px 0 0 80px;}
+.dqzxxmModel{margin-bottom:35px;}
+.dqzxxmModel .TableListArea{height:180px;}
+.dqzxxmModel table td{padding-left:5px;}
+
+.zjsjModel{margin-bottom:35px;}
+.zjsjModel .TableListHeadItemBox{margin-right:155px;}
+.zjsjModel .TableListArea{height:80px;}
+.zjsjModel table td{padding-left:5px;margin-right:155px;}
+
+/*顶部统计*/
+.TopTJContainer{overflow:hidden;}
+.tc{margin-left:110px;}
+.TJPanelAssembly{width:218px;height:101px;margin-right:20px;background:url(../img/bg/panelBG3.png) no-repeat;overflow:hidden;display:inline-block;}
+.TJPanelAssemblyTitle{font-size:14px;font-weight:bold;color:#0fffff;margin:20px 0 0 15px;}
+.TJPanelAssemblyData{margin:0px 0 0 0px;text-align:center;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:oblique;}
+.TJPanelAssemblyData .DataCounter{font-size:40px;font-family:DataFont;}
+.DataAssemblyOne_data .DataUnit{font-size:12px;font-weight:bold;font-family:"微软雅黑"}
+
+/*饼图组*/
+.pieGroupContainer{margin-left:120px;}
+.pieGroupContainer .pieGroupItem{width:328px;height:233px;margin-right:20px;background:url(../img/bg/PiepanelBG.png) no-repeat;overflow:hidden;display:inline-block;}
+.pieChartName{font-size:14px;font-weight:bold;color:#0fffff;margin:20px 0 0 15px;}
+/*立体饼图*/
+.pieChartBox{height:200px;position:relative;top:-15px;left:10px;}
+
+/*实时情况展现区域*/
+.ssqkShowAssemblyTop{margin-top:20px;}
+.legend,.ssqkShowAssembly_progressBar,.BarType{display:inline-block;}
+.ssqkShowAssembly_progressBar{margin-left:20px;}
+.BarType{font-size:14px;color:#ffffff;font-weight:bold;position:relative;top:-5px;}
+.DataAssemblyBar_progressBar{width:260px;height:25px;display:inline-block;margin-top:0;}
+.DataAssemblyBar_progressBarItem{height:25px;line-height:25px;}
+.progressBarData{font-size:12px;font-weight:normal;}
+
+/*地理轮播*/
+.ssqkShowAssemblyMain{margin-top:20px;}
+.AreaOutContainer img{display:block;float:left;}
+.miniArea{transform:scale(0.6);opacity:0.5;transition:1s;}
+.maxArea{transform:scale(1);transition:1s;}
+.AreaOutContainer{width:850px;margin:0 auto;overflow:hidden;}

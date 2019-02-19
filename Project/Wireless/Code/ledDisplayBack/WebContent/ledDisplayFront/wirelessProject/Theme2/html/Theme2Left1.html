@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主题二左边重宝期</title>
+	<link href="../../Common/css/ledDisplayCommon.css" rel="stylesheet" type="text/css">
+	<link href="../../Common/css/assemblyCommon.css" rel="stylesheet" type="text/css">
+	<link href="../../Common/css/liMarquee.css" rel="stylesheet" type="text/css">
+	<link href="../css/Theme2Left1.css" rel="stylesheet" type="text/css">
+	
+	<script src="../../Common/js/jquery-1.9.1.min.js"></script>
+	<script src="../../Common/js/jquery.waypoints.js"></script>
+	<script src="../../Common/js/jquery.counterup.min.js"></script>
+	<script src="../../Common/js/jquery.liMarquee.js"></script>
+	<script src="../../Common/js/echarts.js"></script>
+	<script src="../../Common/js/echarts-gl.min.js"></script>
+    <script src="../../Common/js/china.js" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+	   /*数据刷新动画调用方法*/
+		function DataFresh(){
+			$('.counter').counterUp({
+                    delay: 100,
+                    time: 2000
+            });
+		}
+	setInterval("DataFresh()",6000);
+        </script>
+	<script>
+ /*表格滚动*/
+$(function(){
+    $('.TableListArea').liMarquee(
+	 {scrollamount:'30'}
+	);
+});	
+</script>
+
+</head>
+
+<body>
+	<div>
+	 <!--顶部报警信息条-->
+	 <div class="alertBox">
+	  <span class="alertBoxTitle">报警信息：</span>
+	  <span class="alerBoxContent"><marquee behavior="scroll" direction="left">报警内容报警内容报警内容报警内容报警内容报警内容报警内容报警内容报警内容</marquee> </span>
+	 </div>
+	 <!--中国地图主体-->
+	 <img src="../img/centerGroup/mapBg.png" style="display:block;margin:0 auto;margin-left:-754.5px;position:absolute;top:183px;left:50%;z-index:1;">
+		
+	 <div class="mapBox">
+		<div id="chinaMap3D"></div>
+	 </div>
+	 
+	 <!--地图元素中央塔-->
+	 <img src="../img/centerGroup/icon/centerTowerIcon.png" style="position:absolute;top:230px;right:680px;z-index:4">
+		
+	 <!--对抗台-->
+	 <div class="dktSite" id="dkt1"></div>
+		
+	 <!--发射台-->
+	 <img src="../img/centerGroup/icon/fstIcon.png" style="position:absolute;top:320px;right:1180px;z-index:4">
+		
+	 <img src="../img/centerGroup/mapBgBorder.png" style="display:block;margin:0 auto;margin-left:-729px;position:absolute;top:210px;left:50%;z-index:3;">
+	 <!--南海-->
+	 <img src="../img/centerGroup/southSea.png" style="position:absolute;bottom:220px;right:400px;z-index:5;">
+	</div>
+	<!--数据统计左侧-->
+    <div class="DataGroupLeft">
+	  <div class="DataGroupLeftContainer">
+		<div class="DataGroupLeftTitleBox">
+		  <div class="DataGroupLeftTitle">播出资源</div>  
+		</div>
+		<div class="DataGroupLeftContentBox">
+		  <!--在播台站-->
+		  <div class="DataGroupLeftItem">
+			<img src="../img/centerGroup/tzSign.png" style="position:relative;top:20px;">
+			<div class="DataGroupLeftItem_Data">
+			  <div class="DataGroupLeftItem_DataName">在播台站</div>
+				<div class="DataGroupLeftItem_DataValue"><span class="">38</span><span class="unit">个</span></div>
+			</div>
+		  </div>
+		  <!--在播功率-->
+		  <div class="DataGroupLeftItem">
+			<img src="../img/centerGroup/glSign.png" style="position:relative;top:30px;">
+			<div class="DataGroupLeftItem_Data">
+			  <div class="DataGroupLeftItem_DataName">在播功率</div>
+				<div class="DataGroupLeftItem_DataValue"><span class="">1200</span><span class="unit">M</span></div>
+			</div>
+		  </div>
+		  <!--在播发射机-->
+		  <div class="DataGroupLeftItem">
+			<img src="../img/centerGroup/fsjSign.png" style="position:relative;top:30px;">
+			<div class="DataGroupLeftItem_Data">
+			  <div class="DataGroupLeftItem_DataName">在播发射机</div>
+				<div class="DataGroupLeftItem_DataValue"><span class="">100</span><span class="unit">个</span></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!--数据统计右侧-->
+    <div class="DataGroupRight">
+	  <div class="DataGroupRightContainer">
+		<div class="DataGroupRightTitleBox">
+		  <div class="DataGroupRightTitle">播出资源</div>  
+		</div>
+		<div class="DataGroupRightContentBox">
+		  <!--在播台站-->
+		  <div class="DataGroupRightItem">
+			<img src="../img/centerGroup/scSign.png" style="position:relative;top:20px;">
+			<div class="DataGroupRightItem_Data">
+			  <div class="DataGroupRightItem_DataName">当日在播时长</div>
+			  <div class="DataGroupRightItem_DataValue"><span class="">20</span><span class="unit">小时</span></div>
+			</div>
+		  </div>
+	      <!--在播台站-->
+		  <div class="DataGroupRightItem">
+			<img src="../img/centerGroup/jmSign.png" style="position:relative;top:20px;">
+			<div class="DataGroupRightItem_Data">
+			  <div class="DataGroupRightItem_DataName">在播节目</div>
+				<div class="DataGroupRightItem_DataValue"><span class="">578</span><span class="unit">个</span></div>
+			</div>
+		  </div>
+		  <!--在播台站-->
+		  <div class="DataGroupRightItem">
+			<img src="../img/centerGroup/yzdtSign.png" style="position:relative;top:20px;">
+			<div class="DataGroupRightItem_Data">
+			  <div class="DataGroupRightItem_DataName">实验压制敌台次数</div>
+				<div class="DataGroupRightItem_DataValue"><span class="">38</span><span class="unit">次</span></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!--预警信息框-->
+    <div class="yjContainer">
+	 <div class="yjTitle"></div>
+	 <div class="yjContent"></div>
+	</div>
+	
+	<!--底部内容区域-->
+	<div class="bottomArea">
+	 <!--调度令统计-->
+	 <div class="TJGroupContainer">
+	   <div class="TJItem">
+	     <div class="TJItemName"><img src="../img/centerGroup/ddlzsTitle.png"></div>
+	     <div class="TJItemValue"><span class="">32</span><span class="unit">个</span></div>
+	   </div>
+	   <div class="TJItem">
+	     <div class="TJItemName"><img src="../img/centerGroup/ddbcscTitle.png"></div>
+	     <div class="TJItemValue"><span class="">32</span><span class="unit">个</span></div>
+	   </div>
+	   <div class="TJItem">
+	     <div class="TJItemName"><img src="../img/centerGroup/tpxkzkplTitle.png"></div>
+	     <div class="TJItemValue"><span class="">32</span><span class="unit">个</span></div>
+	   </div>
+	 </div>
+	 
+	 <!--表格区域-->
+	 <div class="TableListAssembly">
+				   <div class="TableListHead">
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">调度令</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">频率</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">下发台站</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">发射机</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">天线</span></span>
+					 <span class="TableListHeadItemBox" style="margin-right:0;"><span class="TableListHeadItemName">状态</span></span>
+				    </div>
+				   <div class="TableListArea">
+				   <table>
+				     <tr><td>调度令名称</td><td>96100</td><td>491台</td><td>A01</td><td>301</td><td style="margin-right:0;">未下发</td></tr> 
+				     <tr><td>调度令名称</td><td>96100</td><td>491台</td><td>A01</td><td>301</td><td style="margin-right:0;">未下发</td></tr>
+					 <tr><td>调度令名称</td><td>96100</td><td>491台</td><td>A01</td><td>301</td><td style="margin-right:0;">未下发</td></tr>
+					 <tr><td>调度令名称</td><td>96100</td><td>491台</td><td>A01</td><td>301</td><td style="margin-right:0;">未下发</td></tr>
+					 <tr><td>调度令名称</td><td>96100</td><td>491台</td><td>A01</td><td>301</td><td style="margin-right:0;">未下发</td></tr>
+				   </table> 
+				   </div>
+			     </div>
+	 <img src="../img/centerGroup/bottomBg.png">
+	</div>
+</body>
+
+
+<!--中国地图-->
+ <script>
+ var geoCoordMap = {
+	 '中心': [116.25,39.26],
+	 
+	 /*发射台坐标*/
+	 '654台': [95.04,36.16]
+ };
+
+ var convertData = function(data) {
+     var res = [];
+     for (var i = 0; i < data.length; i++) {
+         var geoCoord = geoCoordMap[data[i].name];
+         if (geoCoord) {
+             res.push({
+                 name: data[i].name,
+                 value: geoCoord.concat(data[i].value)
+             });
+         }
+     }
+	 console.log(res)
+     return res;
+ };
+var bar1 = "image://../img/barBg.png";
+var myChart = echarts.init(document.getElementById('chinaMap3D'));
+ /*全局样式中国地图*/
+ option1 = {
+     tooltip: { 
+         show: true,
+         borderColor: '#fff',
+         borderWidth: 1,
+         textStyle: {
+             color: '#c3c1b5'
+         },
+        
+     },
+    
+     itemStyle: {
+         emphasis: {
+             borderColor: '#fff',
+             borderWidth: 1
+         }
+     },
+
+     geo3D: {
+         map: 'china',
+         roam: true,
+		 show:true,
+		 shading:'lambert',
+		 regionHeight:0,
+		 postEffect:{
+			 enable:false,
+			 bloom:{
+				 enable:false,
+				 bloomIntensity:1
+			 }
+		 },
+         itemStyle: { //初始化地图区域颜色
+             areaColor: 'rgba(255,255,255,0)',
+             opacity:0.5,
+             borderWidth: 1,
+             borderColor: '#38538c'
+         },
+		 instancing:false,
+         label: { 
+             show: false,
+             textStyle: {
+                 color: 'rgba(255,255,255,0.9)',
+                 fontSize: 10,
+                 fontFamily: '微软雅黑',
+                 backgroundColor: 'rgba(0,23,11,0)'
+             },
+             
+         },
+         emphasis: { //当鼠标放上去  地区区域是否显示名称
+             label: {
+                 show: false,
+                 textStyle: {
+                     color: 'red',
+
+                     fontSize: 3,
+                 }
+             },
+             itemStyle: {
+                 areaColor: '#1a4589',
+             }
+         },
+         viewControl: { 
+             projection:'perspective',
+			 autoRotate:false,
+			 autoRotateSpeed:10,
+		     alpha:22,
+			 distance:70,
+			 maxBeta:null,
+             minBeta:null,
+         },
+        
+        
+		 top:0,
+     },
+	 series:[
+		 /*绿色状态线小组*/
+		 {
+            type: 'lines3D',
+            name:'绿色状态线',
+            coordinateSystem: 'geo3D',
+            effect: {
+                show: true,
+                trailWidth: 3,
+                trailOpacity: 1,
+                trailLength: 0.5,
+                constantSpeed: 10
+            },
+            blendMode: 'source-over',
+            large: true,
+            lineStyle: {
+                width: 2,
+                color: 'rgb(9, 209, 89)',
+                opacity: 0.3
+            },
+
+            data:[
+				{coords:[[116.25,39.26],[95.04,36.16]]}
+			]
+            },
+		 /*红色状态线小组*/
+		 {
+            type: 'lines3D',
+            name:'红色状态线',
+            coordinateSystem: 'geo3D',
+            effect: {
+                show: true,
+                trailWidth: 3,
+                trailOpacity: 1,
+                trailLength: 0.5,
+                
+            },
+            blendMode: 'source-over',
+            large: true,
+            lineStyle: {
+                width: 2,
+                color: 'rgb(248, 50, 78)',
+                opacity: 0.3
+            },
+
+            data:[
+				{coords:[[116.25,39.26],[105.08,28.25]]}
+			]
+          },
+		 
+		 /*站点名字*/
+		 {
+        type: 'scatter3D',
+        coordinateSystem: 'geo3D',
+        blendMode: 'lighter',
+	    symbol:'circle',
+        symbolSize: 5,
+        silent: true,
+		label: {
+            show: true,
+            formatter: '{b}',
+			distance:5,
+			position:'bottom',
+			textStyle: {
+                    color: '#fff',
+                    fontSize: 16,
+                    backgroundColor: 'rgba(0,23,11,0)'
+             }
+        },
+        itemStyle: {
+            color: '#f4da35',
+            opacity: 1
+        },
+		data: convertData([ 
+		   {name: "654台",value: 0},
+		  
+        ]),
+        
+	   
+    },
+		 
+	 ]
+		 
+		
+	 
+	 
+ }	 
+    myChart.setOption(option1);
+</script>
+</html>

@@ -14,9 +14,11 @@ ul,li{margin:0;padding:0;list-style-type:none;}
 .modelTitleBox{width:300px;height:45px;text-align:center;margin-left:25px;}
 .modelTitleBoxR{width:300px;height:45px;text-align:center;margin-left:550px;}
 .modelTitleBoxR2{width:300px;height:45px;text-align:center;margin-left:100px;}
+.modelTitleBoxR3{width:440px;height:45px;text-align:center;margin-left:410px;}
 .modelTitle{font-size:26px;display:inline-block;font-weight:bold;height:45px;line-height:45px;text-align:center;background-image:-webkit-linear-gradient(left,#9bf9dd,#0095fe); -webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow: -4px 4px 1px rgba(155,249,221,0.2);}
 .modelTitleBoxR .modelTitle{background-image:-webkit-linear-gradient(left,#0095fe,#9bf9dd);text-shadow: 4px 4px 1px rgba(155,249,221,0.2);}
 .modelTitleBoxR2 .modelTitle{background-image:-webkit-linear-gradient(left,#0095fe,#9bf9dd);text-shadow: 4px 4px 1px rgba(155,249,221,0.2);}
+.modelTitleBoxR3 .modelTitle{background-image:-webkit-linear-gradient(left,#0095fe,#9bf9dd);text-shadow: 4px 4px 1px rgba(155,249,221,0.2);}
 /*展现模块内容盒子*/
 .modelContentBox{margin:30px 0 0 25px;}
 .modelContentBoxR{margin:30px 25px 0 0px;}
@@ -24,3 +26,5 @@ ul,li{margin:0;padding:0;list-style-type:none;}
 .DataNum{font-family:DataFont}
 /*镜像容器内元素右对齐*/
 .contentRightDQ{float:right;}
+
+.ModalTitle img{display:block;margin:0 auto;}

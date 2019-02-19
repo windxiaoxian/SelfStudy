@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* 主题一中间 */
+html,body,div,img{margin:0;padding:0;}
+body{width:1920px;height:1080px;background:url(../img/bg/centerBg.png) no-repeat;overflow:hidden;font-family:"微软雅黑"}
+.main{margin:40px 0px 0px 45px;overflow:hidden;}
+
+/*顶部报警信息条*/
+.alertBox{width:733px;height:40px;background:url(../img/centerGroup/alertBg.png) no-repeat;background-size:cover;margin:0 auto;margin-top:115px;}
+.alertBoxTitle{display:inline-block;font-size: 16px;font-weight:bold;background-image: -webkit-linear-gradient(top,#9bf9dd,#0095fe);-webkit-background-clip:text;-webkit-text-fill-color:transparent;height:40px;line-height:40px;position:relative;top:-15px;}
+.alerBoxContent{display:inline-block;height:40px;line-height:40px;font-size:14px;color:#ffffff;}
+
+/*地图区域内容*/
+.mapBox{width:1920px;height:1000px;margin:0 auto;position:relative;top:-298px;z-index:2;}
+#chinaMap3D {
+	width:1920px;height:1000px;
+}
+/*对抗台*/
+@keyframes dktSiteFlash
+{
+	0%{background:url(../img/centerGroup/icon/dktIcon.png) no-repeat;}
+	33%{background:url(../img/centerGroup/icon/dktIcon1.png) no-repeat;}
+	66%{background:url(../img/centerGroup/icon/dktIcon2.png) no-repeat;}
+	100%{background:url(../img/centerGroup/icon/dktIcon3.png) no-repeat;}
+}
+.dktSite{width:102px;height:79px;background:url(../img/centerGroup/icon/dktIconNormal.png) no-repeat;background-size:cover;}
+.dktSiteFlash{animation:dktSiteFlash 2s linear infinite;transition:1s;}
+#dkt1{position:absolute;right:880px;top:440px;z-index:4;}
+#dkt2{position:absolute;right:600px;top:500px;z-index:4;}
+
+/*数据统计左侧部分*/
+.DataGroupLeft{width:476px;height:501px;perspective:500px;position:absolute;top:160px;z-index:10;}
+.DataGroupLeftContainer{width:476px;height:550px;background:url(../img/centerGroup/mainLeftBg.png) no-repeat;transform-origin:left center;transform:rotateY(12deg)}
+.DataGroupLeftTitleBox{width:285px;height:45px;text-align:center;margin-left:25px;}
+.DataGroupLeftTitle{font-size:26px;display:inline-block;font-weight:bold;height:45px;line-height:45px;text-align:center;background-image:-webkit-linear-gradient(left,#9bf9dd,#0095fe); -webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow: 4px 4px 1px rgba(155,249,221,0.2);}
+
+/*数据项*/
+.DataGroupLeftContentBox{margin:30px 0 0 25px;}
+.DataGroupLeftItem{width:367px;height:129px;background:url(../img/centerGroup/mainLeftTJPanel.png) no-repeat;background-size:cover;margin-bottom:30px;overflow:hidden;}
+.DataGroupLeftItem img,.DataGroupLeftItem .DataGroupLeftItem_Data{display:block;float:left;}
+.DataGroupLeftItem img{margin:0px 0 0 20px;}
+.DataGroupLeftItem_Data{margin:20px 0 0 20px;}
+.DataGroupLeftItem_DataName{font-size:16px;color:#ffffff;font-weight: bold;}
+.DataGroupLeftItem_DataValue{font-size:50px;font-family:DataFont;text-align:left;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:0px;}
+.DataGroupLeftItem_DataValue .unit{font-famly:"微软雅黑";font-size:12px;font-weight:bold;}
+
+/*数据统计右侧部分*/
+.DataGroupRight{width:476px;height:501px;perspective:500px;position:absolute;right:0;top:160px;z-index:10;float:right;}
+.DataGroupRightContainer{width:476px;height:550px;background:url(../img/centerGroup/mainRightBg.png) no-repeat;transform-origin:right center;transform:rotateY(-12deg)}
+.DataGroupRightTitleBox{width:285px;height:45px;text-align:center;margin-left:160px;}
+.DataGroupRightTitle{font-size:26px;display:inline-block;font-weight:bold;height:45px;line-height:45px;text-align:center;background-image:-webkit-linear-gradient(right,#9bf9dd,#0095fe); -webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow: -4px 4px 1px rgba(155,249,221,0.2);}
+
+/*数据项*/
+.DataGroupRightContentBox{margin:30px 25px 0 0px;}
+.DataGroupRightItem{width:367px;height:129px;float:right;background:url(../img/centerGroup/mainRightTJPanel.png) no-repeat;background-size:cover;margin-bottom:30px;overflow:hidden;}
+.DataGroupRightItem img,.DataGroupRightItem .DataGroupRightItem_Data{display:block;float:right;}
+.DataGroupRightItem img{margin:0px 20px 0 0px;}
+.DataGroupRightItem_Data{margin:20px 20px 0 0px;text-align:right;}
+.DataGroupRightItem_DataName{font-size:16px;color:#ffffff;font-weight: bold;}
+.DataGroupRightItem_DataValue{font-size:50px;font-family:DataFont;text-align:right;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:0px;}
+.DataGroupRightItem_DataValue .unit{font-famly:"微软雅黑";font-size:12px;font-weight:bold;}
+
+
+/*底部统计区域*/
+.bottomArea{position:absolute;bottom:18px;left:50%;margin-left:-510px;z-index:10;}
+.TJGroupContainer{width:663px;margin:0 auto;overflow:hidden;margin-bottom:20px;}
+.TJItem{float:left;}
+.TJItem .TJItemValue{font-size:40px;font-family:DataFont;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:0px;text-align:center;}
+.TJItem .unit{font-famly:"微软雅黑";font-size:12px;font-weight:bold;}
+.bottomArea .TableListAssembly{margin-bottom:10px;width:886px;margin:0 auto;}
+.bottomArea .TableListArea{height:90px;}
+.bottomArea .TableListHeadItemBox{margin-right:20px;}
+.bottomArea .TableListAssembly table td{margin-right:20px;}
+
+
+/*预警框*/
+.yjContainer{width:314px;height:207px;float:right;background:url(../img/centerGroup/videoBoxMini.png) no-repeat;background-size:cover;position:absolute;bottom:50px;left:30px;}
+.yjTitle{width:111px;height:14px;margin:0 auto;margin-top:30px;background:url(../img/centerGroup/yjTitleBG1.png) no-repeat;background-size:cover;}
+.ytContent{margin-top:20px;font-size:14px;color:#ffffff;padding:0 15px 0 15px;}

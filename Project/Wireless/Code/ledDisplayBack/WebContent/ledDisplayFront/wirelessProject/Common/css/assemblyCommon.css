@@ -32,7 +32,7 @@
 .greenMix{background:-webkit-linear-gradient(top,#a6ef78,#468b1a);}
 
 .DataAssemblyBar_progressBar{width:810px;height:30px;border-radius:30px;overflow:hidden;margin-top:5px;}
-.DataAssemblyBar_progressBarItem{height:30px;line-height:30px;display:block;float:left;text-align:center;}
+.DataAssemblyBar_progressBarItem{height:30px;line-height:30px;display:block;float:left;text-align:center;transition:1s;}
 .progressBarData{font-size:16px;font-weight:bold;color:#ffffff;}
 #item1 .progressBarData{text-shadow: 2px 2px 1px #c74202;}
 #item2 .progressBarData{text-shadow: 2px 2px 1px #0722b1;}
@@ -59,6 +59,25 @@
 .BarCompAssembly_legendName{font-size:14px;color:#ffffff;}
 .greenMix2{background:linear-gradient(to top, rgba(106,255,197,1), rgba(106,255,197,0));}
 .yellowMix2{background:linear-gradient(to top, rgba(248,222,77,0), rgba(248,222,77,1));}
+
+/*表格组件*/
+.TableListAssembly{}
+.TableListHead{width:100%;}
+.TableListHeadItem{width:30%;display:inline-block;text-align:left;}
+.TableListHeadItemName{font-size:16px;font-weight:bold;background-image:-webkit-linear-gradient(top,#e4f7ff,#1eb9fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.TableListHeadItemBox{display:inline-block;width:125px;height:30px;margin-right:60px;line-height:30px;text-align:center;border-radius:3px;border:1px solid #00b4ff;background: -webkit-linear-gradient(top,rgba(0,180,255,0.05),rgba(0,180,255,0.4));}
+.TableListAssembly table{width:100%;color:#ffffff;}
+.TableListAssembly table tr{margin-top:5px;display:block;}
+.TableListAssembly table td{display:inline-block;font-size:14px;width:125px;margin-right:60px;}
+.TableListAssembly .Rate{text-align:center;font-weight:bold;}
+.TableListArea{height:330px;margin-top:10px;overflow:hidden;position:relative;}
+/*90%以上颜色*/
+.GreenRate{color:#3fff76;}
+/*60%-90%以上颜色*/
+.OrangeRate{color:#f0d97b;}
+/*60%以下颜色*/
+.RedRate{color:#f82525;}
+
 
 .BarCompAssembly{
 			display: flex;

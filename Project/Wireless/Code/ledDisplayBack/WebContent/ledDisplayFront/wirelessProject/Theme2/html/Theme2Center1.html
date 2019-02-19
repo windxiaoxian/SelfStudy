@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主题二中间视频重宝期</title>
+	<link href="../../Common/css/ledDisplayCommon.css" rel="stylesheet" type="text/css">
+	<link href="../../Common/css/assemblyCommon.css" rel="stylesheet" type="text/css">
+	<link href="../../Common/css/liMarquee.css" rel="stylesheet" type="text/css">
+	<link href="../css/Theme2Center1.css" rel="stylesheet" type="text/css">
+	
+	<script src="../../Common/js/jquery-1.9.1.min.js"></script>
+	<script src="../../Common/js/jquery.waypoints.js"></script>
+	<script src="../../Common/js/jquery.counterup.min.js"></script>
+	<script src="../../Common/js/jquery.liMarquee.js"></script>
+	<script src="../../Common/js/echarts.js"></script>
+	<script src="../../Common/js/echartsGl.js"></script>
+    <script src="../../Common/js/china.js" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+	   /*数据刷新动画调用方法*/
+		function DataFresh(){
+			$('.counter').counterUp({
+                    delay: 100,
+                    time: 2000
+            });
+		}
+	setInterval("DataFresh()",6000);
+        </script>
+
+</head>
+
+<body>
+	<!--顶部报警信息条-->
+	<div class="alertBox">
+	  <span class="alertBoxTitle">报警信息：</span>
+	  <span class="alerBoxContent"><marquee behavior="scroll" direction="left">报警内容报警内容报警内容报警内容报警内容报警内容报警内容报警内容报警内容</marquee> </span>
+	</div>
+	
+	<!--中心视频窗口-->
+	<div class="videoBigBox leftVideo">
+	 <div class="videoTitleBox">
+	  <span class="videoTitleBgLeft"></span><span class="videoTitle">CCTV-1</span><span class="videoTitleBgRight"></span>	
+	 </div>
+	 <!--视频内容-->
+	 <div class="videoContent">
+		
+	 </div>
+	</div>
+	
+	<div class="videoBigBox rightVideo">
+	 <div class="videoTitleBox">
+	  <span class="videoTitleBgLeft"></span><span class="videoTitle">CCTV-1</span><span class="videoTitleBgRight"></span>	
+	 </div>
+	 <!--视频内容-->
+	 <div class="videoContent">
+		
+	 </div>
+	</div>
+	
+	<div class="videoStage">
+	  <img src="../img/centerGroup/videoStageLight.png">
+	</div>
+	
+	<!--视频指挥系统和视频页面-->
+	<div class="spzhxtBox">
+	 
+	</div>
+	
+	<div class="spymBox">
+	 
+	</div>
+</body>
+
+</html>

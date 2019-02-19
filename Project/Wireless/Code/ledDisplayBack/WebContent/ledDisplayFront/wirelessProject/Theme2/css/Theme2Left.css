@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* 主题一左侧 */
+html,body,div,img{margin:0;padding:0;}
+body{width:1920px;height:1080px;background:url(../img/bg/leftBg.png) no-repeat;overflow:hidden;font-family:"微软雅黑"}
+.main{margin:40px 0px 0px 45px;overflow:hidden;}
+.Model{margin-bottom:20px;}
+.mainLeft{width:879px;height:988px;perspective:500px;float:left;}
+.mainLeftContainer{width:879px;height:988px;float:left;transform-origin:left center;transform:rotateY(5deg)}
+
+.ssfxModel{width:879px;height:988px;background:url(../img/bg/containerBG1.png) no-repeat;background-size:cover;}
+
+/*实时分析对比展现组件*/
+.ssfxzxContainer{height:289px;}
+.ssfxContrustCoreBox{width:305px;height:195px;background:url(../img/ssfxContrust/ssfxContrustCore.png) no-repeat;position:relative;left:240px;top:60px;z-index:10;}
+#waveFlash{width:150px;height:150px;position:absolute;left:70px;top:22px;border-radius:50%;border:1px solid pink;}
+
+.ssfxContrustCoreBox .ssfxContrustCoreTitle{font-size:20px;font-weight:bold;color:#01fff6;text-align:center;margin-top:50px;}
+.ssfxContrust_wxjBox{position:absolute;left:50px;}
+.ssfxContrustItem{float:left;}
+.ssfxContrust_wxj_Title{font-size:22px;font-weight:bold;color:#3fff76;padding-left:20px;}
+.ssfxContrust_wxj_TjGroup .ssfxContrust_wxj_TjBar{width:262px;height:65px;oveflow:hidden;}
+.ssfxContrust_wxj_TjGroup .TjBar1{background:url(../img/ssfxContrust/GreenContrustBar1.png) no-repeat;}
+.ssfxContrust_wxj_TjGroup .TjBar2{background:url(../img/ssfxContrust/GreenContrustBar2.png) no-repeat;}
+.ssfxContrust_wxj_TjGroup .TjBar3{background:url(../img/ssfxContrust/GreenContrustBar3.png) no-repeat;}
+.ssfxContrust_wxj_TjBar_Name{display:inline-block;text-align:right;height:65px;line-height:70px;float:right;font-size:14px;color:#ffffff;margin:0px 10px 0 0;}
+.ssfxContrust_wxj_TjGroup .ssfxContrust_wxj_TjBar .ssfxContrust_wxj_TjBar_Data{display:inline-block;margin-left:10px;height:65px;line-height:65px;float:left;color:#3fff76;font-family:DataFont;font-size:22px;margin-left:10px;}
+.ssfxContrust_wxj_TjBar_Data .unit{font-size:12px;font-weight:bold;font-family:"微软雅黑"}
+
+.ssfxContrust_dxtBox{position:absolute;right:90px;}
+.ssfxContrust_dxt_Title{font-size:22px;text-align:right;font-weight:bold;color:#f82525;padding-right:20px;}
+.ssfxContrust_dxt_TjGroup .ssfxContrust_dxt_TjBar{width:262px;height:65px;oveflow:hidden;}
+.ssfxContrust_dxt_TjGroup .TjBar1{background:url(../img/ssfxContrust/RedContrustBar1.png) no-repeat;}
+.ssfxContrust_dxt_TjGroup .TjBar2{background:url(../img/ssfxContrust/RedContrustBar2.png) no-repeat;}
+.ssfxContrust_dxt_TjGroup .TjBar3{background:url(../img/ssfxContrust/RedContrustBar3.png) no-repeat;}
+.ssfxContrust_dxt_TjBar_Name{display:inline-block;height:65px;line-height:70px;float:left;font-size:14px;color:#ffffff;margin:0px 0px 0 10px;}
+.ssfxContrust_dxt_TjGroup .ssfxContrust_dxt_TjBar .ssfxContrust_dxt_TjBar_Data{display:inline-block;margin-left:10px;height:65px;line-height:65px;float:right;color:#f82525;font-family:DataFont;font-size:22px;margin-right:10px;text-align:right;}
+.ssfxContrust_dxt_TjBar_Data .unit{font-size:12px;font-weight:bold;font-family:"微软雅黑"}
+
+.jgzxtstfpvssfxChart{margin-top:35px;}
+.jgzxtstfpvssfxChart .chartBox{width:100%;height:150px;}
+
+/*监管中心推送突发频率排名柱图组*/
+.chartBoxBg{width:90%;height:300px;position:relative;}
+.BarCartRank{width:90%;height:200px;position:relative;top:0;z-index:99}
+
+
+
+.mainRight{width:879px;perspective:500px;float:left;}
+.mainRightContainer{width:879px;float:left;transform-origin:left center;transform:rotateY(5deg)}
+.modelTitleBox2{width:380px;height:45px;text-align:center;margin-left:25px;}
+
+/*全局年度至今调度令*/
+.qjndzjddlModel{width:879px;height:486px;background:url(../img/bg/containerBG2.png) no-repeat;background-size:cover;}
+.modelContentBoxLeft,.modelContentBoxRight{float:left;}
+.TJPanelAssembly{width:218px;height:131px;background:url(../img/bg/panelBG1.png) no-repeat;overflow:hidden;}
+.TJPanelAssemblyTitle{font-size:14px;font-weight:bold;color:#0fffff;margin:20px 0 0 15px;}
+.TJPanelAssemblyData{margin:10px 0 0 0px;text-align:center;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:oblique;}
+.TJPanelAssemblyData .DataCounter{font-size:40px;font-family:DataFont;}
+.TJPanelAssemblyData .DataUnit{font-size:12px;font-weight: bold;}
+
+.TJPanelAssembly2{width:218px;height:191px;background:url(../img/bg/panelBG2.png) no-repeat;overflow:hidden;}
+.RangeBox{perspective:500px;}
+.PieTransformAssembly{transform:rotateX(66deg);}
+#ddlzxlvChart{width:180px;height:180px;margin:0 auto;position:relative;top:-85px;}
+.Range_Data{font-size: 32px;font-style: italic; font-family:DataFont;color:#69f276;position:relative;left:50px;top:-142px;}
+.Range_Data_unit{font-size:12px;}
+
+.modelContentBoxRight{margin-left:30px;}
+.qjndzjlsdbModel .TableListHeadItemBox{margin-right:0px;}
+.qjndzjlsdbModel table td{margin-right:0px;}
+
+/*全局年度至今临时代播*/
+.qjndzjlsdbModel{width:879px;height:486px;background:url(../img/bg/containerBG2.png) no-repeat;background-size:cover;}
