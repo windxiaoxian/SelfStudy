@@ -13,17 +13,81 @@
 	<script src="../../Common/js/jquery.counterup.min.js"></script>
 	<script src="../../Common/js/jquery.liMarquee.js"></script>
 	<script src="../../Common/js/echarts.js"></script>
-	<script type="text/javascript">
-	   /*数据刷新动画调用方法*/
-		function DataFresh(){
-			$('.counter').counterUp({
-                    delay: 100,
-                    time: 2000
-            });
+	<script src="../../Common/js/global.js"></script>
+	<style>
+		table{
+			text-align: center;
 		}
-	setInterval("DataFresh()",6000);
-        </script>
-
+		table td:last-of-type{
+			font-size: 16px;
+			font-weight: bold;
+			margin-right: 0;
+		}
+		.ssfxContrust_wxj_TjGroup .ssfxContrust_wxj_TjBar{
+			width: 272px;
+		}
+		.modelContentBoxRight {
+			margin-left: 20px;
+		}
+		.jgzxtstfpvssfxChart:last-of-type{
+			position: relative;
+			height: 360px;
+			margin-top: 0;
+			width: 700px;
+			margin-left: 80px;
+			color: yellow;
+		}
+		.chart-count{
+			position: absolute;
+			height: 89%;
+			width: 70px;	
+			right: -80px;
+			font-size: 20px;
+		}
+		.chart-title{
+			color: #fff;
+			position: absolute;
+			height: 89%;
+			width: 70px;	
+			left: -50px;
+		}
+		.chart-count>div,.chart-title>div{
+			height: 66px;
+			line-height: 66px;
+			width: 100%;
+		}
+		.chartTitle2{
+			margin-top: 20px;
+			text-align: center
+		}
+		.chartsBoxs{
+			position: absolute;
+		}
+		.chartBoxBg{
+			height: 350px;
+			width: 100%;
+		}
+		.BarCartRank{
+			height: 17%;
+			border: 1px solid tomato;
+			width: 100%;
+		}
+		#barChartRank1{
+			top: 0%
+		}
+		#barChartRank2{
+			top: 18%
+		}
+		#barChartRank3{
+			top: 36%
+		}
+		#barChartRank4{
+			top: 54%
+		}
+		#barChartRank5{
+			top: 72%
+		}
+	</style>
 </head>
 
 <body>
@@ -46,22 +110,22 @@
 				 <div class="ssfxContrust_wxj_TjGroup">
 				   <!--无线局-当前实验发射机-->
 				   <div class="ssfxContrust_wxj_TjBar TjBar1">
-					 <span class="ssfxContrust_wxj_TjBar_Data"><span class="counter">7</span><span class="unit">个</span></span>
+					 <span class="ssfxContrust_wxj_TjBar_Data"><span class="counter transmitterWXJ"> - </span><span class="unit">个</span></span>
 					 <span class="ssfxContrust_wxj_TjBar_Name">当前实验发射机</span>
 				   </div>
 				   <!--无线局-当日累计播出时间-->
 				   <div class="ssfxContrust_wxj_TjBar TjBar2">
-					 <span class="ssfxContrust_wxj_TjBar_Data"><span class="counter">13</span><span class="unit">小时</span></span>
+					 <span class="ssfxContrust_wxj_TjBar_Data"><span class="counter broadcastTimeWXJ"> - </span><span class="unit">小时</span></span>
 					 <span class="ssfxContrust_wxj_TjBar_Name">当日累计播出时间</span>
 				   </div>
 				   <!--无线局-当日累计频次-->
 				    <div class="ssfxContrust_wxj_TjBar TjBar2">
-					 <span class="ssfxContrust_wxj_TjBar_Data"><span class="counter">5</span><span class="unit">次</span></span>
+					 <span class="ssfxContrust_wxj_TjBar_Data"><span class="counter accFreqencyWXJ"> - </span><span class="unit">次</span></span>
 					 <span class="ssfxContrust_wxj_TjBar_Name">当日累计频次</span>
 				   </div>
 				   <!--无线局-当日累计频率个数-->
 				   <div class="ssfxContrust_wxj_TjBar TjBar3">
-					 <span class="ssfxContrust_wxj_TjBar_Data"><span class="counter">172</span><span class="unit">个</span></span>
+					 <span class="ssfxContrust_wxj_TjBar_Data"><span class="counter accFreqWXJ"> - </span><span class="unit">个</span></span>
 					 <span class="ssfxContrust_wxj_TjBar_Name">当日累计频率个数</span>
 				   </div>
 				 </div>
@@ -78,22 +142,22 @@
 				 <div class="ssfxContrust_dxt_TjGroup">
 				   <!--对象台-当前对象台-->
 				   <div class="ssfxContrust_dxt_TjBar TjBar1">
-					 <span class="ssfxContrust_dxt_TjBar_Data"><span class="counter">17</span><span class="unit">个</span></span>
+					 <span class="ssfxContrust_dxt_TjBar_Data"><span class="counter transmitterEnemy"> - </span><span class="unit">个</span></span>
 					 <span class="ssfxContrust_dxt_TjBar_Name">当前对象台</span>
 				   </div>
 				   <!--对象台-当日累计播音时间-->
 				   <div class="ssfxContrust_dxt_TjBar TjBar2">
-					 <span class="ssfxContrust_dxt_TjBar_Data"><span class="counter">13</span><span class="unit">小时</span></span>
+					 <span class="ssfxContrust_dxt_TjBar_Data"><span class="counter broadcastTimeEnemy"> - </span><span class="unit">小时</span></span>
 					 <span class="ssfxContrust_dxt_TjBar_Name">当日累计播出时间</span>
 				   </div>
 				   <!--对象台-当日累计频次-->
 				    <div class="ssfxContrust_dxt_TjBar TjBar2">
-					 <span class="ssfxContrust_dxt_TjBar_Data"><span class="counter">5</span><span class="unit">次</span></span>
+					 <span class="ssfxContrust_dxt_TjBar_Data"><span class="counter accFreqencyEnemy"> - </span><span class="unit">次</span></span>
 					 <span class="ssfxContrust_dxt_TjBar_Name">当日累计频次</span>
 				   </div>
 				   <!--对象台-当日累计频率个数-->
 				   <div class="ssfxContrust_dxt_TjBar TjBar3">
-					 <span class="ssfxContrust_dxt_TjBar_Data"><span class="counter">172</span><span class="unit">个</span></span>
+					 <span class="ssfxContrust_dxt_TjBar_Data"><span class="counter accFreqEnemy"> - </span><span class="unit">个</span></span>
 					 <span class="ssfxContrust_dxt_TjBar_Name">当日累计频率个数</span>
 				   </div>
 				 </div>
@@ -109,10 +173,28 @@
 			  </div>
 			   
 			  <!--监管中心推送突发频率排名-->
+			  <div class="chartTitle2"><img src="../img/jgzxtstfpvpmTitle.png"></div>
 			  <div class="jgzxtstfpvssfxChart">
-				  <div class="chartTitle"><img src="../img/jgzxtstfpvpmTitle.png"></div>
-				  <div class="chartBoxBg" id="barbgChart"></div>
-				  <div class="BarCartRank" id="barChartRank1"></div>
+				  <div class="chart-title">
+					  <div>频率1</div>
+					  <div>频率2</div>
+					  <div>频率3</div>
+					  <div>频率4</div>
+					  <div>频率5</div>
+				  </div>
+				  <div class="chart-count">
+					  <div><span class="count-num">1234</span>次</div>
+					  <div><span class="count-num">1234</span>次</div>
+					  <div><span class="count-num">1234</span>次</div>
+					  <div><span class="count-num">1234</span>次</div>
+					  <div><span class="count-num">1234</span>次</div>
+				  </div>
+				  <div class="chartBoxBg chartsBoxs" id="barbgChart"></div>
+				  <div class="BarCartRank chartsBoxs" id="barChartRank1"></div>
+				  <div class="BarCartRank chartsBoxs" id="barChartRank2"></div>
+				  <div class="BarCartRank chartsBoxs" id="barChartRank3"></div>
+				  <div class="BarCartRank chartsBoxs" id="barChartRank4"></div>
+				  <div class="BarCartRank chartsBoxs" id="barChartRank5"></div>
 			  </div>
 		   </div>
 		 </div>
@@ -133,7 +215,7 @@
 			   <!--全局下发调度令-->
 			   <div class="TJPanelAssembly qjxfddl">
 				 <div class="TJPanelAssemblyTitle">全局下发调度令</div>
-				 <div class="TJPanelAssemblyData"><span class="counter DataCounter">12045</span><span class="DataUnit">个</span></div>
+				 <div class="TJPanelAssemblyData"><span class="counter DataCounter orderByAnnual"> - </span><span class="DataUnit">个</span></div>
 			   </div>
 				 
 			   <!--调度令执行率-->
@@ -142,7 +224,7 @@
 				 <div class="TJPanelAssemblyData RangeBox">
 				    <div class="PieTransformAssembly" id="ddlzxlvChart"></div>
 				 </div>
-				 <div class="Range_Data">99.86<span class="Range_Data_unit">%</span></div>
+				 <div class="Range_Data"><span class="counter orderImplRateByAnnual"></span><span class="Range_Data_unit">%</span></div>
 			   </div>
 			 </div>
 			 
@@ -155,20 +237,7 @@
 					 <span class="TableListHeadItemBox"  style="margin-right:0;"><span class="TableListHeadItemName">执行率</span></span>
 				 </div>
 				<div class="TableListArea">
-				   <table>
-				   	 <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td>491台</td><td>30次</td><td class="Rate OrangeRate" style="margin-right:0px">76%</td></tr>
-				     <tr><td>491台</td><td>30次</td><td class="Rate RedRate" style="margin-right:0px">47%</td></tr> 
-				     <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr>
-				     <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr>
-				     <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr>
-				     <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr>
-				     <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td>491台</td><td>30次</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr>
-				  </table> 
+				   <table></table> 
 				</div>
 				
 			   </div>
@@ -188,19 +257,19 @@
 			   <!--全局年度至今总代播频次-->
 			   <div class="TJPanelAssembly qjndzjzdbpc">
 				 <div class="TJPanelAssemblyTitle">全局年度至今总代播频次</div>
-				 <div class="TJPanelAssemblyData"><span class="counter DataCounter">12045</span><span class="DataUnit">个</span></div>
+				 <div class="TJPanelAssemblyData"><span class="counter DataCounter generalBroadTimesByAnnual"> - </span><span class="DataUnit">个</span></div>
 			   </div>
 				 
 			   <!--全局年度至今总代播时长-->
 			   <div class="TJPanelAssembly qjndzjzdbsc">
 				 <div class="TJPanelAssemblyTitle">全局年度至今总代播时长</div>
-				 <div class="TJPanelAssemblyData"><span class="counter DataCounter">12045</span><span class="DataUnit">小时</span></div>
+				 <div class="TJPanelAssemblyData"><span class="counter DataCounter generalBroadTimeByAnnual"> - </span><span class="DataUnit">小时</span></div>
 			   </div>
 			 </div>
 			 
 			 <!--右侧表格-->
 			 <div class="modelContentBoxRight">
-			   <div class="TableListAssembly ">
+			   <div class="TableListAssembly " style="width:615px;">
 				 <div class="TableListHead">
 					 <span class="TableListHeadItemBox" style="width:80px;"><span class="TableListHeadItemName">台名</span></span>
 					 <span class="TableListHeadItemBox" style="width:100px;"><span class="TableListHeadItemName">申请次数</span></span>
@@ -208,20 +277,15 @@
 					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">代播它台时长</span></span>
 					 <span class="TableListHeadItemBox"  style="margin-right:0;"><span class="TableListHeadItemName">代播执行率</span></span>
 				 </div>
-				 <div class="TableListArea">
+				 <div class="TableListArea" style="margin-left:-20px;">
 				   <table>
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr>
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
-				     <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
+						<!-- <tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
+						<tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr>
+						<tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
+						<tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
+						<tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
+						<tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr> 
+						<tr><td style="width:80px;">491台</td><td style="width:100px;">30次</td><td>50小时</td><td>50小时</td><td class="Rate GreenRate" style="margin-right:0px">90%</td></tr>  -->
 				   </table> 
 				 </div>
 				 
@@ -235,25 +299,138 @@
 </body>
 
 <script>
+	// 左侧右上数据
+	let getData1 = function (res) {
+		$(".transmitterWXJ").html(res.transmitterWXJ);    		//当前实验发射机 
+		$(".broadcastTimeWXJ").html(res.broadcastTimeWXJ);		//当日累计播音时间
+		$(".accFreqencyWXJ").html(res.accFreqencyWXJ);    		//当日累计频次
+		$(".accFreqWXJ").html(res.accFreqWXJ);         			//当日累计频率个数
+		$(".transmitterEnemy").html(res.transmitterEnemy);    	//当前实验发射机
+		$(".broadcastTimeEnemy").html(res.broadcastTimeEnemy);	//当日累计播音时间
+		$(".accFreqencyEnemy").html(res.accFreqencyEnemy);    	//当日累计频次
+		$(".accFreqEnemy").html(res.accFreqEnemy);         		//当日累计频率个数
+
+		g.dataFresh(".ssfxzxContainer .counter");
+	}
+	let param1 = {
+		key: 'left',
+		param: JSON.stringify({ interfaceName: 'resourceCompare' }),
+	}
+	g.doAjax("servlet/SecondThemeServlet", param1, getData1);
+	setInterval(function () {
+		g.doAjax("servlet/SecondThemeServlet", param1, getData1);
+	}, 30000);
+
+	// 柱图1
+	let getData2 = function (res) {
+		let lightBar = [],darkBar = [];
+		res.brustFreqList.forEach(function(item){
+			lightBar.push({
+				value: item,
+				symbol: bar1,
+				symbolSize: ['100%', '100%'],
+				symbolPosition: 'end',
+				z: 10
+			})
+		});
+		BarCartRank.setOption(
+			{
+            series: [{
+                name: 'lightBar', 
+                data: lightBar
+            }]
+        }
+		);
+		barChart.setOption({
+            series: [{
+                name: 'lightBar', 
+                data: lightBar
+            }]
+        });
+		res.brustFreqList.forEach(function(item){
+			darkBar.push({
+				value: Math.max.apply(null, res.brustFreqList),
+				symbol: bar2,
+				symbolSize: ['100%', '100%'],
+				symbolPosition: 'end',
+				z: 10
+			})
+		});
+		barChart.setOption({
+            series: [{
+                name: 'darkBar', 
+                data: darkBar
+            }]
+        });
+	}
+	let param2 = {
+		key: 'left',
+		param: JSON.stringify({ interfaceName: 'burstFreqAnalysis' }),
+	}
+	g.doAjax("servlet/SecondThemeServlet", param2, getData2);
+	setInterval(function () {
+		g.doAjax("servlet/SecondThemeServlet", param2, getData2);
+	}, 30000)
+
+	// 柱图2
+	let getData3 = function (res) {
+		
+	}
+	let param3 = {
+		key: 'left',
+		param: JSON.stringify({ interfaceName: 'burstFreqOrder' }),
+	}
+	g.doAjax("servlet/SecondThemeServlet", param3, getData3);
+	setInterval(function () {
+		g.doAjax("servlet/SecondThemeServlet", param3, getData3);
+	}, 30000)
+
+	// 右侧数据
+	let getData4 = function (res) {
+		$(".orderByAnnual").html(res.orderByAnnual);       					 	//全局下发调度令总数
+		$(".orderImplRateByAnnual").html(res.orderImplRateByAnnual);        	//全局下发调度令执行率       
+		$(".generalBroadTimesByAnnual").html(res.generalBroadTimesByAnnual);    //全局年度至今代播总频次
+		$(".generalBroadTimeByAnnual").html(res.generalBroadTimeByAnnual);      //全局年度至今代播总时长
+		g.dataFresh(".mainRightContainer .counter");
+		$(".qjndzjddlModel table,.qjndzjlsdbModel table").html('');
+		$(res.orderTimeList).each(function(i,ele){
+			$(".qjndzjddlModel table").append('<tr><td>'+ ele.station +'</td><td>'+ ele.orderCount +'次</td><td class="GreenRate">'+ ele.orderRate +'</td></tr>');
+		});
+		$(res.generationBroadList).each(function(i,ele){
+			$(".qjndzjlsdbModel table").append('<tr><td>'+ ele.station +'</td><td style="width:100px;">'+ ele.applicationCount +'次</td><td>'+ ele.applicationGeneral +'小时</td><td>'+ ele.applicationOther +'小时</td><td class="GreenRate">'+ ele.generalRate +'</td></tr>');
+		});
+		$('.TableListArea').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});
+
+	}
+	let param4 = {
+		key: 'left',
+		param: JSON.stringify({ interfaceName: 'annualSituation' }),
+	}
+	g.doAjax("servlet/SecondThemeServlet", param4, getData4);
+	setInterval(function () {
+		g.doAjax("servlet/SecondThemeServlet", param4, getData4);
+	}, 30000)
+
+
+
 	 /*表格滚动*/
-$(function(){
-    $('.TableListArea').liMarquee(
-	 {scrollamount:'30'}
-	);
-});
+	$(function(){
+		// $('.TableListArea').liMarquee('pause');
+		// $('.TableListArea').liMarquee({scrollamount:'30',hoverstop:false,circular: true});
+
+	});
 	/*监管中心推送突发频率实时分析柱图*/
 	let bar1 = "image://../img/barBg.png";
 	let bar2 = "image://../img/barBgDark.png";
 	let barChart = echarts.init(document.getElementById('jgzxtstfpvssfx_barChart'));
-	let gain = 0.9;
-    let gap = 0;
+	let gain = 0.9,gap = 0;
     let baroption = {
             grid: {
                 left: '0',
-        right: '30',
-        bottom: '0',
-		height:'85%',
-        containLabel: true
+				right: '30',
+				bottom: '0',
+				height:'85%',
+				containLabel: true
             },
             xAxis: [{
                     type: 'category',
@@ -277,7 +454,8 @@ $(function(){
                         }
                     },
                     data: ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
-                }, {
+				}, 
+				{
                     type: 'category',
                     axisLine: {
                         show: false
@@ -294,7 +472,8 @@ $(function(){
                     splitLine: {
                         show: false
                     },
-                    data: []
+                    data: ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
+
                 },
             ],
             yAxis: {
@@ -333,305 +512,17 @@ $(function(){
                 }
             },
             series: [{
+					name:'darkBar',
                     type: 'pictorialBar',
                     xAxisIndex: 1,
                     barWidth: '25%',
-                    data: [{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 40,
-			            symbol: bar2,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        }]
+					data: []
                 }, 
                 {
+					name:'lightBar',
                     type: 'pictorialBar',
                     barWidth: '25%',
-                    data: [{
-			            value: 8,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },]
+					data: []
                 }
             ]
     };
@@ -699,17 +590,16 @@ $(function(){
 <!--监管中心推送突发频率排名-->	
 <script>
 	/*监管中心推送突发频率排名柱图底图*/
-	let bar3 = "image://../img/barBg.png";
-	let bar4 = "image://../img/barBgDark.png";
+	let bar3 = "image://../img/bar3.png";
 	let barChartBG = echarts.init(document.getElementById('barbgChart'));
 	let BarCartRank = echarts.init(document.getElementById('barChartRank1'));
-	let baroptionbg = {
+	let barChartBgOption = {
             grid: {
                 left: '0',
-        right: '30',
-        bottom: '0',
-		height:'85%',
-        containLabel: true
+				right: '30',
+				bottom: '0',
+				height:'85%',
+				containLabel: true
             },
             xAxis: [{
                     type: 'category',
@@ -787,63 +677,73 @@ $(function(){
             ]
     };
 	
-	let barRank1 = {
-            grid: {
+	let BarCartRankOption = {
+		grid: {
                 left: '0',
-        right: '30',
-        bottom: '0',
-		height:'85%',
-        containLabel: true
+				right: '30',
+				bottom: '-16',
+				height:'85%',
+				containLabel: true
             },
-            xAxis: [{
+            xAxis: [
+				// {
+                //     type: 'category',
+				//     name: '时',
+                //     nameTextStyle:{
+                //     color:'#ffffff',
+                //     fontSize:10,
+                //     },
+                //     axisTick: {
+                //         show: false
+                //     },
+                //     axisLine:{
+                //           lineStyle:{
+                //               color:'rgb(69,109,154)',
+                //           }
+                //       },
+                //     axisLabel:{
+                //         textStyle:{
+                //             color:"ffffff",
+                //             fontSize:14,
+                //         }
+                //     },
+                //     data: ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
+				// }, 
+				{
                     type: 'category',
-				    nameTextStyle:{
-                    color:'#ffffff',
-                    fontSize:10,
-                },
+                    axisLine: {
+                        show: false
+                    },
                     axisTick: {
                         show: false
                     },
-				    splitLine: {
-                	show: true,
-					interval:0,
-            lineStyle: {
-				type:'dashed',
-                color: '#135c92',
-				opacity:0.5
-            }
-                },
-                    axisLine:{
-                          lineStyle:{
-                              color:'rgba(69,109,154,0)',
-                          }
-                      },
-                    axisLabel:{
-                       textStyle:{
-						   color:'#ffffff',
-						   fontSize:14
-					   }
-                       
+                    axisLabel: {
+                        show: false
+                    },
+                    splitArea: {
+                        show: false
+                    },
+                    splitLine: {
+                        show: false
                     },
                     data: ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
-                }
+
+                },
             ],
             yAxis: {
                 type: 'value',
-				
                 // name:'单位：件',
                 // minInterval:1,
                 splitNumber:3,
                 // interval:12,
                
-				name: '',
+				// name: '频次(次)',
                 nameTextStyle:{
                     color:'#ffffff',
                     fontSize:10,
                 },
                 axisTick: {
-                    show: true,
-					
+                    show: false
                 },
                 axisLine:{
 					show:false,
@@ -853,176 +753,39 @@ $(function(){
               	},
                 splitLine: {
                 	show: false,
-            lineStyle: {
-				type:'dashed',
-                color: '#135c92',
-				opacity:0.5
-            }
+					lineStyle: {
+						type:'dashed',
+						color: '#135c92',
+						opacity:0.5
+					}
                 },
                 axisLabel: {
+					show:false,
                     textStyle: {
                         color: 'rgba(255,255,255,0.8)',
                         fontSize:14*gain,
                     }
-                },
-				series: [
+                }
+            },
+            series: [
                 {
+					name:'lightBar',
                     type: 'pictorialBar',
                     barWidth: '25%',
-                    data: [{
-			            value: 8,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 8,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 15,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 6,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 10,
-			            symbol: bar3,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },]
+					data: [
+						{
+						value: 10,
+						symbol: bar3,
+						symbolSize: ['100%', '100%'],
+						symbolPosition: 'end',
+						z: 10
+					}]
                 }
-                ]
-            },
+            ]
           
     };
             
-    barChartBG.setOption(baroptionbg);/*监管中心推送突发频率排名柱图底图*/
-	BarCartRank.setOption(barRank1);/*监管中心推送突发频率排名柱图底图*/
+    barChartBG.setOption(barChartBgOption);/*监管中心推送突发频率排名柱图底图*/
+	BarCartRank.setOption(BarCartRankOption);/*监管中心推送突发频率排名柱图底图*/
 </script>
 </html>

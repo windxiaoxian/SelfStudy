@@ -756,8 +756,8 @@
 		$(".virus").html(res.virus);      						//高清
 		$(".loophole").html(res.loophole);   					//标清
 		$(".spy").html(res.spy);       							//数据业务
-		$("#item2").width(res.bandInUse / (res.bandInUse + res.bandNoUse) * 100 + '%');
-		$("#item1").width(res.bandNoUse / (res.bandInUse + res.bandNoUse) * 100 + '%');
+		$("#item1").width(res.bandInUse / (res.bandInUse + res.bandNoUse) * 100 + '%');
+		$("#item2").width(res.bandNoUse / (res.bandInUse + res.bandNoUse) * 100 + '%');
 		dataFresh('.yczsThreeState .counter');
 		res.stationsList.forEach(function(item,i){
 			dataList[i].name = item.station_code;
