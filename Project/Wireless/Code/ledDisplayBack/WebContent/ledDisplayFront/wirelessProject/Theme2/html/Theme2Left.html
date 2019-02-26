@@ -40,7 +40,7 @@
 		.chart-count{
 			position: absolute;
 			height: 89%;
-			width: 70px;	
+			/* width: 70px;	 */
 			right: -80px;
 			font-size: 20px;
 		}
@@ -48,12 +48,12 @@
 			color: #fff;
 			position: absolute;
 			height: 89%;
-			width: 70px;	
+			width: 80px;	
 			left: -50px;
 		}
 		.chart-count>div,.chart-title>div{
 			height: 66px;
-			line-height: 66px;
+			line-height: 96px;
 			width: 100%;
 		}
 		.chartTitle2{
@@ -69,7 +69,7 @@
 		}
 		.BarCartRank{
 			height: 17%;
-			border: 1px solid tomato;
+			/* border: 1px solid tomato; */
 			width: 100%;
 		}
 		#barChartRank1{
@@ -86,6 +86,13 @@
 		}
 		#barChartRank5{
 			top: 72%
+		}
+		.chart-title span{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			background-size: 100% 100%;
+			vertical-align: -5px;
 		}
 	</style>
 </head>
@@ -176,11 +183,11 @@
 			  <div class="chartTitle2"><img src="../img/jgzxtstfpvpmTitle.png"></div>
 			  <div class="jgzxtstfpvssfxChart">
 				  <div class="chart-title">
-					  <div>频率1</div>
-					  <div>频率2</div>
-					  <div>频率3</div>
-					  <div>频率4</div>
-					  <div>频率5</div>
+					  <div><span style="background-image: url(../img/firstSign.png)"></span> 频率1</div>
+					  <div><span style="background-image: url(../img/secondSign.png)"></span> 频率2</div>
+					  <div><span style="background-image: url(../img/thirdSign.png)"></span> 频率3</div>
+					  <div><span style="background-image: url(../img/fourthSign.png)"></span> 频率4</div>
+					  <div><span style="background-image: url(../img/fifthSign.png)"></span> 频率5</div>
 				  </div>
 				  <div class="chart-count">
 					  <div><span class="count-num">1234</span>次</div>
@@ -333,14 +340,6 @@
 				z: 10
 			})
 		});
-		BarCartRank.setOption(
-			{
-            series: [{
-                name: 'lightBar', 
-                data: lightBar
-            }]
-        }
-		);
 		barChart.setOption({
             series: [{
                 name: 'lightBar', 
@@ -374,7 +373,27 @@
 
 	// 柱图2
 	let getData3 = function (res) {
-		
+		res.brustFreqOrderList.forEach((item,index)=>{
+			// 渲染5个echart
+			let bars = [];
+			item.freqencyList.forEach((item2)=>{
+				bars.push({
+					value: item2,
+					symbol: bar3,
+					symbolSize: ['160%', '100%'],
+					symbolPosition: 'end',
+					z: 10
+				})
+				barChartRankArr[index].setOption({
+					series: [{
+						name: 'lightBar', 
+						data: bars
+					}]
+				});
+			});
+			// 次数统计
+			$(".count-num").eq(index).html(item.freq)
+		})
 	}
 	let param3 = {
 		key: 'left',
@@ -592,7 +611,12 @@
 	/*监管中心推送突发频率排名柱图底图*/
 	let bar3 = "image://../img/bar3.png";
 	let barChartBG = echarts.init(document.getElementById('barbgChart'));
-	let BarCartRank = echarts.init(document.getElementById('barChartRank1'));
+	let BarCartRank1 = echarts.init(document.getElementById('barChartRank1'));
+	let BarCartRank2 = echarts.init(document.getElementById('barChartRank2'));
+	let BarCartRank3 = echarts.init(document.getElementById('barChartRank3'));
+	let BarCartRank4 = echarts.init(document.getElementById('barChartRank4'));
+	let BarCartRank5 = echarts.init(document.getElementById('barChartRank5'));
+	let barChartRankArr = [BarCartRank1,BarCartRank2,BarCartRank3,BarCartRank4,BarCartRank5];
 	let barChartBgOption = {
             grid: {
                 left: '0',
@@ -786,6 +810,10 @@
     };
             
     barChartBG.setOption(barChartBgOption);/*监管中心推送突发频率排名柱图底图*/
-	BarCartRank.setOption(BarCartRankOption);/*监管中心推送突发频率排名柱图底图*/
+	BarCartRank1.setOption(BarCartRankOption);/*监管中心推送突发频率排名柱图底图*/
+	BarCartRank2.setOption(BarCartRankOption);/*监管中心推送突发频率排名柱图底图*/
+	BarCartRank3.setOption(BarCartRankOption);/*监管中心推送突发频率排名柱图底图*/
+	BarCartRank4.setOption(BarCartRankOption);/*监管中心推送突发频率排名柱图底图*/
+	BarCartRank5.setOption(BarCartRankOption);/*监管中心推送突发频率排名柱图底图*/
 </script>
 </html>
