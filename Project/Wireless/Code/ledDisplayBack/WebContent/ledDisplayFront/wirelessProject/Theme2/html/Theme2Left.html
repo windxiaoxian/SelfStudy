@@ -24,7 +24,7 @@
 			margin-right: 0;
 		}
 		.ssfxContrust_wxj_TjGroup .ssfxContrust_wxj_TjBar{
-			width: 272px;
+			width: 280px;
 		}
 		.modelContentBoxRight {
 			margin-left: 20px;
@@ -94,6 +94,9 @@
 			background-size: 100% 100%;
 			vertical-align: -5px;
 		}
+        .ssfxContrustCoreBox{
+            left: 250px;
+        }
 	</style>
 </head>
 
@@ -410,15 +413,67 @@
 		$(".orderImplRateByAnnual").html(res.orderImplRateByAnnual);        	//全局下发调度令执行率       
 		$(".generalBroadTimesByAnnual").html(res.generalBroadTimesByAnnual);    //全局年度至今代播总频次
 		$(".generalBroadTimeByAnnual").html(res.generalBroadTimeByAnnual);      //全局年度至今代播总时长
-		g.dataFresh(".mainRightContainer .counter");
+        g.dataFresh(".mainRightContainer .counter");
+        myChart.setOption({
+            series : [{
+                name : "Line 1",
+                data : [{
+                    
+                    value: (100 - res.orderImplRateByAnnual),
+                    name: '合格',
+                    
+                },
+                {
+                    value: res.orderImplRateByAnnual,
+                    name: '总量',
+                    itemStyle: {
+                        normal: {
+                            color: { // 完成的圆环的颜色
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(105, 242, 118, 1)' // 0% 处的颜色
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(105, 242, 118, 1)' // 100% 处的颜色
+                                }]
+                            },
+                            label: {
+                                show: false
+                            },
+                            labelLine: {
+                                show: false
+                            }
+                        } 
+                    }
+                }]
+            }]
+        })
 		$(".qjndzjddlModel table,.qjndzjlsdbModel table").html('');
 		$(res.orderTimeList).each(function(i,ele){
 			$(".qjndzjddlModel table").append('<tr><td>'+ ele.station +'</td><td>'+ ele.orderCount +'次</td><td class="GreenRate">'+ ele.orderRate +'</td></tr>');
 		});
 		$(res.generationBroadList).each(function(i,ele){
 			$(".qjndzjlsdbModel table").append('<tr><td>'+ ele.station +'</td><td style="width:100px;">'+ ele.applicationCount +'次</td><td>'+ ele.applicationGeneral +'小时</td><td>'+ ele.applicationOther +'小时</td><td class="GreenRate">'+ ele.generalRate +'</td></tr>');
+        });
+		
+		$(res.orderTimeList).each(function(i,ele){
+			$(".qjndzjddlModel table").append('<tr><td>'+ ele.station +'</td><td>'+ ele.orderCount +'次</td><td class="GreenRate">'+ ele.orderRate +'</td></tr>');
 		});
-		$('.TableListArea').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});
+		$(res.generationBroadList).each(function(i,ele){
+			$(".qjndzjlsdbModel table").append('<tr><td>'+ ele.station +'</td><td style="width:100px;">'+ ele.applicationCount +'次</td><td>'+ ele.applicationGeneral +'小时</td><td>'+ ele.applicationOther +'小时</td><td class="GreenRate">'+ ele.generalRate +'</td></tr>');
+        });
+		
+		$(res.orderTimeList).each(function(i,ele){
+			$(".qjndzjddlModel table").append('<tr><td>'+ ele.station +'</td><td>'+ ele.orderCount +'次</td><td class="GreenRate">'+ ele.orderRate +'</td></tr>');
+		});
+		$(res.generationBroadList).each(function(i,ele){
+			$(".qjndzjlsdbModel table").append('<tr><td>'+ ele.station +'</td><td style="width:100px;">'+ ele.applicationCount +'次</td><td>'+ ele.applicationGeneral +'小时</td><td>'+ ele.applicationOther +'小时</td><td class="GreenRate">'+ ele.generalRate +'</td></tr>');
+        });
+		
+        $('.TableListArea:eq(0)').liMarquee('destroy');
+		$('.TableListArea:eq(0)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});
+        $('.TableListArea:eq(1)').liMarquee('destroy');
+		$('.TableListArea:eq(1)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});
 
 	}
 	let param4 = {
@@ -429,8 +484,6 @@
 	setInterval(function () {
 		g.doAjax("servlet/SecondThemeServlet", param4, getData4);
 	}, 30000)
-
-
 
 	 /*表格滚动*/
 	$(function(){
@@ -599,7 +652,7 @@
             }
         }, {
             name: '合格',
-            value: 20
+            value: 80
         }]
     }]
 }

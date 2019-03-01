@@ -10,7 +10,7 @@
 	<link href="../../Common/css/liMarquee.css" rel="stylesheet" type="text/css">
 	
 	<script src="../../Common/js/jquery-1.9.1.min.js"></script>
-	<!-- <script src="../../Common/js/jquery.liMarquee.js"></script> -->
+	<script src="../../Common/js/jquery.liMarquee.js"></script>
 	<script src="../../Common/js/jquery.waypoints.js"></script>
 	<script src="../../Common/js/jquery.counterup.min.js"></script>
 	<script src="../../Common/js/echarts.js"></script>
@@ -20,16 +20,16 @@
 
 	<script>
 		/*表格滚动*/
-		$(function () {
-			$('.TableListArea').liMarquee(
-				{ scrollamount: '30' }
-			);
-		});	
+		// $(function () {
+		// 	$('.TableListArea').liMarquee(
+		// 		{ scrollamount: '30' }
+		// 	);
+		// });	
 	</script>
 	<style>
 		.mapBox{
-			top:-299px;
-			left: -61px;
+			/* top: -297px;
+            left: -239px; */
 		}
 		.bottomArea .TableListAssembly{
 			width: 900px;
@@ -38,6 +38,12 @@
 		.DataGroupRightItem{
 			width: 382px;
 		}
+        .bottomArea{
+            display: none;
+        }
+        .southSea{
+            display: none;
+        }
 	</style>
 </head>
 
@@ -79,7 +85,7 @@
 		<img src="../img/centerGroup/mapBgBorder.png"
 			style="display:block;margin:0 auto;margin-left:-729px;position:absolute;top:210px;left:50%;z-index:3;">
 		<!--南海-->
-		<img src="../img/centerGroup/southSea.png" style="position:absolute;bottom:220px;right:400px;z-index:5;">
+		<img class="southSea" src="../img/centerGroup/southSea.png" style="position:absolute;bottom:220px;right:400px;z-index:5;">
 	</div>
 	<!--数据统计左侧-->
 	<div class="DataGroupLeft">
@@ -237,7 +243,7 @@
 
 <!--中国地图-->
 <script>
-	// 左侧右上数据
+
 	let getData1 = function (res) {
 		$(".stationInUse").html(res.stationInUse);			//在播台站
 		$(".transmitterInUse").html(res.transmitterInUse);	//在播发射机
@@ -302,6 +308,7 @@
 	let myChart = echarts.init(document.getElementById('chinaMap3D'));
 
 	option1 = {
+        roam: false,
 		tooltip: {
 			show: true,
 			borderColor: '#fff',

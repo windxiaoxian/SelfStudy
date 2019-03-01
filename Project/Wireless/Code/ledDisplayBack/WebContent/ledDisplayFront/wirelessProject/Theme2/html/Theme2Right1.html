@@ -1,699 +1,422 @@
 <!doctype html>
 <html>
-
 <head>
-	<meta charset="utf-8">
-	<title>主题二右侧版本2</title>
+<meta charset="utf-8">
+<title>主题二右侧重宝期</title>
 	<link href="../../Common/css/ledDisplayCommon.css" rel="stylesheet" type="text/css">
 	<link href="../../Common/css/assemblyCommon.css" rel="stylesheet" type="text/css">
 	<link href="../../Common/css/liMarquee.css" rel="stylesheet" type="text/css">
-	<link href="../css/Theme2Right1.css" rel="stylesheet" type="text/css">
-
+	<link href="../css/Theme2Right.css" rel="stylesheet" type="text/css">
+	
 	<script src="../../Common/js/jquery-1.9.1.min.js"></script>
 	<script src="../../Common/js/jquery.waypoints.js"></script>
 	<script src="../../Common/js/jquery.counterup.min.js"></script>
 	<script src="../../Common/js/jquery.liMarquee.js"></script>
 	<script src="../../Common/js/echarts.js"></script>
-	<script src="../../Common/js/highcharts.js"></script>
-	<script src="../../Common/js/highcharts-3d.js"></script>
-	<script type="text/javascript">
-		/*数据刷新动画调用方法*/
-		function DataFresh() {
-			$('.counter').counterUp({
-				delay: 100,
-				time: 2000
-			});
-		}
-		setInterval("DataFresh()", 6000);
-	</script>
+	<script src="../../Common/js/global.js"></script>
 	<style>
-		.miniArea{
-			transition: none;
-		}
-		
-	</style>
+        .miniArea{
+            transition: none;
+        }
+        .ModelContent{
+            margin-left: 70px;
+        }
+        table{
+            /* text-align: center; */
+        }
+        .DataAssemblyBar_progressBarItem{
+            min-width: 45px;
+        }
+        .TableListAssembly table td {
+            width: auto;
+            margin-right: 0px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
 	<div class="main2">
-		<!--左侧内容-->
-		<div class="mainLeft">
-			<div class="mainLeftContainer">
-				<!--技改大修-->
-				<div class="Model jgdxModel">
-					<div class="modelTitleBoxR">
-						<div class="modelTitle">技改大修</div>
+	 <!--左侧内容-->
+	 <div class="mainLeft">
+	   <div class="mainLeftContainer">
+		<!--技改大修-->
+		<div class="Model jgdxModel">
+		  <div class="modelTitleBoxR">
+			 <div class="modelTitle">技改大修</div>
+		  </div>  
+		
+		  <div class="modelContentBoxR">
+			<!--当前正在执行项目-->
+			<div class="dqzxxmModel">
+				  <div class="ModalTitle"><img src="../img/dqzxxmTitle.png"></div>
+				  <div class="ModelContent">
+				    <!--表格部分-->
+			       <div class="TableListAssembly table-box-1">
+				    <div class="TableListHead">
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">台名</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">开始时间</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">结束时间</span></span>
+					 <span class="TableListHeadItemBox" style="margin-right:0;"><span class="TableListHeadItemName">项目名称</span></span>
+				    </div>
+				 <div class="TableListArea">
+				   <table>
+				     <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+				     <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr>
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+				     <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr>
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr>
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+				     <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr>
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr>
+				   </table> 
+				 </div>
+				 
+			   </div>
+				  </div>
+			  </div> 	
+			
+			<!--即将执行项目-->
+			<div class="dqzxxmModel">
+				  <div class="ModalTitle"><img src="../img/jjzxxmTitle.png"></div>
+				  <div class="ModelContent">
+				    <!--表格部分-->
+			       <div class="TableListAssembly table-box-2">
+				    <div class="TableListHead">
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">台名</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">开始时间</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">结束时间</span></span>
+					 <span class="TableListHeadItemBox" style="margin-right:0;"><span class="TableListHeadItemName">项目名称</span></span>
+				    </div>
+				 <div class="TableListArea">
+				   <table>
+				     <!-- <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+				     <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr>
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+				     <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr>
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr>
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+				     <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr>
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> 
+					 <tr><td>491台</td><td>2018-12-22</td><td>2018-12-23</td><td>无线局项目</td></tr> -->
+				   </table> 
+				 </div>
+				 
+			   </div>
+				  </div>
+			  </div> 
+			  
+			<!--总计数据-->
+			<div class="zjsjModel">
+				  <div class="ModalTitle"><img src="../img/zjsjTitle.png"></div>
+				  <div class="ModelContent">
+					<!--顶部统计部分-->
+					<div class="TopTJContainer">
+					  <div class="TJPanelAssembly tc">
+				       <div class="TJPanelAssemblyTitle">台次</div>
+				       <div class="TJPanelAssemblyData"><span class="counter DataCounter"> - </span><span class="DataUnit">次</span></div>
+			          </div>
+					  <div class="TJPanelAssembly wcxm">
+				       <div class="TJPanelAssemblyTitle">完成项目</div>
+				       <div class="TJPanelAssemblyData"><span class="counter DataCounter"> - </span><span class="DataUnit">个</span></div>
+			          </div>
 					</div>
-
-					<div class="modelContentBoxR">
-						<!--当前正在执行项目-->
-						<div class="dqzxxmModel">
-							<div class="ModalTitle"><img src="../img/dqzxxmTitle.png"></div>
-							<div class="ModelContent">
-								<!--表格部分-->
-								<div class="TableListAssembly ">
-									<div class="TableListHead">
-										<span class="TableListHeadItemBox"><span
-												class="TableListHeadItemName">台名</span></span>
-										<span class="TableListHeadItemBox"><span
-												class="TableListHeadItemName">开始时间</span></span>
-										<span class="TableListHeadItemBox"><span
-												class="TableListHeadItemName">结束时间</span></span>
-										<span class="TableListHeadItemBox" style="margin-right:0;"><span
-												class="TableListHeadItemName">项目名称</span></span>
-									</div>
-									<div class="TableListArea">
-										<table>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-										</table>
-									</div>
-
-								</div>
-							</div>
-						</div>
-
-						<!--即将执行项目-->
-						<div class="dqzxxmModel">
-							<div class="ModalTitle"><img src="../img/jjzxxmTitle.png"></div>
-							<div class="ModelContent">
-								<!--表格部分-->
-								<div class="TableListAssembly ">
-									<div class="TableListHead">
-										<span class="TableListHeadItemBox"><span
-												class="TableListHeadItemName">台名</span></span>
-										<span class="TableListHeadItemBox"><span
-												class="TableListHeadItemName">开始时间</span></span>
-										<span class="TableListHeadItemBox"><span
-												class="TableListHeadItemName">结束时间</span></span>
-										<span class="TableListHeadItemBox" style="margin-right:0;"><span
-												class="TableListHeadItemName">项目名称</span></span>
-									</div>
-									<div class="TableListArea">
-										<table>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>2018-12-22</td>
-												<td>2018-12-23</td>
-												<td>无线局项目</td>
-											</tr>
-										</table>
-									</div>
-
-								</div>
-							</div>
-						</div>
-
-						<!--总计数据-->
-						<div class="zjsjModel">
-							<div class="ModalTitle"><img src="../img/zjsjTitle.png"></div>
-							<div class="ModelContent">
-								<!--顶部统计部分-->
-								<div class="TopTJContainer">
-									<div class="TJPanelAssembly tc">
-										<div class="TJPanelAssemblyTitle">台次</div>
-										<div class="TJPanelAssemblyData"><span
-												class="counter DataCounter">12045</span><span class="DataUnit">次</span>
-										</div>
-									</div>
-									<div class="TJPanelAssembly wcxm">
-										<div class="TJPanelAssemblyTitle">完成项目</div>
-										<div class="TJPanelAssemblyData"><span
-												class="counter DataCounter">30</span><span class="DataUnit">个</span>
-										</div>
-									</div>
-								</div>
-
-								<!--表格部分-->
-								<div class="TableListAssembly" style="margin-top:10px;">
-									<div class="TableListHead">
-										<span class="TableListHeadItemBox"><span
-												class="TableListHeadItemName">台名</span></span>
-										<span class="TableListHeadItemBox"><span
-												class="TableListHeadItemName">已完成项目个数</span></span>
-										<span class="TableListHeadItemBox" style="margin-right:0;"><span
-												class="TableListHeadItemName">累计时间</span></span>
-									</div>
-									<div class="TableListArea">
-										<table>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-											<tr>
-												<td>491台</td>
-												<td>10个</td>
-												<td style="margin-right:0;">100天</td>
-											</tr>
-										</table>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-
+					
+				    <!--表格部分-->
+			       <div class="TableListAssembly" style="margin-top:10px;">
+				    <div class="TableListHead">
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">台名</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">已完成项目个数</span></span>
+					 <span class="TableListHeadItemBox" style="margin-right:0;"><span class="TableListHeadItemName">累计时间</span></span>
+				    </div>
+				   <div class="TableListArea">
+				   <table class="table-3">
+				     <!-- <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr> 
+				     <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr>
+					 <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr>
+					 <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr>
+					 <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr>
+					 <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr>
+					 <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr>
+					 <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr>
+					 <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr>
+					 <tr><td>491台</td><td>10个</td><td style="margin-right:0;">100天</td></tr> -->
+				   </table> 
+				 </div>
+				 
+			   </div>
+				  </div>
+			  </div> 
+		  </div>
+		  
+	    </div>
+	   </div>
+     </div> 
+	 <!--右侧内容-->
+	 <div class="mainRight">
+	   <div class="mainRightContainer">
+	    <!--重保期实时累计播放时长-->
+		<div class="Model zbqljbfscModel">
+		  <div class="modelTitleBoxR3">
+			 <div class="modelTitle">重保期实时累计播放时长</div>
+		  </div> 
+		  
+		  <div class="modelContentBoxR">
+		      <!--播放时长累计节目排名-->
+			  <div class="jgzxtstfpvssfxChart">
+				  <div class="chartTitle"><img src="../img/bfscljpmTitle.png"></div>
+				  <div class="chartBox" id="bfscljpm_barChart"></div>
+			  </div> 	
+		  </div>
+	    </div>
+		   
+		<!--重要节目播出状态-->
+		<div class="Model zyjmbcztModel">
+		  <div class="modelTitleBoxR3">
+			 <div class="modelTitle">重要节目播出状态</div>
+		  </div>   
+			
+		  <div class="modelContentBoxR">
+			<!--表格部分-->
+			<div class="TableListAssembly ">
+				 <div class="TableListHead">
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">节目</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">在播发射机</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">在播天线</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">频率</span></span>
+					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">异态</span></span>
+					 <span class="TableListHeadItemBox" style="margin-right:0;"><span class="TableListHeadItemName">覆盖区域</span></span>
+				 </div>
+				 <div class="TableListArea">
+				   <table>
+				     <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr> 
+				     <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr> 
+				     <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+					 <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
+				   </table> 
+				 </div>
+				 
+			   </div>
+			
+			<!--监测异态&台际代播-->
+			<div class="TJGroupContainer">
+			  <!--监测异态-->
+			  <div class="TjGroupItem">
+				<img src="../img/bg/jcytMTitle.png">
+				<div class="TjGroupItem_content">
+				  
 				</div>
+			  </div>
+				
+			  <!--台际代播-->
+			  <div class="TjGroupItem">
+				<img src="../img/bg/tjdbMTitle.png">
+				<div class="TjGroupItem_content">
+				  
+				</div>
+			  </div>
 			</div>
-		</div>
-		<!--右侧内容-->
-		<div class="mainRight">
-			<div class="mainRightContainer">
-				<!--全局台站资源总览-->
-				<div class="Model qjtzzyzlModel">
-					<div class="modelTitleBoxR3">
-						<div class="modelTitle">全局台站资源总览</div>
-					</div>
-
-					<div class="modelContentBoxR">
-						<div class="pieGroupContainer">
-							<!--全局发射机状态饼图-->
-							<div class="pieGroupItem">
-								<div class="pieChartName">全局发射机状态</div>
-								<div class="pieChartBox" id="qjfsjztPieChart"></div>
-							</div>
-
-							<!--总空闲天线饼图-->
-							<div class="pieGroupItem">
-								<div class="pieChartName">总空闲天线</div>
-								<div class="pieChartBox" id="zkjxtxPieChart" style="position:relative;left:5px;"></div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-				<!--对内对外实验及播出资源实时情况-->
-				<div class="Model syjbcqktModel">
-					<div class="modelTitleBoxR3" style="width:450px;margin-left:355px;">
-						<div class="modelTitle">对内对外实验及播出资源实时情况</div>
-					</div>
-
-					<div class="modelContentBoxR">
-						<!--对内情况-->
-						<div class="dnqkModel">
-							<div class="ModalTitle"><img src="../img/dnqkTitle.png"></div>
-							<div class="ssqkShowAssemblyGroup">
-								<!--顶部统计组-->
-								<div class="ssqkShowAssemblyTop">
-									<img class="legend" src="../img/ssqkShowGroup/legend.png">
-									<div class="ssqkShowAssembly_progressBar">
-										<div class="BarType">可用：</div>
-
-										<!--可用-->
-										<div class="DataAssemblyBar_progressBar">
-											<a class="DataAssemblyBar_progressBarItem yellowMix" id="item1"><span
-													class="progressBarData">236个</span></a>
-											<a class="DataAssemblyBar_progressBarItem blueMix" id="item2"><span
-													class="progressBarData">236个</span></a>
-											<a class="DataAssemblyBar_progressBarItem greenMix" id="item3"><span
-													class="progressBarData">236个</span></a>
-										</div>
-									</div>
-
-									<div class="ssqkShowAssembly_progressBar">
-										<div class="BarType">在用：</div>
-										<!--在用-->
-										<div class="DataAssemblyBar_progressBar">
-											<a class="DataAssemblyBar_progressBarItem yellowMix" id="item1"><span
-													class="progressBarData">236个</span></a>
-											<a class="DataAssemblyBar_progressBarItem blueMix" id="item2"><span
-													class="progressBarData">236个</span></a>
-											<a class="DataAssemblyBar_progressBarItem greenMix" id="item3"><span
-													class="progressBarData">236个</span></a>
-										</div>
-									</div>
-								</div>
-								<!--地图轮播展现组件组-->
-								<div class="ssqkShowAssemblyMain">
-									<div class="AreaOutContainer">
-										<img class="AreaItem miniArea" src="../img/ssqkShowGroup/inDistrict/hbArea.png">
-										<img class="AreaItem miniArea" src="../img/ssqkShowGroup/inDistrict/xnArea.png">
-										<img class="AreaItem maxArea" src="../img/ssqkShowGroup/inDistrict/hzArea.png">
-										<img class="AreaItem miniArea" src="../img/ssqkShowGroup/inDistrict/xbArea.png">
-										<img class="AreaItem miniArea" src="../img/ssqkShowGroup/inDistrict/dbArea.png">
-									</div>
-								</div>
-							</div>
-						</div>
-						<!--对外情况-->
-						<div class="dwqkModel" style="margin-top:35px;">
-							<div class="ModalTitle"><img src="../img/dwqkTitle.png"></div>
-							<div class="ssqkShowAssemblyGroup">
-								<!--顶部统计组-->
-								<div class="ssqkShowAssemblyTop">
-									<img class="legend" src="../img/ssqkShowGroup/legend.png">
-									<div class="ssqkShowAssembly_progressBar">
-										<div class="BarType">可用：</div>
-
-										<!--可用-->
-										<div class="DataAssemblyBar_progressBar">
-											<a class="DataAssemblyBar_progressBarItem yellowMix" id="item1"><span
-													class="progressBarData">236个</span></a>
-											<a class="DataAssemblyBar_progressBarItem blueMix" id="item2"><span
-													class="progressBarData">236个</span></a>
-											<a class="DataAssemblyBar_progressBarItem greenMix" id="item3"><span
-													class="progressBarData">236个</span></a>
-										</div>
-									</div>
-
-									<div class="ssqkShowAssembly_progressBar">
-										<div class="BarType">在用：</div>
-										<!--在用-->
-										<div class="DataAssemblyBar_progressBar">
-											<a class="DataAssemblyBar_progressBarItem yellowMix" id="item1"><span
-													class="progressBarData">236个</span></a>
-											<a class="DataAssemblyBar_progressBarItem blueMix" id="item2"><span
-													class="progressBarData">236个</span></a>
-											<a class="DataAssemblyBar_progressBarItem greenMix" id="item3"><span
-													class="progressBarData">236个</span></a>
-										</div>
-									</div>
-								</div>
-								<!--地图轮播展现组件组-->
-								<div class="ssqkShowAssemblyMain">
-									<div class="AreaOutContainer">
-										<img class="AreaItemF miniArea"
-											src="../img/ssqkShowGroup/inDistrict/asiaArea.png">
-										<img class="AreaItemF miniArea"
-											src="../img/ssqkShowGroup/inDistrict/atlanticArea.png">
-										<img class="AreaItemF maxArea"
-											src="../img/ssqkShowGroup/inDistrict/europeArea.png">
-										<img class="AreaItemF miniArea"
-											src="../img/ssqkShowGroup/inDistrict/americaArea.png">
-										<img class="AreaItemF miniArea"
-											src="../img/ssqkShowGroup/inDistrict/africaArea.png">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		  </div>
+	    </div>
+	   </div>
+	</div>
 	</div>
 </body>
-<!--全局发射机状态-->
-<script type="text/javascript">
-	Highcharts.chart('qjfsjztPieChart', {
-		chart: {
-			type: 'pie',
-			backgroundColor: 'none',
 
-			options3d: {
-				enabled: true,
-				alpha: 60
-			}
-		},
-		colors: ['#fca80d', '#42b9fd', '#97df69', '#fef55a', '#77f7e4'],
-		title: {
-			text: ''
-		},
-		subtitle: {
-			text: ''
-		},
-		plotOptions: {
-			pie: {
-				innerSize: 80,
-				depth: 30,
-				dataLabels: {
-
-					style: { fontSize: "14px", color: '#ffffff' }
-				}
-			}
-		},
-		series: [{
-			name: '状态',
-			type: "pie",
-			data: [
-				['停机', 8],
-				['检修', 3],
-				['空闲', 1],
-				['在用', 6],
-				['可用', 8],
-
-			]
-		}]
-	});
-</script>
-
-<!--总空闲天线-->
-<script type="text/javascript">
-	Highcharts.chart('zkjxtxPieChart', {
-		chart: {
-			type: 'pie',
-			backgroundColor: 'none',
-
-			options3d: {
-				enabled: true,
-				alpha: 60
-			}
-		},
-		colors: ['#fca80d', '#42b9fd', '#97df69', '#fef55a', '#77f7e4'],
-		title: {
-			text: ''
-		},
-		subtitle: {
-			text: ''
-		},
-		plotOptions: {
-			pie: {
-				innerSize: 80,
-				depth: 30,
-				dataLabels: {
-
-					style: { fontSize: "14px", color: '#ffffff' }
-				}
-			}
-		},
-		series: [{
-			name: '天线状态',
-			type: "pie",
-			data: [
-				['停机', 8],
-				['检修', 3],
-				['空闲', 1],
-				['在用', 6],
-				['可用', 8],
-
-			]
-		}]
-	});
-</script>
-<!--对内对外情况地域轮播-->
 <script>
-	/*对内*/
-	function dnqkAreaFlash() {
-		// $(".AreaItem").first().animate({ marginLeft: '-170px' }, 'slow', function () {
-			$(".AreaItem").first().css("margin-left", "0px");
-			$(".AreaItem").removeClass("maxArea").removeClass("miniArea");
-			$(".AreaItem").eq(3).addClass("maxArea").siblings().addClass("miniArea");
-			$(".AreaItem").last().after($(".AreaItem").first());
-		// });
+	// let getData1 = function (res) {
+		
+	// 	// g.dataFresh(".counter");
+	// 	$("table").html(`<tr>
+	// 						<td style="width:130px;">${res.currentOrderList[0].order}</td>
+	// 						<td>${res.currentOrderList[0].freq}</td>
+	// 						<td>${res.currentOrderList[0].station}</td>
+	// 						<td>${res.currentOrderList[0].transmitter}</td>
+	// 						<td>${res.currentOrderList[0].annate}</td>
+	// 						<td style="margin-right:0;">${res.currentOrderList[0].status}</td>
+	// 					</tr>`);
+	// }
+	// let param1 = {
+	// 	screenPosition: 'right',
+	// 	param: JSON.stringify({ interfaceName: 'stationResource' }),
+	// }
+	// g.doAjax("servlet/SecondThemeServlet", param1, getData1);
+
+
+     // 右侧前两个table
+     let getData3 = function (res) {
+        $(".table-box-1 table,.table-box-2 table").html("");
+        $(res.doingList).each(function(i,ele){
+            $(".table-box-1 table").append(`<tr>
+                                        <td style="width:120px;">${ele.stationName}</td>
+                                        <td style="width:240px;">${ele.startDate}</td>
+                                        <td style="width:120px;">${ele.endDate}</td>
+                                        <td style="width:210px;">${ele.projectName}</td>
+                                    </tr>`);
+        });
+        $(res.toDoList).each(function(i,ele){
+            $(".table-box-2 table").append(`<tr>
+                                        <td style="width:120px;">${ele.stationName}</td>
+                                        <td style="width:240px;">${ele.startDate}</td>
+                                        <td style="width:120px;">${ele.endDate}</td>
+                                        <td style="width:210px;">${ele.projectName}</td>
+                                    </tr>`);
+        });
+        $(res.toDoList).each(function(i,ele){
+            $(".table-box-2 table").append(`<tr>
+                                        <td style="width:120px;">${ele.stationName}</td>
+                                        <td style="width:240px;">${ele.startDate}</td>
+                                        <td style="width:120px;">${ele.endDate}</td>
+                                        <td style="width:210px;">${ele.projectName}</td>
+                                    </tr>`);
+        });
+        $('.TableListArea:lt(2)').liMarquee('destroy');  
+		$('.TableListArea:lt(2)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
 	}
-	setInterval("dnqkAreaFlash()", 3000);
-	/*对外*/
-	function dwqkAreaFlash() {
-		// $(".AreaItemF").first().animate({ marginLeft: '-170px' }, 'slow', function () {
-			$(".AreaItemF").first().css("margin-left", "0px");
-			$(".AreaItemF").removeClass("maxArea").addClass("miniArea");
-			// $(".AreaItemF").eq(2).addClass("miniArea");
-			$(".AreaItemF").eq(3).removeClass("miniArea").addClass("maxArea");
-			$(".AreaItemF").last().after($(".AreaItemF").first());
-		// });
+	let param3 = {
+		key: 'right',
+		param: JSON.stringify({ interfaceName: 'technologyCondition' }),
 	}
-	setInterval("dwqkAreaFlash()", 3000);
+    g.doAjax("servlet/SecondThemeServlet", param3, getData3);
+    let getData4 = function (res) {
+        $(".tc .counter").html(res.stationCount);
+        $(".wcxm .counter").html(res.completeProject);
+        g.dataFresh(".counter");
+        $(".table-3").html("");
+        $(res.projectList).each(function(i,ele){
+            $(".table-3").append(`<tr>
+                                    <td style="width:120px;">${ele.stationName}</td>
+                                    <td style="width:430px;">${ele.completeProject}</td>
+                                    <td style="width:120px;">${ele.timeLength}天</td>
+                                </tr>`);
+        });
+        $('.TableListArea:eq(2)').liMarquee('destroy');  
+        $('.TableListArea:eq(2)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+	}
+	let param4 = {
+		key: 'right',
+		param: JSON.stringify({ interfaceName: 'completeCondition' }),
+	}
+	g.doAjax("servlet/SecondThemeServlet", param4, getData4);
 
-
-</script>
-
-
-<script>
-	/*表格滚动*/
-	$(function () {
-		$('.TableListArea').liMarquee(
-			{ scrollamount: '30' }
-		);
-	});	
-</script>
-<script>
 	/*播放时长累计节目排名柱图*/
 	let bar1 = "image://../img/barBgBig.png";
 	let myChart = echarts.init(document.getElementById('bfscljpm_barChart'));
 	baroption = {
-
-		tooltip: {
-			show: false,
-			trigger: 'axis',
-			axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-				type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+    
+    tooltip : {
+		show:false,
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+			axisTick: {
+                show:false
+            },
+			axisLine: {
+                        show: false
+                    },
+			axisLabel: {
+                color: '#fff',
+                fontSize: 14
+        },
+            data : ['中一', '中二', '中三', '中四', '中五'],
+            
+			
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+			show:false,
+			axisLine: {
+                        show: false
+                    },
+			splitLine:{
+				show:false
 			}
-		},
-		grid: {
-			left: '3%',
-			right: '4%',
-			bottom: '3%',
-			containLabel: true
-		},
-		xAxis: [
-			{
-				type: 'category',
-				axisTick: {
-					show: false
-				},
-				axisLine: {
-					show: false
-				},
-				axisLabel: {
-					color: '#fff',
-					fontSize: 14
-				},
-				data: ['中一', '中二', '中三', '中四', '中五'],
+        }
+    ],
+    series : [
+              {
+                    type: 'pictorialBar',
+                    barWidth: '30%',
+				    label:{
+						normal:{
+					    show:true,
+						position:'top',
+						color:'#fdb810',
+						fontSize:18,
+						fontWeight:'bold',
+						fontStyle:'oblique',
+					    formatter:'{c}个'
+						}
+						
+					},
+                    data: [{
+			            value: 345,
+			            symbol: bar1,
+			            symbolSize: ['100%', '100%'],
+			            symbolPosition: 'end',
+			            z: 10
+			        },{
+			            value: 217,
+			            symbol: bar1,
+			            symbolSize: ['100%', '100%'],
+			            symbolPosition: 'end',
+			            z: 10
+			        },{
+			            value: 205,
+			            symbol: bar1,
+			            symbolSize: ['100%', '100%'],
+			            symbolPosition: 'end',
+			            z: 10
+			        },{
+			            value: 196,
+			            symbol: bar1,
+			            symbolSize: ['100%', '100%'],
+			            symbolPosition: 'end',
+			            z: 10
+			        },{
+			            value: 178,
+			            symbol: bar1,
+			            symbolSize: ['100%', '100%'],
+			            symbolPosition: 'end',
 
-
-			}
-		],
-		yAxis: [
-			{
-				type: 'value',
-				show: false,
-				axisLine: {
-					show: false
-				},
-				splitLine: {
-					show: false
-				}
-			}
-		],
-		series: [
-			{
-				type: 'pictorialBar',
-				barWidth: '30%',
-				label: {
-					normal: {
-						show: true,
-						position: 'top',
-						color: '#fdb810',
-						fontSize: 18,
-						fontWeight: 'bold',
-						fontStyle: 'oblique',
-						formatter: '{c}个'
-					}
-
-				},
-				data: [{
-					value: 345,
-					symbol: bar1,
-					symbolSize: ['100%', '100%'],
-					symbolPosition: 'end',
-					z: 10
-				}, {
-					value: 217,
-					symbol: bar1,
-					symbolSize: ['100%', '100%'],
-					symbolPosition: 'end',
-					z: 10
-				}, {
-					value: 205,
-					symbol: bar1,
-					symbolSize: ['100%', '100%'],
-					symbolPosition: 'end',
-					z: 10
-				}, {
-					value: 196,
-					symbol: bar1,
-					symbolSize: ['100%', '100%'],
-					symbolPosition: 'end',
-					z: 10
-				}, {
-					value: 178,
-					symbol: bar1,
-					symbolSize: ['100%', '100%'],
-					symbolPosition: 'end',
-
-					z: 10
-				}]
-			}
-		]
-	};
-	myChart.setOption(baroption);
+			            z: 10
+			        }]
+                }
+              ]
+};
+    myChart.setOption(baroption);
 </script>
-
 </html>
