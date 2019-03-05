@@ -32,6 +32,9 @@
             margin-right: 0px;
             text-align: center;
         }
+        .zyjmbcztModel table td{
+            padding: 0;
+        }
     </style>
 </head>
 
@@ -194,7 +197,7 @@
 					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">异态</span></span>
 					 <span class="TableListHeadItemBox" style="margin-right:0;"><span class="TableListHeadItemName">覆盖区域</span></span>
 				 </div>
-				 <div class="TableListArea">
+				 <div class="TableListArea table-box-0">
 				   <table>
 				     <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr> 
 				     <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
@@ -260,7 +263,60 @@
 	// 	param: JSON.stringify({ interfaceName: 'stationResource' }),
 	// }
 	// g.doAjax("servlet/SecondThemeServlet", param1, getData1);
+    
+    // 左中 table
+    let getData1 = function (res) {
+        let dataArr = [],xArr = [];
+        $(res.programPlayTimeList).each(function(i,ele){
+            dataArr.push({
+			            value: ele.timeLength,
+			            symbol: bar1,
+			            symbolSize: ['100%', '100%'],
+			            symbolPosition: 'end',
+			            z: 10
+                    });
+            xArr.push(ele.programName);
+        });
+        myChart.setOption({
+            series : [{
+                name:'barChart',
+                data : dataArr
+            }],
+            xAxis : [{
+                data : xArr
+            }],
+        })
+       
+        $(".zyjmbcztModel table").liMarquee('destroy');  
+		$(".zyjmbcztModel table").liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+	}
+	let param1 = {
+		key: 'important',
+		param: JSON.stringify({ interfaceName: 'programPlaybackTime' }),
+	}
+    g.doAjax("servlet/SecondThemeServlet", param1, getData1);
 
+    let getData2 = function (res) {
+        $(".zyjmbcztModel table").html("");
+        $(res.programStatusList).each(function(i,ele){
+            $(".zyjmbcztModel table").append(`<tr>
+                                        <td style="width:126px;">${ele.programName}</td>
+                                        <td style="width:140px;">${ele.transmitter}</td>
+                                        <td style="width:132px;">${ele.anterna}</td>
+                                        <td style="width:140px;">${ele.freq}</td>
+                                        <td style="width:130px;">${ele.excep}</td>
+                                        <td style="width:140px;">${ele.servArea}</td>
+                                    </tr>`);
+        });
+       
+        $(".table-box-0").liMarquee('destroy');  
+		$(".table-box-0").liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+	}
+	let param2 = {
+		key: 'important',
+		param: JSON.stringify({ interfaceName: 'programPlayStatus' }),
+	}
+    g.doAjax("servlet/SecondThemeServlet", param2, getData2);
 
      // 右侧前两个table
      let getData3 = function (res) {
@@ -281,14 +337,7 @@
                                         <td style="width:210px;">${ele.projectName}</td>
                                     </tr>`);
         });
-        $(res.toDoList).each(function(i,ele){
-            $(".table-box-2 table").append(`<tr>
-                                        <td style="width:120px;">${ele.stationName}</td>
-                                        <td style="width:240px;">${ele.startDate}</td>
-                                        <td style="width:120px;">${ele.endDate}</td>
-                                        <td style="width:210px;">${ele.projectName}</td>
-                                    </tr>`);
-        });
+       
         $('.TableListArea:lt(2)').liMarquee('destroy');  
 		$('.TableListArea:lt(2)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
 	}
@@ -368,6 +417,7 @@
     ],
     series : [
               {
+                    name:'barChart',
                     type: 'pictorialBar',
                     barWidth: '30%',
 				    label:{
@@ -383,35 +433,10 @@
 						
 					},
                     data: [{
-			            value: 345,
+			            value: 1,
 			            symbol: bar1,
 			            symbolSize: ['100%', '100%'],
 			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 217,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 205,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 196,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-			            z: 10
-			        },{
-			            value: 178,
-			            symbol: bar1,
-			            symbolSize: ['100%', '100%'],
-			            symbolPosition: 'end',
-
 			            z: 10
 			        }]
                 }

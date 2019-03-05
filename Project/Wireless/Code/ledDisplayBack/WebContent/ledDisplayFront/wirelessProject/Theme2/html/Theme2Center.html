@@ -308,7 +308,6 @@
 	let myChart = echarts.init(document.getElementById('chinaMap3D'));
 
 	option1 = {
-        roam: false,
 		tooltip: {
 			show: true,
 			borderColor: '#fff',
@@ -325,10 +324,8 @@
 				borderWidth: 1
 			}
 		},
-
 		geo3D: {
 			map: 'china',
-			roam: true,
 			show: true,
 			shading: 'lambert',
 			regionHeight: 0,
@@ -400,6 +397,7 @@
 		series: [
 			/*调度令动画小组*/
 			{
+			    roam: false,
 				type: 'lines3D',
 				name: '绿色状态线',
 				coordinateSystem: 'geo3D',
