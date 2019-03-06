@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -15,6 +16,9 @@
 	<script src="../../Common/js/echarts.js"></script>
 	<script src="../../Common/js/global.js"></script>
 	<style>
+        td{
+            box-sizing: border-box;
+        }
 		table{
 			text-align: center;
 		}
@@ -48,8 +52,8 @@
 			color: #fff;
 			position: absolute;
 			height: 89%;
-			width: 80px;	
-			left: -50px;
+			width: 100px;	
+			left: -54px;
 		}
 		.chart-count>div,.chart-title>div{
 			height: 66px;
@@ -65,7 +69,8 @@
 		}
 		.chartBoxBg{
 			height: 350px;
-			width: 100%;
+			width: 99.5%;
+            margin-left: 4px;
 		}
 		.BarCartRank{
 			height: 17%;
@@ -87,7 +92,7 @@
 		#barChartRank5{
 			top: 72%
 		}
-		.chart-title span{
+		.chart-title .img-span{
 			display: inline-block;
 			width: 30px;
 			height: 30px;
@@ -186,11 +191,11 @@
 			  <div class="chartTitle2"><img src="../img/jgzxtstfpvpmTitle.png"></div>
 			  <div class="jgzxtstfpvssfxChart">
 				  <div class="chart-title">
-					  <div><span style="background-image: url(../img/firstSign.png)"></span> 频率1</div>
-					  <div><span style="background-image: url(../img/secondSign.png)"></span> 频率2</div>
-					  <div><span style="background-image: url(../img/thirdSign.png)"></span> 频率3</div>
-					  <div><span style="background-image: url(../img/fourthSign.png)"></span> 频率4</div>
-					  <div><span style="background-image: url(../img/fifthSign.png)"></span> 频率5</div>
+					  <div><span class="img-span" style="background-image: url(../img/firstSign.png)"></span> <span class="freq">频率1</span></div>
+					  <div><span class="img-span" style="background-image: url(../img/secondSign.png)"></span> <span class="freq">频率2</span></div>
+					  <div><span class="img-span" style="background-image: url(../img/thirdSign.png)"></span> <span class="freq">频率3</span></div>
+					  <div><span class="img-span" style="background-image: url(../img/fourthSign.png)"></span> <span class="freq">频率4</span></div>
+					  <div><span class="img-span" style="background-image: url(../img/fifthSign.png)"></span> <span class="freq">频率5</span></div>
 				  </div>
 				  <div class="chart-count">
 					  <div><span class="count-num">1234</span>次</div>
@@ -306,7 +311,43 @@
 	   </div>
 	</div>
 	</div>
-</body>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
 
 <script>
 	// 左侧右上数据
@@ -395,7 +436,8 @@
 				});
 			});
 			// 次数统计
-			$(".count-num").eq(index).html(item.freq)
+			$(".count-num").eq(index).html(item.times);
+			$(".freq").eq(index).html(item.freq);
 		})
 	}
 	let param3 = {
@@ -450,24 +492,10 @@
         })
 		$(".qjndzjddlModel table,.qjndzjlsdbModel table").html('');
 		$(res.orderTimeList).each(function(i,ele){
-			$(".qjndzjddlModel table").append('<tr><td>'+ ele.station +'</td><td>'+ ele.orderCount +'次</td><td class="GreenRate">'+ ele.orderRate +'</td></tr>');
+			$(".qjndzjddlModel table").append('<tr><td>'+ ele.station +'</td><td>'+ ele.orderCount +'次</td><td class="GreenRate" style="padding-left:20px;">'+ ele.orderRate +'</td></tr>');
 		});
 		$(res.generationBroadList).each(function(i,ele){
-			$(".qjndzjlsdbModel table").append('<tr><td>'+ ele.station +'</td><td style="width:100px;">'+ ele.applicationCount +'次</td><td>'+ ele.applicationGeneral +'小时</td><td>'+ ele.applicationOther +'小时</td><td class="GreenRate">'+ ele.generalRate +'</td></tr>');
-        });
-		
-		$(res.orderTimeList).each(function(i,ele){
-			$(".qjndzjddlModel table").append('<tr><td>'+ ele.station +'</td><td>'+ ele.orderCount +'次</td><td class="GreenRate">'+ ele.orderRate +'</td></tr>');
-		});
-		$(res.generationBroadList).each(function(i,ele){
-			$(".qjndzjlsdbModel table").append('<tr><td>'+ ele.station +'</td><td style="width:100px;">'+ ele.applicationCount +'次</td><td>'+ ele.applicationGeneral +'小时</td><td>'+ ele.applicationOther +'小时</td><td class="GreenRate">'+ ele.generalRate +'</td></tr>');
-        });
-		
-		$(res.orderTimeList).each(function(i,ele){
-			$(".qjndzjddlModel table").append('<tr><td>'+ ele.station +'</td><td>'+ ele.orderCount +'次</td><td class="GreenRate">'+ ele.orderRate +'</td></tr>');
-		});
-		$(res.generationBroadList).each(function(i,ele){
-			$(".qjndzjlsdbModel table").append('<tr><td>'+ ele.station +'</td><td style="width:100px;">'+ ele.applicationCount +'次</td><td>'+ ele.applicationGeneral +'小时</td><td>'+ ele.applicationOther +'小时</td><td class="GreenRate">'+ ele.generalRate +'</td></tr>');
+			$(".qjndzjlsdbModel table").append('<tr><td style="width:80px;">'+ ele.station +'</td><td style="width:100px;">'+ ele.applicationCount +'次</td><td>'+ ele.applicationGeneral +'小时</td><td style="padding-left:20px;">'+ ele.applicationOther +'小时</td><td class="GreenRate" style="padding-left:40px;">'+ ele.generalRate +'</td></tr>');
         });
 		
         $('.TableListArea:eq(0)').liMarquee('destroy');
