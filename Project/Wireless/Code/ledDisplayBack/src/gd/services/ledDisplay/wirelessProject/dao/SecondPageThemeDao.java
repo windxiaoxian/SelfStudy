@@ -428,7 +428,7 @@ public class SecondPageThemeDao {
                 .append("                   LEFT JOIN ")
                 .append("                  (SELECT   b.station_code, COUNT (b.station_code) num ")
                 .append("                       FROM wxj_busiorder_detail_realtime b ")
-                .append("                      WHERE b.status = '70' b.status ") /*不明确，影响查询结果 */
+                .append("                      WHERE b.status = '70'") /* b.status 不明确，影响查询结果 */
                 .append("                   GROUP BY b.station_code) n ")
                 .append("                   ON m.station_code = n.station_code) y ")
                 .append("    WHERE x.station_code = y.station_code ")
@@ -771,8 +771,8 @@ public class SecondPageThemeDao {
 
     public static String getDoingProgramList(Map reqMap) {
         StringBuffer strBuffer = new StringBuffer();
-        strBuffer .append(" SELECT t.projdeptname, t.dt_projplanstartdate,  ")
-                .append(" t.dt_projplanenddate,t.vc_projname ")
+        strBuffer .append(" SELECT t.projdeptname, SUBSTR(t.dt_projplanstartdate,1,10) dt_projplanstartdate,  ")
+                .append(" NVL(substr(t.dt_projplanenddate,1,10),'2019-10-01') dt_projplanenddate,t.vc_projname ")
                 .append(" FROM wxj_project_info_t t ")
                 .append("  WHERE t.int_projstates = '3' ")
                 .append(" ORDER BY t.dt_projplanstartdate ");
@@ -781,8 +781,8 @@ public class SecondPageThemeDao {
 
     public static String getTodoProgramList(Map reqMap) {
         StringBuffer strBuffer = new StringBuffer();
-        strBuffer .append(" SELECT   t.projdeptname, t.dt_projplanstartdate,  ")
-                .append("  t.dt_projplanenddate, t.vc_projname ")
+        strBuffer .append(" SELECT   t.projdeptname, substr(t.dt_projplanstartdate, 1, 10) dt_projplanstartdate,  ")
+                .append("  NVL(substr(t.dt_projplanenddate , 1, 10), '2019-10-01') dt_projplanenddate, t.vc_projname ")
                 .append(" FROM wxj_project_info_t t ")
                 .append("  WHERE TO_CHAR (SYSDATE, 'yyyy-MM-dd hh24:mi:ss') < t.dt_projplanstartdate ")
                  .append("  AND t.int_projstates = '1' ")
@@ -891,6 +891,7 @@ public class SecondPageThemeDao {
                 .append("              AND w.trans_code = m.transcode ")
                 .append("              AND w.operate != 'D' ")
                 .append("              AND w.order_type IN ('D', 'F', 'I') ")
+                .append("              AND t.pg_id = '4' ")
                 .append("         ORDER BY t.program_name) info ")
                 .append("        LEFT JOIN ")
                 .append("        (SELECT program_code, 'err' excep ")
