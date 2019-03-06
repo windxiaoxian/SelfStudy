@@ -338,6 +338,13 @@ public class FirstThemeServlet extends HttpServlet {
     protected String getProgramTransInfo(JSONObject json, String screenPosition) {
         try {
             JSONObject resultJson = new JSONObject();
+            // ADD-START BY liubaoyun DATE 2019-02-22
+            resultJson.accumulate("upStarSystem", 48);//上星系统
+            resultJson.accumulate("OTN", 2);//光传输网络
+            resultJson.accumulate("integrationPlatform", 3);//集成成台
+            resultJson.accumulate("MTN", 1);//微波传输网络
+            // ADD-END BY liubaoyun DATE 2019-02-22
+
             resultJson.accumulate("centerRadio", 181);//中央广播
             resultJson.accumulate("localRadio", 58);//地方广播
             resultJson.accumulate("center", 265);//中央
@@ -352,6 +359,11 @@ public class FirstThemeServlet extends HttpServlet {
             resultJson.accumulate("transProgram", 580);//传输节目
             resultJson.accumulate("satilliteUsed", 9);//占用卫星
             resultJson.accumulate("repeater", 57);//转发器
+            // ADD-START BY liubaoyun DATE 2019-02-22
+            // 集成平台信息
+            resultJson.accumulate("tvProgram", 22);//电视节目
+            resultJson.accumulate("radioProgram", 70);//广播节目
+            // ADD-END BY liubaoyun DATE 2019-02-22
             return resultJson.toString();
         } catch (Exception e) {
             logger.error("FirstThemeServlet." + screenPosition + "后台报错" + e.getMessage());

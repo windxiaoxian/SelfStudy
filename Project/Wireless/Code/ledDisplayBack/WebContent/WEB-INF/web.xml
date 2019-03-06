@@ -36,6 +36,30 @@
     </servlet-mapping>
 
 
+    <!--        主题二Servlet     -->
+    <servlet>
+        <description>SecondThemeServlet_Description</description>
+        <display-name>SecondThemeServlet_Name</display-name>
+        <servlet-name>SecondThemeServlet</servlet-name>
+        <servlet-class>gd.services.ledDisplay.wirelessProject.servlet.SecondThemeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SecondThemeServlet</servlet-name>
+        <url-pattern>/servlet/SecondThemeServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--        主题二Servlet  测试类   -->
+    <servlet>
+        <description>SecondThemeServletTest_Description</description>
+        <display-name>SecondThemeServletTest_Name</display-name>
+        <servlet-name>SecondThemeServletTest</servlet-name>
+        <servlet-class>gd.services.ledDisplay.wirelessProject.servlet.SecondThemeServletTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SecondThemeServletTest</servlet-name>
+        <url-pattern>/servlet/SecondThemeServletTest</url-pattern>
+    </servlet-mapping>
+
     <!-- Spring 配置 begin-->
     <!-- ====================================== -->
     <servlet>
