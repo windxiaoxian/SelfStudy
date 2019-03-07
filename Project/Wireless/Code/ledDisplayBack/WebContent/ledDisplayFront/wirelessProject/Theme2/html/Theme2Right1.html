@@ -188,7 +188,7 @@
 			
 		  <div class="modelContentBoxR">
 			<!--表格部分-->
-			<div class="TableListAssembly ">
+			<div class="TableListAssembly  table-box-0">
 				 <div class="TableListHead">
 					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">节目</span></span>
 					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">在播发射机</span></span>
@@ -197,7 +197,7 @@
 					 <span class="TableListHeadItemBox"><span class="TableListHeadItemName">异态</span></span>
 					 <span class="TableListHeadItemBox" style="margin-right:0;"><span class="TableListHeadItemName">覆盖区域</span></span>
 				 </div>
-				 <div class="TableListArea table-box-0">
+				 <div class="TableListArea">
 				   <table>
 				     <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr> 
 				     <tr><td>491台</td><td>发射机C</td><td>天线C</td><td>1000Khz</td><td>无异态</td><td style="margin-right:0;">华北东北</td></tr>
@@ -285,10 +285,7 @@
             xAxis : [{
                 data : xArr
             }],
-        })
-       
-        $(".zyjmbcztModel table").liMarquee('destroy');  
-		$(".zyjmbcztModel table").liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+        });      
 	}
 	let param1 = {
 		key: 'important',
@@ -309,10 +306,8 @@
                                     </tr>`);
         });
        
-        $(".table-box-0").liMarquee('destroy'); 
-        setTimeout(function(){
-            $(".table-box-0").liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
-        },200) 
+        $('.TableListArea:eq(3)').liMarquee('destroy');  
+		$('.TableListArea:eq(3)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});  
 	}
 	let param2 = {
 		key: 'important',
