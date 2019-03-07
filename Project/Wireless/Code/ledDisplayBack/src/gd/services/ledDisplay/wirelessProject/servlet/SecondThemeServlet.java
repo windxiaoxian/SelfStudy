@@ -78,7 +78,7 @@ public class SecondThemeServlet extends HttpServlet {
                         callbackInfo = getProgramPlayStatus(paramJson,screenPosition);
                     }
                 }
-				 if("".equals(callbackInfo))
+                if("".equals(callbackInfo))
                     callbackInfo = "9999|未匹配到后台接口，请核查参数！";
             }
         }catch (Exception e) {
@@ -104,27 +104,24 @@ public class SecondThemeServlet extends HttpServlet {
     //获取实时资源比对
     protected String getResourceCompare(JSONObject json,String screenPosition){
         try{
+            Map reqMap = new HashMap();
             JSONObject resultJSON = new JSONObject();
-
-            HashMap reqMap = new HashMap();
-            // 获取获取实时资源比对数据
-            Map resMap = (HashMap) wirelessDB.qryMap(SecondPageThemeDao.getResourceCompareInfo(reqMap)).get("data");
             //获取实时资源比对
             // 无线局
-            resultJSON.accumulate("transmitterWXJ",resMap.get("station_count"));//当前实验发射机
-            resultJSON.accumulate("broadcastTimeWXJ",resMap.get("play_time_done"));//当日累计播音时间
-            resultJSON.accumulate("accFreqencyWXJ",resMap.get("freq_time"));//当日累计频次
-            resultJSON.accumulate("accFreqWXJ",resMap.get("freq_count"));//当日累计频率个数
+            resultJSON.accumulate("transmitterWXJ",1234);//当前实验发射机
+            resultJSON.accumulate("broadcastTimeWXJ",123456);//当日累计播音时间
+            resultJSON.accumulate("accFreqencyWXJ",345);//当日累计频次
+            resultJSON.accumulate("accFreqWXJ",56);//当日累计频率个数
 
             // 对象台
-            resultJSON.accumulate("transmitterEnemy",resMap.get("target_station_count"));//当前实验发射机
-            resultJSON.accumulate("broadcastTimeEnemy",resMap.get("target_play_time_done"));//当日累计播音时间
-            resultJSON.accumulate("accFreqencyEnemy",resMap.get("target_freq_time"));//当日累计频次
-            resultJSON.accumulate("accFreqEnemy",resMap.get("target_freq_count"));//当日累计频率个数
+            resultJSON.accumulate("transmitterEnemy",23);//当前实验发射机
+            resultJSON.accumulate("broadcastTimeEnemy",2345);//当日累计播音时间
+            resultJSON.accumulate("accFreqencyEnemy",45);//当日累计频次
+            resultJSON.accumulate("accFreqEnemy",34);//当日累计频率个数
 
             return resultJSON.toString();
         }catch (Exception e){
-            logger.error("[SecondThemeServlet.left.getResourceCompare]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.left.getResourceCompare]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -135,17 +132,14 @@ public class SecondThemeServlet extends HttpServlet {
             Map reqMap = new HashMap();
             JSONObject resultJSON = new JSONObject();
             //突发频率实时分析
-            List brustFreqDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getBurstFreqAnalysis(null)).get("data");
-            List brustFreqList = new ArrayList();
-            for (int i=0;i<brustFreqDBList.size();i++) {
-                String time = ((Map) brustFreqDBList.get(i)).get("times").toString();
-                brustFreqList.add(time);
+            List brustFreqList =  new ArrayList();
+            for(int i=0;i<24;i++){
+                brustFreqList.add((int)(Math.random()*100)+100);
             }
-
             resultJSON.accumulate("brustFreqList",brustFreqList);
             return resultJSON.toString();
         }catch (Exception e){
-            logger.error("[SecondThemeServlet.left.getburstFreqAnalysis]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.left.getburstFreqAnalysis]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -158,32 +152,34 @@ public class SecondThemeServlet extends HttpServlet {
             JSONObject resultJSON = new JSONObject();
             //突发频率实时分析
             List brustFreqOrderList =  new ArrayList();
-
-            //突发频率总次数排名
-            List freqencyRankingList = (List) wirelessDB.qryList(SecondPageThemeDao.getFreqencyRanking(reqMap)).get("data");
-            Map map = new HashMap();
-            List freqencyDBList =  new ArrayList();
             List freqencyList =  new ArrayList();
-            for (int i=0;i<5;i++){
-                map = new HashMap();
-                Integer freq = Integer.valueOf(((Map) freqencyRankingList.get(i)).get("freq").toString());
-                map.put("freq", freq); // 频率
-                map.put("times",((Map) freqencyRankingList.get(i)).get("times")); // 次数
-                //突发频率实时分析
-                freqencyDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getBurstFreqAnalysis(freq)).get("data");
-                freqencyList =  new ArrayList();
-                for (int j=0;j<freqencyDBList.size();j++) {
-                    String time = ((Map) freqencyDBList.get(j)).get("times").toString();
-                    freqencyList.add(time);
-                }
-                map.put("freqencyList",freqencyList); // 24小时该突发频率实时分析
-                brustFreqOrderList.add(map);
+            for(int i=0;i<24;i++){
+                freqencyList.add((int)(Math.random()*100)+100);
             }
+            Map map = new HashMap();
+            map.put("freq",6990);
+            map.put("times",1232);
+            map.put("freqencyList",freqencyList);
 
+            map.put("freq",10800);
+            map.put("times",1200);
+            brustFreqOrderList.add(map);
+
+            map.put("freq",7550);
+            map.put("times",897);
+            brustFreqOrderList.add(map);
+
+            map.put("freq",960);
+            map.put("times",799);
+            brustFreqOrderList.add(map);
+
+            map.put("freq",14400);
+            map.put("times",666);
+            brustFreqOrderList.add(map);
             resultJSON.accumulate("brustFreqOrderList",brustFreqOrderList);
             return resultJSON.toString();
         }catch (Exception e){
-            logger.error("[SecondThemeServlet.left.getBurstFreqOrder]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.left.getBurstFreqOrder]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -195,64 +191,72 @@ public class SecondThemeServlet extends HttpServlet {
             JSONObject  resultJSON = new JSONObject();
             List orderTimeList = new ArrayList();
             List generationBroadList = new ArrayList();
-
-            List orderTimeDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getOrderTimeList(reqMap)).get("data");
             Map map  = new HashMap();
-            int size = orderTimeDBList.size();
-            for (int i=0;i<size; i++){
-                map  = new HashMap();
-                map.put("station",((Map) orderTimeDBList.get(i)).get("station_code_dic")); // 台名
+            map.put("station","491台");
+            map.put("orderCount",23);
+            map.put("orderRate","86%");
+            orderTimeList.add(map);
 
-                Integer orderCount = Integer.valueOf(((Map) orderTimeDBList.get(i)).get("order_total").toString()); //调度次数
-                map.put("orderCount",orderCount);   //调度次数
+            map.put("station","624台");
+            map.put("orderCount",34);
+            map.put("orderRate","68%");
+            orderTimeList.add(map);
 
-                Integer orderCountDone = Integer.valueOf(((Map) orderTimeDBList.get(i)).get("done_count").toString()); //调度完成次数
-                BigDecimal completioRate = new BigDecimal(orderCountDone/orderCount);
-                //保留2位小数，且四舍五入,调度令执行率
-                double orderImplRateByAnnual = completioRate.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+            map.put("station","2021台");
+            map.put("orderCount",12);
+            map.put("orderRate","48%");
+            orderTimeList.add(map);
 
-                map.put("orderRate", orderImplRateByAnnual+"%");       // 执行率
-                orderTimeList.add(map);
-            }
+            map.put("station","573台");
+            map.put("orderCount",67);
+            map.put("orderRate","82%");
+            orderTimeList.add(map);
 
-            List generationDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getGenerationList(reqMap)).get("data");
-            Map map2  = new HashMap();
-            int size2 = generationDBList.size();
-            for (int i=0;i<size2; i++){
-                map2  = new HashMap();
-                map2.put("station",((Map) generationDBList.get(i)).get("station_code_dic")); // 台名
-                // TODO
-                map2.put("applicationCount",80);//申请次数
-                map2.put("applicationGeneral",3232);//申请代播时长
-                map2.put("applicationOther",((Map) generationDBList.get(i)).get("play_time"));//代播他台时长
+            Map map2 = new HashMap();
+            map2.put("station","491台");
+            map2.put("applicationCount",80);//申请次数
+            map2.put("applicationGeneral",3232);//申请代播时长
+            map2.put("applicationOther",212);//代播他台时长
+            map2.put("generalRate","90%");//代播执行率
+            generationBroadList.add(map2);
 
-                Integer agentOrderCount = Integer.valueOf(((Map) generationDBList.get(i)).get("agent_order_count").toString()); //代播调度次数
-                Integer agentOrderCountDone = Integer.valueOf(((Map) generationDBList.get(i)).get("agent_done_count").toString()); //调度完成次数
-                BigDecimal completioRate = new BigDecimal(agentOrderCountDone/agentOrderCount);
-                //保留2位小数，且四舍五入,调度令执行率
-                double generalRate = completioRate.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-                map2.put("generalRate", generalRate+"%");       // 执行率
-                generationBroadList.add(map2);
-            }
+            map2.put("station","491台");
+            map2.put("applicationCount",80);//申请次数
+            map2.put("applicationGeneral",3232);//申请代播时长
+            map2.put("applicationOther",212);//代播他台时长
+            map2.put("generalRate","90%");//代播执行率
+            generationBroadList.add(map2);
 
-            // 获取年度至今临时代播
-            Map resMap = (HashMap) wirelessDB.qryMap(SecondPageThemeDao.getAnnualSituationInfo(reqMap)).get("data");
-            Integer orderCount = Integer.valueOf(resMap.get("order_count").toString()); //全局下发调度令总数
-            Integer orderCountDone = Integer.valueOf(resMap.get("order_count_done").toString()); //全局下发调度令总数
+            map2.put("station","282台");
+            map2.put("applicationCount",6);//申请次数
+            map2.put("applicationGeneral",130);//申请代播时长
+            map2.put("applicationOther",80);//代播他台时长
+            map2.put("generalRate","95%");//代播执行率
+            generationBroadList.add(map2);
 
-            float completioRate =(float) orderCountDone/orderCount;
-            //保留2位小数，且四舍五入, 全局下发调度令执行率
-            double orderImplRateByAnnual = new BigDecimal(completioRate).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue()*100;
-            resultJSON.accumulate("orderByAnnual", orderCount);//全局下发调度令总数
-            resultJSON.accumulate("orderImplRateByAnnual",orderImplRateByAnnual);//全局下发调度令执行率
-            resultJSON.accumulate("generalBroadTimesByAnnual",resMap.get("agent_freq_count"));//全局年度至今代播总频次
-            resultJSON.accumulate("generalBroadTimeByAnnual",resMap.get("agent_order_duration"));//全局年度至今代播总时长
+            map2.put("station","2021台");
+            map2.put("applicationCount",12);//申请次数
+            map2.put("applicationGeneral",20);//申请代播时长
+            map2.put("applicationOther",119);//代播他台时长
+            map2.put("generalRate","98%");//代播执行率
+            generationBroadList.add(map2);
 
-            resultJSON.accumulate("orderTimeList",orderTimeList);  // 全年至今调度令信息列表
+            map2.put("station","293台");
+            map2.put("applicationCount",56);//申请次数
+            map2.put("applicationGeneral",108);//申请代播时长
+            map2.put("applicationOther",246);//代播他台时长
+            map2.put("generalRate","89%");//代播执行率
+            generationBroadList.add(map2);
+
+            resultJSON.accumulate("orderByAnnual",1234);//全局下发调度令总数
+            resultJSON.accumulate("orderImplRateByAnnual",99.19);//全局下发调度令执行率
+            resultJSON.accumulate("generalBroadTimesByAnnual",678);//全局年度至今代播总频次
+            resultJSON.accumulate("generalBroadTimeByAnnual",9807);//全局年度至今代播总时长
+            resultJSON.accumulate("orderTimeList",orderTimeList);
             resultJSON.accumulate("generationBroadList",generationBroadList);
             return resultJSON.toString();
         }catch(Exception  e){
-            logger.error("[SecondThemeServlet.left.getAnnualSituation]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.left.getAnnualSituation]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -285,7 +289,7 @@ public class SecondThemeServlet extends HttpServlet {
             resultJSON.accumulate("orderTrendList",orderTrendList);//台站调度令走势信息
             return resultJSON.toString();
         }catch (Exception e){
-            logger.error("[SecondThemeServlet.middle.getBroadCastResource]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.middle.getBroadCastResource]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -297,39 +301,46 @@ public class SecondThemeServlet extends HttpServlet {
             Map reqMap = new HashMap();
             JSONObject  resultJSON = new JSONObject();
             List currentOrderList  = new ArrayList();
-
             Map map = new HashMap();
-            List currentOrderDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getBroadCastResourceList(reqMap)).get("data");
-            int size = currentOrderDBList.size();
-            for (int i=0;i<size; i++){
-                map = new HashMap();
-                map.put("order",((Map) currentOrderDBList.get(i)).get("order_code_dic"));
-                map.put("freq",((Map) currentOrderDBList.get(i)).get("freq"));
-                map.put("station",((Map) currentOrderDBList.get(i)).get("station_name"));
-                map.put("transmitter",((Map) currentOrderDBList.get(i)).get("txname"));
-                map.put("annate",((Map) currentOrderDBList.get(i)).get("antusedcode"));
-                map.put("status",((Map) currentOrderDBList.get(i)).get("status"));
-                currentOrderList.add(map);
-            }
+            map.put("order","2019[987号]调度令");
+            map.put("freq",14400);
+            map.put("station","572台");
+            map.put("transmitter","A02");
+            map.put("annate",301);
+            map.put("status","未下发");
+            currentOrderList.add(map);
 
-            Map resUpMap = (HashMap) wirelessDB.qryMap(SecondPageThemeDao.getBroadCastResourceUpInfo(reqMap)).get("data");
-            resultJSON.accumulate("stationInUse", resUpMap.get("station_doing"));//在播台站
-            resultJSON.accumulate("transmitterInUse",resUpMap.get("trans_doing"));//在播发射机
-            resultJSON.accumulate("broadcastPower",resUpMap.get("power_doing"));//在播功率
-            resultJSON.accumulate("broadcastTime",resUpMap.get("playtime_doing"));//当日在播时长
-            resultJSON.accumulate("programOnPlay",resUpMap.get("program_doing"));//在播节目
-            resultJSON.accumulate("suppressEnemy",resUpMap.get("task_doing"));//实验压制敌台次数
+            map.put("order","2019[001号]调度令");
+            map.put("freq",11800);
+            map.put("station","2021台");
+            map.put("transmitter","A02");
+            map.put("annate",301);
+            map.put("status","未下发");
+            currentOrderList.add(map);
 
-            Map resMap = (HashMap) wirelessDB.qryMap(SecondPageThemeDao.getBroadCastResourceDownInfo(reqMap)).get("data");
-            resultJSON.accumulate("orderCountByDay",resMap.get("order_count"));//当日调度令总数
-            resultJSON.accumulate("orderBroadTime",resMap.get("play_time"));//调度播出时长
-            resultJSON.accumulate("orderAddFreq",resMap.get("newordercount"));//调度新开或增开频率
+            map.put("order","2019[007号]调度令");
+            map.put("freq",960);
+            map.put("station","293台");
+            map.put("transmitter","A01");
+            map.put("annate",301);
+            map.put("status","已下发");
+            currentOrderList.add(map);
 
+            resultJSON.accumulate("stationInUse",222);//在播台站
+            resultJSON.accumulate("transmitterInUse",444);//在播发射机
+            resultJSON.accumulate("broadcastPower",333);//在播功率
+            resultJSON.accumulate("broadcastTime",123445);//当日在播时长
+            resultJSON.accumulate("programOnPlay",76);//在播节目
+            resultJSON.accumulate("suppressEnemy",687);//实验压制敌台次数
+
+            resultJSON.accumulate("orderCountByDay",56);//当日调度令总数
+            resultJSON.accumulate("orderBroadTime",687);//调度播出时长
+            resultJSON.accumulate("orderAddFreq",687);//调度新开或增开频率
             resultJSON.accumulate("currentOrderList",currentOrderList);//当前小时调度令情况
 
             return resultJSON.toString();
         }catch (Exception e){
-            logger.error("[SecondThemeServlet.middle.getBroadCastResource]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.middle.getBroadCastResource]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -339,23 +350,21 @@ public class SecondThemeServlet extends HttpServlet {
         try{
             Map reqMap = new HashMap();
             JSONObject  resultJSON = new JSONObject();
-            Map resMap = (HashMap) wirelessDB.qryMap(SecondPageThemeDao.getStationResourceOfTransmitter(reqMap)).get("data");
-
-            resultJSON.accumulate("transmitterInUse",resMap.get("inuse"));  //全局发射机状态:在用
-            resultJSON.accumulate("transmitterUsed",resMap.get("free"));   //全局发射机状态:可用
+            resultJSON.accumulate("transmitterInUse",126);  //全局发射机状态:在用
+            resultJSON.accumulate("transmitterUsed",135);   //全局发射机状态:可用
             //resultJSON.accumulate("transmitterFree",236);   //全局发射机状态:空闲
-            resultJSON.accumulate("transmitterRepair",resMap.get("overhaul")); //全局发射机状态:抢修
-            resultJSON.accumulate("transmitterClose",resMap.get("bad"));  //全局发射机状态:停用
+            resultJSON.accumulate("transmitterRepair",32); //全局发射机状态:抢修
+            resultJSON.accumulate("transmitterClose",147);  //全局发射机状态:停用
 
             resultJSON.accumulate("antennaInUse",119);  //全局天线状态:在用
-            resultJSON.accumulate("antennaUsed",209);   //全局天线状态:已用
-           // resultJSON.accumulate("antennaFree",224);   //全局天线状态:空闲
+            resultJSON.accumulate("antennaUsed",209);   //全局天线状态:可用
+            // resultJSON.accumulate("antennaFree",224);   //全局天线状态:空闲
             resultJSON.accumulate("antennaRepair",108); //全局天线状态:抢修
             resultJSON.accumulate("antennaClose",190);  //全局天线状态:停用
 
             return resultJSON.toString();
         }catch (Exception e){
-            logger.error("[SecondThemeServlet.right.getStationResource]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.right.getStationResource]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -435,9 +444,10 @@ public class SecondThemeServlet extends HttpServlet {
             resultJSON.accumulate("AfricaList",AfricaList);          // 美洲地区
             resultJSON.accumulate("OceaniaList",OceaniaList);   // 大洋洲地区
 
+
             return resultJSON.toString();
         }catch (Exception e){
-            logger.error("[SecondThemeServlet.right.getStationResource]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.right.getStationResource]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -448,36 +458,28 @@ public class SecondThemeServlet extends HttpServlet {
             Map reqMap = new HashMap();
             JSONObject resultJSON = new JSONObject();
             List doingList = new ArrayList();
-            // 当前正在执行项目
-            Map dingMap = new HashMap();
-            List doingDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getDoingProgramList(reqMap)).get("data");
-            int size = doingDBList.size();
-            for (int i=0;i<size; i++){
-                dingMap = new HashMap();
-                dingMap.put("stationName",((Map) doingDBList.get(i)).get("projdeptname"));
-                dingMap.put("startDate",((Map) doingDBList.get(i)).get("dt_projplanstartdate"));
-                dingMap.put("endDate",((Map) doingDBList.get(i)).get("dt_projplanenddate"));
-                dingMap.put("projectName",((Map) doingDBList.get(i)).get("vc_projname"));
-                doingList.add(dingMap);
+            for(int i=0 ; i<5;i++){
+                Map map =  new HashMap();
+                map.put("stationName","491台");
+                map.put("startDate","2019/01/05");
+                map.put("endDate","2019/01/05");
+                map.put("projectName","XXXXXXXXXXXXXXXXXXXXX");
+                doingList.add(map);  // 当前正在执行项目
             }
-            // 即将在执行项目
-            Map todoMap =  new HashMap();
             List todoList = new ArrayList();
-            List todoDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getTodoProgramList(reqMap)).get("data");
-            int todoSize = todoDBList.size();
-            for(int i=0 ; i<todoSize;i++){
-                todoMap =  new HashMap();
-                todoMap.put("stationName",((Map) todoDBList.get(i)).get("projdeptname"));
-                todoMap.put("startDate",((Map) todoDBList.get(i)).get("dt_projplanstartdate"));
-                todoMap.put("endDate",((Map) todoDBList.get(i)).get("dt_projplanenddate"));
-                todoMap.put("projectName",((Map) todoDBList.get(i)).get("vc_projname"));
-                todoList.add(todoMap);
+            for(int i=0 ; i<5;i++){
+                Map map =  new HashMap();
+                map.put("stationName","491台");
+                map.put("startDate","2019/01/05");
+                map.put("endDate","2019/01/05");
+                map.put("projectName","XXXXXXXXXXXXXXXXXXXXX");
+                todoList.add(map);
             }
             resultJSON.accumulate("doingList",doingList); // 当前正在执行项目
             resultJSON.accumulate("toDoList",todoList);    // 即将在执行项目
             return resultJSON.toString();
         }catch (Exception e){
-            logger.error("[SecondThemeServlet.right.getStationResource]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.right.getStationResource]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -488,26 +490,28 @@ public class SecondThemeServlet extends HttpServlet {
             Map reqMap = new HashMap();
             JSONObject  resultJSON = new JSONObject();
             List resList = new ArrayList();
-
             Map map =  new HashMap();
-            List resDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getCompleteConditionList(reqMap)).get("data");
-            int size = resDBList.size();
-            for(int i=0 ; i<size;i++){
-                map =  new HashMap();
-                map.put("stationName",((Map) resDBList.get(i)).get("projdeptname")); // 台名
-                map.put("completeProject",((Map) resDBList.get(i)).get("projdeptname"));// 已完成项目数
-                map.put("timeLength",((Map) resDBList.get(i)).get("time")); // 累计时间
-                resList.add(map);
-            }
+            map.put("stationName","491");  // 台名
+            map.put("completeProject",33); // 已完成项目数
+            map.put("timeLength",112);      // 累计时间
+            resList.add(map);
+
+            map.put("stationName","582");
+            map.put("completeProject",16);
+            map.put("timeLength",221);
+            resList.add(map);
+
+            map.put("stationName","2021");
+            map.put("completeProject",54);
+            map.put("timeLength",240);
+            resList.add(map);
 
             resultJSON.accumulate("projectList",resList);  // 列表数据
-
-            Map resMap = (HashMap) wirelessDB.qryMap(SecondPageThemeDao.getCompleteConditionInfo(reqMap)).get("data");
-            resultJSON.accumulate("stationCount",resMap.get("projdeptname"));      //台次
-            resultJSON.accumulate("completeProject",resMap.get("donecount"));  //完成项目
+            resultJSON.accumulate("stationCount",234);      //台次
+            resultJSON.accumulate("completeProject",456);  //完成项目
             return resultJSON.toString();
         }catch (Exception e){
-            logger.error("[SecondThemeServlet.right.getStationResource]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.right.getStationResource]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -519,23 +523,30 @@ public class SecondThemeServlet extends HttpServlet {
             JSONObject  resultJSON = new JSONObject();
             List resList = new ArrayList();
             Map map =  new HashMap();
-            List resDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getProgramPlaybackTimeList(reqMap)).get("data");
-            int size = 5;
-            if(resDBList.size()<=5){
-                size = resDBList.size();
-            }
-            for(int i=0 ; i < size;i++){
-                map =  new HashMap();
-                map.put("programName",((Map) resDBList.get(i)).get("PROGRAM_NAME")); // 节目名
-                map.put("timeLength",((Map) resDBList.get(i)).get("play_time"));// 累计时间
-                resList.add(map);
-            }
+            map.put("programName","中一");  // 节目名
+            map.put("timeLength", 1836);      // 累计时间
+            resList.add(map);
+
+            map.put("programName","中二");  // 节目名
+            map.put("timeLength", 1336);      // 累计时间
+            resList.add(map);
+
+            map.put("programName","中三");  // 节目名
+            map.put("timeLength", 1006);      // 累计时间
+            resList.add(map);
+
+            map.put("programName","中四");  // 节目名
+            map.put("timeLength", 836);      // 累计时间
+            resList.add(map);
+
+            map.put("programName","中五");  // 节目名
+            map.put("timeLength", 776);      // 累计时间
+            resList.add(map);
 
             resultJSON.accumulate("programPlayTimeList",resList);  // 重保期实时累计播放时长
             return resultJSON.toString();
         }catch (Exception e){
-            e.printStackTrace();
-            logger.error("[SecondThemeServlet.right.getStationResource]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.right.getStationResource]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }
@@ -547,23 +558,20 @@ public class SecondThemeServlet extends HttpServlet {
             JSONObject  resultJSON = new JSONObject();
             List resList = new ArrayList();
             Map map =  new HashMap();
-            List resDBList = (List) wirelessDB.qryList(SecondPageThemeDao.getProgramPlayStatusList(reqMap)).get("data");
-            int size = resDBList.size();
-            for(int i=0 ; i<size;i++){
-                map =  new HashMap();
-                map.put("programName",((Map) resDBList.get(i)).get("program_name"));  // 节目名
-                map.put("transmitter", ((Map) resDBList.get(i)).get("usedcode"));      // 在播发射机
-                map.put("anterna", ((Map) resDBList.get(i)).get("antcode_bfd_dic"));      // 在播天线
-                map.put("freq", ((Map) resDBList.get(i)).get("freq"));      // 频率
-                map.put("excep", ((Map) resDBList.get(i)).get("excep"));      // 异态
-                map.put("servArea", ((Map) resDBList.get(i)).get("serv_area"));      // 覆盖区域
+            map.put("programName","中一");  // 节目名
+            map.put("transmitter", "A04");      // 在播发射机
+            map.put("anterna", "10号天线");      // 在播天线
+            map.put("freq", 111650);      // 频率
+            map.put("excep", 1836);      // 异态
+            map.put("servArea", 1836);      // 覆盖区域
+            for (int i =0 ; i < 9 ; i++){
                 resList.add(map);
             }
+
             resultJSON.accumulate("programStatusList",resList);  // 重保期节目播出状态
             return resultJSON.toString();
         }catch (Exception e){
-            e.printStackTrace();
-            logger.error("[SecondThemeServlet.right.getStationResource]后台报错" + e.getMessage());
+            logger.error("[SecondThemeServletTest.right.getStationResource]后台报错" + e.getMessage());
             return "9999|后台接口报错，请核查日志！";
         }
     }

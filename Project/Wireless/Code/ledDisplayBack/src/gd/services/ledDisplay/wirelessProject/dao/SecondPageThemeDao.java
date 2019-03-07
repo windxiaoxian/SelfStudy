@@ -832,7 +832,7 @@ public class SecondPageThemeDao {
     public static String getProgramPlaybackTimeList(Map reqMap) {
         StringBuffer strBuffer = new StringBuffer();
         strBuffer.append(" select t.PROGRAM_NAME, NVL(p1.play_time, 0) + NVL(p2.play_time, 0) + NVL(p3.play_time, 0) + NVL(p4.play_time, 0) play_time ")
-                .append(" from wxj_program_info_t t ")
+                .append(" from wxj_program_baseinfo_t t ")
                 .append(" left join ")
                 .append(" (SELECT  PROGRAM_NAME,  CEIL (SUM (end_time - start_time) * 24) play_time ")
                 .append("                           FROM wxj_runplan_history_t  ")
@@ -881,7 +881,7 @@ public class SecondPageThemeDao {
                 .append("        excep.excep, info.serv_area ")
                 .append("   FROM (SELECT   t.program_code, t.program_name, m.usedcode, n.antcode_bfd_dic, ")
                 .append("                  w.freq, w.serv_area ")
-                .append("             FROM wxj_program_info_t t, ")
+                .append("             FROM wxj_program_baseinfo_t t, ")
                 .append("                  wxj_runplan_realtime_t w, ")
                 .append("                  wxj_transmitter_info_t m, ")
                 .append("                  wxj_anterna_info_t n ")
