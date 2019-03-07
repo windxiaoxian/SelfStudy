@@ -338,8 +338,10 @@
                                     </tr>`);
         });
        
-        $('.TableListArea:lt(2)').liMarquee('destroy');  
-		$('.TableListArea:lt(2)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+        $('.TableListArea:eq(0)').liMarquee('destroy');  
+		$('.TableListArea:eq(0)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+        $('.TableListArea:eq(1)').liMarquee('destroy');  
+		$('.TableListArea:eq(1)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
 	}
 	let param3 = {
 		key: 'right',
@@ -365,7 +367,14 @@
 		key: 'right',
 		param: JSON.stringify({ interfaceName: 'completeCondition' }),
 	}
-	g.doAjax("servlet/SecondThemeServlet", param4, getData4);
+    g.doAjax("servlet/SecondThemeServlet", param4, getData4);
+    
+    setInterval(function () {
+		g.doAjax("servlet/SecondThemeServlet", param1, getData1);
+		g.doAjax("servlet/SecondThemeServlet", param2, getData2);
+		g.doAjax("servlet/SecondThemeServlet", param3, getData3);
+		g.doAjax("servlet/SecondThemeServlet", param4, getData4);
+	}, 30000);
 
 	/*播放时长累计节目排名柱图*/
 	let bar1 = "image://../img/barBgBig.png";

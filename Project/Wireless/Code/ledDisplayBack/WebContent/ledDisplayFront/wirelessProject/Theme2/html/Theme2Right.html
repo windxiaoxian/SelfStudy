@@ -639,8 +639,10 @@
                                         <td style="width:210px;">${ele.projectName}</td>
                                     </tr>`);
         });
-        $('.TableListArea:lt(2)').liMarquee('destroy');  
-		$('.TableListArea:lt(2)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+        $('.TableListArea:eq(0)').liMarquee('destroy');  
+		$('.TableListArea:eq(0)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+        $('.TableListArea:eq(1)').liMarquee('destroy');  
+		$('.TableListArea:eq(1)').liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
 	}
 	let param3 = {
 		key: 'right',
