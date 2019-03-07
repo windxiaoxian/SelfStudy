@@ -309,8 +309,10 @@
                                     </tr>`);
         });
        
-        $(".table-box-0").liMarquee('destroy');  
-		$(".table-box-0").liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+        $(".table-box-0").liMarquee('destroy'); 
+        setTimeout(function(){
+            $(".table-box-0").liMarquee({scrollamount:'30',hoverstop:false,runshort: false});        
+        },200) 
 	}
 	let param2 = {
 		key: 'important',
