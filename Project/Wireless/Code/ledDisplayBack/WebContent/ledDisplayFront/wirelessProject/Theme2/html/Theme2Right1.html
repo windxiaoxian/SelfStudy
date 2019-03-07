@@ -297,9 +297,9 @@
     g.doAjax("servlet/SecondThemeServlet", param1, getData1);
 
     let getData2 = function (res) {
-        $(".zyjmbcztModel table").html("");
+        $(".table-box-0 table").html("");
         $(res.programStatusList).each(function(i,ele){
-            $(".zyjmbcztModel table").append(`<tr>
+            $(".table-box-0 table").append(`<tr>
                                         <td style="width:126px;">${ele.programName}</td>
                                         <td style="width:140px;">${ele.transmitter}</td>
                                         <td style="width:132px;">${ele.anterna}</td>
