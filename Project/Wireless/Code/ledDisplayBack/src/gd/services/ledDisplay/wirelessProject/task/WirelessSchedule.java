@@ -50,7 +50,9 @@ public class WirelessSchedule {
                     + DateUtil.getNowStr("yyyy-MM-dd HH:mm:ss")
                     + "\"},\"endDate\":{\"$gte\":\""
                     + DateUtil.getNowStr("yyyy-MM-dd HH:mm:ss")
-                    + "\"}}]},{\"endDate\":null} ] }";
+                    + "\"}}]},{\"endDate\":"
+                    + DateUtil.strToDate(DateUtil.getNowStr("yyyy-MM-dd") + " 00:00:00", "yyyy-MM-dd HH:mm:ss")
+                    + "} ] }";
             Bson queryFilter = BasicDBObject.parse(jsonInfo);
             //排序条件|(-1:倒叙 1：正序)
             Bson sortFilter = new BasicDBObject("stationCode", 1)
