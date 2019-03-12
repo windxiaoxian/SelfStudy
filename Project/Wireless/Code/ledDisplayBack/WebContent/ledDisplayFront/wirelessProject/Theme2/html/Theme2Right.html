@@ -23,9 +23,6 @@
 		.ModelContent{
             margin-left: 70px;
         }
-        table{
-            /* text-align: center; */
-        }
         .DataAssemblyBar_progressBarItem{
             min-width: 45px;
         }
@@ -505,13 +502,6 @@
     // 轮播地图
     let timer1,timer2 ;
     let getData2 = function (res) {
-        // $(".AreaOutContainer:eq(0)").html(`
-        //     <img class="AreaItem miniArea huabei" src="../img/ssqkShowGroup/inDistrict/hbArea.png">
-        //     <img class="AreaItem miniArea xinan" src="../img/ssqkShowGroup/inDistrict/xnArea.png">
-        //     <img class="AreaItem maxArea huazhong" src="../img/ssqkShowGroup/inDistrict/hzArea.png">
-        //     <img class="AreaItem miniArea xibei" src="../img/ssqkShowGroup/inDistrict/xbArea.png">
-        //     <img class="AreaItem miniArea dongbei" src="../img/ssqkShowGroup/inDistrict/dbArea.png">			
-        // `);
         $(".huabei").data({
             orange1:res.huabeiList[0].orangeCanuseInter,orange2:res.huabeiList[0].orangeInuseInter,
             blue1:res.huabeiList[0].blueCanuseInter,blue2:res.huabeiList[0].blueInuseInter,
@@ -765,16 +755,6 @@
 	});
 </script>
 
-
-
-<script>
-	// /*表格滚动*/
-	// $(function () {
-	// 	$('.TableListArea').liMarquee(
-	// 		{ scrollamount: '30' }
-	// 	);
-	// });	
-</script>
 <script>
 	/*播放时长累计节目排名柱图*/
 	// let bar1 = "image://../img/barBgBig.png";

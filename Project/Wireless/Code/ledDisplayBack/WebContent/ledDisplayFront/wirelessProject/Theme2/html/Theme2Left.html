@@ -368,9 +368,7 @@
 		param: JSON.stringify({ interfaceName: 'resourceCompare' }),
 	}
 	g.doAjax("servlet/SecondThemeServlet", param1, getData1);
-	setInterval(function () {
-		g.doAjax("servlet/SecondThemeServlet", param1, getData1);
-	}, 30000);
+	
 
 	// 柱图1
 	let getData2 = function (res) {
@@ -411,10 +409,7 @@
 		param: JSON.stringify({ interfaceName: 'burstFreqAnalysis' }),
 	}
 	g.doAjax("servlet/SecondThemeServlet", param2, getData2);
-	setInterval(function () {
-		g.doAjax("servlet/SecondThemeServlet", param2, getData2);
-	}, 30000)
-
+	
 	// 柱图2
 	let getData3 = function (res) {
 		res.brustFreqOrderList.forEach((item,index)=>{
@@ -445,10 +440,7 @@
 		param: JSON.stringify({ interfaceName: 'burstFreqOrder' }),
 	}
 	g.doAjax("servlet/SecondThemeServlet", param3, getData3);
-	setInterval(function () {
-		g.doAjax("servlet/SecondThemeServlet", param3, getData3);
-	}, 30000)
-
+	
 	// 右侧数据
 	let getData4 = function (res) {
 		$(".orderByAnnual").html(res.orderByAnnual);       					 	//全局下发调度令总数
@@ -508,11 +500,14 @@
 		key: 'left',
 		param: JSON.stringify({ interfaceName: 'annualSituation' }),
 	}
-	g.doAjax("servlet/SecondThemeServlet", param4, getData4);
-	setInterval(function () {
-		g.doAjax("servlet/SecondThemeServlet", param4, getData4);
-	}, 30000)
-
+    g.doAjax("servlet/SecondThemeServlet", param4, getData4);
+    
+    setInterval(function () {
+        g.doAjax("servlet/SecondThemeServlet", param1, getData1);
+        g.doAjax("servlet/SecondThemeServlet", param2, getData2);
+        g.doAjax("servlet/SecondThemeServlet", param3, getData3);
+        g.doAjax("servlet/SecondThemeServlet", param4, getData4);
+	}, 30000);
 	 /*表格滚动*/
 	$(function(){
 		// $('.TableListArea').liMarquee('pause');
