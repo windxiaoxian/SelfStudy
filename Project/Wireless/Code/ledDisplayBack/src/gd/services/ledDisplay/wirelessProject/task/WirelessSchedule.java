@@ -46,13 +46,11 @@ public class WirelessSchedule {
             logger.info("有效运行图全量信息沉淀【MongoDB】开始：" + count);
 
             //查询条件|$ne 、$gt 、$gte 、 $lt 、 $lte （分别对应 <> 、 > 、  >=  、 <  、 <= ）
-            String jsonInfo = "{ \"$or\":[ {\"$and\":[{\"startDate\":{\"$lte\":\""
+            String jsonInfo = "{\"$and\":[{\"startDate\":{\"$lte\":\""
                     + DateUtil.getNowStr("yyyy-MM-dd HH:mm:ss")
                     + "\"},\"endDate\":{\"$gte\":\""
                     + DateUtil.getNowStr("yyyy-MM-dd HH:mm:ss")
-                    + "\"}}]},{\"endDate\":"
-                    + DateUtil.strToDate(DateUtil.getNowStr("yyyy-MM-dd") + " 00:00:00", "yyyy-MM-dd HH:mm:ss")
-                    + "} ] }";
+                    + "\"}}]}";
             Bson queryFilter = BasicDBObject.parse(jsonInfo);
             //排序条件|(-1:倒叙 1：正序)
             Bson sortFilter = new BasicDBObject("stationCode", 1)
@@ -471,46 +469,46 @@ public class WirelessSchedule {
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
                 Map busiOrderMap = new HashMap();
-                busiOrderMap.put("stationCode", doc.get("stationCode"));
-                busiOrderMap.put("operate", doc.get("operate"));
-                busiOrderMap.put("sourceType", doc.get("sourceType"));
-                busiOrderMap.put("orderCode", doc.get("orderCode"));
-                busiOrderMap.put("orderStatus", doc.get("orderStatus"));
-                busiOrderMap.put("sendDept", doc.get("sendDept"));
-                busiOrderMap.put("orderYear", doc.get("orderYear"));
-                busiOrderMap.put("statusDate", doc.get("statusDate"));
-                busiOrderMap.put("sender", doc.get("sender"));
-                busiOrderMap.put("sendDate", doc.get("sendDate"));
-                busiOrderMap.put("sendAssessor", doc.get("sendAssessor"));
-                busiOrderMap.put("receiver", doc.get("receiver"));
-                busiOrderMap.put("receiverDate", doc.get("receiverDate"));
-                busiOrderMap.put("corrector", doc.get("corrector"));
-                busiOrderMap.put("correctDate", doc.get("correctDate"));
+                busiOrderMap.put("stationCode", doc.get("stationCode"));// 台站编码
+                busiOrderMap.put("operate", doc.get("operate")); //操作标志
+                busiOrderMap.put("sourceType", doc.get("sourceType"));//调度令性质
+                busiOrderMap.put("orderCode", doc.get("orderCode"));// 文号
+                busiOrderMap.put("orderStatus", doc.get("orderStatus"));// 状态
+                busiOrderMap.put("sendDept", doc.get("sendDept"));// 发送单位
+                busiOrderMap.put("orderYear", doc.get("orderYear"));// 年份
+                busiOrderMap.put("statusDate", doc.get("statusDate"));// 状态日期
+                busiOrderMap.put("sender", doc.get("sender"));//发送人
+                busiOrderMap.put("sendDate", doc.get("sendDate"));// 发送时间
+                busiOrderMap.put("sendAssessor", doc.get("sendAssessor"));// 发送审核人
+                busiOrderMap.put("receiver", doc.get("receiver"));// 台站接收人
+                busiOrderMap.put("receiverDate", doc.get("receiverDate"));//接收时间
+                busiOrderMap.put("corrector", doc.get("corrector"));// 接受校对人
+                busiOrderMap.put("correctDate", doc.get("correctDate"));// 校对时间
                 if (doc.get("orderOps") != null) {
                     List busiOrderDetailTempList = (ArrayList) doc.get("orderOps");
                     for (Object orderOps : busiOrderDetailTempList) {
                         Map busiOrderDetailMap = new HashMap();
-                        busiOrderDetailMap.put("stationCode", doc.get("stationCode"));
-                        busiOrderDetailMap.put("transCode", ((Map) orderOps).get("transCode"));
-                        busiOrderDetailMap.put("antCode", ((Map) orderOps).get("antCode"));
-                        busiOrderDetailMap.put("status", ((Map) orderOps).get("status"));
-                        busiOrderDetailMap.put("statusDate", ((Map) orderOps).get("statusDate"));
-                        busiOrderDetailMap.put("rmks", ((Map) orderOps).get("rmks"));
-                        busiOrderDetailMap.put("channel", ((Map) orderOps).get("channel"));
-                        busiOrderDetailMap.put("orderCode", doc.get("orderCode"));
-                        busiOrderDetailMap.put("days", ((Map) orderOps).get("days"));
-                        busiOrderDetailMap.put("servArea", ((Map) orderOps).get("servArea"));
-                        busiOrderDetailMap.put("power", ((Map) orderOps).get("power"));
-                        busiOrderDetailMap.put("azimuthM", ((Map) orderOps).get("azimuthM"));
-                        busiOrderDetailMap.put("programName", ((Map) orderOps).get("programName"));
-                        busiOrderDetailMap.put("programCode", ((Map) orderOps).get("programCode"));
-                        busiOrderDetailMap.put("freq", ((Map) orderOps).get("freq"));
-                        busiOrderDetailMap.put("startDate", ((Map) orderOps).get("startDate"));
-                        busiOrderDetailMap.put("endDate", ((Map) orderOps).get("endDate"));
-                        busiOrderDetailMap.put("startTime", ((Map) orderOps).get("startTime"));
-                        busiOrderDetailMap.put("endTime", ((Map) orderOps).get("endTime"));
-                        busiOrderDetailMap.put("orderType", ((Map) orderOps).get("orderType"));
-                        busiOrderDetailMap.put("operate", ((Map) orderOps).get("operate"));
+                        busiOrderDetailMap.put("stationCode", doc.get("stationCode"));// 台站编码
+                        busiOrderDetailMap.put("transCode", ((Map) orderOps).get("transCode"));//发射机编码
+                        busiOrderDetailMap.put("antCode", ((Map) orderOps).get("antCode"));//天线编码
+                        busiOrderDetailMap.put("status", ((Map) orderOps).get("status"));//状态
+                        busiOrderDetailMap.put("statusDate", ((Map) orderOps).get("statusDate"));//状态日期
+                        busiOrderDetailMap.put("rmks", ((Map) orderOps).get("rmks"));//备注
+                        busiOrderDetailMap.put("channel", ((Map) orderOps).get("channel"));//节目通道
+                        busiOrderDetailMap.put("orderCode", doc.get("orderCode"));//文号
+                        busiOrderDetailMap.put("days", ((Map) orderOps).get("days"));//周期
+                        busiOrderDetailMap.put("servArea", ((Map) orderOps).get("servArea"));//服务区
+                        busiOrderDetailMap.put("power", ((Map) orderOps).get("power"));//功率
+                        busiOrderDetailMap.put("azimuthM", ((Map) orderOps).get("azimuthM"));//方向
+                        busiOrderDetailMap.put("programName", ((Map) orderOps).get("programName"));//节目名称
+                        busiOrderDetailMap.put("programCode", ((Map) orderOps).get("programCode"));//节目编码
+                        busiOrderDetailMap.put("freq", ((Map) orderOps).get("freq"));//频率
+                        busiOrderDetailMap.put("startDate", ((Map) orderOps).get("startDate"));//开始执行日期
+                        busiOrderDetailMap.put("endDate", ((Map) orderOps).get("endDate"));//结束执行日期
+                        busiOrderDetailMap.put("startTime", ((Map) orderOps).get("startTime"));//开始时间
+                        busiOrderDetailMap.put("endTime", ((Map) orderOps).get("endTime"));//结束时间
+                        busiOrderDetailMap.put("orderType", ((Map) orderOps).get("orderType"));//任务类型
+                        busiOrderDetailMap.put("operate", ((Map) orderOps).get("operate"));//操作标志
                         busiOrderDetailList.add(busiOrderDetailMap);
                     }
                 }

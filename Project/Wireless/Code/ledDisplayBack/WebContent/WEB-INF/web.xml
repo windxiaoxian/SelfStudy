@@ -60,6 +60,30 @@
         <url-pattern>/servlet/SecondThemeServletTest</url-pattern>
     </servlet-mapping>
 
+    <!--        主题三Servlet  测试类   -->
+    <servlet>
+        <description>ThirdThemeServletTest_Description</description>
+        <display-name>ThirdThemeServletTest_Name</display-name>
+        <servlet-name>ThirdThemeServletTest</servlet-name>
+        <servlet-class>gd.services.ledDisplay.wirelessProject.servlet.ThirdThemeServletTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ThirdThemeServletTest</servlet-name>
+        <url-pattern>/servlet/ThirdThemeServletTest</url-pattern>
+    </servlet-mapping>
+
+    <!--        主题四Servlet  测试类   -->
+    <servlet>
+        <description>FourThemeServletTest_Description</description>
+        <display-name>FourThemeServletTest_Name</display-name>
+        <servlet-name>FourThemeServletTest</servlet-name>
+        <servlet-class>gd.services.ledDisplay.wirelessProject.servlet.FourThemeServletTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FourThemeServletTest</servlet-name>
+        <url-pattern>/servlet/FourThemeServletTest</url-pattern>
+    </servlet-mapping>
+
     <!-- Spring 配置 begin-->
     <!-- ====================================== -->
     <servlet>
