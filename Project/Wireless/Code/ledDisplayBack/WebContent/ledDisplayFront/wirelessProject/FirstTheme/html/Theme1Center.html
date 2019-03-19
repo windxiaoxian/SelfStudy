@@ -9,7 +9,7 @@
 	<link href="../css/Theme1Center.css" rel="stylesheet" type="text/css">
 	<style>
 		#BeijingMap {
-			background: url(../img/center/site/BeijingMapBg.png) !important;
+			background: url(../img/center/site/BeijingMapBg.png) no-repeat center!important;
 		}
 		.ddlcModel_item:first-of-type .ddlcModel_item_value {
 			vertical-align: super;
@@ -267,6 +267,10 @@
 			width: inherit;
 			font-style: 18px;
 		}
+        .BeijingMap{
+            width: 190px;
+            left: 850px;
+        }
 	</style>
 </head>
 
@@ -605,7 +609,7 @@
 		{ name : '2023台', value: [109.54,19.53] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '2024台', value: [124.16,47.21] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '501台', value: [102.31,24.54] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '523台', value: [125.22,43.56] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '523台', value: [125.22,43.56] ,label: {normal: {position: 'left',}}, symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '552台', value: [119.40,26.05] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '554台', value: [113.25,34.49] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '561台', value: [116.05,28.37] , symbol: 'image://../img/center/site/zdbSite.png',},
@@ -613,36 +617,36 @@
 		{ name : '623台', value: [120.08,31.42] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '641台', value: [118.35,24.53] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '694台', value: [111.14,40.47] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '722台', value: [106.58,34.42] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '722台', value: [106.58,34.42] ,label: {normal: {position: 'left',}}, symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '723台', value: [114.26,38.02] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '724台', value: [107.43,34.32] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '724台', value: [107.43,34.32] ,label: {normal: {position: 'top',}}, symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '725台', value: [111.55,36.51] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '726台', value: [103.54,25.49] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '731台', value: [117.03,25.01] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '731台', value: [117.03,25.01] ,label: {normal: {position: 'left',}}, symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '751台', value: [117.19,27.05] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '761台', value: [117.13,25.44] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '761台', value: [117.13,25.64] ,label: {normal: {position: 'left',}}, symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '763台', value: [126.44,42.54] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '824台', value: [119.11,25.28] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '831台', value: [119.20,29.06] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '871台', value: [108.42,19.53] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '951台', value: [114.08,38.13] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '871台', value: [108.42,19.53] ,label: {normal: {position: 'left',}}, symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '951台', value: [114.08,38.13] ,label: {normal: {position: 'left',}}, symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '952台', value: [105.10,28.24] , symbol: 'image://../img/center/site/zbtSite.png',},
 		{ name : '953台', value: [127.17,43.33] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '呼和浩特地球站', value: [111.48,40.41] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站'},
+		{ name : '呼和浩特地球站', value: [111.48,40.41],label: {normal: {position: 'left',}} , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站'},
 		{ name : '602台', value: [91.15,29.38] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '2022台', value: [75.47,39.21] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
 		{ name : '654台', value: [86.54,44.09] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '916台', value: [94.60,36.24] , symbol: 'image://../img/center/site/zdbSite.png',},
 	]
 	let bjData = [
-		{ name : '491台', value: [60.36,59.53] , symbol: 'image://../img/center/site/zdbSiteNormal.png',},
-		{ name : '542台', value: [60.14,79.45] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
-		{ name : '564台', value: [80.08,129.38] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '491台', value: [60.36,59.53] ,label: {normal: {position: 'left'}}, symbol: 'image://../img/center/site/zdbSiteNormal.png',},
+		{ name : '542台', value: [60.14,79.45] ,label: {normal: {position: 'left',}}, symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
+		{ name : '564台', value: [80.08,135.38] , symbol: 'image://../img/center/site/zdbSite.png',},
 		{ name : '572台', value: [96.50,99.45] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '582台', value: [56.21,79.56] , symbol: 'image://../img/center/site/zdbSite.png',},
-		{ name : '北京地球站', value: [36.18,104.06] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站'},
-		{ name : '中央广播电视塔管理中心', value: [44.23,119.54] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
-		{ name : '中央广播电视发射二台（月坛）', value: [70.23,80.55] , symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
+		{ name : '582台', value: [96.21,79.56] , symbol: 'image://../img/center/site/zdbSite.png',},
+		{ name : '北京地球站', value: [76.18,94.06] ,label: {normal: {position: 'left',}}, symbol: 'image://../img/center/site/dqzSite.png',des:'地球站'},
+		{ name : '中央广播电视塔管理中心', value: [80.08,140.38] ,label: {normal: {position: 'top',}},  symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
+		{ name : '中央广播电视发射二台（月坛）', value: [100.23,60.55] ,label: {normal: {position: 'top',}}, symbol: 'image://../img/center/site/dqzSite.png',des:'地球站',},
 		// { name : '7055甲台', value: [NULL,NULL] , symbol: 'image://../img/center/site/zbtSite.png',},
 		// { name : '7055乙台', value: [NULL,NULL] , symbol: 'image://../img/center/site/zbtSite.png',},
 		// { name : '7055丙台', value: [NULL,NULL] , symbol: 'image://../img/center/site/zbtSite.png',},
@@ -730,9 +734,9 @@
 						position: 'right',
 						show: labelIsShow
 					},
-					emphasis: {
-						show: true
-					}
+					// emphasis: {
+					// 	show: true
+					// }
 				},
 				itemStyle: {
 					normal: {
@@ -956,7 +960,7 @@
 	// $(".siteInfoBox").hide();
 
 	let totalData = bjData.concat(chData), i = 0, effectData, effectData2 = [], targetChart, cancelEffectChart;
-	console.log(totalData);
+	// console.log(totalData);
 	let intervalFun = function () {
 		// 轮播effect
 		effectData = [totalData[i]];
