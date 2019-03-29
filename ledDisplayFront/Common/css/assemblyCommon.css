@@ -1,0 +1,165 @@
+@charset "utf-8";
+/* 大屏数据展示组件样式 */
+
+/*托盘数据呈现组件-大*/
+.DataAssmeblyOne{width:260px;height:95px;position:relative;margin-top: 15px;}
+.DataAssmeblyOne_Content{}
+.DataAssemblyOne_title{font-size:18px;color:#ffffff;text-align:center;position:absolute;top:-15px;left:100px;}
+.DataAssemblyOne_data{font-size:40px;font-family:DataFont;text-align:center;display:inline-block;height:45px;line-height:45px;text-align:center;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;position:absolute;top:35px;left:100px;}
+.DataAssemblyOne_data .DataUnit{font-size:12px;font-weight:bold;font-family:"微软雅黑"}
+
+/*托盘数据呈现组件-小*/
+.DataAssmeblyTwo{width:185px;height:42px;background:url(../img/assembly/DataAssemblyTwoBg.png) no-repeat;background-size:cover;position:relative;}
+.DataAssmeblyTwo_Content{}
+.DataAssemblyTwo_title{font-size:20px;color:#ffffff;text-align:center;position:absolute;top:-25px;left:80px;}
+.DataAssemblyTwo_data{font-size:28px;font-family:DataFont;text-align:center;display:inline-block;height:28px;line-height:28px;text-align:center;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;position:absolute;top:0px;left:75px;}
+.DataAssemblyTwo_data .DataUnit{font-size:16px;font-weight:bold;font-family:"微软雅黑"}
+.DataAssemblyTwo_icon{position:absolute;top:-20px;left:25px;}
+
+/*舞台数据统计呈现组件*/
+.DataStageAssembly{}
+.DataStageAssembly_Data{width:100%;font-size:40px;font-family:DataFont;display:inline-block;height:45px;line-height:45px;text-align:center;background-image:-webkit-linear-gradient(top,#fef55a,#e8b705); -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.DataStageAssembly_Data .DataUnit{font-size:16px;font-weight:bold;font-family:"微软雅黑"}
+.DataStageAssembly_Name{font-size:18px;color:#ffffff;text-align:center;}
+
+/*数据进度条呈现组件*/
+.DataAssemblyBar_lengendGroup{overflow:hidden;}
+.DataAssemblyBar_lengendGroup li{float:left;}
+.DataAssemblyBar_legendCircle{display:inline-block;width:12px;height:12px;margin-right:5px;border-radius:100%;}
+.DataAssemblyBar_legendName{font-size:14px;color:#ffffff;}
+.yellowMix{background:-webkit-linear-gradient(top,#fef55a,#dc6d0b);}
+.blueMix{background:-webkit-linear-gradient(top,#42b9fd,#1e4bcd);}
+.greenMix{background:-webkit-linear-gradient(top,#a6ef78,#468b1a);}
+
+.DataAssemblyBar_progressBar{width:810px;height:30px;border-radius:30px;overflow:hidden;margin-top:5px;}
+.DataAssemblyBar_progressBarItem{height:30px;line-height:30px;display:block;float:left;text-align:center;transition:1s;}
+.progressBarData{font-size:16px;font-weight:bold;color:#ffffff;}
+#item1 .progressBarData{text-shadow: 2px 2px 1px #c74202;}
+#item2 .progressBarData{text-shadow: 2px 2px 1px #0722b1;}
+#item3 .progressBarData{text-shadow: 2px 2px 1px #1c5d06;}
+#item1{width:30%;}
+#item2{width:40%;}
+#item3{width:30%;}
+
+/*饼图类1呈现样式*/
+.pieAssembly{width:206px;height:206px;background:url(../img/assembly/pieChartBg.png) no-repeat;background-size:cover;position:relative;}
+.pieAssembly_pieChart{width:235px;height:235px;margin:0 auto;position: absolute;top:-14px;left:-12px;border-radius:50%;}
+
+/*进度环呈现组件*/
+.PieTransformAssembly{width:100%;height:100%;transform-origin:bottom center;transform:rotateX(75deg)}
+.PieTransformAssembly_Data{font-size: 40px;font-style: italic; font-family:DataFont;color:#69f276;position:absolute;left:52px;top:172px;}
+.PieTransformAssembly_DataUnit{font-size:18px;}
+.PieTransformAssembly_Name{font-size:16px;color:#ffffff;text-align:center;margin-top: 10px;}
+
+/*对比柱图呈现组件*/
+
+.BarCompAssembly_lengendGroup{overflow:hidden;padding-left: 15px;}
+.BarCompAssembly_lengendGroup li{float:left;width:50%}
+.BarCompAssembly_legendCircle{display:inline-block;width:12px;height:12px;margin-right:5px;}
+.BarCompAssembly_legendName{font-size:14px;color:#ffffff;}
+.greenMix2{background:linear-gradient(to top, rgba(106,255,197,1), rgba(106,255,197,0));}
+.yellowMix2{background:linear-gradient(to top, rgba(248,222,77,0), rgba(248,222,77,1));}
+
+/*表格组件*/
+.TableListAssembly{}
+.TableListHead{width:100%;}
+.TableListHeadItem{width:30%;display:inline-block;text-align:left;}
+.TableListHeadItemName{font-size:16px;font-weight:bold;background-image:-webkit-linear-gradient(top,#e4f7ff,#1eb9fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.TableListHeadItemBox{display:inline-block;width:125px;height:30px;margin-right:60px;line-height:30px;text-align:center;border-radius:3px;border:1px solid #00b4ff;background: -webkit-linear-gradient(top,rgba(0,180,255,0.05),rgba(0,180,255,0.4));}
+.TableListAssembly table{width:100%;color:#ffffff;}
+.TableListAssembly table tr{margin-top:5px;display:block;}
+.TableListAssembly table td{display:inline-block;font-size:14px;width:125px;margin-right:60px;}
+.TableListAssembly .Rate{text-align:center;font-weight:bold;}
+.TableListArea{height:330px;margin-top:10px;overflow:hidden;position:relative;}
+/*90%以上颜色*/
+.GreenRate{color:#3fff76;}
+/*60%-90%以上颜色*/
+.OrangeRate{color:#f0d97b;}
+/*60%以下颜色*/
+.RedRate{color:#f82525;}
+
+
+.BarCompAssembly{
+			display: flex;
+			justify-content: center;
+		}
+		.BarCompAssembly_barBox{
+			width: 50px;
+			height: 60px;
+			position: relative;
+			margin: 0 auto;
+		}
+		.BarCompAssembly_barBox div{
+		}
+		.BarCompAssembly_Name{
+		    font-size: 16px;
+		    width: 80px;
+		    color: #ffffff;
+		    text-align: center;
+			margin: 5px 0 5px 0;
+		}
+		
+		.bar-1{
+			height: 80%;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background: linear-gradient(to top, rgba(106,255,197,1), rgba(106,255,197,0));
+		}
+		.bar-2{
+			height: 50%;
+			background: linear-gradient(to top, rgba(248,222,77,0), rgba(248,222,77,1));
+
+		}
+		.BarCompAssembly_Data{
+			text-align: center;
+			color: #22f;
+			font-size: 12px;
+		}
+		.BarCompAssembly_item1 .BarCompAssembly_Data{color:#6affc5;}
+		.BarCompAssembly_item2 .BarCompAssembly_Data{color:#f8de4d;}
+		.num-span{
+			font-size: 16px;
+		}
+/*图表标题*/
+.chartTitle img{display:block;margin:0 auto;}
+
+/*数据景观化组件*/
+.DataStage2Assembly{float:left;}
+.DataStage2Assembly_Data{height:40px;}
+.DataStage2Assembly_Data_item{margin-right:30px;transform-origin:left;transform: skewY(30deg);color:#01fff6;font-size:14px;}
+.DataStage2Assembly_Data_item span{font-size:18px;font-weight:bold;font-family:DataFont;}
+.DataStage2Assembly_Icon{margin:30px 0 0 10px;}
+
+/*数据球组件*/
+.DataBallGreen1{width:157px;height:157px;background:url(../img/assembly/NewDataBall/DataBallGreen1Bg.png) no-repeat;text-align:center;overflow:hidden;}
+.DataBallGreen1Mini{width:84px;height:84px;background:url(../img/assembly/DataBallGreen1MiniBg.png) no-repeat;text-align:center;overflow:hidden;}
+.DataBallGreen2{width:157px;height:157px;background:url(../img/assembly/NewDataBall/DataBallGreen2Bg.png) no-repeat;text-align:center;overflow:hidden;}
+.DataBallOrange{width:157px;height:157px;background:url(../img/assembly/NewDataBall/DataBallOrangeBg.png) no-repeat;text-align:center;overflow:hidden;}
+.DataBallOrangeMini{width:84px;height:84px;background:url(../img/assembly/DataBallOrangeMiniBg.png) no-repeat;text-align:center;overflow:hidden;}
+.DataBallOrange {
+	
+}
+
+
+/*信息表组件*/
+.PanelListAssembly{margin:10px;}
+.PanelListHead{width:100%;}
+.PanelListHeadItem{width:30%;display:inline-block;text-align:left;}
+.PanelListHeadItemName{font-size:22px;font-weight:bold;background-image:-webkit-linear-gradient(top,#e4f7ff,#1eb9fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.PanelListHeadItemBox{display:inline-block;width:125px;height:30px;margin-right:5px;line-height:30px;text-align:center;border-radius:3px;border:1px solid #00b4ff;background: -webkit-linear-gradient(top,rgba(0,180,255,0.05),rgba(0,180,255,0.4));}
+.PanelListAssembly table{width:100%;color:#ffffff;}
+.PanelListAssembly table tr{margin-top:5px;display:block;}
+.PanelListAssembly table td{display:inline-block;font-size:20px;width:125px;text-align:center;margin-right:10px;}
+.PanelListArea{height:330px;margin-top:10px;overflow:hidden;position:relative;}
+
+/*状态灯*/
+.stateLight{width:30px;height:30px;display:block;margin:0 auto;}
+.greenLight{background:url(../../Theme3/img/right/stateLightGreen.png) no-repeat;background-size:cover;}
+.redLight{background:url(../../Theme3/img/right/stateLightRed.png) no-repeat;background-size:cover;}
+
+
+
+
+
+
